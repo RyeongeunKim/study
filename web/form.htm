@@ -1,0 +1,155 @@
+﻿<html>
+ <head>
+  <title>form</title>
+ </head>
+ <body>
+
+<h1>form</h1>
+
+<ul>
+ <li>form 태그란? 사용자가 서버에 정보를 쉽게 전달할 수 있는 페이지를 구성함</li>
+ <li>form 태그 속성</li>
+  <ul>
+    <li>action: 서버의 파일 지정</li>
+    <li>method: 전달 방식 지정 -> 일반적으로는 post, 보안상의 문제가 없고 길이가 짧을 때는 get</li>
+  </ul>
+</ul>
+
+<form action="test.jsp" method="post">
+<hr>
+ <h3>input type="text" 한줄 글상자</h3>
+  <ul>
+    <li>label 태그: input상자에 입력할 설명문 지정</li>
+    <li>for의 속성값을 input태그의 id속성값과 일치시켜 글상자와 설명문 연결시킴</li>
+    <li>size 속성: 상자의 가로 길이 지정</li>
+    <li>maxlength 속성: 입력데이터의 최대길이 제한</li>
+    <li>minlength 속성: 입력데이터의 최소길이 제한</li>
+  </ul>
+    <label for="nm">name</label> <input type="text" id="nm"> <br>
+    <label for="nnm">nick name</label>
+    <input type="text" id="nnm" size="10">
+ <hr>
+  <h3>input type="passward" 암호 글상자</h3>
+  <label for="pwd">password</label>
+  <input type="password" id="pwd" maxlength="12">
+ <hr>
+  <h3>textarea .../textarea 큰 글상자</h3>
+  <p>cols속성으로 상자의 가로 크기를, rows속성으로 세로 크기를 지정</p>
+   <textarea cols="100" rows="10"></textarea>
+
+ <hr>
+   <h3>input type="radio" 라디오 버튼(객관식 단일선택형)</h3>
+   <p>
+    같은 질문의 선택지들끼리는 name 속성 값을 서로 일치시킴<br>
+    초기값은 checked(checked="checked")를 추가함<br>
+
+   <!-- label로 input을 감싸준 경우 (for와 id생략 가능) -->
+   <label><input type="radio" name="gender" checked>male</label> </label><br>
+   <label><input type="radio" name="gender">female</label><br>
+   <label><input type="radio" name="gender">other</label>
+   </p>
+ <hr>
+  <h3>input type="checkbox" 체크박스(객관식 다중선택형)</h3>
+   <p>이용하는 교통수단은?<br>
+    <label><input type="checkbox">도보</label><br>
+    <label><input type="checkbox">버스</label><br>
+    <label><input type="checkbox">지하철</label><br>
+    <label><input type="checkbox">자전거</label><br>
+    <label><input type="checkbox">자가용</label><br>
+  </p>
+ <hr>
+  <h3>select ... / select 드롭다운 리스트(객관식 펼침목록)</h3>
+  <ul>
+   <li>selected(selected="selected"): 초기값</li>
+   <li>multiple: 2개 이상 선택</li>
+   <li>size="n": n개의 항목이 보이는 상자형</li>
+   <li>optgroup: 옵션들을 그룹으로 묶어주고 label 속성으로 제목을 붙인다.</li>
+  </ul>
+  <p>
+   <i>기본형</i> 교육센터까지 걸리는 시간은?<br>
+   <select>
+    <option>10분 이내</option>
+    <option>30분 이내</option>
+    <option>1시간 이내</option>
+    <option>1시간 30분 이내</option>
+    <option>2시간 이내</option>
+    <option>2시간 30분 이내</option>
+    <option>3시간 이상</option>
+   </select>
+  </p>
+  <p>
+   <i>option에 selected 추가</i> 교육센터까지 걸리는 시간은?<br>
+   <select>
+    <option>10분 이내</option>
+    <option>30분 이내</option>
+    <option selected="selected">1시간 이내</option>
+    <option>1시간 30분 이내</option>
+    <option>2시간 이내</option>
+    <option>2시간 30분 이내</option>
+    <option>3시간 이상</option>
+   </select>
+  </p>
+
+   <i>option에 selected 추가</i> 제일 집에 가고싶은 시간은?<br>
+  <p>
+  <select multiple>
+    <option>1교시</option>
+    <option>2교시</option>
+    <option>3교시</option>
+    <option>4교시</option>
+    <option selected>5교시</option>
+    <option>6교시</option>
+    <option selected>7교시</option>
+    <option>8교시</option>
+  </select>
+  </p>
+
+  <p>
+   <i>(select에 size="n"추가하여 box형으로)</i> 희망하는 팀프로젝트 회의 시간은?<br>
+   <select size="5">
+    <option>1교시</option>
+    <option>2교시</option>
+    <option>3교시</option>
+    <option>4교시</option>
+    <option>5교시</option>
+    <option>6교시</option>
+    <option>7교시</option>
+    <option>8교시</option>
+   </select> 
+  </p>
+  <p>
+   <i>(optgroup)</i> 희망하는 팀프로젝트 회의 시간은?<br>
+   
+   <select size="5">
+    <optgroup label="오전시간">
+     <option>1교시</option>
+     <option>2교시</option>
+     <option>3교시</option>
+     <option>4교시</option>
+    </optgroup>
+    <optgroup label="오후시간">
+     <option>5교시</option>
+     <option>6교시</option>
+     <option>7교시</option>
+     <option>8교시</option>
+    </optgroup>
+   </select>  
+  </p>
+
+  <hr>
+  <h3>input type="search" 검색 상자(삭제버튼 생성)</h3>
+   <input type="search">
+ 
+  <hr>
+  <h3>input type="hidden" 숨긴 데이터(사용자에게 보이지 않는 데이터 전송용)</h3>
+   <input type="hidden" value="vip">
+
+  <hr>
+  <h3>input type="file" 파일 전송용</h3>
+   <label>photo <input type="file"></label>
+
+
+ </body>
+
+</html>
+
