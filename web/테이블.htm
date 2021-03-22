@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+ <html>
+  <head>
+   <title>table</title>
+   <style type="text/css">
+    table, th, td {border:1px solid #5aa;}
+    </style>
+  </head>
+  <body>
+
+<h3>테이블 기본 태그</h3>
+
+<table>
+ <tr>
+  <th>table</th>
+  <td>표를 구성하는 태그</td>
+ </tr>
+ <tr>
+  <th>tr</th>
+   <td>줄을 구성하는 태그</td>
+ </tr>
+ <tr>
+  <th>th</th>
+    <td>제목칸을 구성하는 태그(볼드체, 중앙정렬)</td>
+ </tr>
+ <tr>
+  <th>td</th>
+    <td>일반칸을 구성하는 태그</td>
+ </tr>
+</table>
+
+<h3>가로형 표</h3>
+
+<table>
+ <tr>
+  <th>과일</th>
+  <td>사과</td>
+  <td>바나나</td>
+ </tr>
+ <tr>
+  <th>채소</th>
+  <td>감자</td>
+  <td>양파</td>
+ </tr>
+</table>
+
+<h3>세로형 표</h3>
+
+<table>
+ <tr>
+  <th>과일</th>
+  <th>채소</th>
+ </tr>
+ <tr>
+  <td>사과</td>
+  <td>감자</td>
+ </tr>
+ <tr>
+  <td>바나나</td>
+  <td>양파</td>
+ </tr>
+</table>
+
+<hr>
+
+<h3>칸 합치기</h3>
+
+<ol>
+ <li>td(th) colspan="n" 가로 방향으로 n개의 칸을 하나로 합치기</li>
+ <li>td(th) rowspan="n" 세로 방향으로 n개의 칸을 하나로 합치기</li>
+</ol>
+
+<h3>가로로 칸 합치기</h3>
+
+<table>
+ <tr>
+  <th colspan="2">colspan</th>
+ </tr>
+ <tr>
+  <td>가로</td>
+  <td>합치기</td>
+ </tr>
+ <tr>
+  <th colspan="2">rowspan</th>
+ </tr>
+ <tr>
+  <td>세로</td>
+  <td>합치기</td>
+ </tr>
+</table>
+
+<h3>세로로 칸 합치기</h3>
+
+<table>
+ <tr>
+  <th rowspan="2">가<br>로</th>
+  <td>합치기</td>
+  <th rowspan="2">세<br>로</th>
+  <td>합치기</td>
+ </tr>
+ <tr>
+ <td>colspan</td>
+ <td>rowspan</td>
+ </tr>
+</table>
+
+<table>
+ <tr>
+  <td rowspan="2">1</td>
+  <td rowspan="3">2</td>
+  <td>3</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>5</td>
+  <td rowspan="2">6</td>
+ </tr>
+ <tr>
+  <td>7</td>
+  <td>8</td>
+ </tr>
+</table>
+
+<hr>
+
+<h3>복합 칸 합치기</h3>
+
+<table>
+ <tr>
+  <th colspan="4">아이티윌 게스트하우스 예약 안내</th>
+ </tr>
+ <tr>
+  <th>방 이름</th>
+  <th>대상</th>
+  <th>크기</th>
+  <th>가격</th>
+ </tr>
+ <tr>
+  <th>유채방</th>
+  <td>여성 도미토리</td>
+  <td rowspan="3">4인실</td>
+  <td rowspan="4">1인 20,000원</td>
+ </tr>
+  <th rowspan="2">동백방</th>
+  <td>남성 도미토리</td>
+ </tr>
+ <tr>
+  <td>가족 1팀</td>
+ </tr>
+ <tr>
+  <th colspan="2">천혜향방</th>
+  <td>2인실</td>
+ </tr>
+ <tr>
+  <td colspan="4"><b>바깥채 단독 : 전화문의</b> (010-777-5454)</td>
+ </tr>
+</table>
+
+<h3>자바 개발자반 시간표</h3>
+
+<table>
+ <tr>
+  <th colspan="6">자바 개발자반</th>
+ </tr>
+ <tr>
+  <th colspan="2">오라클</th>
+  <th colspan="2">웹표준 UI</th>
+  <th colspan="2">애플리케이션</th>
+ </tr>
+ <tr>
+  <td rowspan="4">1교시<br>~<br>4교시</td>
+  <td rowspan="4"><b>특강</b><br>강사<br><b>홍길동</b></td>
+  <td colspan="2">1교시</td>
+  <td colspan="2">1교시</td>
+ </tr>
+ <tr>
+  <td colspan="2">2교시</td>
+  <td colspan="2">2교시</td>
+ </tr>
+ <tr>
+  <td colspan="2">3교시</td>
+  <td colspan="2">3교시</td>
+ </tr>
+ <tr>
+  <td colspan="2">4교시</td>
+  <td colspan="2">4교시</td>
+ </tr>
+ <tr>
+  <td colspan="2">5교시</td>
+  <td rowspan="4">5교시<br>~<br>8교시</td>
+  <td rowspan="4"><b>특강</b><br>강사<br><b>홍길순</b></td>
+  <td colspan="2">5교시</td>
+ </tr>
+ <tr>
+  <td colspan="2">6교시</td>
+  <td colspan="2">6교시</td>
+ </tr>
+ <tr>
+  <td colspan="2">7교시</td>
+  <td rowspan="2">7교시<br>~<br>8교시</td>
+  <td rowspan="2"><b>특강</b><br>강사<br>김갑을</td>
+ </tr>
+ <tr>
+  <td colspan="2">8교시</td>
+ </tr>
+
+</table>
