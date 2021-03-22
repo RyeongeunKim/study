@@ -1,0 +1,226 @@
+﻿<html>
+ <head>
+  <title>form-1</title>
+ </head>
+ <body>
+<hr>
+<nav>
+ <a href="test05.htm">form-1</a>
+ <a href="test05-1.htm">form-2</a>
+</nav>
+<hr>
+
+<h1>form-1</h1>
+<p>
+ form으로 사용자가 서버에 정보를 쉽게 전달할 수 있는 페이지를 구성한다.<br>
+ action속성으로 서버의 파일을 지정하고 method속성으로 전달 방식을 지정.<br>
+ (일반적으로는 post, 보안상의 문제없고 데이터의 길이가 짧을 때는 get)
+</p>
+
+<form action="test.jsp" method="post"> 
+<hr>
+ <h2>input type="text"  한줄 글상자</h2>
+ <p>input상자에 입력할 정보에 대한 설명문은 <b>label</b>태그로 지정하고
+   <b>for의 속성값</b>을 <b>input</b>태그의 <b>id속성값</b>과 서로 일치시켜
+   글상자와 설명문을 연결시킴.<br>
+   size속성으로 상자의 가로 길이를 지정하고<br>
+   <b>maxlength</b>속성으로 <b>입력데이터의 최대길이를 제한</b>할 수 있다.
+   (최소는 minlength)
+ </p>
+  <label for="nm">name</label> <input type="text" id="nm"> <br>
+  <label for="nnm">nick name</label> 
+   <input type="text" id="nnm" size="10">
+<hr>
+ <h2>input type="password" 암호 글상자</h2>
+ <label for="pwd">password</label> 
+  <input type="password" id="pwd" maxlength="12">
+<hr>
+ <h2>textarea ... /textarea 큰 글상자</h2>
+ <p>cols속성으로 상자의 가로 크기를, rows속성으로 세로 크기를 지정</p>
+ <textarea cols="100" rows="10"></textarea>
+
+<hr>
+ <h2>input type="radio" 객관식 단일선택형의 라디오버튼</h2>
+ <p>
+  같은 질문하의 선택지들끼리는 name속성의 값을 서로 일치시킴 <br>
+  초기값으로 선택되어질 항목에는 checked(checked="checked")를 추가함 <br>
+
+   <!-- label로 input을 감싸준 경우 (for와 id생략 가능) -->
+  <label> <input type="radio" name="gender" checked>male </label> <br>
+  <label> <input type="radio" name="gender">female</label> <br>
+  <label> <input type="radio" name="gender">other</label>
+ </p>
+<hr>
+ <h2>input type="checkbox" 객관식 다중선택형의 체크박스</h2>
+<p>이용하는 교통수단은?<br>
+ <label> <input type="checkbox"> 도보</label><br>
+ <label> <input type="checkbox" checked> 버스</label><br>
+ <label> <input type="checkbox"> 지하철</label><br>
+ <label> <input type="checkbox" checked="checked"> 자전거</label><br>
+ <label> <input type="checkbox"> 자가용</label>
+</p>
+
+<hr>
+ <h2>select ... /select 공간절약형 객관식. 펼침목록(드롭다운 리스트)</h2>
+<p>select안에 항목들은 option태그로 묶어준다. <br>
+초기값으로 선택되어질 항목(option)에는 selected (selected="selected")를 추가함.<br>	
+2개 이상 선택가능하게 하려면 select에 multiple추가 <br>
+상자형태로 나타내려면 select에 size="n"추가 (n개의 항목이 보이는 상자형)<br>
+option들을 주제에 따라 그룹화하려면 option들을 
+optgroup으로 묶어주고 label속성으로 제목을 붙인다.
+</p>
+  <p>
+   <i>(기본형)</i> 교육센터까지 걸리는 시간은?<br>
+  <select>
+   <option>10분 이내</option>
+   <option>30분 이내</option>
+   <option>1시간 이내</option>
+   <option>1시간 30분 이내</option>
+   <option>2시간 이내</option>
+   <option>2시간 30분 이내</option>
+   <option>3시간 이내</option>
+   <option>3시간 30분 이내</option>
+   <option>4시간 이상</option>
+  </select>
+  </p>
+
+  <p>
+   <i>(option에 selected 추가)</i> 교육센터까지 걸리는 시간은?<br>
+  <select>
+   <option>10분 이내</option>
+   <option>30분 이내</option>
+   <option selected="selected">1시간 이내</option>
+   <option>1시간 30분 이내</option>
+   <option>2시간 이내</option>
+   <option>2시간 30분 이내</option>
+   <option>3시간 이내</option>
+   <option>3시간 30분 이내</option>
+   <option>4시간 이상</option>
+  </select>
+  </p>
+
+  <p>
+   <i>(select에 multiple추가하여 다중선택형으로)</i> 희망하는 팀프로젝트 회의 시간은?<br>
+   
+   <select multiple>
+    <option>1교시</option>
+    <option selected>2교시</option>
+    <option>3교시</option>
+    <option selected>4교시</option>
+    <option>5교시</option>
+    <option>6교시</option>
+    <option>7교시</option>
+    <option>8교시</option>
+   </select>  
+  </p>
+
+  <p>
+   <i>(select에 size="n"추가하여 box형으로)</i> 희망하는 팀프로젝트 회의 시간은?<br>
+   
+   <select size="5">
+    <option>1교시</option>
+    <option>2교시</option>
+    <option>3교시</option>
+    <option>4교시</option>
+    <option>5교시</option>
+    <option>6교시</option>
+    <option>7교시</option>
+    <option>8교시</option>
+   </select>  
+  </p>
+  <p>
+   <i>(optgroup)</i> 희망하는 팀프로젝트 회의 시간은?<br>
+   
+   <select size="5">
+    <optgroup label="오전시간">
+     <option>1교시</option>
+     <option>2교시</option>
+     <option>3교시</option>
+     <option>4교시</option>
+    </optgroup>
+    <optgroup label="오후시간">
+     <option>5교시</option>
+     <option>6교시</option>
+     <option>7교시</option>
+     <option>8교시</option>
+    </optgroup>
+   </select>  
+  </p>
+
+  <p>(문제). 뭐 마실래~ (내 돈 많다. 2개 골라도 된다.)  <br>   
+   <select multiple>
+    <optgroup label="커피">
+     <option selected >아아</option>
+     <option>카푸치노</option>
+     <option>아라</option>
+    </optgroup>
+    <optgroup label="차">
+     <option selected>녹차</option>
+     <option>홍차</option>
+     <option>코코아</option>
+    </optgroup>
+   </select>  
+  </p>
+
+ <hr>
+ <h2>input type="search" 검색 상자 (삭제버튼 생성)</h2>
+  <input type="search"> 
+
+ <hr>
+ <h2>input type="hidden" 숨긴 데이터(사용자에게 보이지 않는 데이터 전송용)</h2>
+  <input type="hidden" value="vip">
+
+ <hr>
+ <h2>input type="file" 파일 전송용</h2>
+  <label>photo <input type="file"> </label>
+
+
+
+
+
+
+
+
+
+
+ <hr>
+ <h2>input type="submit/reset/button" 전송/초기화/일반 버튼</h2>
+ <input type="submit" value="확인"> <input type="reset" value="취소">
+ 
+ <p>input type="submit/reset"은 폼의 정보를 전송하거나 초기화하는 역할의 버튼,<br>
+ input type="button" 폼과는 무관한 일반 버튼이 생성됨.<br>
+ 버튼의 글자는 value속성으로 지정.
+ </p>
+ <input type="button" onclick="alert('Why~~~~~?')" value="click">
+
+ <h2>input type="image" 전송하는 역할의 그림</h2>
+  <p>src속성으로 그림파일의 경로를 지정 </p>
+ <input type="image" src="colorpicker.gif">
+ 
+ 
+<h2> button ... /button  전송/초기화/일반 버튼</h2>
+ <p>button은 기본적으로 폼의 정보를 전송하는 역할의 버튼임.<br>
+ type="reset"으로 폼의 정보를 초기화할 수 있고,<br>
+ type="button"으로 폼과는 무관한 일반 버튼이 될 수 있다.<br>
+ 버튼의 글자는 시작과 종료 태그 사이에 입력.
+ </p>
+ <button>전송</button> <button type="reset">다시쓰기</button> 
+ <h3>button안의 글자 꾸미기</h3>
+ <button type="button" onclick="alert('Dont click')">
+  나 <b>버튼</b></button>
+ <h3>button안에 그림 넣기</h3>
+ <button>w3schools.com <img src="w3schoolscom_gray.gif"></button>
+</form>
+
+
+
+ </body>
+</html>
+
+
+
+
+
+
+
+
