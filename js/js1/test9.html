@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script type="text/javascript">
+	
+	//Q. 변수의 값보다 크면서 가장 가까운 10의 배수를 찾아서
+	//	  기존 변수의 값을 뺀 값을 출력
+	
+	// 56 -> 60 : 60 - 56 = 4
+	// 91 -> 100 : 100 - 91 = 9
+	// 74 -> 20 : 20 - 11 = 9
+	// 55 -> 60 : 60 - 55 = 5
+	
+	// 10 - 변수값 % 10 
+	
+	var num = 56;
+	document.write("연산의 결과 : "+(10-num%10)+"<br>");
+	
+	document.write("<hr>");
+	
+	//Q. 두 개의 주사위를 던졌을 때, 눈의 합이 6이 되는 경우의 수 모두 출력
+	// 총 개수도 출력
+	// ex) 1 + 5 = 6
+	//		....
+	// 총 : 00개
+	
+	
+	var cnt = 0;
+	for (var i = 1; i <= 6; i++) {
+		for (var j = 1; j <= 6; j++) {
+			if(i + j == 6){
+				document.write(i + " + " + j + "=" + (i + j) + "<br>");
+				cnt++;
+			}
+		}
+	}
+	document.write("총 : "+cnt+"개<br>");
+	
+	document.write("<hr>");
+	
+	// Q. 방정식 2x + 4y = 10 만족하는 모든 해를 구하시오.
+	// (x, y 는 정수) 0<=x<=10, 0<=y<=10
+	// "x = 00, y = 00"
+	
+	for (var x = 0; x <= 10; x++) {
+		for (var y = 0; y <= 10; y++) {
+			if(2*x + 4*y == 10){
+				document.write("x = "+x+", y="+y+"<br>");
+			}
+		}
+	}
+	
+	document.write("<hr>");
+	 
+	// Q. 1~20 까지의 숫자중에서 2의 배수가 아닌 숫자, 3의 배수도 아닌 숫자의 합을 출력
+	
+	var sum = 0;
+	for (var i = 1; i <= 20; i++) {
+		if(i%3 != 0 && i % 2 != 0){
+			sum += i;
+		}
+	}	
+	
+	document.write("총합 : "+sum+"<br>");
+	
+	// Q. 1+(1+2)+(1+2+3)+ ... + (1+2+3+....+10)
+	// Q. 1 + 3 + 6 + 10 + ..... + 55
+	
+	var sum = 0;
+	var total_sum = 0;
+	for(var i=1; i<=10; i++){
+		sum = sum + i;
+		//document.write("sum : "+sum+"<br>");
+		total_sum += sum; // total_sum = total_sum + sum;
+	}
+	
+	document.write("sum : "+sum+"<br>");
+	document.write("total_sum : "+total_sum+"<br>");
+	
+	// 1 + (-2) +3+(-4)+5+(-6)+.....숫자의 연산이 계속될 때 연산의 총합이
+	// 100이 되는 시점의 값은 얼마인가?
+			
+		var sum = 0;
+		for(var i=1;true;i++){
+			
+			if(i%2 == 0){ // 짝수
+				sum += -i;
+			}else{
+				sum += i;
+			}
+
+			if(sum >= 100)
+				break;
+		}	
+		document.write("sum :"+sum+", i : "+i+"<br>");
+		
+		//////////////////////////////////////////////////////////
+		
+		var sum = 0;
+		var num = 0;
+		var s = 1; //값의 부호(+,-)
+		
+		for(var i=1;true;i++,s=-s){
+			
+			
+			num = i * s; // 숫자 * 부호
+			
+			sum += num;
+			
+			
+			if(sum >= 100){
+				break;
+			}
+		}
+		
+		//////////////////////////////////////////////////////////
+			
+	// Q. 구구단 가로 출력
+	
+	// 2단 3단 ... 9단
+	// 2*1 =2 3*1=3... 9*1=9
+	// 2*9...
+	
+	for(var a=0;a<=9;a++){ // 1~9
+		for(var b=2;b<=9;b++){ // 2~9단
+			if(a == 0){
+				document.write(" [ "+b+" 단 ] ");
+			}else{
+				document.write(b + " * " + a + "=" + (b * a)+" ");
+			}
+		}
+		document.write("<br>");
+	}
+
+	
+	
+	
+	
+
+
+
+	</script>
+</head>
+<body>
+
+	<h1>WebContent/js1/test9.html</h1>
+
+</body>
+</html>

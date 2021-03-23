@@ -3,6 +3,13 @@
   <title>form</title>
  </head>
  <body>
+<hr>
+<nav>
+ <a href="form01.htm">form-1</a>
+ <a href="form02.htm">form-2</a>
+
+</nav>
+<hr>
 
 <h1>form</h1>
 
@@ -148,6 +155,38 @@
   <h3>input type="file" 파일 전송용</h3>
    <label>photo <input type="file"></label>
 
+  <hr>
+  <h3>input type="submit/reset/button" 전송/초기화/일반버튼</h3>
+  <input type="submit" value="확인"> <input type="reset" value="취소">
+
+  <ul>
+   <li>submit: 폼의 정보 전송</li>
+   <li>reset: 초기화</li>
+   <li>button: 폼과는 무관한 일반 버튼</li>
+   <li>value 속성: 버튼의 글자</li>
+  </ul>
+  <input type="button" onclick="alert('왜눌러??')" value="절대 누르지 마시오">
+
+  <h3>input type="image" 전송하는 역할의 그림</h3>
+   <p>src 속성으로 그림파일의 경로를 지정</p>
+  <input type="image" src="colorpicker.gif">
+
+  <h3> button ... /button 전송/초기화/일반 버튼</h3>
+   <ul>
+    <li>button은 기본적으로 폼의 정보를 전송하는 역할임</li> 
+    <li>type="reset" : 폼의 정보 초기화</li> 
+    <li>type="button" : 폼과는 무관한 일반 버튼</li> 
+    <li>버튼의 글자는 시작과 종료 태그 사이에 입력</li> 
+   </ul>  
+   <button>전송</button> <button type="reset">다시쓰기</button>
+   <h3>button 안의 글자 꾸미기</h3>
+   <button type="button" onclick="alert('좀 꾸며봤음')">
+    꾸민 <b>버튼</b></button>
+   <h3>button 안에 그림 넣기</h3>
+   <button>그림입니당 <img 
+src="w3schoolscom_gray.gif"></button>
+
+  </form>
 
  </body>
 
