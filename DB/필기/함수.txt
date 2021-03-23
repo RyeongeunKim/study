@@ -1,0 +1,95 @@
+< 함수 >
+
+-단일 행 : 행당 하나의 결과 반환
+-여러 행(그룹함수) : 행 집합당 하나의 결과 반환
+
+< 단일 행 함수 >
+
+1.문자함수 1) 대소문자 변환함수 : lower, upper, initcap
+	 2) 문자 조작함수 : concat, substr, length, instr, 
+			lpad, rpad, replace, tirm
+2.숫자함수 : ROUND, TRUNC, MOD
+3.날짜함수
+4.변환함수
+5.일반함수
+
+(( 문자함수 ))
+
+1) 대소문자 변환함수 : lower, upper, initcap
+
+고객에게 익숙한 형태로
+last_name 대문자, job_id는 initcap, email 소문자로 출력하려면
+
+select empployee_id, upper(last_name) as last-name,
+initcap(job_id) as jobs, lower(email) as email
+from employees
+
+※ 만약 as 를 다른걸로 할거면 조정했던 컬럼(last_name)사이즈가 원래대로 크게 나와서 
+  같은 걸로 지정함 
+
+2) 문자 조작 함수
+
+(1) concat(expr1, expr2) 
+- 두 인수를 연결해서 하나의 문자열로 반환해주는 함수
+(ex1) select concat(first_name, last_name) as name
+      from employees;
+      (==)
+(ex2) select first_name||last_name as name
+      from employees;
+
+==> 연결 연산자와 역할은 같지만 문법이 다르다
+concat은 인수를 2개만 받아들일 수 있기에, 
+2개 이상 연결하고 싶을 땐 중첩해서 사용해야됨
+
+(2) substr(expr1, expr2, expr3)
+- 문자열의 일부분을 반환해주는 함수
+- expr1 : 반환할 문자열
+- expr2 : 시작위치 -> 음수(시작위치를 끝에서 부터 찾아옴)
+- expr3 : 반환할 문자수 -> 생략 가능!(시작 위치에서 끝까지 반환)
+(ex1) substr(주민번호, 1, 6) => 901223
+(ex2) substr('Kochhar', -3, 2) => ha
+
+(3) length(expr1)
+- 문자열의 길이를 반환해주는 함수
+
+(4) instr(expr1, expr2)
+- 문자열(expr1)로부터 특정 문자(expr2)의 첫번째 위치값을 반환해주는 함수
+(ex1) instr('HelloWorld', 'o') => 5
+
+(5) lpad(expr1, expr2, expr3) / rpad(expr1, expr2, expr3)
+- 왼쪽부터 expr3를 채워라(l) / 오른쪽부터 expr3를 채워라(r)
+- 오른쪽 정렬(l) / 왼쪽 정렬(r) 해주는 함수
+-expr1 : 반환할 문자열
+-expr2 : 전체자리수
+-expr3 : 남는 공간을 채울 문자(*, 공백, _ ....)
+
+(6) replace(expr1, expr2, expr3)
+- 문자열(expr1)로부터 특정문자(expr2)를 다른문자(expr3)로 교체해주는 함수
+
+select employee_id, last_name, replace(phone_number, '.', '-')
+       as ph_num
+from employees
+
+(7) trim(expr1 from expr2)
+-문자열(expr2)로부터 특정문자(expr1)가 접두어나 접미어에 있다면 삭제(절단)해주는 함수
+(ex1) trim('H' from 'HHHelloHHWoHrldHH') => elloHHWoHrld
+
+(( 숫자함수 )) ROUND, TRUNC 주로 사용
+
+1) ROUND : 지정된 소수점까지 반올림
+2) TRUNC : 지정된 소수점까지 남겨라 
+3) MOD : 나머지를 반환 (값이 짝수인지 홀수인지 확인할 때 주로 사용)
+
+※ DUAL 테이블 
+-sys소유 
+-sys사용자가 생성되면서 자동으로 만들어지는 테이블
+-공개된 table => 모든 유저가 사용할 수 있음
+-단순한 함수 및 계산 결과, 접근할 테이블이 없는 경우 사용
+
+<3장 연습문제 풀이>
+1.
+SQL> SELECT employee_id, last_name, salary, 
+            ROUND(salary * 1.155, 0) "New Salary",
+            ROUND(salary * 1.155, 0) - salary "Increase"
+     FROM employees;
+ 

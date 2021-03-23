@@ -1,0 +1,69 @@
+< User 소개 >
+
+<Linux User>
+- root(pw : oracle01) - 관리자의 권한을 가진 계정
+- oracle(pw: oracle) - /home/oracle 디렉토리 권한
+                              /u01/app/oracle 디렉토리 권한
+
+<Oracle User>
+- sys(pw: oracle) - sysdba 권한(dba + DB생성 + DB시작/종료)
+SQL> sonn sys/oracle as sysdba // sys만 접속할 때 권한명까지 입력해야됨
+- system(pw: oracle) - dba 권한
+SQL> conn system/oracle // sys 제외한 나머지 유저는 아이디, 패스워드만 입력해면됨
+- hr(pw: hr) - Object(Table, View, Index 등)를 운영할 수 있는 권한
+SQL> conn hr/hr
+
+< DB 시작 및 사용자 접속 > $] -> 리눅스단 / SQL -> SQL단
+
+1)) 요약
+
+1. 리눅스 오라클 유저로 로그인
+2. 터미널창 열기
+3. 리스너 활성화시키기
+4. SQL+ 프로그램 실행(쿼리채 구문 입력..수정 등 하기위해)
+5. hr 유저를 켜기위해 sys 사용자로 접속하여 켠다
+
+2))
+
+1.ORCL 가상 PC 시작
+2. Linux 로그인 - username : oracle / password : oracle
+3. 터미널 창 열기
+4. 리스너 활성화 		$] lsnrctl start
+5. sqlplus 프로그램 실행      $]sqlplus con/nolog
+6. sys 사용자로 DB 로그인 SQL>conn sys/oracle as sysdba
+7. DB 시작 	         SQL> startup
+8. hr사용자로 DB로그인    SQL> conn hr/hr
+9. show user
+
+opened 뜨면 잘켜진거
+
+※ 오류는 무엇인가?
+7 --> hr사용자의 패스워드가 만료일까지 7일남았다
+db에서는 6개월에 한 번씩 pw바꿔줘야됨
+
+※ 패스워드 변경 명령어
+alter user hr
+identified by __; 빈공간에 새로운 패스워드 지정하면됨
+
+pwd 현재 내 위치 확인
+!clear 화면이 위로 올라감
+
+< 오타수정 >
+
+* 성공했던 실패했던 마지막에 실행했던 쿼리 하나가 버퍼에 남아있음
+
+* ed //editor의 약자, 마지막 쿼리로 감
+
+* 버퍼는 읽기전용이면 i누르면 편집모드로 바뀜 
+  버퍼에는 ; 작성하면 안됨
+ 
+* 수정하고 편집모드 나오기 esc -> : -> wq
+
+* 수정안하고 원래대로 나가고 싶으면 :q!
+
+* 바뀐 커리구문 실행해달라 -> /enter
+
+
+
+
+
