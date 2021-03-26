@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+	// 사용자가 "네이버, 다음, 구글, 네이트..." 입력 시 (한/영)
+	// 해당 페이지로 이동
+	
+	// 1. 사용자 입력받기
+	
+	var site = prompt("이동하고 싶은 사이트를 입력하세요");
+	var url = "";
+	
+	// 2. switch-case문으로 주소 비교
+	switch(site){
+	case "네이버":
+	case "naver":
+	case "NAVER":
+		//location.href="http://www.naver.com";
+		url = "http://www.naver.com";
+		break;
+	case "다음":
+	case "daum":
+	case "DAUM":
+		//location.href="http://www.daum.com";
+		url = "http://www.daum.net";
+		break;
+	}
+	
+	//3. 페이지 이동
+	
+/* 	if(url != ""){
+		location.href=url;
+	} */
+	
+	if(url){
+		location.href=url;
+	}
+	
+
+</script>
+</head>
+<body>
+
+	<h1>WebContent/js1/test6.1html</h1>
+
+</body>
+</html>
