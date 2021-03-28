@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+  <script type="text/javascript">
+  	
+  	/*
+  		이미지 : document에서 이미지의 정보를 배열로 저장
+  		
+  		사용법 : window - document - 이미지
+  		=> 두가지 방식
+  		1) window.document.img태그의 이름.속성
+  		2) window.document.images[0].속성
+  		
+  		속성 : name, src(파일주소), border(테두리)
+  		     width(가로), height(세로)
+  		     
+  		기능 : alert(window.document.images[0].src);
+  		     alert(window.document.img1.src);
+  	*/
+  	
+  	function func1(){
+  		
+  		// ↓ 둘 다 사용가능
+  		//alert(window.document.images[0].src);
+  		//alert(window.document.img1(img 태그의 이름).src);
+  	
+  		alert("src : "+window.document.img1.src); //이미지 주소
+  		alert("name : "+document.img1.name); //이미지 이름
+  		alert("border : "+document.img1.border); //테두리
+  		alert("width : "+document.img1.width); //가로
+  		alert("height : "+document.img1.height); //세로
+  	}
+  	
+  	function func2(){
+  		window.document.images[1].src = "2.jpg"; //이미지를 바꾼다는 의미
+  		document.images[1].width = 200;
+  		document.images[1].height = 200;
+  		document.images[1].border = 3;
+  	}
+  	
+  	function func3(){
+  		document.images[2].src="4.jpg";
+  	}
+  	
+  	function func4(){
+  		document.images[2].src="3.jpg";
+  	}
+  	
+  	// func3(), func4() 기능을 한번에 처리
+  	var upDown = true;
+  	function func5(){
+  		if(upDown){
+  			document.images[3].src="5.jpg";
+  		}else{
+  			document.images[3].src="6.jpg";
+  		}
+  		upDown = !upDown;
+  	}
+
+  </script>
+</head>
+<body>
+  <h1>WebContent/me/image.html</h1>
+  
+  <img src="1.jpg" width="180" height="200" name="img1">
+  
+  <input type="button" value="이미지 정보 확인" onclick="func1();">
+  <hr>
+  
+  <h3>이미지의 속성을 변경</h3>
+  <p> 버튼 클릭 이벤트 발생 시 
+      => 이미지 변경(1->2), 크기 변경(200 X 200), 테두리 3</p>
+      
+  <img src="1.jpg" width="150" height="150" name="img2">
+  <input type="button" value="속성변경" onclick="func2()">
+  <hr>
+  
+  <h3>마우스를 올리면 이미지 변경 -> 내리면 원래 이미지</h3>
+  <img src="3.jpg" width="150" height="150"
+       onmouseover="func3()" onmouseout="func4()"
+  >
+  <hr>
+  
+  <img src="5.jpg" width="150" height="150"
+       onmouseover="func5()" onmouseout="func5()"
+  >
+  
+</body>
+</html>
