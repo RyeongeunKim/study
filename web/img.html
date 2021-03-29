@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>img</title>
+</head>
+<body>
+ <h1>img tag로 이미지 넣기</h1>
+ 
+ <ol>
+  <li>jpg - 트루컬러 표현가능, 실사느낌의 이미지에 적합(상대적으로 파일 용량은 적음)</li>
+  <li>gif - 최대 256컬러만 표현가능, 단순한 이미지에 적합. 투명배경 지원, 움짤 가능</li>
+  <li>png - 두가지 형식의 장점 결합. 트루컬러 표현가능. 투명배경 지원.</li>
+ </ol>
+ 
+ <h2>img의 필수속성</h2>
+ <ul>
+  <li>alt="..." 이미지 대체텍스트(설명문) <br>
+     이미지가 나타나지 않을 때의 설명글 <br>
+     시각장애인용 음성낭독기에서의 설명글 
+  </li> 
+  <li>src="이미지경로" 이미지파일의 위치와 정보</li> 
+ </ul>
+ 
+ <p>원본이미지 크기 그대로 (width와 height를 지정하면 브라우저에 이미지가 더 빨리뜸)<br>
+  <img alt="아이스커피" src="img/ice.jpg" width="320" height="225">
+ </p>
+ 
+ <h3>width 속성으로 가로크기(200) 지정</h3>
+ <img alt="아이스커피" src="img/ice.jpg" width="200">
+ 
+ <h3>height 속성으로 세로크기(200) 지정</h3>
+ <img alt="아이스커피" src="img/ice.jpg" height="200">
+ 
+ <h2>파일의 경로 지정</h2>
+ <ul>
+  <li>상대경로 - html문서의 위치를 기준으로 상대적인 경로<br>
+   ../*.jpg 상위로의 표시(안 -> 밖 => 한단계 밖의 폴더에 있는 *.jpg)<br>
+   a/b/c/*.jpg 하위로의 표시(밖 -> 안 => a폴더 안에 b폴더 안에 c폴더 안에 있는 *.jpg)<br>
+   
+   (ex) ../../b/*.jpg 두단계 상위로 이동 후 다시 하위폴더b 안에 있는 *.jpg
+  </li>
+  <li>절대경로 - 항상 같은 경로</li>
+ </ul>
+ 
+ <img alt="cat" src="img/cat.jpg">
+ <img alt="monster" src="img/png/monster.png">
+ <img alt="face" src="img/gif/face.gif" width="50">
+ <img alt="mqcap" src="mqcap.jpg"> 
+ 
+ <img alt="" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTAzMDNfMjE3%2FMDAxNjE0NzgzMzI4NjM2.QmIcumFIAh1_aW2_MMB0SQ6trQLCFcGLp2PIc9HoqFYg.TeCiYObRqr72LkoortESDIXliLVjEiUBU9pjoMp5AzAg.JPEG.dasol0_0%2F602510389898253_20201119232050300.JPG&type=sc960_832">
+
+</body>
+</html>
