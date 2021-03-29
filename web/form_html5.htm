@@ -1,120 +1,107 @@
 ﻿<html>
  <head>
-  <title>form-2</title>
+  <title>폼태그(html5)</title>
  </head>
  <body>
+
 <hr>
+<p>
 <nav>
- <a href="test05.htm">form-1</a>
- <a href="test05-1.htm">form-2</a>
+ <a href="form_html5.htm">html5에서 추가된 폼태그</a>
+ <a href="form.htm">폼태그란?</a>
+ <a href="form_signup.htm">회원가입</a>
 </nav>
+</p>
 <hr>
 
-<h1>form-2</h1>
 <h2>html5에서 추가된 폼요소들</h2>
 
-<form action="test.jsp" method="post">
-<hr>
-<h3>input type="time" 시간(시분)을 지정</h3>
- <input type="time">
-<hr>
-<h3>input type="date" 날짜(년월일)을 지정</h3>
- <input type="date">
-<hr>
-<h3>input type="datetime-local" 날짜와 시간(년월일시분)을 지정</h3>
- <input type="datetime-local">
-<hr>
-<h3>input type="week" 날짜(연주)을 지정</h3>
- <input type="week">
-<hr>
-<h3>input type="month" 날짜(연월)을 지정</h3>
- <input type="month">
-<hr>
-<h3>input type="tel" 연락처(전화번호)을 지정</h3>
-<p>모바일브라우저에서 가상키패드가 숫자형식으로 바뀔수 있고 전화걸기 가능</p>
- <input type="tel">
-<hr>
-<h3>input type="email" 연락처(이메일주소)을 지정</h3>
-<p>모바일브라우저에서 가상키패드가 영문(.com등) 포함하는 형식으로 바뀔수 있고
- 브라우저에서 알맞은 이메일형식인지(@여부,뒷자리)를 체크함.
-</p>
- <input type="email">
-<hr>
-<h3>input type="url" 연락처(웹사이트주소)을 지정</h3>
-<p>모바일브라우저에서 가상키패드가 영문(https://등) 포함하는 형식으로 바뀔수 있고
- 브라우저에서 알맞은 웹주소형식인지(https://등 프로토콜 여부)를 체크함.
-</p>
- <input type="url">
-<hr>
-<h3>input type="number" 숫자 형식을 지정</h3>
-<p>숫자값을 포함하는 형식. 증감버튼이 생성.<br>
- 최소값과 최대값을 min/max속성으로 지정할 수 있고<br>
- 증감 간격을 step속성으로 지정할 수 있다.
-
- <input type="number"><br>
- <input type="number" min="0"> min="0" 지정<br>
- <input type="number" max="100"> max="100" 지정<br>
- <input type="number" step="12"> step="12" 지정
-</p>
+ <form action="test.jsp" method="post">
 
 <hr>
-<h3>input type="range" 범위내의 값을 지정</h3>
- <input type="range">
-<hr>
-<h3>input type="color" 컬러값을 지정</h3>
- <input type="color">
 
+<h3>input type="OOO" OOO에 넣어서 사용!</h3>
+
+<fieldset>
+ <legend><b>[날짜와 시간]</b></legend>
+ <ul>
+  <li>time : 시간(시분)<p><input type="time"></p></li>
+  <li>date : 날짜(연도-월-일)<p><input type="date"></p></li>
+  <li>datetime-local : 날짜와 시간<p><input type="datetime-local"></p></li>
+  <li>week : 일주일 단위<p><input type="week"></p></li>
+  <li>month : 한달 단위<p><input type="month"></p></li>
+</ul>
+</fieldset>
+
+<fieldset>
+ <legend><b>[개인정보]</b></legend>
+ <ul>
+  <li>tel : 전화번호(모바일에서 가상키패드가 숫자형식으로 바뀔 수 있고 전화걸기 가능)<p><input type="tel"></p></li>
+  <li>email : 이메일주소<br>모바일에서 가상키패드가 영문(.com) 포함하는 형식으로 바뀔 수 있음<br>
+   브라우저에서 알맞은 이메일 형식인지(@여부, 뒷자리) 체크
+   <p><input type="email"></p></li>
+  <li>url : 웹사이트 주소 지정<br>모바일에서 가상키패드가 영문(https://) 포함하는 형식으로 바뀔 수 있음<br>
+   브라우저에서 알맞은 주소 형식인지(https:// 등 프로토콜 여부) 체크</li>
+  <p><input type="url"></p>
+   </ul>
+ </ul>
+</fieldset>
+
+<fieldset>
+ <legend><b>[숫자/컬러]</b></legend>
+ <ul>
+  <li>number : 숫자값 지정, 증감버튼 생성
+   <p><input type="number"></p></li>
+   <ul>
+    <li>min : 최소값(0 지정)<p><input type="number" min="0"</p></li>
+    <li>max : 최대값(20 지정)<p><input type="number" max="20"</p></li>
+    <li>step : 증감 간격(12 지정)<p><input type="number" step="12"</p></li>
+   </ul> 
+  <li>range : 시각적으로 범위 내의 값 지정<p><input type="range"></p></li>
+  <li>color : 컬러값 지정<p><input type="color"></p></li>
+ </ul>
+</fieldset>
+
+<hr>
 
 <h2>html5에서 추가된 속성들</h2>
-<hr>
-<h3>autofocus - 자동포커싱(입력대기상태)된 요소로 지정</h3>
- <input type="text" autofocus>
+
+<fieldset>
+<legend><b>[input type="text" OOO => OOO에 넣어서 사용!]</b></legend>
+<ul>
+ <li>autofocus : 자동포커싱(입력대기상태)<p><input type="text" autofocus></p></li>
+ <li>autocomplete : 자동완성<p>
+   <label for="id">아이디(자동완성 off)</label>
+    <input type="text" id="id" autocomplete="off"></p>
+   <p><label for="id2">아이디(자동완성 on)</label>
+     <input type="text" id="id2" autocomplete="on"></p></li>
+ <li>placeholder : 입력예시를 보여줌
+ <p> 
+  <label>아이디 <input type="text" placeholder="abc1234(영문,숫자조합7자이내)"></label>
+ </p>
+ <p>
+ <label>전화번호 <input type="text" placeholder="010-1234-5678"></label>
+ </p></li>
+ <li>readonly value : 읽기전용<p><input type="text" readonly value="읽기전용/수정불가"></p></li>
+ <li>disabled : 사용불가<p><input type="text" disabled="사용못함"></p></li>
+ <li>required : 필수입력<p><input type="text" required></p></li>
+</ul>
+</fieldset>
 
 <hr>
-<h3>autocomplete="on/off" - 자동완성 기능을 켜거나 끔</h3>
- <label for="id">id</label> 
-  <input type="text" id="id" autocomplete="off"> <br>
- <label for="id2">id-2</label> 
-  <input type="text" id="id2" autocomplete="on"> 
 
-<hr>
-<h3>placeholder - 입력예시를 보여주거나 설명문을 넣어줌</h3>
-  <label>id <input type="text" placeholder="abc1234(영문,숫자조합7자이내)">
-  </label> <br>
-  <label>tel <input type="tel" placeholder="051-809-0909"></label> 
-<hr>
-<h3>readonly - 읽기만 가능한 요소로 지정</h3>
- <input type="text" readonly value="1조">
-
-<hr>
-<h3>disabled - 사용불가한 요소로 지정</h3>
- <input type="text" disabled value="1조 팀장">
-
-<hr>
-<h3>required - 필수입력 요소로 지정</h3>
- <input type="text" required> 
-
-<hr>
-<h2>fieldset과 legend로 폼요소들 그룹화 하기</h2>
+<h2>폼요소들 그룹화하기</h2>
 <fieldset>
  <legend>필수입력</legend>
- <input type="text" required placeholder="ID">  <br>
- <input type="password" required placeholder="Password"> 
+ <input type="text" required placeholder="아이디"><br>
+ <input type="password" required placeholder="비밀번호">
 </fieldset>
 
 <hr>
  <input type="submit">
- <input type="reset">
+ <input type="reset"> 
 
-</form>
+ </form>
 
  </body>
 </html>
-
-
-
-
-
-
-
-
