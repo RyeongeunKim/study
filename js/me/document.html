@@ -1,45 +1,45 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-	// ºê¶ó¿ìÀú °´Ã¼ ¸ğµ¨ - document °´Ã¼
-	// => ÀÛ¼ºÇÏ°í ÀÖ´Â ÆäÀÌÁö Á¤º¸
+	// ë¸Œë¼ìš°ì € ê°ì²´ ëª¨ë¸ - document ê°ì²´
+	// => ì‘ì„±í•˜ê³  ìˆëŠ” í˜ì´ì§€ ì •ë³´
 	
-	//window.document.¼Ó¼º
-	//window.document.ÇÔ¼ö();
+	//window.document.ì†ì„±
+	//window.document.í•¨ìˆ˜();
 	
-	//°´Ã¼ÀÇ Á¤º¸ È®ÀÎ¹æ¹ı => °£´Ü, º¹Àâ
+	//ê°ì²´ì˜ ì •ë³´ í™•ì¸ë°©ë²• => ê°„ë‹¨, ë³µì¡
 	
-	//°£´ÜÇÑ Á¤º¸ : °ªÀÌ ¹Ù·Î È­¸é¿¡ Ãâ·Â°¡´É
+	//ê°„ë‹¨í•œ ì •ë³´ : ê°’ì´ ë°”ë¡œ í™”ë©´ì— ì¶œë ¥ê°€ëŠ¥
 	document.write(window.document);
 	alert(window.document);
 	
-	//º¹ÀâÇÑ Á¤º¸ : °ªÀÌ ¹Ù·Î È­¸é¿¡ Ãâ·Â ºÒ°¡´É
+	//ë³µì¡í•œ ì •ë³´ : ê°’ì´ ë°”ë¡œ í™”ë©´ì— ì¶œë ¥ ë¶ˆê°€ëŠ¥
 	console.log(window.document);
 	
-	//¼Ó¼ºÁ¤º¸ : title, location, bgColor, fgColor
+	//ì†ì„±ì •ë³´ : title, location, bgColor, fgColor
 	document.write(window.document.title);
 	
-	//ÆäÀÌÁö Á¦¸ñ º¯°æ
-	document.title="³ª´Â ÆäÀÌÁö Á¦¸ñ";
+	//í˜ì´ì§€ ì œëª© ë³€ê²½
+	document.title="ë‚˜ëŠ” í˜ì´ì§€ ì œëª©";
 	
 	function fun1(){
-		alert("ÆäÀÌÁö Á¦¸ñ : "+window.document.title);
-		alert("À§Ä¡ : "+window.document.location);
-		alert("¹è°æ»ö : "+window.document.bgcolor);
-		alert("±Û²Ã»ö : "+window.document.fgcolor);
+		alert("í˜ì´ì§€ ì œëª© : "+window.document.title);
+		alert("ìœ„ì¹˜ : "+window.document.location);
+		alert("ë°°ê²½ìƒ‰ : "+window.document.bgcolor);
+		alert("ê¸€ê¼´ìƒ‰ : "+window.document.fgcolor);
 	}
 	
-	//window.document.bgColor=Math.random(); fun2ÇÔ¼ö ¾È¿¡ ÀÌ·¸°Ô¸¸ ³Ö¾îµµ ·£´ıÀ¸·Î ¹Ù²î´Âµ¥
-	//½ÜÀº ¿Ö ¹è¿­À» ¸¸µé¾î¼­ ÇÑ°É±î?? ¸ğ¸£°Ú´Ù
+	//window.document.bgColor=Math.random(); fun2í•¨ìˆ˜ ì•ˆì— ì´ë ‡ê²Œë§Œ ë„£ì–´ë„ ëœë¤ìœ¼ë¡œ ë°”ë€ŒëŠ”ë°
+	//ìŒ¤ì€ ì™œ ë°°ì—´ì„ ë§Œë“¤ì–´ì„œ í•œê±¸ê¹Œ?? ëª¨ë¥´ê² ë‹¤
 	function fun2(){
 		
 		var colArr=["BlueViolet","Black","Red","White","Orange","Yellow","Green","SkyBlue"];
 		
-		//·£´ı°ª
-		//Math.random(); // 0 <= x < 1 ½Ç¼öµ¥ÀÌÅÍ
+		//ëœë¤ê°’
+		//Math.random(); // 0 <= x < 1 ì‹¤ìˆ˜ë°ì´í„°
 		
 		var r=Math.floor(Math.random()*colArr.length);
 		var r2=Math.floor(Math.random()*colArr.length);
@@ -50,7 +50,7 @@
 	}
 	
 	function fun3(colorValue){
-		//¸Å°³º¯¼ö·Î Àü´Ş¹Ş¾Æ ¹è°æ»ö º¯°æ
+		//ë§¤ê°œë³€ìˆ˜ë¡œ ì „ë‹¬ë°›ì•„ ë°°ê²½ìƒ‰ ë³€ê²½
 		window.document.bgColor=colorValue;
 	}
 	
@@ -59,13 +59,13 @@
 <body>
 	<h1>WebContent/js3/document.html</h1>
 	
-	<input type="button" value="¼Ó¼ºÈ®ÀÎ" onclick="fun1()">
+	<input type="button" value="ì†ì„±í™•ì¸" onclick="fun1()">
 	
-	<h3> ¹öÆ°À» ´©¸£¸é ¹è°æ»öÀ» ·£´ıÀ¸·Î º¯°æÇÏ±â </h3>
-	<input type="button" value="¹è°æ»ö º¯°æ" onclick="fun2()">
+	<h3> ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ ë°°ê²½ìƒ‰ì„ ëœë¤ìœ¼ë¡œ ë³€ê²½í•˜ê¸° </h3>
+	<input type="button" value="ë°°ê²½ìƒ‰ ë³€ê²½" onclick="fun2()">
 	
-	<h3> ¶óµğ¿À ¹öÆ°À¸·Î ¹è°æ»ö º¯°æÇÏ±â</h3>
-	<p> ¶óµğ¿À¹öÆ° : name ¼Ó¼º°ªÀ¸·Î ¹öÆ°ÀÇ ±×·ìÈ­(±×·ì Áß¿¡ ÇÏ³ª¸¸ ¼±ÅÃ)</p>
+	<h3> ë¼ë””ì˜¤ ë²„íŠ¼ìœ¼ë¡œ ë°°ê²½ìƒ‰ ë³€ê²½í•˜ê¸°</h3>
+	<p> ë¼ë””ì˜¤ë²„íŠ¼ : name ì†ì„±ê°’ìœ¼ë¡œ ë²„íŠ¼ì˜ ê·¸ë£¹í™”(ê·¸ë£¹ ì¤‘ì— í•˜ë‚˜ë§Œ ì„ íƒ)</p>
 	<input type="radio" name="myColor" onclick="fun3('gray')"> gray
 	<input type="radio" name="myColor" onclick="fun3('pink')"> pink
 	<input type="radio" name="myColor" onclick="fun3('skyblue')"> skyblue

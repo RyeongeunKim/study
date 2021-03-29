@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
@@ -6,35 +6,35 @@
   <script type="text/javascript">
   	
   	/*
-  		ÀÌ¹ÌÁö : document¿¡¼­ ÀÌ¹ÌÁöÀÇ Á¤º¸¸¦ ¹è¿­·Î ÀúÀå
+  		ì´ë¯¸ì§€ : documentì—ì„œ ì´ë¯¸ì§€ì˜ ì •ë³´ë¥¼ ë°°ì—´ë¡œ ì €ì¥
   		
-  		»ç¿ë¹ı : window - document - ÀÌ¹ÌÁö
-  		=> µÎ°¡Áö ¹æ½Ä
-  		1) window.document.imgÅÂ±×ÀÇ ÀÌ¸§.¼Ó¼º
-  		2) window.document.images[0].¼Ó¼º
+  		ì‚¬ìš©ë²• : window - document - ì´ë¯¸ì§€
+  		=> ë‘ê°€ì§€ ë°©ì‹
+  		1) window.document.imgíƒœê·¸ì˜ ì´ë¦„.ì†ì„±
+  		2) window.document.images[0].ì†ì„±
   		
-  		¼Ó¼º : name, src(ÆÄÀÏÁÖ¼Ò), border(Å×µÎ¸®)
-  		     width(°¡·Î), height(¼¼·Î)
+  		ì†ì„± : name, src(íŒŒì¼ì£¼ì†Œ), border(í…Œë‘ë¦¬)
+  		     width(ê°€ë¡œ), height(ì„¸ë¡œ)
   		     
-  		±â´É : alert(window.document.images[0].src);
+  		ê¸°ëŠ¥ : alert(window.document.images[0].src);
   		     alert(window.document.img1.src);
   	*/
   	
   	function func1(){
   		
-  		// ¡é µÑ ´Ù »ç¿ë°¡´É
+  		// â†“ ë‘˜ ë‹¤ ì‚¬ìš©ê°€ëŠ¥
   		//alert(window.document.images[0].src);
-  		//alert(window.document.img1(img ÅÂ±×ÀÇ ÀÌ¸§).src);
+  		//alert(window.document.img1(img íƒœê·¸ì˜ ì´ë¦„).src);
   	
-  		alert("src : "+window.document.img1.src); //ÀÌ¹ÌÁö ÁÖ¼Ò
-  		alert("name : "+document.img1.name); //ÀÌ¹ÌÁö ÀÌ¸§
-  		alert("border : "+document.img1.border); //Å×µÎ¸®
-  		alert("width : "+document.img1.width); //°¡·Î
-  		alert("height : "+document.img1.height); //¼¼·Î
+  		alert("src : "+window.document.img1.src); //ì´ë¯¸ì§€ ì£¼ì†Œ
+  		alert("name : "+document.img1.name); //ì´ë¯¸ì§€ ì´ë¦„
+  		alert("border : "+document.img1.border); //í…Œë‘ë¦¬
+  		alert("width : "+document.img1.width); //ê°€ë¡œ
+  		alert("height : "+document.img1.height); //ì„¸ë¡œ
   	}
   	
   	function func2(){
-  		window.document.images[1].src = "2.jpg"; //ÀÌ¹ÌÁö¸¦ ¹Ù²Û´Ù´Â ÀÇ¹Ì
+  		window.document.images[1].src = "2.jpg"; //ì´ë¯¸ì§€ë¥¼ ë°”ê¾¼ë‹¤ëŠ” ì˜ë¯¸
   		document.images[1].width = 200;
   		document.images[1].height = 200;
   		document.images[1].border = 3;
@@ -48,7 +48,7 @@
   		document.images[2].src="3.jpg";
   	}
   	
-  	// func3(), func4() ±â´ÉÀ» ÇÑ¹ø¿¡ Ã³¸®
+  	// func3(), func4() ê¸°ëŠ¥ì„ í•œë²ˆì— ì²˜ë¦¬
   	var upDown = true;
   	function func5(){
   		if(upDown){
@@ -66,18 +66,18 @@
   
   <img src="1.jpg" width="180" height="200" name="img1">
   
-  <input type="button" value="ÀÌ¹ÌÁö Á¤º¸ È®ÀÎ" onclick="func1();">
+  <input type="button" value="ì´ë¯¸ì§€ ì •ë³´ í™•ì¸" onclick="func1();">
   <hr>
   
-  <h3>ÀÌ¹ÌÁöÀÇ ¼Ó¼ºÀ» º¯°æ</h3>
-  <p> ¹öÆ° Å¬¸¯ ÀÌº¥Æ® ¹ß»ı ½Ã 
-      => ÀÌ¹ÌÁö º¯°æ(1->2), Å©±â º¯°æ(200 X 200), Å×µÎ¸® 3</p>
+  <h3>ì´ë¯¸ì§€ì˜ ì†ì„±ì„ ë³€ê²½</h3>
+  <p> ë²„íŠ¼ í´ë¦­ ì´ë²¤íŠ¸ ë°œìƒ ì‹œ 
+      => ì´ë¯¸ì§€ ë³€ê²½(1->2), í¬ê¸° ë³€ê²½(200 X 200), í…Œë‘ë¦¬ 3</p>
       
   <img src="1.jpg" width="150" height="150" name="img2">
-  <input type="button" value="¼Ó¼ºº¯°æ" onclick="func2()">
+  <input type="button" value="ì†ì„±ë³€ê²½" onclick="func2()">
   <hr>
   
-  <h3>¸¶¿ì½º¸¦ ¿Ã¸®¸é ÀÌ¹ÌÁö º¯°æ -> ³»¸®¸é ¿ø·¡ ÀÌ¹ÌÁö</h3>
+  <h3>ë§ˆìš°ìŠ¤ë¥¼ ì˜¬ë¦¬ë©´ ì´ë¯¸ì§€ ë³€ê²½ -> ë‚´ë¦¬ë©´ ì›ë˜ ì´ë¯¸ì§€</h3>
   <img src="3.jpg" width="150" height="150"
        onmouseover="func3()" onmouseout="func4()"
   >

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
@@ -7,16 +7,16 @@
 
 	function fun1(){
 		
-		alert("action(Á¤º¸¸¦ Àü´ÞÇÏ´Â ÆäÀÌÁö) : "+document.forms[0].action); // document.forms[0].¼Ó¼º 
-		alert("name : "+document.forms[0].name); // document.forms[0].¼Ó¼º 
-		alert("method(Àü´Þ¹æ½Ä) : "+document.fr.method); // document.ÆûÅÂ±×ÀÌ¸§.¼Ó¼º
+		alert("action(ì •ë³´ë¥¼ ì „ë‹¬í•˜ëŠ” íŽ˜ì´ì§€) : "+document.forms[0].action); // document.forms[0].ì†ì„± 
+		alert("name : "+document.forms[0].name); // document.forms[0].ì†ì„± 
+		alert("method(ì „ë‹¬ë°©ì‹) : "+document.fr.method); // document.í¼íƒœê·¸ì´ë¦„.ì†ì„±
 		
 	} 
 	
 	function fun2(){
-		// ÇØ´ç ¹öÆ° Å¬¸¯ ½Ã
-		// ÆûÅÂ±×ÀÇ Á¤º¸¸¦ get¹æ½ÄÀ¸·Î test.html ÆäÀÌÁö¿¡ Àü´Þ
-		alert("test.html ÆäÀÌÁö¿¡ Àü´Þ");
+		// í•´ë‹¹ ë²„íŠ¼ í´ë¦­ ì‹œ
+		// í¼íƒœê·¸ì˜ ì •ë³´ë¥¼ getë°©ì‹ìœ¼ë¡œ test.html íŽ˜ì´ì§€ì— ì „ë‹¬
+		alert("test.html íŽ˜ì´ì§€ì— ì „ë‹¬");
 		return false;
 		
 		if(num == 100){
@@ -28,7 +28,7 @@
 			return false;
 		}
 		
-		//ÆûÅÂ±×ÀÇ Á¤º¸¸¦ ÀúÀåÇØ¼­ ÆäÀÌÁö ÀÌµ¿ => submit()
+		//í¼íƒœê·¸ì˜ ì •ë³´ë¥¼ ì €ìž¥í•´ì„œ íŽ˜ì´ì§€ ì´ë™ => submit()
 		//document.fr.submit();
 	}
 
@@ -37,94 +37,94 @@
 <body>
 	<h1>WebContent/me/test1.html</h1>
 	
-	<!-- ÆûÅÂ±×´Â input ÅÂ±×(name¼Ó¼º) Á¤º¸¸¦ °¡Áö°í Æ¯Á¤ÆäÀÌÁö·Î ÀÌµ¿ -->
-	<!-- Àü´ÞÇÏ°íÀÚ ÇÏ´Â ¼Ó¼ºÀÇ Á¤º¸°¡ 1°³ ÀÌ»óÀÎ °æ¿ì & °ªÀ» »ç¿ëÇØ¼­ Àü´Þ -->
+	<!-- í¼íƒœê·¸ëŠ” input íƒœê·¸(nameì†ì„±) ì •ë³´ë¥¼ ê°€ì§€ê³  íŠ¹ì •íŽ˜ì´ì§€ë¡œ ì´ë™ -->
+	<!-- ì „ë‹¬í•˜ê³ ìž í•˜ëŠ” ì†ì„±ì˜ ì •ë³´ê°€ 1ê°œ ì´ìƒì¸ ê²½ìš° & ê°’ì„ ì‚¬ìš©í•´ì„œ ì „ë‹¬ -->
 	
-	<!-- <fieldset> : Æû ÅÂ±× ¾È¿¡ °ü·Ã ÀÖ´Â Æû ¿ä¼ÒµéÀ» ±×·ìÈ­ÇÒ ¶§ »ç¿ë 
-	     fieldset ÇÏÀ§¿¡ legend¸¦ »ç¿ëÇÏ¿© ±×·ìÈ­ÇÑ Æû ¿ä¼ÒµéÀ» ¸ñÀû¿¡ ¸Â°Ô ÀÌ¸§ ÁöÁ¤-->
+	<!-- <fieldset> : í¼ íƒœê·¸ ì•ˆì— ê´€ë ¨ ìžˆëŠ” í¼ ìš”ì†Œë“¤ì„ ê·¸ë£¹í™”í•  ë•Œ ì‚¬ìš© 
+	     fieldset í•˜ìœ„ì— legendë¥¼ ì‚¬ìš©í•˜ì—¬ ê·¸ë£¹í™”í•œ í¼ ìš”ì†Œë“¤ì„ ëª©ì ì— ë§žê²Œ ì´ë¦„ ì§€ì •-->
 	<fieldset>
-	  <legend>ÆûÅÂ±× Á¦¸ñ</legend>
+	  <legend>í¼íƒœê·¸ ì œëª©</legend>
 	   <form action="itwill.html" name="fr" method="post"
 	         onsubmit="return fun2()">
-	     <label> ¾ÆÀÌµð </label>
+	     <label> ì•„ì´ë”” </label>
 	     <input type="text" name="ID"> <br>
-	         ºñ¹Ð¹øÈ£ <input type="text" name="PW"><br>
+	         ë¹„ë°€ë²ˆí˜¸ <input type="text" name="PW"><br>
 	         
-	     <input type="submit" value="Àü¼Û">
-	     <input type="button" value="ÆûÅÂ±× ¼Ó¼º È®ÀÎ" onclick="fun1()">
+	     <input type="submit" value="ì „ì†¡">
+	     <input type="button" value="í¼íƒœê·¸ ì†ì„± í™•ì¸" onclick="fun1()">
 	     
-	     <input type="button" value="ÆûÅÂ±× ¼Ó¼º º¯°æ ÈÄ ÆäÀÌÁö ÀÌµ¿" onclick="fun2()">
+	     <input type="button" value="í¼íƒœê·¸ ì†ì„± ë³€ê²½ í›„ íŽ˜ì´ì§€ ì´ë™" onclick="fun2()">
  
 	   </form>
 	</fieldset>
 	
-	<h2> Æû(form) ÅÂ±×</h2>
+	<h2> í¼(form) íƒœê·¸</h2>
 
 	<ul>
 	
-	 <li>form ÅÂ±×¶õ? »ç¿ëÀÚ°¡ ¼­¹ö¿¡ Á¤º¸¸¦ ½±°Ô Àü´ÞÇÒ ¼ö ÀÖ´Â ÆäÀÌÁö¸¦ ±¸¼ºÇÔ</li>
-	 <li>BOM - document.form °´Ã¼<br>
-	 Á¤º¸¸¦ ÀÔ·Â¹ÞÀº ÈÄ ´Ù¸¥ÆäÀÌÁö·Î Á¤º¸¸¦ Àü´ÞÇÔ<br>
-	 formÅÂ±×ÀÇ Á¤º¸¸¦ ¹è¿­·Î ÀúÀåÇÏ¿© ÀÌ¸§Á¤º¸°¡ ¾ø¾îµµ ¹è¿­·Î Á¢±Ù°¡´ÉÇÔ <br><br>
-	 document.forms[0].¼Ó¼º <br>
-	 document.forms[0].±â´É()<br>
-	  document.ÆûÅÂ±×ÀÌ¸§.¼Ó¼º<br>
-	  document.ÆûÅÂ±×ÀÌ¸§.±â´É()<br></li>
+	 <li>form íƒœê·¸ëž€? ì‚¬ìš©ìžê°€ ì„œë²„ì— ì •ë³´ë¥¼ ì‰½ê²Œ ì „ë‹¬í•  ìˆ˜ ìžˆëŠ” íŽ˜ì´ì§€ë¥¼ êµ¬ì„±í•¨</li>
+	 <li>BOM - document.form ê°ì²´<br>
+	 ì •ë³´ë¥¼ ìž…ë ¥ë°›ì€ í›„ ë‹¤ë¥¸íŽ˜ì´ì§€ë¡œ ì •ë³´ë¥¼ ì „ë‹¬í•¨<br>
+	 formíƒœê·¸ì˜ ì •ë³´ë¥¼ ë°°ì—´ë¡œ ì €ìž¥í•˜ì—¬ ì´ë¦„ì •ë³´ê°€ ì—†ì–´ë„ ë°°ì—´ë¡œ ì ‘ê·¼ê°€ëŠ¥í•¨ <br><br>
+	 document.forms[0].ì†ì„± <br>
+	 document.forms[0].ê¸°ëŠ¥()<br>
+	  document.í¼íƒœê·¸ì´ë¦„.ì†ì„±<br>
+	  document.í¼íƒœê·¸ì´ë¦„.ê¸°ëŠ¥()<br></li>
 
 	</ul>
 	
-	<h2>Æû ÅÂ±× µ¿ÀÛ¹æ¹ý</h2>
+	<h2>í¼ íƒœê·¸ ë™ìž‘ë°©ë²•</h2>
 	<ol>
-	 <li>ÆûÀÌ ÀÖ´Â À¥ ÆäÀÌÁö ¹æ¹®ÇÑ´Ù.</li>
-	 <li>Æû ³»¿ëÀ» ÀÔ·ÂÇÑ´Ù.</li>
-	 <li>Æû ¾È¿¡ ÀÖ´Â ¸ðµç µ¥ÀÌÅÍ¸¦ À¥ ¼­¹ö·Î º¸³½´Ù.</li>
-	 <li>À¥ ¼­¹ö´Â ¹ÞÀº Æû µ¥ÀÌÅÍ¸¦ Ã³¸®ÇÏ±â À§ÇØ À¥ ÇÁ·Î±×·¥À¸·Î ³Ñ±ä´Ù.</li>
-	 <li>À¥ ÇÁ·Î±×·¥Àº Æû µ¥ÀÌÅÍ¸¦ Ã³¸®ÇÑ´Ù.</li>
-	 <li>Ã³¸®°á°ú¿¡ µû¸¥ »õ·Î¿î htmlÆäÀÌÁö¸¦ À¥ ¼­¹ö¿¡ º¸³½´Ù.</li>
-	 <li>À¥ ¼­¹ö´Â ¹ÞÀº htmlÆäÀÌÁö¸¦ ºê¶ó¿ìÀú¿¡ º¸³½´Ù.</li>
-	 <li>ºê¶ó¿ìÀú´Â ¹ÞÀº htmlÆäÀÌÁö¸¦ º¸¿©ÁØ´Ù.</li>
+	 <li>í¼ì´ ìžˆëŠ” ì›¹ íŽ˜ì´ì§€ ë°©ë¬¸í•œë‹¤.</li>
+	 <li>í¼ ë‚´ìš©ì„ ìž…ë ¥í•œë‹¤.</li>
+	 <li>í¼ ì•ˆì— ìžˆëŠ” ëª¨ë“  ë°ì´í„°ë¥¼ ì›¹ ì„œë²„ë¡œ ë³´ë‚¸ë‹¤.</li>
+	 <li>ì›¹ ì„œë²„ëŠ” ë°›ì€ í¼ ë°ì´í„°ë¥¼ ì²˜ë¦¬í•˜ê¸° ìœ„í•´ ì›¹ í”„ë¡œê·¸ëž¨ìœ¼ë¡œ ë„˜ê¸´ë‹¤.</li>
+	 <li>ì›¹ í”„ë¡œê·¸ëž¨ì€ í¼ ë°ì´í„°ë¥¼ ì²˜ë¦¬í•œë‹¤.</li>
+	 <li>ì²˜ë¦¬ê²°ê³¼ì— ë”°ë¥¸ ìƒˆë¡œìš´ htmlíŽ˜ì´ì§€ë¥¼ ì›¹ ì„œë²„ì— ë³´ë‚¸ë‹¤.</li>
+	 <li>ì›¹ ì„œë²„ëŠ” ë°›ì€ htmlíŽ˜ì´ì§€ë¥¼ ë¸Œë¼ìš°ì €ì— ë³´ë‚¸ë‹¤.</li>
+	 <li>ë¸Œë¼ìš°ì €ëŠ” ë°›ì€ htmlíŽ˜ì´ì§€ë¥¼ ë³´ì—¬ì¤€ë‹¤.</li>
 	</ol>
 	<br>
 	&nbsp;&nbsp;&nbsp;<img src="f1.png" width="530" height="150" name="form1">
 	<br>
 	
-	<h2>Æû ÅÂ±× ¼Ó¼º : name, action, mathod, target</h2>
+	<h2>í¼ íƒœê·¸ ì†ì„± : name, action, mathod, target</h2>
 	
 	<ul>
-	 <li>action : ÆûÀ» Àü¼ÛÇÒ ¼­¹ö ÂÊ ½ºÅ©¸³Æ® ÆÄÀÏ ÁöÁ¤</li>
-	 <li>name : ÆûÀ» ½Äº°ÇÏ±â À§ÇÑ ÀÌ¸§ ÁöÁ¤</li>
-	 <li>accept-charset : Æû Àü¼Û¿¡ »ç¿ëÇÒ ¹®ÀÚ ÀÎÄÚµù ÁöÁ¤</li>
-	 <li>target : action¿¡¼­ ÁöÁ¤ÇÑ ½ºÅ©¸³Æ® ÆÄÀÏÀ» ÇöÀç Ã¢ÀÌ ¾Æ´Ñ ´Ù¸¥ À§Ä¡¿¡ ¿­µµ·Ï ÁöÁ¤</li>
-	 <li>method : ÆûÀ» ¼­¹ö¿¡ Àü¼ÛÇÒ http ¸Þ¼Òµå¸¦ Á¤ÇÔ.(GET ¶Ç´Â POST)</li>
+	 <li>action : í¼ì„ ì „ì†¡í•  ì„œë²„ ìª½ ìŠ¤í¬ë¦½íŠ¸ íŒŒì¼ ì§€ì •</li>
+	 <li>name : í¼ì„ ì‹ë³„í•˜ê¸° ìœ„í•œ ì´ë¦„ ì§€ì •</li>
+	 <li>accept-charset : í¼ ì „ì†¡ì— ì‚¬ìš©í•  ë¬¸ìž ì¸ì½”ë”© ì§€ì •</li>
+	 <li>target : actionì—ì„œ ì§€ì •í•œ ìŠ¤í¬ë¦½íŠ¸ íŒŒì¼ì„ í˜„ìž¬ ì°½ì´ ì•„ë‹Œ ë‹¤ë¥¸ ìœ„ì¹˜ì— ì—´ë„ë¡ ì§€ì •</li>
+	 <li>method : í¼ì„ ì„œë²„ì— ì „ì†¡í•  http ë©”ì†Œë“œë¥¼ ì •í•¨.(GET ë˜ëŠ” POST)</li>
 	</ul>
-	<small>À§ GET ¾Æ·¡ POST</small>
+	<small>ìœ„ GET ì•„ëž˜ POST</small>
 	<br>
 	&nbsp;&nbsp;&nbsp;<img src="f2.png" width="550" height="380" name="form2">
 	
 	<br>
 	
-	<h2> ÆäÀÌÁö Àü´Þ¹æ½Ä(get/post) </h2>
+	<h2> íŽ˜ì´ì§€ ì „ë‹¬ë°©ì‹(get/post) </h2>
 
-	<h3>get ¹æ½Ä / get ¸Þ¼­µå</h3>
+	<h3>get ë°©ì‹ / get ë©”ì„œë“œ</h3>
 	
 	<ul>
-	 <li>Àü¼ÛÇÒ µ¥ÀÌÅÍ(ÆÄ¶ó¹ÌÅÍ)¸¦ URLÀÇ Á¤º¸¿¡ ºÙ¿©¼­ Àü¼Û</li>
-	 <li>Àü¼Û¼Óµµ°¡ ºü¸§ - body°¡ ÇÊ¿ä¾ø±â ¶§¹®</li>
-	 <li>µ¥ÀÌÅÍ ±æÀÌÁ¦¾à - 256byte ÃÊ°ú ºÒ°¡</li>
-	 <li>ÀûÀº·®ÀÇ ÆÄ¶ó¹ÌÅÍ, ÀÏ¹ÝÀûÀÎ µ¥ÀÌÅÍ¸¦ Àü´ÞÇÒ ¶§ »ç¿ë</li>
-	 <li>º¸¾ÈÀûÀ¸·Î Ãë¾àÇÔ - ÆÄ¶ó¹ÌÅÍ°¡ URL¿¡ ¸ðµÎ º¸¿©Áö±â ¶§¹®<br>
-	 => Áï, °³ÀÎÁ¤º¸³ª Áß¿äµ¥ÀÌÅÍ´Â Àü´ÞÇÏ¸é ¾ÈµÊ</li>
+	 <li>ì „ì†¡í•  ë°ì´í„°(íŒŒë¼ë¯¸í„°)ë¥¼ URLì˜ ì •ë³´ì— ë¶™ì—¬ì„œ ì „ì†¡</li>
+	 <li>ì „ì†¡ì†ë„ê°€ ë¹ ë¦„ - bodyê°€ í•„ìš”ì—†ê¸° ë•Œë¬¸</li>
+	 <li>ë°ì´í„° ê¸¸ì´ì œì•½ - 256byte ì´ˆê³¼ ë¶ˆê°€</li>
+	 <li>ì ì€ëŸ‰ì˜ íŒŒë¼ë¯¸í„°, ì¼ë°˜ì ì¸ ë°ì´í„°ë¥¼ ì „ë‹¬í•  ë•Œ ì‚¬ìš©</li>
+	 <li>ë³´ì•ˆì ìœ¼ë¡œ ì·¨ì•½í•¨ - íŒŒë¼ë¯¸í„°ê°€ URLì— ëª¨ë‘ ë³´ì—¬ì§€ê¸° ë•Œë¬¸<br>
+	 => ì¦‰, ê°œì¸ì •ë³´ë‚˜ ì¤‘ìš”ë°ì´í„°ëŠ” ì „ë‹¬í•˜ë©´ ì•ˆë¨</li>
 	 <li>/itwill.html[?]ID=itwill[&]PW=123123</li>
 	</ul>
 	
-	<h3>post ¹æ½Ä / post ¸Þ¼­µå</h3>
+	<h3>post ë°©ì‹ / post ë©”ì„œë“œ</h3>
 	
 	<ul>
-	 <li>Àü¼ÛÇÒ µ¥ÀÌÅÍ(ÆÄ¶ó¹ÌÅÍ)¸¦ URL¿¡ Àü´Þ X, º»¹®¿¡ body¿¡ ºÙ¿©¼­ Àü¼Û</li>
-	 <li>»ó´ëÀûÀ¸·Î Àü¼Û¼Óµµ°¡ ´À¸² - body »ý¼º, ¸¹Àº·®ÀÇ µ¥ÀÌÅÍ¸¦ Àü´ÞÇÏ±â ¶§¹®</li>
-	 <li>µ¥ÀÌÅÍ ±æÀÌÁ¦¾à X - ÆÄÀÏ¾÷·Îµå</li>
-	 <li>º¸¾ÈÀûÀ¸·Î ¿ì¼öÇÔ - ÆÄ¶ó¹ÌÅÍ¸¦ URL¿¡ Àü´ÞÇÏÁö ¾Ê±â ¶§¹®<br>
-	 => Áï, °³ÀÎÁ¤º¸, Áß¿äµ¥ÀÌÅÍ Àü´Þ, ·Î±×ÀÎÇÒ ¶§ »ç¿ë</li>
+	 <li>ì „ì†¡í•  ë°ì´í„°(íŒŒë¼ë¯¸í„°)ë¥¼ URLì— ì „ë‹¬ X, ë³¸ë¬¸ì— bodyì— ë¶™ì—¬ì„œ ì „ì†¡</li>
+	 <li>ìƒëŒ€ì ìœ¼ë¡œ ì „ì†¡ì†ë„ê°€ ëŠë¦¼ - body ìƒì„±, ë§Žì€ëŸ‰ì˜ ë°ì´í„°ë¥¼ ì „ë‹¬í•˜ê¸° ë•Œë¬¸</li>
+	 <li>ë°ì´í„° ê¸¸ì´ì œì•½ X - íŒŒì¼ì—…ë¡œë“œ</li>
+	 <li>ë³´ì•ˆì ìœ¼ë¡œ ìš°ìˆ˜í•¨ - íŒŒë¼ë¯¸í„°ë¥¼ URLì— ì „ë‹¬í•˜ì§€ ì•Šê¸° ë•Œë¬¸<br>
+	 => ì¦‰, ê°œì¸ì •ë³´, ì¤‘ìš”ë°ì´í„° ì „ë‹¬, ë¡œê·¸ì¸í•  ë•Œ ì‚¬ìš©</li>
 	 <li>/itwill.html</li>
 	</ul>
 

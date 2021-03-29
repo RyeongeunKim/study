@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
@@ -6,46 +6,46 @@
 <script type="text/javascript">
 
 	/*
-		* ºê¶ó¿ìÀú °´Ã¼ ¸ğµ¨(BOM)
-		- ºê¶ó¿ìÀúÀÇ Á¤º¸¿¡ Á¢±ÙÇÏ°Å³ª ¿©·¯ ±â´É Á¦¾î
+		* ë¸Œë¼ìš°ì € ê°ì²´ ëª¨ë¸(BOM)
+		- ë¸Œë¼ìš°ì €ì˜ ì •ë³´ì— ì ‘ê·¼í•˜ê±°ë‚˜ ì—¬ëŸ¬ ê¸°ëŠ¥ ì œì–´
 		
-		* window °´Ã¼ : À¥ ºê¶ó¿ìÀúÀÇ Ã¢(window)
-		- window °´Ã¼ÀÇ ÇÏÀ§ °´Ã¼ : document, screen, location, history ...
-		- window °´Ã¼ÀÇ ¸Ş¼­µå : alert(), prompt(), confirm() ...
-		- ÀÚ¹Ù ½ºÅ©¸³Æ®ÀÇ ¸ğµç Àü¿ª °´Ã¼, Àü¿ª ÇÔ¼ö, Àü¿ª º¯¼ö¸¦ »ç¿ëÇÒ ¶§´Â window Á¢µÎ»ç »ı·« °¡´É
+		* window ê°ì²´ : ì›¹ ë¸Œë¼ìš°ì €ì˜ ì°½(window)
+		- window ê°ì²´ì˜ í•˜ìœ„ ê°ì²´ : document, screen, location, history ...
+		- window ê°ì²´ì˜ ë©”ì„œë“œ : alert(), prompt(), confirm() ...
+		- ìë°” ìŠ¤í¬ë¦½íŠ¸ì˜ ëª¨ë“  ì „ì—­ ê°ì²´, ì „ì—­ í•¨ìˆ˜, ì „ì—­ ë³€ìˆ˜ë¥¼ ì‚¬ìš©í•  ë•ŒëŠ” window ì ‘ë‘ì‚¬ ìƒëµ ê°€ëŠ¥
 	*/
 	
-	//BOM - window.location °´Ã¼ : ºê¶ó¿ìÀúÀÇ ÁÖ¼ÒÁÙ
+	//BOM - window.location ê°ì²´ : ë¸Œë¼ìš°ì €ì˜ ì£¼ì†Œì¤„
 	
-	//location °´Ã¼ÀÇ ¼Ó¼ºÀ» Ãâ·ÂÇÏ´Â ÇÔ¼ö : href, protocol, hostname, port, host
+	//location ê°ì²´ì˜ ì†ì„±ì„ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜ : href, protocol, hostname, port, host
 	function fun1(){
-		document.write("href : "+window.location.href+"<br>"); //ÇöÀç ¹®¼­ÀÇ URLÁÖ¼Ò
-		document.write("protocol : "+window.location.protocol+"<br>"); //ÇÁ·ÎÅäÄİ -> http:
-		document.write("hostname : "+window.location.hostname+"<br>"); //ipÁÖ¼Ò
-		document.write("port : "+window.location.port+"<br>"); //Æ÷Æ®¹øÈ£ -> 8080
-		document.write("host : "+window.location.host+"<br>"); //È£½ºÆ®¸í
+		document.write("href : "+window.location.href+"<br>"); //í˜„ì¬ ë¬¸ì„œì˜ URLì£¼ì†Œ
+		document.write("protocol : "+window.location.protocol+"<br>"); //í”„ë¡œí† ì½œ -> http:
+		document.write("hostname : "+window.location.hostname+"<br>"); //ipì£¼ì†Œ
+		document.write("port : "+window.location.port+"<br>"); //í¬íŠ¸ë²ˆí˜¸ -> 8080
+		document.write("host : "+window.location.host+"<br>"); //í˜¸ìŠ¤íŠ¸ëª…
 	}
 
 	fun1();
 	
 	function fun2(){
-		// location.href="ÆäÀÌÁö ÁÖ¼Ò" => ÆäÀÌÁö ÁÖ¼Ò·Î ÀÌµ¿
+		// location.href="í˜ì´ì§€ ì£¼ì†Œ" => í˜ì´ì§€ ì£¼ì†Œë¡œ ì´ë™
 		location.href="event.html";
 	}
 	
 	/*
-		< Âü°í >
-		ÆäÀÌÁö »õ·Î°íÄ§(F5) : location.reload();
-		ÆäÀÌÁö ÀÌµ¿ : location.replace("event.html");
+		< ì°¸ê³  >
+		í˜ì´ì§€ ìƒˆë¡œê³ ì¹¨(F5) : location.reload();
+		í˜ì´ì§€ ì´ë™ : location.replace("event.html");
 	*/
 	
 	function fun3(){ 
 		
-	// window.screen °´Ã¼ : »ç¿ëÀÚ È­¸é¿¡ ´ëÇÑ Á¤º¸
+	// window.screen ê°ì²´ : ì‚¬ìš©ì í™”ë©´ì— ëŒ€í•œ ì •ë³´
 	
 		document.write("width : "+screen.width+"<br>");
 		document.write("height : "+window.screen.height+"<br>");
-		// ¡é ÀÛ¾÷ Ç¥½ÃÁÙÀ» Á¦¿ÜÇÑ ±æÀÌ
+		// â†“ ì‘ì—… í‘œì‹œì¤„ì„ ì œì™¸í•œ ê¸¸ì´
 		document.write("availwidth : "+window.screen.availWidth+"<br>");
 		document.write("availHeight : "+screen.availHeight+"<br>");
 		
@@ -53,7 +53,7 @@
 		
 	function fun4(){
 		
-		//navigator °´Ã¼ : »ç¿ëÀÚÀÇ ºê¶ó¿ìÀú¿Í ¿î¿µÃ¼Á¦ Á¤º¸ Á¦°ø
+		//navigator ê°ì²´ : ì‚¬ìš©ìì˜ ë¸Œë¼ìš°ì €ì™€ ìš´ì˜ì²´ì œ ì •ë³´ ì œê³µ
 		
 		document.write("appCodeName : "+window.navigator.appCodeName+"<br>");
 		document.write("appName : "+window.navigator.appName+"<br>");
@@ -67,14 +67,14 @@
 </head>
 <body>
 	<h1>WebContent/me/location.html</h1>
-	<h3> ¹öÆ° Å¬¸¯ ½Ã event.html ÆäÀÌÁö·Î ÀÌµ¿ </h3>
-	<input type="button" value="ÆäÀÌÁö ÀÌµ¿" onclick="fun2()">
+	<h3> ë²„íŠ¼ í´ë¦­ ì‹œ event.html í˜ì´ì§€ë¡œ ì´ë™ </h3>
+	<input type="button" value="í˜ì´ì§€ ì´ë™" onclick="fun2()">
 	
-	<h3>¹öÆ° Å¬¸¯ ½Ã ¸ğ´ÏÅÍ Á¤º¸ È®ÀÎ</h3>
-	<input type="button" value="¸ğ´ÏÅÍ Á¤º¸ È®ÀÎ" onclick="fun3()">
+	<h3>ë²„íŠ¼ í´ë¦­ ì‹œ ëª¨ë‹ˆí„° ì •ë³´ í™•ì¸</h3>
+	<input type="button" value="ëª¨ë‹ˆí„° ì •ë³´ í™•ì¸" onclick="fun3()">
 	
-	<h3>¹öÆ° Å¬¸¯½Ã »ç¿ëÀÚ Á¤º¸(ºê¶ó¿ìÀú, ¿î¿µÃ¼Á¦) È®ÀÎ</h3>
-	<input type="button" value="»ç¿ëÀÚ Á¤º¸ È®ÀÎ" onclick="fun4()">
+	<h3>ë²„íŠ¼ í´ë¦­ì‹œ ì‚¬ìš©ì ì •ë³´(ë¸Œë¼ìš°ì €, ìš´ì˜ì²´ì œ) í™•ì¸</h3>
+	<input type="button" value="ì‚¬ìš©ì ì •ë³´ í™•ì¸" onclick="fun4()">
 
  
 </body>

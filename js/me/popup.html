@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 <script type="text/javascript">
 
-	// ºê¶ó¿ìÀú °´Ã¼ ¸ğµ¨(BOM) : ºê¶ó¿ìÀú¿¡ ³»ÀåµÇ¾î ÀÖ´Â °´Ã¼
-	// window°´Ã¼ ÇÏÀ§¿¡ ¿©·¯°³ÀÇ °´Ã¼°¡ Æ÷ÇÔµÇ¾îÀÖÀ½. (ÃÖ»óÀ§ °´Ã¼)
+	// ë¸Œë¼ìš°ì € ê°ì²´ ëª¨ë¸(BOM) : ë¸Œë¼ìš°ì €ì— ë‚´ì¥ë˜ì–´ ìˆëŠ” ê°ì²´
+	// windowê°ì²´ í•˜ìœ„ì— ì—¬ëŸ¬ê°œì˜ ê°ì²´ê°€ í¬í•¨ë˜ì–´ìˆìŒ. (ìµœìƒìœ„ ê°ì²´)
 	// => document, screen, location, history ....
 	
-	// window °´Ã¼ ¾È¿¡ ÀÖ´Â ¸Ş¼­µå
+	// window ê°ì²´ ì•ˆì— ìˆëŠ” ë©”ì„œë“œ
 	// alert(), prompt(), confirm(), ....
 	/* 
 	function test(){
@@ -19,16 +19,16 @@
 	test(); 
 	 */
 	
-	//open() : »õ ºê¶ó¿ìÀú¸¦ ¶ç¿ï ¶§ »ç¿ë
+	//open() : ìƒˆ ë¸Œë¼ìš°ì €ë¥¼ ë„ìš¸ ë•Œ ì‚¬ìš©
 	
-	//window.open("url°æ·Î", "Ã¢ÀÌ¸§", "¿É¼Ç");
-	//window.open("http://www.google.com","ÆË¾÷Å×½ºÆ®");
+	//window.open("urlê²½ë¡œ", "ì°½ì´ë¦„", "ì˜µì…˜");
+	//window.open("http://www.google.com","íŒì—…í…ŒìŠ¤íŠ¸");
 	
-	//»çÀÌÁîµµ Á¶Àı°¡´É
-	//window.open("popup.html","ÆË¾÷Å×½ºÆ®","width=500, height=500");
+	//ì‚¬ì´ì¦ˆë„ ì¡°ì ˆê°€ëŠ¥
+	//window.open("popup.html","íŒì—…í…ŒìŠ¤íŠ¸","width=500, height=500");
 	
 	function myOpen(){
-		//width, height Å©±â / left, top À§Ä¡
+		//width, height í¬ê¸° / left, top ìœ„ì¹˜
 		window.open('popup1.html','','width=300,height=300,left=400,top=400');
 	}
 	
@@ -40,20 +40,20 @@
 </head>
 <body>
  <h1>WebContent/js3/popup.html</h1>
- <!-- ¹öÆ° Å¬¸¯ ½Ã popup.html »õÃ¢À¸·Î ¿­±â -->
- <input type="button" value="ÆË¾÷Ã¢1" onclick="window.open('popup.html','ÆË','width=300,height=300');">
- <input type="button" value="ÆË¾÷Ã¢2" onclick="myOpen();">
- <input type="button" value="Ã¢´İ±â" onclick="window.close();">
+ <!-- ë²„íŠ¼ í´ë¦­ ì‹œ popup.html ìƒˆì°½ìœ¼ë¡œ ì—´ê¸° -->
+ <input type="button" value="íŒì—…ì°½1" onclick="window.open('popup.html','íŒ','width=300,height=300');">
+ <input type="button" value="íŒì—…ì°½2" onclick="myOpen();">
+ <input type="button" value="ì°½ë‹«ê¸°" onclick="window.close();">
  
  <hr>
  
  <!-- 
- 	myOpen2() È£ÃâÇØ¼­ »õÃ¢¿­±â, 
- 	popup2.html »ı¼º ÈÄ(500*500)
- 	+ »õÃ¢¸¸ ´İ´Â ¹öÆ° Ãß°¡
+ 	myOpen2() í˜¸ì¶œí•´ì„œ ìƒˆì°½ì—´ê¸°, 
+ 	popup2.html ìƒì„± í›„(500*500)
+ 	+ ìƒˆì°½ë§Œ ë‹«ëŠ” ë²„íŠ¼ ì¶”ê°€
  -->
  
-  <input type="button" value="popup2¿­±â" onclick="myOpen2()">
+  <input type="button" value="popup2ì—´ê¸°" onclick="myOpen2()">
 
     <form action="" name="fr">
      <input type="text" name="txt" value="">
