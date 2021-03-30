@@ -59,6 +59,12 @@ public class Test71 {
 		System.out.println("인스턴스변수 num의 값 : "+b_student.num);
 		System.out.println("클래스변수 staticNum의 값 : "+Student.staticNum);
 		
+		//인스턴스변수와 클래스변수의 차이점
+		//-> 인스턴스변수 : 객체를 생성할 때 마다 객체 내부에 만들어지는 변수
+		//-> 클래스변수 : 각 객체들이 공유하여 사용하는 공용 변수이므로
+		//   맨처음에 java 클래스명 <-명령문을 이용하여 클래스명.class를 실행할 때
+		//   JVM메모리의 Method영역에 먼저 올라가는 변수 메모리이다.
+		
 
 	}
 
