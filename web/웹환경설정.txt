@@ -1,0 +1,17 @@
+open perspective-web선택-open
+dynamic web project -> name: html5 -> open perspective? No!(리멤버 체크)
+
+환경설정
+window-preferences-web-CSS files-인코딩 utf-8로 변경
+HTML files-인코딩 utf-8
+JSP files-utf8
+general-web browser-라디오버튼 아래꺼 체크박스는 크롬으로
+appearence-color fonts-basic
+
+
+F11
+
+always
+
+아파치-톰캣8.5-next-브라우저-c드라이브-프로그램 파일즈-아파치-톰캣선택-넥스트하면끝
+
