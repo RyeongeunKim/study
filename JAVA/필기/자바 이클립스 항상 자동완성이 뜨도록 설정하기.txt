@@ -1,0 +1,8 @@
+
+
+자바 이클립스 항상 자동완성이 뜨도록 설정하기
+
+window->프리퍼런스->java->Editor->
+Content Assist클릭하면 오른쪽화면 아래쪽에 
+auto activation triggers for java 항목으로 가서 
+abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._ 입력 한후 Apply and close버튼 클릭
