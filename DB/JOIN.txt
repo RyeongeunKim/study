@@ -37,5 +37,15 @@ on e.department_id = d.department_id;
 같은 테이블인데 다른 테이블처럼 
 AS 를 달리 주면서 JOIN 요청
 
+---------------------------------------------------------------------------------------------------------
+
+inner join  vs  outer join
+-내부조인		-외부조인
+-조인조건을 만족하는	-조인조건을 만족하지 않는 
+ 행만 반환하는 	 행까지 반환하는
+ 조인유형		 조인유형
+-on절 join	-left outer join
+		 right outer join
+		 full outer join
 
 
