@@ -12,6 +12,12 @@
     // ID,PW를 입력받아서 해당 회원을 탈퇴(삭제)
   %>
   
+  <form action="deletePro.jsp" method="post">
+     아이디 : <input type="text" name="id"><br>
+     비밀번호 : <input type="password" name="pw"><br>
+   <input type="submit" value="탈퇴하기">
+  </form>
+  
   
   
   
