@@ -1,0 +1,16 @@
+<치환변수>
+SQL> select employee_id, last_name, salary, department_id
+     from employees
+     where employee_id = &emp_num;
+
+SQL> select employee_id, last_name, job_id, salary
+     from employees
+     where job_id = '&job';
+
+SQL> insert into departments
+     values (&d_id, '&d_name', &m_id, &loc_id);
+
+<스크립트 파일 생성 및 실행> => sqlplus 명령어
+SQL> save /home/oracle/test.sql
+
+SQL> @/home/oracle/test.sql
