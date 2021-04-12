@@ -1,0 +1,84 @@
+p99 ~ 101
+-------------------------------------------------------------
+//트랜잭션 시작
+3. insert ---;(첫번째행)
+SQL> insert into my_employee
+     values (1, 'Patel', 'Ralph', 'rpatel', 895);
+
+4. insert ---;(두번째행)
+SQL> insert into my_employee
+     values (2, 'Dancs', 'Betty', 'bdancs', 860);
+
+5. select ---;(미리보기)
+SQL> select *
+     from my_employee;
+
+6. insert + 치환변수(&변수명)---;(세번째행)
+SQL> insert into my_employee
+     values (&id, '&lname', '&fname', '&uid', &sal); => 세번째행 입력
+SQL> save /home/oracle/load_emp.sql
+
+7. load_emp.sql 스크립트 파일을 활용한 insert ---;(네번째행)
+SQL> @/home/oracle/load_emp.sql => 네번째행 입력
+
+8. select ---;(미리보기)
+SQL> select *
+     from my_employee;
+
+9. commit;
+//트랜잭션 종료
+-------------------------------------------------------------
+//트랜잭션 시작
+10. update ---;
+SQL> update my_employee
+     set last_name = 'Drexler'
+     where id = 3;
+
+11. update ---;
+SQL> update my_employee
+     set salary = 1000
+     where salary < 900;
+ 
+12. select ---;(미리보기)
+SQL> select *
+     from my_employee;
+
+13. delete ---;
+SQL> delete from my_employee
+     where first_name = 'Betty';
+
+14. select ---;(미리보기)
+SQL> select *
+     from my_employee;
+
+15. commit;
+//트랜잭션 종료
+-------------------------------------------------------------
+//트랜잭션 시작
+16. load_emp.sql 스크립트 파일을 활용한 insert ---;(다섯번째행)
+SQL> @/home/oracle/load_emp.sql => 다섯번째행 입력
+
+17. select ---;(미리보기)
+SQL> select *
+     from my_employee;
+
+18. savepoint 생성
+SQL> savepoint test1;
+
+19. delete ---;
+SQL> delete from my_employee;
+
+20. select ---;(미리보기)
+SQL> select *
+     from my_employee;
+
+21. savepoint로 롤백
+SQL> rollback to test1;
+
+22. select ---;(미리보기)
+SQL> select *
+     from my_employee;
+
+23. commit;
+//트랜잭션 종료
+-------------------------------------------------------------
