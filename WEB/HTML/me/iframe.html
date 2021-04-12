@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>iframe</title>
+</head>
+<body>
+ <h1>iframe</h1>
+ <p>
+  iframe은 브라우저 안에 독립된 영역을 만들어 
+    다른 내용(사이트, 웹문서, 이미지, 동영상 등)을 보여줄 수 있다. <br>
+  src 속성으로 보여줄 내용의 경로를 지정한다.
+ </p>
+ 
+ <iframe>
+  iframe태그를 지원하지 않는 브라우저용 멘트
+ </iframe>
+ 
+ <h2>iframe 안에 웹문서, 이미지, 동영상 보여주기</h2>
+ <iframe src="a.html"></iframe>
+ <iframe src="img/cat.jpg"></iframe>
+ <iframe src="img/trees.mp4"></iframe>
+ 
+ <h2>width/height 속성으로 크기 지정</h2>
+ <iframe src="http://www.itwillbs.co.kr/" width="800" height="600"></iframe>
+ <iframe src="http://www.daum.net" width="800" height="600"></iframe>
+ 
+ <h2>iframe안에 링크열어주기</h2>
+ iframe을 구별하는 name값을 지정하고 링크의 속성값에 iframe의 name값을 넣어준다. <br>
+ &lt;iframe src="" <mark>name="abc"</mark>&gt; &lt;/iframe&gt; <br>
+ &lt;a href=" " <mark>target="abc"</mark>&gt; ...&lt;/a&gt;<br>
+ <iframe src="a.html" width="800" height="500" name="html-box"></iframe>
+ <nav>
+  <a href="a.html" target="html-box">html-1</a>
+  <a href="a-1.html" target="html-box">html-2</a>
+  <a href="img.html" target="html-box">html-3</a>
+  <a href="form.htm" target="html-box">html-4</a>
+ </nav>
+<nav>
+ <a href="img/cat.jpg" target="img-box">img-1</a>
+ <a href="img/bare.jpg" target="img-box">img-2</a>
+ <a href="img/art.jpg" target="img-box">img-3</a>
+ <a href="img/away.jpg" target="img-box">img-4</a>
+</nav>
+ <iframe src="img/abend.jpg" width="640" height="500" name="img-box"></iframe>
+ 
+</body>
+</html>

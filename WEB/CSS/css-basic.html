@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css-basic</title>
+<link href="basic.css" rel="stylesheet">
+<style type="text/css">
+ b {color: blue;}   /* tag 선택자 */
+
+ h2 {color: olive;  /* tag 선택자 */
+  border-bottom: 3px solid; }
+  
+ #ex {color: green;}  /* id 선택자 */
+   
+ #basic {color: navy; /* id 선택자 */
+     text-align: center; }  
+     
+ .big {font-size: 22px;}  /* class 선택자 */     
+ .fs30 {font-size: 30px;} 
+ .ta-r {text-align: right;}  
+ .red {color: red;} 
+ .st-n {font-style: normal;}
+</style>
+</head>
+<body>
+<div id="basic">
+ <h1>css-basic</h1>
+ <p>html로 만든 웹문서를 꾸미는 역할. <br>
+   동시에 여러 문서를 일관된 스타일로 꾸밀 수 있고 <br>
+   동시에 수정도 가능하므로 유지보수에도 유리함.<br>
+  <div class="box"> 선택자 { CSS속성 : CSS속성값; } <br>
+  <i>(주인공) (꾸밈종류)=(꾸밈값). </i> </div>
+ </p>
+</div>
+
+<h2 class="fs30 ta-r">css 적용법</h2>
+<ul>
+ <li><b id="ex" class="big">External CSS</b> - 외부 파일 방식.<br>
+  CSS소스가 독립되어 존재(abc.css)하며 head안의 link태그로 웹문서와 연결시켜 적용.<br>
+  여러 웹문서를 동시에 스타일 적용하고 동시에 수정이 가능.<br>  
+    &lt;head&gt;<br>  
+      &lt;link href="abc.css" rel="stylesheet"&gt;<br>  
+    &lt;/head&gt;
+ </li> 
+ <li><b class="big">Internal CSS</b> - html문서의 head태그 안에 넣는 방식.<br>
+   태그와 CSS소스가 분리되어 적용과 수정은 용이하나 해당 웹문서에만 적용 가능.<br> 
+   &lt;head&gt;<br>    
+   &lt;style type="text/css"&gt;<br>
+    선택자 { CSS속성:CSS속성값; }    <br>
+   &lt;/style&gt;<br>
+   &lt;/head&gt;<br>
+ </li>
+ <li><span class="big" style="font-weight:bold;color:gray;">
+ Inline CSS</span> - 해당 태그 뒤에 직접 적는 방식 <br>
+ &lt;tag style="CSS속성:CSS속성값;"&gt;
+ <br>소스가 길어지고 중복 됨, 일관된 스타일 적용불가, 유지보수 불리. <br>
+ 3가지 방식 중 css적용 우선 순위가 가장 높은 장점.
+ </li>
+</ul>
+
+<h2 class="ta-r fs30">css 선택자 종류</h2>
+<ul>
+ <li>tag 선택자 <i class="st-n red">(tag)</i> - 강제 적용, 자동 적용(태그가 같으면 같은 스타일)</li>
+ <li>id 선택자 <i class="red st-n">(#abc)</i> - id값이 유일한 값이므로 한번만 적용가능. 구조적 목적에 주로 쓰임</li>
+ <li>class 선택자 <i class="red st-n">(.abc)</i> - class값은 중복적용이 가능. 디자인적 목적에 두루 쓰임. <br>
+  class값은 2개이상 조합하여 적용도 가능. 
+ </li>
+ <li>전체 선택자 <i class="st-n red">(*)</i> - 모든 요소를 불러와서 적용</li>
+ <li>...</li>
+</ul>
+
+<h2>css 구문</h2>
+
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>a태그로 link걸기</title>
+</head>
+<body>
+<hr>
+ <nav>
+  <a href="a.html">링크수업-1</a>
+  <a href="a-1.html">링크수업-2</a>    
+  <a href="a-1.html#hr-06">(링크수업-2)photo-6</a>
+ </nav>
+<hr>
+<h1>a태그로 link걸기</h1>
+<p>
+ &lt;a href="url(이동할 곳의 주소)"&gt; ... &lt;/a&gt;<br><br>
+ a태그에 href속성으로 주소(경로)를 지정한다. <br>
+ 링크가 걸린 텍스트는 밑줄이 나타나고 <br>
+ 마우스 오버시 커서의 모양이 바뀌고<br>
+ 색상은 3가지 형태중 하나로 나타남.<br>
+ ▶초기링크색 - 파랑<br>
+ ▶방문한링크색 - 보라<br>
+ ▶활성화시링크색 - 빨강
+</p>
+<h2>link의 경로 지정</h2>
+<ol>
+ <li>상대경로 - html문서의 위치에 따라 달라지는 경로</li>
+ <li>절대경로 - 항상 같은 경로</li>
+</ol>
+
+<h3>1.상대경로로 link걸기</h3>
+<a href="form-test_홍길동.html">form-test</a>
+<a href="img.html">이미지 수업</a>
+
+<h3>2.절대경로로 link걸기</h3>
+<a href="https://www.w3schools.com/">w3schools.com</a>
+<a href="https://www.daum.net/">daum</a>
+
+<h2 id="h2-2">target속성으로 링크 여는 방식 지정하기</h2>
+<a href="https://www.daum.net/" target="_blank">daum(새 탭에서 열기)</a>
+
+<h3>target 속성값</h3>
+<ul>
+ <li>target="_self" (기본값)현재 위치에 열기</li>
+ <li><b>target="_blank" 새 탭에서 열기</b></li>
+ <li>target="_parent" 한단계 상위창에 열기</li>
+ <li>target="_top" (프레임으로 나뉨없이)전체 창에 열기</li>
+</ul>
+
+  <a href="https://www.naver.com/" target="_blank">네이놈</a>을 새 탭에서 열기
+
+<h2>링크로 보여줄 수 있는 종류 <small>- 브라우저가 처리 가능한 파일(종류)인 경우 바로 보여줌</small></h2>
+
+<ol>
+ <li>외부사이트 (url) <br>
+  <a href="https://pixabay.com/" target="_blank">pixabay(이미지무료1)</a>
+  <a href="https://www.pexels.com/ko-kr/" target="_blank">pexels(이미지무료2)</a>
+ </li>
+ <li>웹페이지 (*.htm or *.html)
+  <a href="img.html">이미지수업보기</a>
+ </li>
+ <li>이미지파일 (*.jpg / *.gif / *.png)  <br>
+  <a href="img/drop.jpg">drop.jpg</a>
+  <a href="img/png/arrow-up.png">arrow-up.png</a>
+    <a href="img/gif/arrow.gif" target="_blank">arrow.gif</a>   
+ </li>
+ <li>동영상파일 (*.ogg / *.mp4 / *.webm)   <br>
+  <a href="img/trees.mp4" target="_blank">trees.mp4</a>
+ </li>
+ <li>텍스트파일 (*.txt)  <br>
+  <a href="이클립스다운받기.txt" target="_blank">이클립스다운받기.txt</a>
+ </li>
+</ol>
+
+<h2>링크로 보여줄 수 없는 종류 <small>- 브라우저가 처리 불가한 파일(종류)인 경우 다운로드 됨</small></h2>
+<a href="img.zip">img.zip</a>
+zip, hwp 등은 다운로드 됨
+
+
+<hr>
+<h2>이미지에 링크 걸기 <small>(링크 걸린 이미지)</small></h2>
+<pre>
+ <b>&lt;a href="보여줄 내용의 경로" title="툴팁 내용"&gt; 
+  &lt;img src="(클릭할) 이미지의 경로"&gt; 
+ &lt;/a&gt;</b>
+ 
+                 *title속성, 툴팁은 다른 태그에도 사용 가능.
+ 
+ 
+</pre>
+<p>
+- 이미지(로고) 클릭시 해당 사이트 보여주기 <br>
+<a href="https://www.daum.net/" target="_blank" title="daum으로 이동">
+<img alt="daum" src="img/png/daum-logo.png" width="150"></a>
+
+<a href="http://www.itwillbs.co.kr/" target="_blank" title="아이티윌 부산교육센터으로 이동">
+<img alt="아이티윌 부산교육센터" src="img/png/itwill_logo.png"></a>
+<br><br>
+- 이미지(썸네일) 클릭시 이미지 크게 보여주기 <br>
+<a href="img/header.jpg" target="_blank" title="사진 크게보기">
+<img alt="cafe" src="img/header.jpg" width="200"></a>
+<br><br>
+- 이미지(영상의 캡쳐본) 클릭시 동영상 보여주기 <br>
+<a href="img/trees.mp4" title="숲속 힐링 영상보기" target="_blank">
+<img alt="숲속이미지" src="img/bastei.jpg" width="150"></a>
+</p>
+
+
+<hr>
+<h2>mailto:으로 email 링크 걸기</h2>
+&lt;a href="<b>mailto:</b>메일주소"&gt; ... &lt;/a&gt; <br>
+
+<a href="mailto:class@itwillbs.co.kr">class@itwillbs.co.kr</a>
+
+ <a href="mailto:hong828282@josun.co.kr">홍길동email</a>
+ 
+ <a href="mailto:hong828282@josun.co.kr" title="홍길동email">
+ <img alt="홍길동email" src="img/mail02.jpg" width="100"></a>
+ 
+<hr> 
+<h2>페이지 최상단으로 이동하는 링크 걸기</h2>
+ &lt;a href="<mark><b>#</b></mark>"&gt;...&lt;/a&gt;  <br>
+ <a href="#">top</a>  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
