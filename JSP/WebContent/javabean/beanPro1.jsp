@@ -37,7 +37,7 @@
 	<jsp:useBean id="객체명 (레퍼런스명)" class="클래스의 위치(패키지명)"/> 
 	--%>
 	<%
-	  //Javabean1 jbAction = new Javabean1();
+	 //Javabean1 jbAction = new Javabean1();
 	%>
 	<jsp:useBean id="jbAction"
                class="com.itwillbs.beantest.Javabean1" />
