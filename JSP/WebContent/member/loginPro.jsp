@@ -88,8 +88,17 @@
     	 // 비회원이다.
     	 %>
 		 <script type="text/javascript">
-		   alert(" 비회원 입니다 !!! ");
-		   history.back();
+		    // confirm(" 비회원 입니다. 회원가입 하겠습니까? ")
+		    // Y - 회원가입 페이지 이동, N -페이지 뒤로가기
+		    var result = confirm(" 비회원 입니다. 회원가입 하겠습니까? ");
+		    
+		    if(result){
+		    	location.href="insertForm.jsp";
+		    }else{
+		    	 history.back();
+		    }
+		   //alert(" 비회원 입니다 !!! ");
+		  
 		 </script>    		 
 		 <%
     	 
