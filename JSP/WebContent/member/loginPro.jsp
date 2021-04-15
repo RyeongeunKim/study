@@ -68,7 +68,7 @@
     	   // response.sendRedirect("main.jsp");
     	    %>
     	     <script type="text/javascript">
-    	        alert("회원 가입성공!");
+    	        alert("로그인 성공!");
     	        location.href="main.jsp";
     	     </script>   	    
     	    <%

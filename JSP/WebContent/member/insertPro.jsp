@@ -52,7 +52,11 @@
      String sql 
      ="insert into itwill_member values (?,?,?,?,?,?,?)";
      
+     //부모 PreparedStatement인터페이스 타입의 참조변수 pstmt에 
+     //SQL문 실행시키는 MySQLPreparedStatementWrapper자식객체 저장
      PreparedStatement pstmt = conn.prepareStatement(sql);
+     
+     
      
      //  ?
      pstmt.setString(1, mb.getId());
