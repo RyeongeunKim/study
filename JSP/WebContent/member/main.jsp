@@ -38,9 +38,24 @@
 	<h3><a href="updateForm.jsp">회원 정보 수정</a></h3>
 	
 	
+	<h3><a href="deleteForm.jsp">회원 정보 탈퇴(삭제)</a></h3>
 	
 	
+	<!-- 관리자만 사용가능한 메뉴 생성 -->
+	<%
+	//if(id != null){ // 아이디가 있을때
+	 // if(id.equals("admin")){
+		  
+		 // 참조형데이터 값 비교시 항상 null값을 먼저 비교후 데이터 비교 
+		if(id !=null && id.equals("admin") )
+		//if(id.equals("admin") &&  id !=null ) 
+		%>
+	  <h3><a href="list.jsp">회원 목록보기</a></h3>
 	
+	<%
+	//  }
+	//}
+	%>
 	
 	
 	
