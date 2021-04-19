@@ -1,0 +1,14 @@
+1. title 테이블 생성
+SQL> create table title
+     ( title_id number(10),
+       title varchar2(60),
+       description varchar2(400),
+       rating varchar2(4),
+       category varchar2(20),
+       release_date date );
+
+2. title_copy 테이블 생성
+SQL> create table title_copy
+     ( copy_id number(10),
+       title_id number(10),
+       status varchar2(15));
