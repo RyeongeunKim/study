@@ -35,7 +35,8 @@
      // 글쓰기 기능을 사용
      bdao.insertBoard(bb);
      
-   
+     //페이지 이동
+     response.sendRedirect("list.jsp"); 
    %>
    
    

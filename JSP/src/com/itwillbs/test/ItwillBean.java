@@ -53,10 +53,6 @@ public class ItwillBean {
 	public void setMath(int math) {
 		this.math = math;
 	}
-
-
-	
-	
 	// alt shift s + v
 //	@Override
 //	public String toString() {
@@ -65,12 +61,12 @@ public class ItwillBean {
 	
 	// alt shift s + s
 
-	@Override
-	public String toString() {
-		return "ItwillBean [name=" + name 
-				+ ", tel=" + tel + ", kor=" + kor 
-				+ ", eng=" + eng + ", math=" + math + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "ItwillBean [name=" + name 
+//				+ ", tel=" + tel + ", kor=" + kor 
+//				+ ", eng=" + eng + ", math=" + math + "]";
+//	}
 
 	
 	

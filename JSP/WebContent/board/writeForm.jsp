@@ -17,7 +17,6 @@
           비밀번호 : <input type="password" name="pass"><br>
           제목 : <input type="text" name="subject"><br>
           내용 : <textarea rows="10" cols="30" name="content"></textarea>
-          
       <hr>
           
       <input type="submit" value="글쓰기">

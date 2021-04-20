@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/* text-align 글자 수평 정렬 */
+
+#sec01>p {border: 1px solid;
+width: 500px;}
+.tal01 {text-align: left;}
+.tal02 {text-align: center;}
+.tal03 {text-align: right;}
+
+#sec01>button {
+ width: 300px;	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -2,7 +2,7 @@ package com.itwillbs.member;
 
 import java.sql.Timestamp;
 
-public class MemberBean {
+public class MemberBean /*extends  Object*/{
 	
 	private String id;
 	private String pw;
@@ -56,7 +56,7 @@ public class MemberBean {
 		this.regdate = regdate;
 	}
 	
-	// alt shift s + s
+	// alt shift s + v
 	@Override
 	public String toString() {
 		return "MemberBean [id=" + id + ", pw=" + pw + ", name=" + name + ", age=" + age + ", gender=" + gender
