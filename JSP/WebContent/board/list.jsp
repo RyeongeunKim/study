@@ -68,7 +68,9 @@
     %>
      <tr>
       <td><%=bb.getNum() %></td>
-      <td><%=bb.getSubject() %></td>
+      <td>
+       <a href="content.jsp?num=<%=bb.getNum()%>&pageNum=<%=pageNum%>"><%=bb.getSubject() %></a>
+      </td>
       <td><%=bb.getName() %></td>
       <td><%=bb.getDate() %></td>
       <td><%=bb.getReadcount() %></td>
@@ -93,7 +95,7 @@
 		int pageCount = cnt/pageSize+(cnt % pageSize == 0? 0:1);
 		
 		// 한 화면에 보여줄 페이지 번호의 개수 (페이지 블럭)
-		int pageBlock = 5;
+		int pageBlock = 2;
 		
 		// 페이지 블럭의 시작페이지 번호 
 		// ex)  1~10 페이지 : 1, 11~20페이지 : 11, 21~30페이지 : 21
@@ -106,7 +108,12 @@
 			endPage = pageCount;
 		}
     	
-    	// 이전
+    	// 이전 (해당 페이지블럭의 첫번째 페이지 호출)
+    	if(startPage > pageBlock){
+    		%>
+    		<a href="list.jsp?pageNum=<%=startPage-pageBlock%>">[이전]</a>
+    		<%
+    	}   	
     	
     	// 숫자  1....5
     	for(int i=startPage;i<=endPage;i++){
@@ -115,8 +122,15 @@
     		<%    		
     	}
     	
+    	// 다음 (기존의 페이지 블럭보다 페이지의 수가 많을때)
+    	if(endPage < pageCount){
+    		%>
+    		<a href="list.jsp?pageNum=<%=startPage+pageBlock%>">[다음]</a>
+    		<%
+    	}
     	
-    	// 다음
+    	
+    	
     	
     }
     //////////////////////////////////////////////////////
