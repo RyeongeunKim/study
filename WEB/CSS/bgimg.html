@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>background</title>
+<link href="style.css" rel="stylesheet">
+<link href="bgimg.css" rel="stylesheet">
+</head>
+<body>
+<h1>background  배경</h1>
+<ul>
+ <li class="li01">background-color:색상값; 배경색상</li>
+ <li class="li02">background-image:url("이미지경로"); 배경이미지</li>
+</ul>
+
+<h2>배경이미지의 속성들</h2>
+<ol>
+ <li>background-repeat: ; 반복 지정
+  <ul>
+   <li>repeat</li>
+   <li>repeat-x</li> 
+   <li>repeat-y</li>
+   <li>no-repeat</li>
+  </ul>
+ </li>
+ <li>background-size: ; 크기 지정
+  <ul>
+   <li>cover</li>
+   <li>contain</li>
+   <li>Xn Yn</li>
+  </ul> 
+ </li> 
+ <li>background-position: ; 위치 지정
+  <ul>
+   <li>left/center/right top/center/bottom
+   </li>
+   <li>Xn Yn</li>
+  </ul> 
+ </li>
+ <li>background-attachment: ; 스크롤여부 지정
+  <ul>
+   <li>scroll</li>
+   <li>fixed</li>
+   <li>local</li>
+  </ul>
+ </li>
+</ol>
+
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+
+<section>
+ <h2>background-attachment: ; 스크롤여부 지정</h2>
+ 
+ <pre>
+ scroll은 브라우저 스크롤바에는 스크롤, 
+         자신 영역의 스크롤바에는 고정.  
+ fixed는 브라우저 스크롤바와 
+         자신 영역의 스크롤바에 모두 고정.  
+ local은 브라우저 스크롤바와 스크롤, 
+         자신 영역의 스크롤바에 모두 스크롤.  
+ </pre>
+ 
+ <p class="att01">
+  background-attachment:scroll;
+  <br><br><br><br><br><br><br><br><br>
+  background-attachment:scroll;
+  <br><br><br><br><br><br><br><br><br>
+ </p> 
+ <p class="att02">
+  background-attachment:fixed;
+  <br><br><br><br><br><br><br><br><br>
+  background-attachment:fixed;
+  <br><br><br><br><br><br><br><br><br>
+ </p> 
+ <p class="att03">
+  background-attachment:local;
+  <br><br><br><br><br><br><br><br><br>
+  background-attachment:local;
+  <br><br><br><br><br><br><br><br><br>
+ </p>
+</section>
+
+
+
+<section id="sec02">
+ <h2>배경이미지 2개 적용하기</h2>
+ background-image: url("A이미지"), url("B이미지"); <br>
+ background-... : A이미지 속성값, B이미지 속성값;
+</section>
+</body>
+</html>
+
+
+
+
