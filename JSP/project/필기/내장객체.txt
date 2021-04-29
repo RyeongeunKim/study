@@ -1,0 +1,12 @@
+자주 사용되어지는 객체
+패키지 X
+9개의 클래스들이 미리 등록되어 있어서 별도의 선언없이(import X) 사용할 수 있음
+외울 것!
+
+* Request : 
+Response
+Out
+Session
+Page
+Application
+Exception
