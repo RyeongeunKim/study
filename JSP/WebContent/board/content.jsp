@@ -13,8 +13,16 @@
 	<%
 		// 페이지 이동시 전달정보가 있으면(파라미터) 항상 가장먼저 저장
 		// num,pageNum
+// 		int num = 0;
+// 		try{
+// 			num = Integer.parseInt(request.getParameter("num"));
+// 		}catch(Exception e){
+// 			System.out.println("존재하지 않는 글번호를 정수로 변환할수 없다.");
+// 			num=1;
+// 		}
+		
 		int num = Integer.parseInt(request.getParameter("num"));
-	    String pageNum = request.getParameter("pageNum");
+		String pageNum = request.getParameter("pageNum");
 		
 	    // BoardDAO 객체 생성
 	    BoardDAO bdao = new BoardDAO();
@@ -54,9 +62,17 @@
       
       <tr>
         <td colspan="4">
-          <input type="button" value="수정하기">
-          <input type="button" value="삭제하기">
-          <input type="button" value="답글쓰기">
+          <input type="button" value="수정하기" 
+                 onclick="location.href='updateForm.jsp?num=<%=bb.getNum() %>&pageNum=<%=pageNum %>';"
+          >
+          <input type="button" value="삭제하기" 
+                onclick=" location.href='deleteForm.jsp?num=<%=bb.getNum() %>&pageNum=<%=pageNum %>';"
+          >
+          
+          <input type="button" value="답글쓰기" 
+                onclick="location.href='reWriteForm.jsp?num=<%=bb.getNum() %>&re_ref=<%=bb.getRe_ref() %>&re_lev=<%=bb.getRe_lev() %>&re_seq=<%=bb.getRe_seq() %>';"
+          >
+          
           <input type="button" value="목록으로" 
                  onclick="location.href='list.jsp?pageNum=<%=pageNum %>';" >        
         </td>
