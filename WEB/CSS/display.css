@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+nav li {border: 1px solid red;
+ display: inline-block;
+ width: 150px; height: 30px;
+ text-align: center;}
+nav a {border: 1px solid blue;}
+
+.dis-nn {
+background-color: #909;
+padding: 1em;
+color: #fff;	
+display: none;}
+
+#dis-ul:hover>.dis-nn {
+display: block;}
+
+#sec01:hover>h2 {display: none;}
+
+/* 1. display: inline; */
+#sec01>div {
+border: 1px solid red;
+width: 30%; height: 50px;
+margin: 30px;
+display: inline;}
+
+#sec01>p {
+background-color: #f95;
+width: 25%; height: 40px;
+margin: 0 auto;
+display: inline;}
+
+
+/* 2. display:block; */
+#sec02>*:not(h2) {
+border: 1px solid #050;
+width: 200px;  height: 50px;
+margin: 30px;
+display: block;}
+
+
+
+
+#sec02:hover>*:not(h2) {
+ display: inline;	}
+
+
+/* 3. display:inline-block
+요소로*/
+#sec03>*:not(h2) {
+border: 1px solid #007;
+width: 200px; height: 50px;
+margin: 30px;
+display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
