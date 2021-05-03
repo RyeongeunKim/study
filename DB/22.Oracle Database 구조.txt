@@ -1,0 +1,30 @@
+<<Oracle Database 전체구조>>
+[Database]
+1.Datafiles
+-실제 Data가 저장된 곳
+-Data Dictionary가 저장된 곳
+-Datafile 정보 조회 : v$datafile, v$tempfile
+
+2.Controlfile
+-DB의 무결성을 유지/관리할 수 있는 모든 동기화 정보가 기록된 곳
+ (DB의 논리적/물리적 구조 정보, 마지막 작업 번호 등)
+-DB당 하나 존재함
+-다중화 기능 제공됨(최대 8개까지 다중화 가능, 권장 : 3개)
+-Controlfile 정보 조회 : v$controlfile
+
+3.Redologfiles
+-DB에서 발생된 변경작업의 로그정보(Redo data)가 기록된 곳
+-주목적 : Datafile Recovery(복구)
+-순환형 관리됨, 다중화 기능 제공됨
+-DB당 최소 2개이상의 Redo log group 존재해야함
+-Redo log group에는 최소 1개이상의 member 존재해야함
+-Redologfile 정보 조회 : v$log, v$logfile
+
+4.Parameterfile
+5.Passwordfile
+6.Archived log files(option)
+
+[Instance]
+(SGA)
+
+(B/G proc)
