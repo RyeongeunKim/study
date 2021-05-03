@@ -4,7 +4,7 @@
 <html>
 <body>
 
-	<table width="200" border="1">
+	<table width="200">
 		
 		<tr height="60">
 			<td width="200" align="center"> <a href="#">스노우피크</a></td>

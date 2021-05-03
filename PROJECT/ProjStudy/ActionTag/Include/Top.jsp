@@ -20,7 +20,7 @@
 		<td width="130" align="center">식기류</td>
 		<td width="130" align="center">침낭</td>
 		<td width="130" align="center">테이블</td>
-		<td width="130" align="center">화롯대</td>
+		<td width="140" align="center"><%=request.getParameter("id") %></td>
 	</tr>
 	</table>
 </body>
