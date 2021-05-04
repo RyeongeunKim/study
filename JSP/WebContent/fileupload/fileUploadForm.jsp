@@ -22,9 +22,11 @@
 	       <td>파일</td><td><input type="file" name="filename"></td>
 	    </tr>
 	    <tr>
-	      <td colspan="2"></td>
-	        <input type="submit" value="파일업로드">
-	    </tr>
+	       <td colspan="2">
+	         <input type="submit" value="파일업로드">
+	       </td>
+	    </tr>  
+	    
 	  </table>
   </form>
   

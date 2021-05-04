@@ -11,21 +11,22 @@
   
   <h2> 게시판 답글쓰기 </h2>
   <%
-  	// 전달된 파라미터값 저장(num,re_ref,re_lev,re_seq)
-  	
-  	int num = Integer.parseInt(request.getParameter("num"));
-  	int re_ref = Integer.parseInt(request.getParameter("re_ref"));
-  	int re_lev = Integer.parseInt(request.getParameter("re_lev"));
-  	int re_seq = Integer.parseInt(request.getParameter("re_seq"));
+    // 전달된 파라미터값 저장 (num,re_ref,re_lev,re_seq)
+    
+    int num = Integer.parseInt(request.getParameter("num"));
+    int re_ref = Integer.parseInt(request.getParameter("re_ref"));
+    int re_lev = Integer.parseInt(request.getParameter("re_lev"));
+    int re_seq = Integer.parseInt(request.getParameter("re_seq"));
+  
   %>
   
   <fieldset>
     <form action="reWritePro.jsp" method="post">
-     <input type="hidden" name="num" value="<%=num%>">
-     <input type="hidden" name="re_ref" value="<%=re_ref%>">
-     <input type="hidden" name="re_lev" value="<%=re_lev%>">
-     <input type="hidden" name="re_seq" value="<%=re_seq%>">
-     
+      <input type="hidden" name="num" value="<%=num%>">
+      <input type="hidden" name="re_ref" value="<%=re_ref%>">
+      <input type="hidden" name="re_lev" value="<%=re_lev%>">
+      <input type="hidden" name="re_seq" value="<%=re_seq%>">    
+    
           글쓴이 : <input type="text" name="name"> <br>
           비밀번호 : <input type="password" name="pass"><br>
           제목 : <input type="text" name="subject" value="[답글]"><br>

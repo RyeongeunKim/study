@@ -19,22 +19,18 @@
   
   <%
     System.out.println(bb);
-  	// 글쓴이의 IP주소를 추가적으로 저장
+    // 글쓴이의 IP주소를 추가적으로 저장
     bb.setIp(request.getRemoteAddr());
-  	
-  	// BoardDAO 객체 생성
-  	BoardDAO bdao = new BoardDAO();
-  	
-  	// 답글작성 메서드 - reInsertBoard(bb);
-  	bdao.reInsertBoard(bb);
-  	
-  	// 페이지 이동 - list.jsp 페이지
-  	response.sendRedirect("list.jsp");
-  	
+    
+    // BoardDAO 객체 생성
+    BoardDAO bdao = new BoardDAO();
+    
+    // 답글작성 메서드 - reInsertBoard(bb);
+    bdao.reInsertBoard(bb); 
+    
+    // 페이지 이동 - list.jsp 페이지
+    response.sendRedirect("list.jsp");    
   %>
-  
-  
-  
   
   
   

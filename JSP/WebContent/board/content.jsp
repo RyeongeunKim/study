@@ -53,7 +53,9 @@
       </tr>
       <tr>
         <td>첨부파일</td>
-        <td colspan="3"></td>
+        <td colspan="3">
+          <a href="../upload/<%=bb.getFile()%>"><%=bb.getFile() %></a> 
+        </td>
       </tr>
       <tr>
         <td>글내용</td>

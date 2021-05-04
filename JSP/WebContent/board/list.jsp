@@ -45,13 +45,13 @@
    //ArrayList boardListAll = bdao.getBoardList(); 
    
    // 디비에 저장된 모든 글중에서 원하는 만큼만 가져오기(페이지 사이즈)
-  ArrayList boardList = bdao.getBoardList(startRow,pageSize); 
+  ArrayList<BoardBean> boardList = bdao.getBoardList(startRow,pageSize); 
    
   %>
   <h2> ITWILL 게시판 글목록 [총 : <%=cnt %>개] </h2>
   
    <h3><a href="writeForm.jsp">글쓰기</a></h3>
-  
+   <h3><a href="fWriteForm.jsp">파일 글쓰기</a></h3>
   <table border="1">
     <tr>
       <td>번호</td>
@@ -64,22 +64,25 @@
     
     <%
      for(int i=0;i<boardList.size();i++){
-    	  BoardBean bb = (BoardBean) boardList.get(i);
+    	 //업캐스팅 다운캐스팅 필요 없음 : 
+    	 //이유 -> ArrayList배열객체 생성시 제네릭 타입을 BoardBean으로 설정해서 생성했기때문
+    	  BoardBean bb = boardList.get(i);
+    		
     %>
      <tr>
       <td><%=bb.getNum() %></td>
       <td>
-       <%
+      <%
        // 답글일때만 이미지 보여주기
        int wid = 0;
        if(bb.getRe_lev()>0){
     	   wid = 10 * bb.getRe_lev();
-       %>
+      %>
        <img src="level.gif" height="15" width="<%=wid%>">
        <img src="re.gif">
-       <%
+      <%
        }
-       %>
+      %>
        <a href="content.jsp?num=<%=bb.getNum()%>&pageNum=<%=pageNum%>"><%=bb.getSubject() %></a>
       </td>
       <td><%=bb.getName() %></td>
