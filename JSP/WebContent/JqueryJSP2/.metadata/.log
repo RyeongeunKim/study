@@ -1,0 +1,712 @@
+!SESSION 2021-05-06 13:11:11.163 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_281
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-05-06 13:11:49.265
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\ITWILL'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2021-05-06 13:11:52.346
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 2.0.4.v20170307-1435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:93)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+!SESSION 2021-05-06 13:14:42.955 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_281
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.361
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.buildship_3.1.4.v20200326-1743
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.361
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.cft.server.core.feature_1.2.3.v201805291812
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.361
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.cft.server.ui.feature_1.0.10.v201805291812
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.361
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.common.doc.user_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.361
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.connectivity.doc.user_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.377
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.connectivity.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.377
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.connectivity.oda.designer.core.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.377
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.connectivity.oda.designer.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.377
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.connectivity.oda.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.377
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.doc.user_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.377
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.enablement.apache.derby.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.377
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.enablement.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.377
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.enablement.hsqldb.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.377
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.enablement.ibm.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.377
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.enablement.ingres.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.377
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.enablement.jdbc.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.377
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.enablement.jdt.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.392
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.enablement.msft.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.392
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.enablement.mysql.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.392
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.enablement.oda.designer.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.392
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.enablement.oda.feature_1.14.102.201911221603
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.392
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.enablement.oracle.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.392
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.enablement.postgresql.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.408
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.enablement.sap.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.408
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.enablement.sdk.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.408
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.enablement.sqlite.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.408
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.enablement.sybase.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.408
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.intro_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.408
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.modelbase.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.408
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.sdk.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.408
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.sqldevtools.data.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.424
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.sqldevtools.ddl.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.424
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.sqldevtools.ddlgen.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.424
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.sqldevtools.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.424
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.sqldevtools.parsers.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.424
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.sqldevtools.results.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.424
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.sqldevtools.schemaobjecteditor.feature_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.424
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.14.102.201911221603
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.424
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.datatools.sqltools.doc.user_1.14.102.201911250848
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.424
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.e4.rcp_4.16.0.v20200604-0951
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.424
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.ecf.core.feature_1.5.600.v20200317-1602
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.424
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.ecf.core.ssl.feature_1.1.400.v20200317-1602
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.439
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.ecf.filetransfer.feature_3.14.800.v20200317-1602
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.439
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.ecf.filetransfer.httpclient45.feature_1.0.400.v20200522-1203
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.439
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.ecf.filetransfer.ssl.feature_1.1.300.v20200317-1602
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.439
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.eclemma.feature_3.1.3.202003132300
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.439
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.egit.mylyn_5.8.0.202006091008-r
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.439
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.egit_5.8.0.202006091008-r
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.439
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.emf.codegen.ecore.ui_2.22.0.v20200324-0947
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.439
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.emf.codegen.ecore_2.22.0.v20200324-0947
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.439
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.emf.codegen.ui_2.22.0.v20200424-0451
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.439
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.emf.codegen_2.20.0.v20200324-0932
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.439
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.emf.common.ui_2.17.0.v20190507-0402
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.455
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.emf.common_2.19.0.v20200324-0932
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.455
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.emf.converter_2.15.0.v20200324-0723
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.470
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.emf.databinding.edit_1.7.0.v20190323-1059
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.470
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.emf.databinding_1.7.0.v20190323-1059
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.470
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.emf.ecore.editor_2.17.0.v20190528-0725
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.470
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.emf.ecore.edit_2.14.0.v20190822-1451
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.470
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.emf.ecore_2.22.0.v20200519-1135
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.470
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.emf.edit.ui_2.19.0.v20200205-0529
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.470
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.emf.edit_2.16.0.v20190920-0401
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.470
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.emf.mapping.ecore.editor_2.14.0.v20190528-0725
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.470
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.emf.mapping.ecore_2.12.0.v20190323-1059
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.470
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.emf.mapping.ui_2.13.0.v20190323-1059
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.470
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.emf.mapping_2.13.0.v20190323-1059
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.470
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.emf_2.22.0.v20200519-1135
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.486
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.epp.mpc_1.8.3.v20200526-1554
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.486
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.epp.package.common.feature_4.16.0.20200615-1200
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.502
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.epp.package.jee.feature_4.16.0.20200615-1200
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.502
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.equinox.p2.core.feature_1.6.600.v20200511-1530
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.502
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.equinox.p2.discovery.feature_1.2.600.v20200521-1852
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.517
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.equinox.p2.extras.feature_1.4.800.v20200511-1530
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.517
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.equinox.p2.rcp.feature_1.4.800.v20200602-1138
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.517
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.equinox.p2.user.ui_2.4.800.v20200602-1138
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.517
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.help_2.3.200.v20200604-0540
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.517
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jdt_3.18.400.v20200604-0540
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.517
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jgit.gpg.bc_5.8.0.202006091008-r
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.517
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jgit.http.apache_5.8.0.202006091008-r
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.517
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jgit.ssh.apache_5.8.0.202006091008-r
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.517
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jgit.ssh.jsch_5.8.0.202006091008-r
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.517
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jgit_5.8.0.202006091008-r
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.533
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jpt.common.eclipselink.feature_1.3.200.v201903221940
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.533
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jpt.common.feature_1.5.100.v201903221940
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.533
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jpt.jaxb.eclipselink.feature_1.4.202.v201903221940
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.533
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jpt.jaxb.feature_1.5.100.v201903221940
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.533
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jpt.jpa.eclipselink.feature_3.4.101.v201903221940
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.533
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jpt.jpa.feature_3.6.0.v202002052252
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.533
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jsf.feature_3.10.0.v202003241443
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.533
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.common.fproj.enablement.jdt_3.13.0.v202005211433
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.533
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.enterprise_core.feature_3.18.0.v202003201241
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.533
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.enterprise_ui.feature_3.18.0.v202003201241
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.549
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.enterprise_userdoc.feature_3.6.100.v201908261515
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.549
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.jsf.apache.trinidad.tagsupport.feature_2.6.1.v201902121810
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.549
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.server_adapters.ext.feature_3.3.700.v201910252115
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.549
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.server_adapters.feature_3.2.600.v201910252115
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.549
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.server_core.feature_3.4.400.v201910252115
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.549
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.server_ui.feature_3.4.400.v201910252115
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.549
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.server_userdoc.feature_3.3.300.v201901310132
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.549
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.webpageeditor.feature_2.9.1.v202003241443
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.549
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.web_core.feature_3.18.0.v202003201241
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.549
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.web_js_support.feature_3.18.0.v202005181429
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.549
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.web_ui.feature_3.18.0.v202005181429
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.549
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.web_userdoc.feature_3.6.1.v201908261515
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.564
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.ws.axis2tools.feature_1.1.401.v201909051708
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.564
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.ws.cxf.feature_1.1.600.v202004091240
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.564
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.ws.jaxws.dom.feature_1.0.303.v201909051708
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.564
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.ws.jaxws.feature_1.2.501.v201909051708
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.564
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.jst.ws.jaxws_userdoc.feature_1.0.403.v201909051708
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.564
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.m2e.feature_1.16.0.20200610-1735
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.564
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.m2e.logback.feature_1.16.0.20200318-1040
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.564
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.m2e.sse.ui.feature_1.16.0.20200514-2159
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.564
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.m2e.wtp.feature_1.4.4.20200220-1005
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.564
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.m2e.wtp.jaxrs.feature_1.4.4.20200220-1005
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.564
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.m2e.wtp.jpa.feature_1.4.4.20200220-1005
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.564
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.m2e.wtp.jsf.feature_1.4.4.20200220-1005
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.564
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.mylyn.bugzilla_feature_3.25.1.v20200512-0316
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.564
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.mylyn.commons.identity_1.17.1.v20200511-1958
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.564
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.mylyn.commons.notifications_1.17.1.v20200511-1958
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.564
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.mylyn.commons.repositories_1.17.1.v20200511-1958
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.564
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.mylyn.commons_3.25.1.v20200511-1958
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.580
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.mylyn.context_feature_3.25.1.v20200512-2113
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.580
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.mylyn.discovery_3.25.1.v20200511-1958
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.580
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.mylyn.ide_feature_3.25.1.v20200512-2113
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.580
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.mylyn.java_feature_3.25.1.v20200512-2113
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.580
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.mylyn.monitor_3.25.1.v20200511-1958
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.580
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.mylyn.tasks.ide_3.25.1.v20200512-0316
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.595
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.mylyn.team_feature_3.25.1.v20200512-2113
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.611
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.mylyn.wikitext.editors_feature_3.0.36.202002070035
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.611
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.mylyn.wikitext_feature_3.0.36.202002070035
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.611
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.mylyn_feature_3.25.1.v20200514-1748
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.611
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.oomph.p2_1.16.0.v20200405-0717
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.611
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.oomph.setup.core_1.17.0.v20200606-0914
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.611
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.oomph.setup_1.17.0.v20200606-0914
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.611
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.pde_3.14.400.v20200604-0540
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.611
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.platform_4.16.0.v20200604-0951
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.611
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.rcp_4.16.0.v20200604-0951
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.627
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.tips.feature_0.2.1000.v20200522-1444
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.627
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.tm.terminal.connector.local.feature_4.6.0.202002152032
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.627
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.tm.terminal.connector.ssh.feature_4.6.0.202001311822
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.627
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.tm.terminal.connector.telnet.feature_4.6.1.202005101728
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.627
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.tm.terminal.control.feature_4.6.1.202005200056
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.627
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.tm.terminal.feature_4.6.0.202001311822
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.627
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.tm.terminal.view.feature_4.6.1.202005101600
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.627
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.userstorage_1.2.0.v20191120-1614
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.627
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wildwebdeveloper.feature_0.10.0.202006021616
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.627
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wildwebdeveloper.xml.feature_0.10.0.202006021616
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.627
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.common.fproj_3.7.2.v201903222010
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.627
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.common_core.feature_3.10.100.v201904082145
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.627
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.common_ui.feature_3.11.0.v201905071717
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.642
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.json_core.feature_1.1.8.v201909302219
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.642
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.json_ui.feature_1.1.8.v202004230532
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.658
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.server_adapters.feature_3.2.801.v201912051849
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.658
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.server_core.feature_3.3.800.v201910252115
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.658
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.server_ui.feature_3.3.900.v201910252115
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.658
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.server_userdoc.feature_3.3.300.v201901310132
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.658
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.web_core.feature_3.18.0.v202005180147
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.658
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.web_js_support.feature_3.18.0.v202005181123
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.658
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.web_ui.feature_3.18.0.v202005251731
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.658
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.web_userdoc.feature_3.18.0.v202004271556
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.658
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.ws_core.feature_3.8.0.v201910301957
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.658
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.ws_ui.feature_3.9.100.v202004082157
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.658
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.ws_userdoc.feature_3.1.501.v201909051708
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.658
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.xml.xpath2.processor.feature_2.0.302.v201909031400
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.658
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.xml_core.feature_3.18.0.v202005180122
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.658
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.xml_ui.feature_3.18.0.v202005192253
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.658
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.xml_userdoc.feature_3.18.0.v202004271556
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.658
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.eclipse.wst.xsl.feature_1.3.900.v202005251734
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:14:44.658
+!MESSAGE Unable to find feature.xml in directory: C:\eclipse_jsp\features\org.sonatype.m2e.mavenarchiver.feature_0.17.5.202002191804
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:15:09.218
+!MESSAGE Cannot backup current configuration
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:15:09.281
+!MESSAGE Could not rename configuration temp file
+
+!ENTRY org.eclipse.update.configurator 4 0 2021-05-06 13:15:09.281
+!MESSAGE Unable to save configuration file "C:\eclipse_jsp\configuration\org.eclipse.update\platform.xml.tmp"
+!STACK 0
+java.io.IOException: Unable to save configuration file "C:\eclipse_jsp\configuration\org.eclipse.update\platform.xml.tmp"
+	at org.eclipse.update.internal.configurator.PlatformConfiguration.save(PlatformConfiguration.java:690)
+	at org.eclipse.update.internal.configurator.PlatformConfiguration.save(PlatformConfiguration.java:574)
+	at org.eclipse.update.internal.configurator.PlatformConfiguration.startup(PlatformConfiguration.java:714)
+	at org.eclipse.update.internal.configurator.ConfigurationActivator.getPlatformConfiguration(ConfigurationActivator.java:404)
+	at org.eclipse.update.internal.configurator.ConfigurationActivator.initialize(ConfigurationActivator.java:136)
+	at org.eclipse.update.internal.configurator.ConfigurationActivator.start(ConfigurationActivator.java:69)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:774)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:767)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:724)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponent.createInstance(ServiceComponent.java:493)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.createInstance(ServiceComponentProp.java:270)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.build(ServiceComponentProp.java:331)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:620)
+	at org.eclipse.equinox.internal.ds.ServiceReg.getService(ServiceReg.java:53)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse$1.run(ServiceFactoryUse.java:212)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:210)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.getService(ServiceFactoryUse.java:111)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceConsumer$2.getService(ServiceConsumer.java:45)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.getService(ServiceRegistrationImpl.java:496)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.getService(ServiceRegistry.java:461)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.getService(BundleContextImpl.java:619)
+	at org.osgi.util.tracker.ServiceTracker.addingService(ServiceTracker.java:414)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:915)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:862)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:801)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.register(ServiceRegistrationImpl.java:127)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.registerService(ServiceRegistry.java:225)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.registerService(BundleContextImpl.java:464)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.registerService(InstanceProcess.java:536)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponents(InstanceProcess.java:260)
+	at org.eclipse.equinox.internal.ds.Resolver.buildNewlySatisfied(Resolver.java:473)
+	at org.eclipse.equinox.internal.ds.Resolver.enableComponents(Resolver.java:217)
+	at org.eclipse.equinox.internal.ds.SCRManager.performWork(SCRManager.java:816)
+	at org.eclipse.equinox.internal.ds.SCRManager$QueuedJob.dispatch(SCRManager.java:783)
+	at org.eclipse.equinox.internal.ds.WorkThread.run(WorkThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-05-06 13:15:16.531
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\ITWILL'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2021-05-06 13:15:19.775
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 2.0.4.v20170307-1435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:93)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+!SESSION 2021-05-06 13:56:50.449 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_281
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-05-06 13:56:56.336
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\ITWILL'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2021-05-06 13:56:59.464
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 2.0.4.v20170307-1435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:93)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+!SESSION 2021-05-06 13:57:10.250 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_281
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-05-06 13:57:16.252
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\ITWILL'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2021-05-06 13:57:19.473
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 2.0.4.v20170307-1435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:93)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
