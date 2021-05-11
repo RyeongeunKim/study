@@ -1,11 +1,11 @@
-	1. 이미지 삽입
+1. 이미지 삽입
 
 <img src="이미지주소" alt="대체문자열">
 
 src : 이미지가 저장된 주소의 URL 주소
 alt : 이미지가 로딩될 수 없는 상황에서 이미지 대신 나타날 문자열을 설정
 
-	2. 이미지 크기 설정
+2. 이미지 크기 설정
 
 1) style 속성
 
@@ -27,7 +27,7 @@ alt : 이미지가 로딩될 수 없는 상황에서 이미지 대신 나타날 
 
 <img src="/examples/images/img_flag.png" alt="html size" width="320" height="214">
 
-	3. 이미지 테두리(border) 설정
+3. 이미지 테두리(border) 설정
 
 <img src="/examples/images/img_flag.png" alt="이미지 테두리"
 
