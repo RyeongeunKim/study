@@ -1,0 +1,34 @@
+P510~ 
+https://tomcat.apache.org/
+
+EL (Expression Language) : 표현언어 -> JSP 표현식을 다른형태로 사용
+
+JSTL (JSP Standard Tag Library) : jsp에서 자주 사용하는 기능을 모아놓은 태그
+ - 자카르타 회사에서 제공하는 커스텀 태그 라이브러리
+ 
+ - CORE 라이브러리 (기본기능)
+  -> 변수선언,조건문,반복문....
+  -> 페이지 이동
+  
+ - Fommatting 라이브러리 
+  -> 국제화 : 다국어 처리
+  -> 형식화 : 날짜,숫자 처리
+  
+ - DB라이브러리 
+  -> CRUD 기능
+  
+ - XML라이브러리
+  -> XML 문서 처리   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
