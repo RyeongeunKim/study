@@ -39,7 +39,7 @@
 
 [Instance]
 (SGA) - 공유 가능 메모리 구조
-1.Shared pool
+1.Shared pool => 사전 준비 작업 공간
 1)Library cache
 -최근에 실행된 SQL과 실행계획이 저장된 곳
  (대소문자, 공백까지 일치해야 hit됨)
@@ -47,14 +47,24 @@
 
 2)Data dictionary cache
 -최근에 사용된 DB 정의정보가 저장된 곳
+ (object, user, file, 제약조건, 권한 등)
+-LRU 알고리즘으로 관리됨
 
-2.DB buffer cache
+2.DB buffer cache => 실제 작업 공간
+-최근에 사용된 Data block이 저장된 곳
+-LRU 알고리즘으로 관리됨
+
 3.Redo log buffer
+-DB에서 발생된 변경 작업의 로그정보가 기록되는 곳
+-순환형으로 관리됨
 
 (B/G proc)
-
-
-
-
-
-
+1.PMON - User proc fail 시 트랜잭션 롤백 및 선점하고 있던 자원/Lock 해제함
+2.SMON - Instance fail(=DB 비정상종료) 후 DB 재시작 시 동기화를 맞춰줌
+3.DBWR - 체크포인트 발생 시 DB buffer cache의 dirty block을 Datafile로 기록함
+4.LGWR - 커밋(commit) 발생 시 Redo log buffer의 로그정보를 Redologfile로 기록함
+5.CKPT - 체크포인트 발생 시 DBWR에게 알림
+	 Datafile 헤더와 Controlfile에 마지막 체크포인트 번호 갱신함
+6.ARC(option) - DB가 Archive log mode인 경우 활성화됨
+ 		(DB가 Noarchive log mode인 경우 비활성화됨)
+		Redologfile에 로그스위치 발생 시 Archived log file 생성함
