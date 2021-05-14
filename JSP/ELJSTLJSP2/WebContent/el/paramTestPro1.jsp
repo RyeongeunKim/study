@@ -58,7 +58,14 @@
   <%-- <c:forEach var="i" begin="0" end="2" step="1">
      ${paramValues.hobby[${i}] }
   </c:forEach> --%>
+  <hr><hr>
   
+  <c:forEach var="i" begin="0" end="2" step="1">
+     ${paramValues.hobby[i] }
+  </c:forEach>
+  
+  
+  <hr><hr>
   <!--
      items속성에 배열의 형태를 전달, 각각의 요소만큼 반복
        해당요소는 var 변수에 저장 -> el표현식으로 반복문에서 사용가능
