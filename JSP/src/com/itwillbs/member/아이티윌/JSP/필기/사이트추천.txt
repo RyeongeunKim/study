@@ -1,9 +1,0 @@
-* 자바스크립트
-
-https://ko.javascript.info/
-
-https://javascript30.com/
-
-* 다이어그램
-
-https://www.diagrams.net/
