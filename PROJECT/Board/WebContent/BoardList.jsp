@@ -38,8 +38,8 @@
 		count = bdao.getAllCount();
 		
 		//현재 페이지에 보여줄 시작 번호를 설정 =데이터 베이스에서 불러올 시작 번호 
-		int startRow = (currentPage-1)*pageSize + 1;
-		int endRow = currentPage * pageSize;
+		int startRow = (currentPage-1)*pageSize;
+		int endRow = currentPage * pageSize+1;
 		
 		//최신글 10개를 기준으로  게시글을 리턴 받아주는 메소드 호출
 		Vector<BoardBean> vec = bdao.getAllBoard(startRow , endRow);
