@@ -19,18 +19,21 @@
 %>
 
 	<table width="1000">
-	<tr height="50">
+	<tr height="70">
 		<td colspan="4">	
-			<img alt="logo" src="img/logo.png" height="65">
+			<a href="RentMain.jsp"><img alt="logo" src="img/logo.png" height="65"></a>
 		</td>
 		<td align="center" width="200">
-			<font size="3"><a href="#" style="text-decoration:none">HOME</a></font>
+			<font size="3"><a href="RentMain.jsp" style="text-decoration:none">HOME</a></font>
 		</td>
 		<td align="center" width="200">
 			<font size="3"><a href="#" style="text-decoration:none">회사소개</a></font>
 		</td>
 		<td align="center" width="200">
-			<font size="3"><a href="#" style="text-decoration:none">오피스</a></font>
+			<font size="3"><a href="RentMain.jsp?center=Office.jsp" style="text-decoration:none">오피스</a></font>
+		</td>
+		<td align="center" width="200">
+			<font size="3"><a href="RentMain.jsp?center=Reserve.jsp" style="text-decoration:none">예약하기</a></font>
 		</td>
 		<td align="center" width="200">
 			<font size="3"><a href="#" style="text-decoration:none">고객센터</a></font>
@@ -39,10 +42,6 @@
  			<%=id %> 
 		</td>
 	</tr>
-	<tr height="50">
-	
-	</tr>
-
 	</table>
 
 </body>
