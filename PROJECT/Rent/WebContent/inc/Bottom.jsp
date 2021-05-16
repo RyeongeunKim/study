@@ -8,6 +8,14 @@
 </head>
 <body>
 
-<h1>re</h1>
+	<table width="800" align="center">
+	<tr height="100">
+		<td rowspan="3" align="center">	
+			<img alt="logo" src="../img/logo.png" height="65">
+		</td>
+		<td>이용약관<br>사업자 등록번호<br>개인정보처리방침</td>
+	</tr>
+	</table>
+
 </body>
 </html>

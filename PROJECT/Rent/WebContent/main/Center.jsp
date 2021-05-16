@@ -9,9 +9,11 @@
 <body>
 
 	<table width="1000">
-	<tr height="50">
-		<td></td>
-	</tr>
+		<tr height="600">
+			<td align="center">
+				<img alt="main" src="../img/main1.jpg" width="1000">
+			</td>
+		</tr>
 	</table>
 
 </body>

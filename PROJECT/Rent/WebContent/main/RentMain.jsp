@@ -18,7 +18,7 @@
 		<table width="1000" >
 		<!--Top 부분 -->
 			<tr height="70" align="center">
-				<td align="center" width="1000"><jsp:include page="Top.jsp"/></td>
+				<td align="center" width="1000"><jsp:include page="../inc/Top.jsp"/></td>
 			</tr>
 		</table>
 		
@@ -32,7 +32,7 @@
 		<!-- Bottom 부분 -->
 		<table>
 			<tr height="100" align="center">
-				<td align="center" width="1000"><jsp:include page="Bottom.jsp"/></td>
+				<td align="center" width="1000"><jsp:include page="../inc/Bottom.jsp"/></td>
 			</tr>
 		</table>
 
