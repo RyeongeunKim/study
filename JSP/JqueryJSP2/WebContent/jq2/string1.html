@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 1. 라이브러리 추가 (파일/CDN)-->
+<script src="../js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+   $(document).ready(function(){
+	   // 비동기방식 처리
+	   // Ajax(Asynchronous JavaScript and Xml)
+	   //-> 비동기방식의 JavaScript, Xml
+	   // * Xml : 데이터 타입- 데이터를 태그의 형태로 저장
+	   // * 비동기방식 : 화면전환 없이 클라이언트, 서버의 데이터를 교환방식
+	   // => 페이지 이동횟수 감소, 깔끔한 동작의 구현
+	   // => 페이지 이동O(화면에 표시 X), 한 페이지에 여러개의 비동기방식의 처리 효율 감소될수 있음 
+
+
+	   // $.ajax() : 비동기방식의 페이지 이동을 하는 함수
+// 	   $.ajax({
+// 		   url:"전송페이지(액션페이지)",
+// 		   type:"전송방식(get,post)",
+// 		   data:"전송할 데이터",
+// 		   dataType:"요청한 데이터타입(페이지 갔다왔을때 데이터 타입)"
+// 		             "(html,xml,json,text....)",
+//            success:function(result){ //페이지 이동후 가져온 데이터
+//         	   //페이지 이동성공시 실행하는 코드
+//            },
+//            error:function(){
+//         	   //페이지 이동실패시 실행하는 코드
+//            },
+//            complete:function(){
+//         	   //Ajax가 완전히 실행했을때 처리하는 코드
+//            } 		   
+// 	   });
+	   
+	   
+	   $.ajax('string1.jsp',{
+		   success: function(result){
+			   //alert("정상 처리 완료!");
+			   //alert(result);
+			   $('body').append(result);
+		   }
+	   });
+	   
+	   
+   }); 
+</script>
+
+</head>
+<body>
+	<h1>WebContent/jq2/string1.html</h1>
+
+
+
+
+
+</body>
+</html>
