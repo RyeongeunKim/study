@@ -23,6 +23,7 @@ public class UserDAO {
 		}
 	}
 	
+	
 	public int login(String userID, String userPassword){
 		String SQL = "select userPassword from user where userID=?";
 		try {
