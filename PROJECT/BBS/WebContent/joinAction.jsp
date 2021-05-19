@@ -35,7 +35,7 @@
 			script.println("alert('입력이 안 된 사항이 있습니다.')");
 			script.println("history.back()");
 			script.println("</script>");
-		}else{
+		} else{
 			
 		UserDAO userDAO = new UserDAO();
 		int result = userDAO.join(user);
@@ -46,8 +46,7 @@
 			script.println("alert('이미 존재하는 아이디입니다.')");
 			script.println("history.back()");
 			script.println("</script>");
-		}
-		else {
+		} else {
 			session.setAttribute("userID", user.getUserID());
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
@@ -55,7 +54,7 @@
 			script.println("</script>");
 		}
 	}
-
+	
 	%>
 </body>
 </html>

@@ -10,6 +10,29 @@
 <title>JSP 게시판 웹 사이트</title>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
+ <script type="text/javascript">
+    function winopen(){
+
+    	//버튼 클릭시 실행 -> 새창 열기 
+    	//alert("클릭");
+    	
+    	//id값이 입력되어있는지 없는지 체크
+    	if(document.fr.userID.value == ""){
+    		alert("아이디를 입력하세요.");
+    		document.fr.userID.focus();
+    		return;
+    	}
+    	
+    	// html코드의 값을 가져오기
+    	var userID = document.fr.userID.value;
+    	//alert(userid);
+    	
+    	//id 값이 있을때 -> 새창열기
+    
+    	window.open("joinIDCheck.jsp?userID="+userID,"","width=300,height=50,left=120, top=120, location=no");    	
+    	
+    }
+ </script>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -46,11 +69,11 @@
 		<div class="col-lg-4"></div>
 		<div class="col-lg-4">
 			<div class="jumbotron" style="padding-top: 20px;">
-				<form method="post" action="joinAction.jsp">
+				<form method="post" action="joinAction.jsp" name="fr">
 					<h3 style="text-align: center;">회원가입 화면</h3>
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="아이디" name="userID" maxlength="20"><br>
-						<button class="btn btn-primary" onclick="registerCheckfunction();" type="button">중복체크</button>
+						<button class="btn btn-primary" onclick="winopen();" type="button">중복체크</button>
 					</div>
 					<div class="form-group">
 						<input type="password" class="form-control" placeholder="비밀번호" name="userPassword" maxlength="20">

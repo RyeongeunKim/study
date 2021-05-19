@@ -4,6 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 
 public class UserDAO {
 	
@@ -59,6 +65,28 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 		return -1; //데이터베이스 오류
+	}
+	
+	// idCheck(id)
+	public int idCheck(String userID){
+		int result =0;
+		try {
+			String SQL = "select * from user where userID=?";
+			pstmt = conn.prepareStatement(SQL);	
+			pstmt.setString(1, userID);
+			rs = pstmt.executeQuery();
+
+			if(rs.next()){
+				result = 1; //회원이 있음 -> 해당아이디 X
+			}else{
+				result = 0; //회원이 없음 -> 해당아이디 O
+			}
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+		return result;
 	}
 
 }
