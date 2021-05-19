@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+
+  $(function(){
+	// json2.jsp/json2.json 파일에서  JSON 형태의 데이터를 가져와서
+	// 화면에 출력
+	  
+	$.getJSON("json2.jsp",function(data){
+		console.log(data);
+		//JSON데이터 각각 접근
+		$.each(data,function(index,item){
+			// 화면에 출력
+			$('body').append(index+"번째 정보 >> "+item.name+","+item.gender+","+item.age+"<br>");
+		});
+	});
+	// table에 json데이터 추가 "json2.json"
+	
+	$.getJSON("json2.json",function(data){
+		$.each(data,function(index,item){
+			// 화면에 출력
+			var t ="";
+			t+="<tr>";
+			t+="<td>"+item.name+"</td>";
+			t+="<td>"+item.gender+"</td>";
+			t+="<td>"+item.age+"</td>";
+			t+="</tr>";
+			
+			//$('table').append("<tr><td>"+item.name+"</td></tr>");
+			$('table').append(t);
+			
+		});
+	});
+	
+	
+	
+	  
+  });
+
+</script>
+
+</head>
+<body>
+  <h1>WebContent/jq2/json2.html</h1>
+  
+  <table border="1">
+    <tr>
+      <td>이름</td>
+      <td>나이</td>
+      <td>성별</td>
+    </tr>
+  </table>
+  
+
+</body>
+</html>

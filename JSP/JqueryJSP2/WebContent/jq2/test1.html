@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+	  $.ajax({
+		  url:"test1.jsp",
+		  success:function(data){
+			  alert("비동기방식 페이지 이동 성공");
+			  
+			  $(data).find('data').each(function(){
+				    //var wfKor = $(this).find('wfKor').text();
+				    var temp = $(this).find('temp').text();
+				   //$('body').append("날씨 : "+wfKor+"<br>");
+				   $('body').append("온도 : "+temp+"<br>");
+			  });
+			  
+		  }	  	  
+		  
+	  });
+  });
+</script>
+
+
+</head>
+<body>
+  <h1>날씨정보(xml)테스트</h1>
+  
+
+</body>
+</html>

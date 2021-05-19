@@ -59,7 +59,7 @@ public class TestServlet extends HttpServlet {
 		// <jsp:forward> - 사용불가 (JSP 페이지에서만 사용가능)
 		
 		RequestDispatcher dis 
-		   = req.getRequestDispatcher("/jstl/set2.jsp");
+		   = req.getRequestDispatcher("/jstl/core/set2.jsp");
 		
 		dis.forward(req, resp);
 	}
