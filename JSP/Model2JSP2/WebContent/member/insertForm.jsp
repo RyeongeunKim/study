@@ -16,9 +16,9 @@
   
   <fieldset>
     <legend> 아이티윌 회원가입 페이지 </legend>
-    <form action="insertPro.jsp" method="post">
+    <form action="./MemberJoinAction.me" method="post">
       아이디 : <input type="text" name="id"><br>
-      비밀번호 : <input type="password" name="pw"><br>
+      비밀번호 : <input type="password" name="pass"><br>
       이름 : <input type="text" name="name"><br>
       나이 : <input type="number" name="age"><br>
       성별 : <input type="radio" name="gender" value="남"> 남
