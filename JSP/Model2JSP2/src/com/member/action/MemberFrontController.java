@@ -73,8 +73,6 @@ public class MemberFrontController extends HttpServlet{
 				dis.forward(request, response);
 			}
 		}
-		
-		
 		/*******************3.페이지 주소 이동********************************/
 		
 		
