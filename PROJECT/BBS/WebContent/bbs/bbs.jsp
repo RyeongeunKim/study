@@ -82,13 +82,13 @@
 	</nav>
 	<div class="container">
 		<div class="row">
-			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-				<thead>
+			<table class="table" style="text-align: center; border: 1px solid #dddddd">
+				<thead class="thead-dark">
 					<tr>
-						<th style="background-color: #eeeeee; text-align: center;">번호</th>
-						<th style="background-color: #eeeeee; text-align: center;">제목</th>
-						<th style="background-color: #eeeeee; text-align: center;">작성자</th>
-						<th style="background-color: #eeeeee; text-align: center;">작성일</th>
+						<th style="background-color: #000000; color: white; text-align: center;">번호</th>
+						<th style="background-color: #000000; color: white; text-align: center;">제목</th>
+						<th style="background-color: #000000; color: white; text-align: center;">작성자</th>
+						<th style="background-color: #000000; color: white; text-align: center;">작성일</th>
 					</tr>
 				</thead>
 				<tbody>

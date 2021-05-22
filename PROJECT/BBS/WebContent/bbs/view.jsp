@@ -84,10 +84,10 @@
 	</nav>
 	<div class="container">
 		<div class="row">
-			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-				<thead>
+			<table class="table" style="text-align: center; border: 1px solid #dddddd">
+				<thead class="thead-dark">
 					<tr>
-						<th colspan="3" style="background-color: #eeeeee; text-align: center;">게시판 글 보기</th>					
+						<th colspan="3" style="background-color: #000000; color: white; text-align: center;">게시판 글 보기</th>					
 					</tr>
 				</thead>
 				<tbody>

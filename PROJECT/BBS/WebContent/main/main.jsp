@@ -9,6 +9,14 @@
 <link rel="stylesheet" href="../css/bootstrap.css">
 <link rel="stylesheet" href="../css/custom.css">
 <title>드림오피스</title>
+	<style type="text/css">
+		.jumbotron{
+			background-image: url("../images/main3.jpg");
+			background-size: cover;
+			text-shadow: black 0.2em 0.2em 0.2em;
+			color: white;
+		}
+	</style>
 </head>
 <body>
 	<%
@@ -70,10 +78,10 @@
 	</nav>
 	<div class="container">
 		<div class="jumbotron">
-			<div class="container">
-				<h1> 웹 사이트 소개 </h1>
-				<p> 사이트 소개하는 문단 </p>
-				<p><a class="btn btn-primary btn-pull" href="#" role="button"> 자세히 알아보기 </a></p>
+	<div class="jumbotron">
+				<h1 class="text-center">드림 오피스를 소개합니다.</h1>
+				<p class="text-center">드림 오피스는 효과적인 협업을 위한 공유공간을 제공합니다</p>
+				<p class="text-center"><a class="btn btn-primary btn-lg" href="../bbs/bbs.jsp" role="button">상담 예약하기</a></p>
 			</div>
 		</div>
 	</div>
@@ -83,9 +91,10 @@
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 				<li data-target="#myCarousel" data-slide-to="1"></li>
 				<li data-target="#myCarousel" data-slide-to="2"></li>
+				<li data-target="#myCarousel" data-slide-to="3"></li>
 			</ol>
 			<div class="carousel-inner">
-				<div class="item active">
+				<div class="item">
 					<img src="../images/main1.jpg">
 				</div>
 				<div class="item">
@@ -93,6 +102,9 @@
 				</div>
 				<div class="item">
 					<img src="../images/lounge1.jpg">
+				</div>
+				<div class="item active">
+					<img src="../images/private.jpg">
 				</div>
 			</div>
 			<a class="left carousel-control" href="#myCarousel" data-slide="prev">

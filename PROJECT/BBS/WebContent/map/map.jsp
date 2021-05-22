@@ -71,7 +71,7 @@
 	<div class="container">
 		<div class="jumbotron">
 			<div class="container">
-				<h1 align="center"> 오시는 길 </h1><br>
+				<h2 align="center"> 오시는 길 </h2><br>
 	<div class="container">
 	<div id="map" style="width:100%;height:400px;"></div>
 	
