@@ -50,7 +50,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="../main/main.jsp">메인</a></li>
-				<li><a href="../bbs/bbs.jsp">예약</a></li>
+				<li><a href="../bbs/bbs.jsp">방문예약</a></li>
 				<li><a href="../map/map.jsp">위치</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
@@ -71,7 +71,7 @@
 		<div class="col-lg-4">
 			<div class="jumbotron" style="padding-top: 20px;">
 				<form method="post" action="joinAction.jsp" name="fr">
-					<h3 style="text-align: center;">회원가입 화면</h3><br>
+					<h2 style="text-align: center;">회원가입</h2><br>
 					<div class="d-flex justify-content-end" align="right">
 						<button class="btn btn-primary" onclick="winopen();" type="button">중복체크</button>
 						<input type="text" class="form-control" placeholder="아이디" name="userID" maxlength="20">	

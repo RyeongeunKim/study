@@ -30,7 +30,7 @@ a:hover {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus{ /* 현재 선택된 네비게이션 색상 이벤트 */
 	color: white;
-	background-color: #000000; 
+	background-color: #585858; 
 }
 .navbar-default .navbar-nav > li > a,hover,
 .navbar-default .navbar-nav > li > a:focus{ /* 네비게이션 글자에 마우스를 올렸을 때 */
@@ -58,3 +58,14 @@ a:hover {
 h2 {
 	font-family : 'Hanna';
 } 
+
+.btn-primary {
+    background-color: #000000;
+    border-color: #000000;
+    color: white; }
+    
+.btn-primary:hover {
+    background-color: #000000;
+    border-color: #000000;
+    color: #585858; }
+    

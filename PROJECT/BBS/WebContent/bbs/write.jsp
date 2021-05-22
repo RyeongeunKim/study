@@ -32,7 +32,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="../main/main.jsp">메인</a></li>
-				<li class="active"><a href="bbs.jsp">예약</a></li>
+				<li class="active"><a href="bbs.jsp">방문예약</a></li>
 				<li><a href="../map/map.jsp">위치</a></li>
 			</ul>
 			<%
@@ -82,7 +82,7 @@
 						<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50"></td>
 					</tr>
 					<tr>	
-						<td><textarea class="form-control" placeholder="글 제목" name="bbsContent" maxlength="2048" style="height: 350px;"></textarea></td>
+						<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;"></textarea></td>
 					</tr>
 				</tbody>
 			</table>

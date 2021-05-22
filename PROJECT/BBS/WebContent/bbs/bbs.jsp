@@ -45,7 +45,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="../main/main.jsp">메인</a></li>
-				<li class="active"><a href="bbs.jsp">예약</a></li>
+				<li class="active"><a href="bbs.jsp">방문예약</a></li>
 				<li><a href="../map/map.jsp">위치</a></li>
 			</ul>
 			<%
@@ -109,11 +109,11 @@
 			<% 
 				if(pageNumber != 1){
 			%>
-				<a href="bbs.jsp?pageNumber=<%=pageNumber - 1%>" class="btn btn-success btn-arraw-left">이전</a>
+				<a href="bbs.jsp?pageNumber=<%=pageNumber - 1%>" class="btn btn-primary btn-arrow-left">이전</a>
 			<% 		
 				} if(bbsDAO.nextPage(pageNumber + 1)){
 			%>
-				<a href="bbs.jsp?pageNumber=<%=pageNumber + 1%>" class="btn btn-success btn-arraw-left">다음</a>
+				<a href="bbs.jsp?pageNumber=<%=pageNumber + 1%>" class="btn btn-primary btn-arrow-left">다음</a>
 			<% 
 				}
 			%>

@@ -40,7 +40,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="main.jsp">메인</a></li>
-				<li><a href="../bbs/bbs.jsp">예약</a></li>
+				<li><a href="../bbs/bbs.jsp">방문예약</a></li>
 				<li><a href="../map/map.jsp">위치</a></li>
 			</ul>
 			<%
@@ -77,14 +77,13 @@
 		</div>
 	</nav>
 	<div class="container">
-		<div class="jumbotron">
 	<div class="jumbotron">
 				<h1 class="text-center">드림 오피스를 소개합니다.</h1>
 				<p class="text-center">드림 오피스는 효과적인 협업을 위한 공유공간을 제공합니다</p>
 				<p class="text-center"><a class="btn btn-primary btn-lg" href="../bbs/bbs.jsp" role="button">상담 예약하기</a></p>
 			</div>
 		</div>
-	</div>
+
 	<div class="container">
 		<div id="myCarousel" class="carousel slide" data-ride="darousel">
 			<ol class="carousel-indicators">
