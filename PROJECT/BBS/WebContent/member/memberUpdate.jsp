@@ -21,7 +21,7 @@
 		if(userID == null){
 			session.setAttribute("messageType", "오류메시지");
 			session.setAttribute("messageContent", "현재 로그인이 되어 있지 않습니다.");
-			response.sendRedirect("../index.jsp");
+			response.sendRedirect("..main/main.jsp");
 			return;
 		}
 		User user = new UserDAO().getUser(userID);
@@ -36,12 +36,13 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>	
 			</button>
-			<a class="navbar-brand" href="../main/main.jsp">JSP 게시판 웹 사이트</a>
+			<a class="navbar-brand" href="../main/main.jsp">드림오피스</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="../main/main.jsp">메인</a></li>
-				<li><a href="../bbs/bbs.jsp">게시판</a></li>
+				<li><a href="../bbs/bbs.jsp">예약</a></li>
+				<li><a href="../map/map.jsp">위치</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
