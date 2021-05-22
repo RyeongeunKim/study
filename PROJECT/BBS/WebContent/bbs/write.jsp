@@ -74,7 +74,7 @@
 			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 				<thead>
 					<tr>
-						<th colspan="2" style="background-color: #eeeeee; text-align: center;"></th>
+						<th colspan="2" style="background-color: #eeeeee; text-align: center;"><b>방문예약</b></th>
 					</tr>
 				</thead>
 				<tbody>

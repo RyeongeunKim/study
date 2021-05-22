@@ -42,6 +42,7 @@
 				<li class="active"><a href="main.jsp">메인</a></li>
 				<li><a href="../bbs/bbs.jsp">방문예약</a></li>
 				<li><a href="../map/map.jsp">위치</a></li>
+				<li><a href="../images/gallery.jsp">시설안내</a></li>
 			</ul>
 			<%
 				if(userID == null){
@@ -112,8 +113,14 @@
 			<a class="right carousel-control" href="#myCarousel" data-slide="next">
 				<span class="glyphicon glyphicon-chevron-right"></span>
 			</a>
+	<p align="center">
+	<br>
+	도로명주소 : 부산광역시 부산진구 동천로 109 삼한골든게이트 7층지번부산광역시 부산진구 부전동 112-3<br>
+	지번주소 : 부산광역시 부산진구 부전동 112-3
+	</p>			
 		</div>
 	</div>
+
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="../js/bootstrap.js"></script>
 </body>

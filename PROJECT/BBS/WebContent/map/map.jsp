@@ -73,55 +73,46 @@
 			<div class="container">
 				<h2 align="center"> 오시는 길 </h2><br>
 	<div class="container">
-	<div id="map" style="width:100%;height:400px;"></div>
+	<div id="map" style="width:100%;height:350px;"></div>
 	
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	61fde81e162fc6e579015810a6d774a1&libraries=services"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=61fde81e162fc6e579015810a6d774a1&libraries=services"></script>
 	<script>
-		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-		    mapOption = {
-		        center: new kakao.maps.LatLng(35.15858848163131, 129.06205635469618), // 지도의 중심좌표
-		        level: 3 // 지도의 확대 레벨
-		    };  
-		
-		// 지도를 생성합니다    
-		var map = new kakao.maps.Map(mapContainer, mapOption); 
-		
-		// 주소-좌표 변환 객체를 생성합니다
-		var geocoder = new kakao.maps.services.Geocoder();
-		
-		// 주소로 좌표를 검색합니다
-		geocoder.addressSearch('부산광역시 부산진구 부전동 동천로 109 삼한골든게이트 아이티윌 부산교육센터 7층', function(result, status) {
-		
-		    // 정상적으로 검색이 완료됐으면 
-		     if (status === kakao.maps.services.Status.OK) {
-		
-		        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-		
-		        // 결과값으로 받은 위치를 마커로 표시합니다
-		        var marker = new kakao.maps.Marker({
-		            map: map,
-		            position: coords
-		        });
-		
-		        // 인포윈도우로 장소에 대한 설명을 표시합니다
-		        var infowindow = new kakao.maps.InfoWindow({
-		            content: 
-		            '<div style="width:150px;text-align:center;padding:6px 0;"><b>드림오피스</b></div>'
-		        });
-		        infowindow.open(map, marker);		        
-
-		
-		        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-		        map.setCenter(coords);
-		    } 
-		});    
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	    mapOption = { 
+	        center: new kakao.maps.LatLng(35.15858848163131, 129.06205635469618), // 지도의 중심좌표
+	        level: 3 // 지도의 확대 레벨
+	    };
+	
+	var map = new kakao.maps.Map(mapContainer, mapOption);
+	
+	// 마커가 표시될 위치입니다 
+	var markerPosition  = new kakao.maps.LatLng(35.15858848163131, 129.06205635469618); 
+	
+	// 마커를 생성합니다
+	var marker = new kakao.maps.Marker({
+	    position: markerPosition
+	});
+	
+	// 마커가 지도 위에 표시되도록 설정합니다
+	marker.setMap(map);
+	
+	var iwContent = '<div style="padding:5px;"><b>드림오피스</b><br><a href="https://map.kakao.com/link/map/드림오피스,35.15858848163131, 129.06205635469618" style="color:black" target="_blank"><u>큰지도보기</u></a> <a href="https://map.kakao.com/link/to/드림오피스,35.15858848163131, 129.06205635469618" style="color:black" target="_blank"><u>길찾기</u></a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+	    iwPosition = new kakao.maps.LatLng(35.15858848163131, 129.06205635469618); //인포윈도우 표시 위치입니다
+	
+	// 인포윈도우를 생성합니다
+	var infowindow = new kakao.maps.InfoWindow({
+	    position : iwPosition, 
+	    content : iwContent 
+	});
+	  
+	// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+	infowindow.open(map, marker); 
 	</script>
-	<p align="center">
-	<br>
-	도로명주소 : 부산광역시 부산진구 동천로 109 삼한골든게이트 7층지번부산광역시 부산진구 부전동 112-3<br>
-	지번주소 : 부산광역시 부산진구 부전동 112-3
+	<p class="page-description text-center">
+		도로명주소 : 부산광역시 부산진구 동천로 109 삼한골든게이트 7층지번부산광역시 부산진구 부전동 112-3<br>
+		지번주소 : 부산광역시 부산진구 부전동 112-3
 	</p>
-	</div>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -55,6 +55,9 @@ a:hover {
 		color: #bbbbbb;
 	}
 }
+h2 {
+	font-family : 'Hanna';
+} 
 
 .btn-primary {
     background-color: #000000;
@@ -64,21 +67,9 @@ a:hover {
 .btn-primary:hover {
     background-color: #000000;
     border-color: #000000;
-    color: #bbbbbb; }
+    color: #585858; }
     
-p.page-description {
-    text-align: center;
-    max-width: 800px;
-    margin: 25px auto;
-    color: #888;
-    font-size: 18px;
-}
-
-h2 {
-    text-align: center;
-    margin-top: 70px;
-    font-family: 'Droid Sans', sans-serif;
-    font-weight: bold;
-}
-
+h1 {
+	font-family : 'Hanna';
+} 
     

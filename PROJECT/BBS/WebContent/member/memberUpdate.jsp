@@ -41,7 +41,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="../main/main.jsp">메인</a></li>
-				<li><a href="../bbs/bbs.jsp">예약</a></li>
+				<li><a href="../bbs/bbs.jsp">방문예약</a></li>
 				<li><a href="../map/map.jsp">위치</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
