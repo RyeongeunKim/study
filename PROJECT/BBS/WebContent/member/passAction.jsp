@@ -4,13 +4,12 @@
 <%@ page import="java.io.PrintWriter" %>
 <% request.setCharacterEncoding("utf-8"); %>
 <jsp:useBean id="user" class="user.User" scope="page"/>
-<jsp:setProperty property="userID" name="user"/>
 <jsp:setProperty property="userPassword" name="user"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>JSP 게시판 웹 사이트</title>
+<title>비밀번호 확인</title>
 </head>
 <body>
 	<%
@@ -22,7 +21,7 @@
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('이미 로그인이 되어있습니다.')");
-			script.println("location.href = 'main.jsp'");
+			script.println("location.href = '../main/main.jsp'");
 			script.println("</script>");
 		}
 		UserDAO userDAO = new UserDAO();
@@ -31,7 +30,7 @@
 			session.setAttribute("userID", user.getUserID());
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("location.href='main.jsp'");
+			script.println("location.href='../main/main.jsp'");
 			script.println("</script>");
 		}
 		else if(result == 0){
