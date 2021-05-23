@@ -73,9 +73,10 @@
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="이름" name="userName" maxlength="20" value="<%=user.getUserName() %>">
 					</div>	
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="주소" name="userAddress" value="<%=user.getUserAddress() %>">
-					</div>		
+					<div class="d-flex justify-content-end" align="right">
+						<button type=button class="btn btn-primary" onclick="goPopup();">주소검색</button>
+					</div>	
+						<input type="text" class="form-control" placeholder="주소" name="userAddress" id="address" required readonly><br>	
 					<div class="form-group">
 						<input type="email" class="form-control" placeholder="이메일" name="userEmail" value="<%=user.getUserEmail() %>">
 					</div>							
@@ -85,8 +86,25 @@
 		</div>
 		<div class="col-lg-4"></div>
 	</div>	
+	<script>
+	function goPopup(){
+		// 주소검색을 수행할 팝업 페이지를 호출합니다.
+		// 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(https://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
+		var pop = window.open("jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+		
+		// 모바일 웹인 경우, 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(https://www.juso.go.kr/addrlink/addrMobileLinkUrl.do)를 호출하게 됩니다.
+	    //var pop = window.open("/popup/jusoPopup.jsp","pop","scrollbars=yes, resizable=yes"); 
+	}
 	
+	
+	function jusoCallBack(roadFullAddr){
+			var addressEI = document.querySelector("#address");
+			addressEI.value = roadFullAddr;
+	}
+	
+	</script>	
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="../js/bootstrap.js"></script>
+	
 </body>
 </html>

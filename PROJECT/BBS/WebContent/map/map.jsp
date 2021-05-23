@@ -32,7 +32,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="../main/main.jsp">메인</a></li>
-				<li><a href="../bbs/bbs.jsp">게시판</a></li>
+				<li><a href="../bbs/bbs.jsp">방문예약</a></li>
 				<li class="active"><a href="map.jsp">위치</a></li>
 			</ul>
 			<%
@@ -71,7 +71,7 @@
 	<div class="container">
 		<div class="jumbotron">
 			<div class="container">
-				<h2 align="center"> 오시는 길 </h2><br>
+				<h2 class="text-center"> 오시는 길 </h2><br>
 	<div class="container">
 	<div id="map" style="width:100%;height:350px;"></div>
 	
