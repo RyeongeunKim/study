@@ -27,6 +27,7 @@
 				<li><a href="../main/main.jsp">메인</a></li>
 				<li><a href="../bbs/bbs.jsp">방문예약</a></li>
 				<li><a href="../map/map.jsp">위치</a></li>
+				<li><a href="../images/gallery.jsp">시설안내</a></li>				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">

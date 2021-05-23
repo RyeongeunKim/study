@@ -139,5 +139,38 @@ public class UserDAO {
 		}
 		return -1; //데이터베이스 오류
 	}
+	
+	public int joinIdCheck(String userID){
+		int result = -1;
+		
+		try {
+			String SQL = "select userID from user where userID=?";
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, userID);
+			
+			//실행 -> select -> rs저장
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()){
+				result = 0;
+			}else{
+				result = 1;
+			}
+			
+			System.out.println("아이디 중복체크결과 : "+result);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try{
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+			}catch (Exception e){
+				e.printStackTrace();
+			}
+		}
+		return result;
 
+	}
+	
 }

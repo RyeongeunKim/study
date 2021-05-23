@@ -27,13 +27,14 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>	
 			</button>
-			<a class="navbar-brand" href="../main/main.jsp">JSP 게시판 웹 사이트</a>
+			<a class="navbar-brand" href="../main/main.jsp">드림오피스</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="../main/main.jsp">메인</a></li>
 				<li><a href="../bbs/bbs.jsp">방문예약</a></li>
 				<li class="active"><a href="map.jsp">위치</a></li>
+				<li><a href="../images/gallery.jsp">시설안내</a></li>
 			</ul>
 			<%
 				if(userID == null){

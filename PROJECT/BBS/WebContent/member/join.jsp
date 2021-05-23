@@ -10,29 +10,6 @@
 <title>드림오피스</title>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="../js/bootstrap.js"></script>
- <script type="text/javascript">
-    function winopen(){
-
-    	//버튼 클릭시 실행 -> 새창 열기 
-    	//alert("클릭");
-    	
-    	//id값이 입력되어있는지 없는지 체크
-    	if(document.fr.userID.value == ""){
-    		alert("아이디를 입력하세요.");
-    		document.fr.userID.focus();
-    		return;
-    	}
-    	
-    	// html코드의 값을 가져오기
-    	var userID = document.fr.userID.value;
-    	//alert(userid);
-    	
-    	//id 값이 있을때 -> 새창열기
-    
-    	window.open("joinIDCheck.jsp?userID="+userID,"","width=300,height=50,left=120, top=120, location=no");    	
-    	
-    }
- </script>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -52,6 +29,7 @@
 				<li><a href="../main/main.jsp">메인</a></li>
 				<li><a href="../bbs/bbs.jsp">방문예약</a></li>
 				<li><a href="../map/map.jsp">위치</a></li>
+				<li><a href="../images/gallery.jsp">시설안내</a></li>				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
@@ -96,22 +74,31 @@
 		<div class="col-lg-4"></div>
 	</div>
 <script>
-function goPopup(){
-	// 주소검색을 수행할 팝업 페이지를 호출합니다.
-	// 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(https://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
-	var pop = window.open("jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+
+	// 아이디중복체크
+	function winopen(){
+		//새창을 열어서 페이지 오픈 후 아이디 정보를 가지고 중복체크
+		//아이디가 없으면 알림창과 진행 x
+		if(document.fr.userID.value == "" || document.fr.userID.value.length < 0){
+			alert("아이디를 먼저 입력해주세요")
+			document.fr.userID.focus();
+		}else{
+			window.open("joinIDCheck.jsp?id="+document.fr.userID.value,"",
+					"width=300,height=50,left=120, top=120, location=no");
+		}
+	}
 	
-	// 모바일 웹인 경우, 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(https://www.juso.go.kr/addrlink/addrMobileLinkUrl.do)를 호출하게 됩니다.
-    //var pop = window.open("/popup/jusoPopup.jsp","pop","scrollbars=yes, resizable=yes"); 
-}
-
-
-function jusoCallBack(roadFullAddr){
-		var addressEI = document.querySelector("#address");
-		addressEI.value = roadFullAddr;
-}
+	function goPopup(){
+		// 주소검색을 수행할 팝업 페이지를 호출
+		var pop = window.open("jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+	}
+	
+	
+	function jusoCallBack(roadFullAddr){
+			var addressEI = document.querySelector("#address");
+			addressEI.value = roadFullAddr;
+	}
 
 </script>
-
 </body>
 </html>
