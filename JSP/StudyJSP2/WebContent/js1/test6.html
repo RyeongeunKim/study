@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+   // 중첩 if문
+   
+  /*if(조건문){
+	   if(조건문){
+		   ...
+	   }
+   } */
+   
+   // 로그인 로직
+   // 아이디 - O 
+   //       -> 비밀번호 비교 - O  => 로그인성공
+   //                    - X  => 비밀번호 오류
+   //      - X
+   //       -> 비회원 -> 회원가입로직
+   
+/*    var userID = "itwill001";
+   var userPW = "1234";
+   
+   var inputID = prompt("아이디를 입력하시오.");
+   var inputPW = prompt("비밀번호를 입력하시오.");
+   
+   document.write("ID : "+inputID+", PW : "+inputPW);
+   
+   if(userID == inputID){
+	   // 회원
+	   if(userPW == inputPW){
+		   // 로그인
+		   alert(inputID+"님 환영합니다!");
+	   }else{
+		   alert(" 비밀번호 오류! ");
+		   location.reload(); //페이지 새로고침
+	   }	   
+   }else{
+	   // 비회원
+	   //alert("비회원 입니다. 회원가입 하시겠습니까?");
+	   confirm("비회원 입니다. 회원가입 하시겠습니까?");
+	   location.reload();
+   } */
+   
+   
+   // 선택문 ( switch-case 문 )
+   
+/*    switch (비교대상(변수)) {
+	case value:
+		실행문;
+		break;
+	case value:
+		break;
+	case value:
+		break;
+	
+	default:
+		break;
+	} */
+	
+	// * 해당 케이스를 만나서 실행후 break구문을 실행했을때 종료 
+    // * default 구문을 실행후 종료 (구문의 끝)
+	// * 해당 케이스를 만나서 실행후 break구문을 실행안하는 경우
+	//   다음 케이스를 모두 실행(케이스 해당여부 상관X) 다음 break문을 찾을때 까지 
+	
+	
+    var num = "안녕";
+	
+	switch(num){ // 숫자(정수,실수), 문자(영어,한글)
+	case "안녕":
+		alert("정답 - 안녕");
+		//break;
+	case "hello":
+		alert("정답 - hello");
+		break;
+	case 1.11:
+	    alert("정답 - 1.11");
+	    break;
+	case 10:
+		alert("정답!-10");
+		break;
+	case 9:
+		alert("정답!-9");
+		break;
+	case 8:
+		alert("정답!-8");
+		break;
+	case 7:
+		alert("정답!-7");
+		break;
+	case 6:
+		alert("정답!-6");
+		break;
+		
+   default:
+	   alert("해당사항없음!");	
+	}
+	
+	alert("실행 완료!");
+   
+   // 학생의 성적처리 프로그램
+   // 90~100  A   90~99 A  100 A
+   // 80~89 B
+   // 70~79 C
+   // 60~69 D
+   // 0~59 F
+   // switch-case문으로 구현하기
+   
+   var score = 89;
+   var tmp = Math.floor(score/10);
+   //alert("tmp : "+tmp);
+   
+   var grade="";
+   
+   switch(tmp){
+   
+   case 10:
+   case 9:
+	   //alert("A");
+	   grade = "A";
+	   break;
+   case 8:
+	   //alert("B");
+	   grade ="B";
+	   break;
+   case 7:
+	  // alert("C");
+	  grade = "C";
+	   break;
+   case 6:
+	  // alert("D");
+	  grade = "D";
+	   break;
+   default:
+	  // alert("F");
+      grade = "F";
+   }
+   
+   alert(grade);
+   
+
+
+</script>
+</head>
+<body>
+
+  <h1>WebContent/js1/test6.html</h1>
+
+</body>
+</html>
