@@ -97,6 +97,7 @@ public class UserDAO {
 				user.setUserName(rs.getString("userName"));
 				user.setUserAddress(rs.getString("userAddress"));
 				user.setUserEmail(rs.getString("userEmail"));
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -66,7 +66,7 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">회원관리<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="memberUpdate.jsp">회원정보수정</a></li>
+						<li><a href="userInfo.jsp">회원정보수정</a></li>
 						<li><a href="logoutAction.jsp">로그아웃</a></li>
 					</ul>
 				</li>
@@ -82,12 +82,9 @@
 			<div class="jumbotron" style="padding-top: 20px;">
 				<form method="post" action="passUpdate.jsp" name="fr">
 					<h3 style="text-align: center;">회원정보</h3>	<br>				
-					<input type="submit" class="btn btn-primary form-control" value="수정하기">			
+					<input type="submit" class="btn btn-primary form-control" value="수정/탈퇴하기">			
 				</form>
 				<br>
-				<form method="post" action="passDelete.jsp" name="fr">				
-					<input type="submit" class="btn btn-primary form-control" value="탈퇴하기">			
-				</form>
 			</div>
 		</div>
 		<div class="col-lg-4"></div>

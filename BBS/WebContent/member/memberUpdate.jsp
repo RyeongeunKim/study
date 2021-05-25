@@ -51,7 +51,7 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">회원관리<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="memberUpdate.jsp">회원정보수정</a></li><br>
+						<li><a href="userInfo.jsp">회원정보수정</a></li><br>
 						<li><a href="logoutAction.jsp">로그아웃</a></li>
 					</ul>
 				</li>
@@ -82,6 +82,11 @@
 						<input type="email" class="form-control" placeholder="이메일" name="userEmail" value="<%=user.getUserEmail() %>">
 					</div>							
 					<input type="submit" class="btn btn-primary form-control" value="수정">			
+				</form>
+				
+				<br>
+				<form method="post" action="memberDeleteAction.jsp">	
+					<input type="submit" onclick="return confirm('정말로 탈퇴하겠습니까?')" class="btn btn-primary form-control" value="탈퇴하기">			
 				</form>
 			</div>
 		</div>

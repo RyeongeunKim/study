@@ -64,7 +64,7 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">회원관리<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="memberUpdate.jsp">회원정보수정</a></li>
+						<li><a href="userInfo.jsp">회원정보수정</a></li>
 						<li><a href="logoutAction.jsp">로그아웃</a></li>
 					</ul>
 				</li>
@@ -78,7 +78,7 @@
 		<div class="col-lg-4"></div>
 		<div class="col-lg-4">
 			<div class="jumbotron" style="padding-top: 20px;">
-				<form method="post" action="memberUpdate.jsp">
+				<form method="post" action="passAction.jsp">
 					<h3 style="text-align: center;">비밀번호 확인</h3>
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="아이디" name="userID" maxlength="20">

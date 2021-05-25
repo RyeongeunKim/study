@@ -59,7 +59,7 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">회원관리<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="../member/memberUpdate.jsp">회원정보수정</a></li>
+						<li><a href="../member/userInfo.jsp">회원정보수정</a></li>
 						<li><a href="../member/logoutAction.jsp">로그아웃</a></li>
 					</ul>
 				</li>
@@ -80,7 +80,11 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50" required="required"></td>
+						<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" required="required"></td>
+					</tr>
+					<tr>
+						<td><input type="radio" class="form-control" name="passAvailable" value="1">Lock</td>
+						<td><input type="radio" class="form-control" name="passAvailable" value="0">Unlock</td>
 					</tr>
 					<tr>	
 						<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;" required="required"></textarea></td>

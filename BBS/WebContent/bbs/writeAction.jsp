@@ -6,6 +6,7 @@
 <jsp:useBean id="bbs" class="bbs.Bbs" scope="page"/>
 <jsp:setProperty property="bbsTitle" name="bbs"/>
 <jsp:setProperty property="bbsContent" name="bbs"/>
+<jsp:setProperty property="passAvailable" name="bbs"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +23,7 @@
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('로그인을 하세요.')");
-			script.println("location.href = 'login.jsp'");
+			script.println("location.href = '../member/login.jsp'");
 			script.println("</script>");
 		} else{
 			if (bbs.getBbsTitle() == null || bbs.getBbsContent() == null){
@@ -33,7 +34,10 @@
 						script.println("</script>");
 					}else{
 					BbsDAO bbsDAO = new BbsDAO();
-					int result = bbsDAO.write(bbs.getBbsTitle(), userID, bbs.getBbsContent());
+					int result = bbsDAO.write(bbs.getBbsTitle(), 
+								 userID, bbs.getBbsContent(), 
+								 bbs.getPassAvailable());
+					
 					if(result == -1){
 						
 						PrintWriter script = response.getWriter();
