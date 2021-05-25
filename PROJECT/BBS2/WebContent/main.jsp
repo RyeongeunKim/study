@@ -10,7 +10,8 @@
 <link rel="stylesheet" href="css/custom.css">
 <title>JSP 게시판 웹 사이트</title>
 </head>
-<body>
+<body>\
+
 	<%
 		String userID = null;
 		if(session.getAttribute("userID") != null){
