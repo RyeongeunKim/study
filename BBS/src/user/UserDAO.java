@@ -86,7 +86,7 @@ public class UserDAO {
 	
 	public User getUser(String userID){
 		User user = new User();
-		String SQL = "select * from user where userID = ?";
+		String SQL = "select * from user where userID=?";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, userID);

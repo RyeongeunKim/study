@@ -71,7 +71,7 @@
 	</nav>
 	<div class="container">
 		<div class="row">
-		<form method="post" action="writeAction.jsp" enctype="multipart/form-data">
+		<form method="post" action="writeAction.jsp">
 			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 				<thead>
 					<tr>
@@ -81,9 +81,6 @@
 				<tbody>
 					<tr>
 						<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50" required="required"></td>
-					</tr>
-					<tr>
-						<td><input type="file" class="form-control" placeholder="파일" name="filename"></td>
 					</tr>
 					<tr>	
 						<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;" required="required"></textarea></td>

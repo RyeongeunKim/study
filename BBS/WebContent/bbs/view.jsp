@@ -106,19 +106,6 @@
 						<td>작성일자</td>
 						<td><%= bbs.getBbsDate().substring(0, 11) + bbs.getBbsDate().substring(11, 13) + "시" + bbs.getBbsDate().substring(14, 16) + "분" %></td>
 					</tr>
-					
-						<%if(bbs.getFilename() != null){
-						%>
-						<tr>
-						<td>파일</td>
-						  <td><a href="file_down.jsp?filename=<%=bbs.getFilename()%>">
-						 	<%=bbs.getFilename() %>
-						  </a></td>	
-						 </tr>
-						<% 
-						}
-						%>
-
 					<tr>
 						<td>내용</td>
 						<td colspan="2" style="min-height: 200px; text-align: left;"><%= bbs.getBbsContent().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "br")%></td>
