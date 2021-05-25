@@ -80,13 +80,13 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50"></td>
+						<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50" required="required"></td>
 					</tr>
 					<tr>
 						<td><input type="file" class="form-control" placeholder="파일" name="filename"></td>
 					</tr>
 					<tr>	
-						<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;"></textarea></td>
+						<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;" required="required"></textarea></td>
 					</tr>
 				</tbody>
 			</table>

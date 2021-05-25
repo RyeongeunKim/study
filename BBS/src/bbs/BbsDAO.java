@@ -1,81 +1,47 @@
 package bbs;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
-
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.sql.DataSource;
-
 
 public class BbsDAO {
 	
-	private Connection conn = null;
-	private ResultSet rs = null;
-	private String SQL = "";
+	private Connection conn;
+	private ResultSet rs;
 	
-	DataSource dataSource;
-	
-	private Connection getConnection(){
+	public BbsDAO(){
 		try {
-			//Context 객체를 생성 (프로젝트 정보를 가지고있는객체)
-			Context initCTX = new InitialContext();
-			// DB연동 정보를 불러오기(context.xml)
-			DataSource ds =
-			(DataSource) initCTX.lookup("java:comp/env/jdbc/mysqlDB");
-			
-			conn = ds.getConnection();
-			
-			System.out.println(" 드라이버 로드, 디비연결 성공! ");
-			System.out.println(conn);
-			
-		} catch (NamingException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
+			String dbURL = "jdbc:mysql://localhost:3306/BBS";
+			String dbID = "root";
+			String dbPassword = "1234";
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		return conn;
 	}
-	// getConnection() - 디비연결 끝
 	
 	public String getDate(){
 		
-		PreparedStatement pstmt = null;
-		
+		String SQL = "select now()";
 		try {
-			conn = getConnection();
-			SQL = "select now()";
-			pstmt = conn.prepareStatement(SQL);
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			rs = pstmt.executeQuery();
 			if(rs.next()){
 				return rs.getString(1);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
-			try {
-				
-				if(rs != null) rs.close();
-				if(pstmt != null) pstmt.close();
-				if(conn != null) conn.close();
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 		}
 		return ""; //데이터베이스 오류
 	}
 	
 	public int getNext(){
 		
+		String SQL = "select bbsID from bbs order by bbsID desc";
 		try {
-			conn = getConnection();
-			SQL = "select bbsID from bbs order by bbsID desc";
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			rs = pstmt.executeQuery();
 			if(rs.next()){
@@ -88,11 +54,9 @@ public class BbsDAO {
 		return -1; //데이터베이스 오류
 	}
 	
-	public int write(String bbsTitle, String userID, String bbsContent){
-		
+	public int write(String bbsTitle, String userID, String bbsContent, String filename, String oFileName){
+		String SQL = "insert into bbs values (?,?,?,?,?,?,?,?)";
 		try {
-			conn = getConnection();
-			SQL = "insert into bbs values (?,?,?,?,?,?)";
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, getNext());
 			pstmt.setString(2, bbsTitle);
@@ -100,18 +64,19 @@ public class BbsDAO {
 			pstmt.setString(4, getDate());
 			pstmt.setString(5, bbsContent);
 			pstmt.setInt(6, 1);
+			pstmt.setString(7, filename);
+			pstmt.setString(8, oFileName);
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
-		} 
+		}
 		return -1; //데이터베이스 오류
-	} 
+	}
 	
 	public ArrayList<Bbs> getList(int pageNumber){
+		String SQL = "select * from bbs where bbsID < ? and bbsAvailable = 1 order by bbsID desc limit 10";
 		ArrayList<Bbs> list = new ArrayList<Bbs>();
 		try {
-			conn = getConnection();
-			SQL = "select * from bbs where bbsID < ? and bbsAvailable = 1 order by bbsID desc limit 10";
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, getNext() - (pageNumber - 1) * 10);
 			rs = pstmt.executeQuery();
@@ -128,13 +93,12 @@ public class BbsDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return list; 
+		return list; //데이터베이스 오류
 	}
 	
 	public boolean nextPage(int pageNumber){
+		String SQL = "select * from bbs where bbsID < ? and bbsAvailable = 1";
 		try {
-			conn = getConnection();
-			SQL = "select * from bbs where bbsID < ? and bbsAvailable = 1";
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, getNext() - (pageNumber - 1) * 10);
 			rs = pstmt.executeQuery();
@@ -148,9 +112,8 @@ public class BbsDAO {
 	}
 	
 	public Bbs getBbs(int bbsID){
+		String SQL = "select * from bbs where bbsID = ?";
 		try {
-			conn = getConnection();
-			String SQL = "select * from bbs where bbsID = ?";
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, bbsID);
 			rs = pstmt.executeQuery();
@@ -162,33 +125,36 @@ public class BbsDAO {
 				bbs.setBbsDate(rs.getString(4));
 				bbs.setBbsContent(rs.getString(5));
 				bbs.setBbsAvailable(rs.getInt(6));
+				bbs.setFilename(rs.getString(7));
+				bbs.setoFileName(rs.getString(8));
+				
 				return bbs;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		} 
+		}
 		return null; //데이터베이스 오류
 	}
 	
-	public int update(int bbsID, String bbsTitle, String bbsContent){
+	public int update(int bbsID, String bbsTitle, String bbsContent, String filename, String oFileName){
+		String SQL = "update bbs set bbstitle=?, bbsContent=?, filename=?, oFileName=? where bbsID=?";
 		try {
-			conn = getConnection();
-			String SQL = "update bbs set bbstitle=?, bbsContent=? where bbsID=?";
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, bbsTitle);
 			pstmt.setString(2, bbsContent);
-			pstmt.setInt(3, bbsID);
+			pstmt.setString(3, filename);
+			pstmt.setString(4, oFileName);
+			pstmt.setInt(5, bbsID);
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
-		} 
+		}
 		return -1; //데이터베이스 오류
 	}
 	
 	public int delete(int bbsID){
+		String SQL = "update bbs set bbsAvailable = 0 where bbsID=?";
 		try {
-			conn = getConnection();
-			String SQL = "update bbs set bbsAvailable = 0 where bbsID=?";
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, bbsID);
 			return pstmt.executeUpdate();
