@@ -38,7 +38,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('aoao','1234','매매','부산','aoao@naver.com'),('asfa','asfaf','afsaf','afsaf','asfa@afasf'),('bibibi','1234','창원','창원','bibi@naver.com'),('dodo','1234','창원','창원','dodo@naver.com'),('hege','1234','헤헤','밀양','gege@naver.com'),('hohoho','1234','호호호','경기','hohoho@naver.com'),('join','1234','요요','부산광역시 부산진구 서면문화로 8 (부전동)','yoyo@naver.com'),('lppl','1234','리리','서울','lplp@naver.com'),('mimi','1234','미미','대전','mimi@naver.com'),('qoqo','1234','뵤뵤','창원','qoqo@naver.com'),('roro','1234','토토','창원','toto@naver.com'),('ser','1234','서울','서울','esr@naver.com'),('sss','1234','sss','경상남도 창원시 성산구 외동반림로 237 (반림동)','sad@asdasd'),('toto','1234','토토','창원','toto@naver.com'),('yoyo','1234','요요','경상남도 창원시 성산구 창원대로 721 (중앙동)','asd@asd');
+INSERT INTO `user` VALUES ('aoao','1234','매매','부산','aoao@naver.com'),('asfa','asfaf','afsaf','afsaf','asfa@afasf'),('bibibi','1234','창원','창원','bibi@naver.com'),('dodo','1234','창원','창원','dodo@naver.com'),('hege','1234','헤헤','밀양','gege@naver.com'),('hohoho','1234','호호호','경기','hohoho@naver.com'),('join','1234','요요','부산광역시 부산진구 서면문화로 8 (부전동)','yoyo@naver.com'),('koko','1234','코코','경상남도 창원시 마산합포구 허당로 8 (상남동)','koko@naver.com'),('lppl','1234','리리','서울','lplp@naver.com'),('mimi','1234','미미','대전','mimi@naver.com'),('qoqo','1234','뵤뵤','창원','qoqo@naver.com'),('roro','1234','토토','창원','toto@naver.com'),('ser','1234','서울','서울','esr@naver.com'),('sss','1234','에스','경상남도 창원시 성산구 외동반림로 237 (반림동)','sss@asdasd'),('toto','1234','토토','창원','toto@naver.com'),('yoyo','1234','요요','경상남도 창원시 성산구 창원대로 721 (중앙동)','asd@asd');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-25 18:28:58
+-- Dump completed on 2021-05-26  1:06:02
