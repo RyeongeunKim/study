@@ -8,8 +8,6 @@
 <jsp:useBean id="bbs" class="bbs.Bbs" scope="page"/>
 <jsp:setProperty property="bbsTitle" name="bbs"/>
 <jsp:setProperty property="bbsContent" name="bbs"/>
-<jsp:setProperty property="filename" name="bbs"/>
-<jsp:setProperty property="oFileName" name="bbs"/>
 
 <!DOCTYPE html>
 <html>
@@ -57,60 +55,8 @@
   내용 : <%=bbsContent %><br>
   파일 : <%=filename %><br>
  파일(원본) : <%=oFileName %><br> 
- 
- <%
- 	bbs.setBbsTitle(bbsTitle);
- 	bbs.setBbsContent(bbsContent);
- 	bbs.setFilename(filename);
- 	bbs.setoFileName(oFileName);
- %>
- 
-	<%
-		String userID = null;
-		if(session.getAttribute("userID") != null){
-			userID = (String)session.getAttribute("userID");
-		}
-		if(userID == null){
-			PrintWriter script = response.getWriter();
-			script.println("<script>");
-			script.println("alert('로그인을 하세요.')");
-			script.println("location.href = '../member/login.jsp'");
-			script.println("</script>");
-		} else{
-			if (bbs.getBbsTitle() == null || bbs.getBbsContent() == null){
-						PrintWriter script = response.getWriter();
-						script.println("<script>");
-						script.println("alert('입력이 안 된 사항이 있습니다.')");
-						script.println("history.back()");
-						script.println("</script>");
-					}else{
-					BbsDAO bbsDAO = new BbsDAO();
-					int result = bbsDAO.write(bbs.getBbsTitle(), userID, bbs.getBbsContent()
-							, bbs.getFilename(), bbs.getoFileName());
-					if(result == -1){
-						
-						PrintWriter script = response.getWriter();
-						script.println("<script>");
-						script.println("alert('글쓰기에 실패했습니다.')");
-						script.println("history.back()");
-						script.println("</script>");
-					}
-					else {
-						PrintWriter script = response.getWriter();
-						script.println("<script>");
-						script.println("location.href = 'bbs.jsp'");
-						script.println("</script>");
-					}
-				}			
-		}
-
-
-	%>
- 
-
-
   
-<%--   <hr>
+  <hr>
   
   <form name="fr" action="writeAction2.jsp" method="post">
      <input type="hidden" name="bbsTitle" value="<%=bbsTitle %>">
@@ -121,6 +67,6 @@
      <<input type="submit" value="전달하기">   
   </form>
   
-<!--   <a href="javascript:fr.submit();">뷰로이동</a> --> --%>
+<!--   <a href="javascript:fr.submit();">뷰로이동</a> -->
 </body>
 </html>

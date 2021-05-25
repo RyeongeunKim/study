@@ -1,5 +1,5 @@
-/* 전체 영역을 통틀어서 스타일 정의 */
 @import url(https:fonts.googleapis.com/earlyaccess/nanumgothic.css);
+/* 전체 영역을 통틀어서 스타일 정의 */
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 * {
 	font-family: 'Nanum Gothic'
@@ -79,6 +79,13 @@ h2 {
     margin-top: 70px;
     font-family: 'Droid Sans', sans-serif;
     font-weight: bold;
+}
+
+h4{
+	text-align: center;
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: bold;
+	
 }
 
     

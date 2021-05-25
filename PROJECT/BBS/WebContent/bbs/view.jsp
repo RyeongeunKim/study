@@ -30,6 +30,8 @@
 			script.println("</script>");
 		}
 		Bbs bbs = new BbsDAO().getBbs(bbsID);
+		
+		System.out.println("확인"+bbs);
 	%>
 	<nav class="navbar navbar-default">
 		<div class="navbar-header">
@@ -103,6 +105,12 @@
 					<tr>
 						<td>작성일자</td>
 						<td><%= bbs.getBbsDate().substring(0, 11) + bbs.getBbsDate().substring(11, 13) + "시" + bbs.getBbsDate().substring(14, 16) + "분" %></td>
+					</tr>
+					<tr>
+						<td>파일</td>
+						<td><a href="file_down.jsp?filename=<%=bbs.getFilename()%>">
+						 	 <%=bbs.getFilename() %>
+						  </a></td>
 					</tr>
 					<tr>
 						<td>내용</td>

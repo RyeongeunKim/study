@@ -9,6 +9,8 @@ public class Bbs {
 	private String bbsContent;
 	private int bbsAvailable;
 	private String bbsPassword;
+	private String filename;
+	private String oFileName;
 	
 	public int getBbsID() {
 		return bbsID;
@@ -52,6 +54,28 @@ public class Bbs {
 	public void setBbsPassword(String bbsPassword) {
 		this.bbsPassword = bbsPassword;
 	}
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	public String getoFileName() {
+		return oFileName;
+	}
+	public void setoFileName(String oFileName) {
+		this.oFileName = oFileName;
+	}
+	@Override
+	public String toString() {
+		return "Bbs [bbsID=" + bbsID + ", bbsTitle=" + bbsTitle + ", userID=" + userID + ", bbsDate=" + bbsDate
+				+ ", bbsContent=" + bbsContent + ", bbsAvailable=" + bbsAvailable + ", bbsPassword=" + bbsPassword
+				+ ", filename=" + filename + ", oFileName=" + oFileName + "]";
+	}
+	
+	
+	
+	
 	
 	
 	

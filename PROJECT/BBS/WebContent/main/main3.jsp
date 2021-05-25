@@ -1,6 +1,10 @@
+<%@page import="bbs.Bbs"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="bbs.BbsDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +13,15 @@
 <link rel="stylesheet" href="../css/bootstrap.css">
 <link rel="stylesheet" href="../css/custom.css">
 <title>드림오피스</title>
+	<style type="text/css">
+		.jumbotron{
+			background-image: url("../images/main3.jpg");
+			background-size: cover;
+			text-shadow: black 0.2em 0.2em 0.2em;
+			color: white;
+		}
+		
+	</style>
 </head>
 <body>
 	<%
@@ -16,7 +29,12 @@
 		if(session.getAttribute("userID") != null){
 			userID = (String) session.getAttribute("userID");
 		}
+		int pageNumber = 1;
+		if (request.getParameter("pageNumber") != null){
+			pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
+		}
 	%>
+
 	<nav class="navbar navbar-default">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed"
@@ -27,12 +45,12 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>	
 			</button>
-			<a class="navbar-brand" href="../main/main.jsp">드림오피스</a>
+			<a class="navbar-brand" href="main.jsp">드림오피스</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="../main/main.jsp">메인</a></li>
-				<li class="active"><a href="bbs.jsp">방문예약</a></li>
+				<li class="active"><a href="main.jsp">메인</a></li>
+				<li><a href="../bbs/bbs.jsp">방문예약</a></li>
 				<li><a href="../map/map.jsp">위치</a></li>
 				<li><a href="../images/gallery.jsp">시설안내</a></li>
 			</ul>
@@ -59,7 +77,7 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">회원관리<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="../member/memberUpdate.jsp">회원정보수정</a></li>
+						<li><a href="../member/userInfo.jsp">회원정보</a></li>
 						<li><a href="../member/logoutAction.jsp">로그아웃</a></li>
 					</ul>
 				</li>
@@ -70,30 +88,50 @@
 		</div>
 	</nav>
 	<div class="container">
+	<div class="jumbotron">
+		<h1 class="text-center">드림 오피스를 소개합니다.</h1>
+		<p class="text-center">드림 오피스는 효과적인 협업을 위한 공유공간을 제공합니다</p>
+		<p class="text-center"><a class="btn btn-primary btn-lg" href="../bbs/bbs.jsp" role="button">상담 예약하기</a></p>
+		
+	</div>
+		<div class="container" style="background-color: #E6E6E6;">
 		<div class="row">
-		<form method="post" action="writeAction.jsp" enctype="multipart/form-data">
-			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-				<thead>
+			<h4>최신글</h4>
+			<table class="table" style="text-align: center; border: 1px solid #dddddd">
+				<thead class="thead-light">
 					<tr>
-						<th colspan="2" style="background-color: #eeeeee; text-align: center;"><b>방문예약</b></th>
+						<th style="background-color: #585858; color: white; text-align: center;">번호</th>
+						<th style="background-color: #585858; color: white; text-align: center;">제목</th>
+						<th style="background-color: #585858; color: white; text-align: center;">작성자</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody style="background-color: #E6E6E6; background-opacity:0.5">
+					<%
+						BbsDAO bbsDAO = new BbsDAO();
+						ArrayList<Bbs> list = bbsDAO.getList2(pageNumber);
+						for(int i = 0;i<list.size(); i++){
+					%>		
 					<tr>
-						<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50"></td>
+						<td><%= list.get(i).getBbsID() %></td>
+						<td><a href = "../bbs/view.jsp?bbsID=<%= list.get(i).getBbsID()%>"><%= list.get(i).getBbsTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "br") %></a></td>
+						<td><%= list.get(i).getUserID() %></td>
 					</tr>
-					<tr>
-						<td><input type="file" class="form-control" placeholder="파일" name="filename"></td>
-					</tr>
-					<tr>	
-						<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;"></textarea></td>
-					</tr>
+					<%} %>
 				</tbody>
 			</table>
-			<input type="submit" class="btn btn-primary pull-right" value="글쓰기">
-		</form>
 		</div>
 	</div>
+			</div>
+	<div>	
+	<p align="center">
+	<br>
+	도로명주소 : 부산광역시 부산진구 동천로 109 삼한골든게이트 7층지번부산광역시 부산진구 부전동 112-3<br>
+	지번주소 : 부산광역시 부산진구 부전동 112-3
+	</p>			
+	</div>
+
+	
+
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="../js/bootstrap.js"></script>
 </body>
