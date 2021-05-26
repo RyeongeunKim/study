@@ -43,6 +43,7 @@
 	   String subject = multi.getParameter("subject");
 	   String name = multi.getParameter("name");
 	   String content = multi.getParameter("content");
+	   String pass = multi.getParameter("pass");
 	   // -> 서버에 올라가는 파일의 이름(중복 처리)
 	   String filename = multi.getFilesystemName("filename");
 
@@ -51,6 +52,7 @@
 	   bb.setName(name);
 	   bb.setContent(content);
 	   bb.setFilename(filename);
+	   bb.setPass(pass);
 
 	   
 	   // 한글처리 

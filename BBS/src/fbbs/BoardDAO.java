@@ -90,7 +90,7 @@ public class BoardDAO {
 			////////////////////////////////////////////////////
 			
 			// 3 sql 작성 (insert) & pstmt 객체 생성
-			sql = "insert into itwill_board(num,name,subject,content,filename) values(?,?,?,?,?)";
+			sql = "insert into itwill_board values(?,?,?,?,?,?,?,?,?,?,now())";
 			
 			pstmt = conn.prepareStatement(sql);
 			
@@ -100,6 +100,11 @@ public class BoardDAO {
 			pstmt.setString(3, bb.getSubject());
 			pstmt.setString(4, bb.getContent());
 			pstmt.setString(5, bb.getFilename());
+			pstmt.setInt(6, bb.getRe_ref());
+			pstmt.setInt(7, bb.getRe_lev());
+			pstmt.setInt(8, bb.getRe_seq());
+			pstmt.setInt(9, bb.getReadcount());
+			pstmt.setString(10, bb.getPass());
 			
 			// 4 sql 실행	
 			
@@ -122,6 +127,8 @@ public class BoardDAO {
 		
 	}
 	// insertBoard()
+	
+	
 	
 	public int getBoardCount(){
 		
@@ -188,9 +195,15 @@ public class BoardDAO {
 				
 				// DB정보 -> Bean 저장
 				bb.setContent(rs.getString("content"));
+				bb.setDate(rs.getDate("date"));
 				bb.setFilename(rs.getString("filename"));
 				bb.setName(rs.getString("name"));
 				bb.setNum(rs.getInt("num"));
+				bb.setPass(rs.getString("pass"));
+				bb.setRe_lev(rs.getInt("re_lev"));
+				bb.setRe_ref(rs.getInt("re_ref"));
+				bb.setRe_seq(rs.getInt("re_seq"));
+				bb.setReadcount(rs.getInt("readcount"));
 				bb.setSubject(rs.getString("subject"));
 				
 				// Bean -> ArrayList 한칸에 저장
@@ -237,9 +250,7 @@ public class BoardDAO {
 			
 			
 			//sql= "select * from itwill_board";
-			sql= "select * from itwill_board "
-					+ "order by re_ref desc, re_seq asc "
-					+ "limit ?,?";			
+			sql= "select * from itwill_board order by num desc, re_ref desc, re_seq asc limit ?,?";			
 			
 			pstmt = conn.prepareStatement(sql);
 			
@@ -257,12 +268,15 @@ public class BoardDAO {
 				
 				// DB정보 -> Bean 저장
 				bb.setContent(rs.getString("content"));
+				bb.setDate(rs.getDate("date"));
 				bb.setFilename(rs.getString("filename"));
 				bb.setName(rs.getString("name"));
 				bb.setNum(rs.getInt("num"));
+				bb.setPass(rs.getString("pass"));
 				bb.setRe_lev(rs.getInt("re_lev"));
 				bb.setRe_ref(rs.getInt("re_ref"));
 				bb.setRe_seq(rs.getInt("re_seq"));
+				bb.setReadcount(rs.getInt("readcount"));
 				bb.setSubject(rs.getString("subject"));
 				
 				// Bean -> ArrayList 한칸에 저장
@@ -284,6 +298,35 @@ public class BoardDAO {
 	}
 	// getBoardList(startRow,pageSize)
 	
+	// updateReadcount(num)
+	public void updateReadcount(int num){
+		
+		try {
+			//1,2 디비연결
+			conn = getConnection();
+			
+			//3 sql 구문 작성(update) & pstmt 객체
+			sql = "update itwill_board set readcount=readcount+1 "
+					+ "where num=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			//?
+			pstmt.setInt(1, num);
+			
+			//4 sql 실행
+			pstmt.executeUpdate();
+			
+			System.out.println(" 글 조회수 증가 완료! ");			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+	}
+	// updateReadcount(num)
+	
 	// getBoard(num)
 	public BoardBean getBoard(int num){
 		BoardBean bb = null;
@@ -303,13 +346,18 @@ public class BoardDAO {
 				bb = new BoardBean();
 				
 				bb.setContent(rs.getString("content"));
+				bb.setDate(rs.getDate("date"));
 				bb.setFilename(rs.getString("filename"));
 				bb.setName(rs.getString("name"));
 				bb.setNum(rs.getInt("num"));
+				bb.setPass(rs.getString("pass"));
 				bb.setRe_lev(rs.getInt("re_lev"));
 				bb.setRe_ref(rs.getInt("re_ref"));
 				bb.setRe_seq(rs.getInt("re_seq"));
+				bb.setReadcount(rs.getInt("readcount"));
 				bb.setSubject(rs.getString("subject"));
+				
+				
 			}
 			
 			System.out.println(" 글번호에 해당하는 글정보 저장완료! ");
@@ -446,9 +494,7 @@ public class BoardDAO {
 			System.out.println(" 답글 정렬 완료! ");
 			
 			// 3) 답글 쓰기 
-			sql ="insert into itwill_board(num,name,pass,subject,content,"
-					+ "readcount,re_ref,re_lev,re_seq,date,ip,file) "
-					+ "values(?,?,?,?,?,?,?)";
+			sql = "insert into itwill_board values(?,?,?,?,?,?,?,?,?,?,now())";
 			
 			pstmt = conn.prepareStatement(sql);
 			
@@ -456,9 +502,12 @@ public class BoardDAO {
 			pstmt.setString(2, bb.getName());
 			pstmt.setString(3, bb.getSubject());
 			pstmt.setString(4, bb.getContent());
-			pstmt.setInt(5, bb.getRe_ref());// re_ref(원글의 그룹번호 사용)
-			pstmt.setInt(6, bb.getRe_lev()+1);//re_lev + 1
-			pstmt.setInt(7, bb.getRe_seq()+1);//re_seq + 1
+			pstmt.setString(5, bb.getFilename());
+			pstmt.setInt(6, bb.getRe_ref());
+			pstmt.setInt(7, bb.getRe_lev());
+			pstmt.setInt(8, bb.getRe_seq());
+			pstmt.setInt(9, bb.getReadcount());
+			pstmt.setString(10, bb.getPass());
 	
 			// sql 실행
 			pstmt.executeUpdate();

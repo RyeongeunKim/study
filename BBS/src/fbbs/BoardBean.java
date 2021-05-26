@@ -1,5 +1,7 @@
 package fbbs;
 
+import java.sql.Date;
+
 public class BoardBean {
 	
 	private int num;
@@ -11,6 +13,9 @@ public class BoardBean {
 	private int re_ref;
 	private int re_lev;
 	private int re_seq;
+	private int readcount;
+	private String pass;
+	private Date date;
 	
 	public int getNum() {
 		return num;
@@ -68,23 +73,33 @@ public class BoardBean {
 	public void setRe_seq(int re_seq) {
 		this.re_seq = re_seq;
 	}
+	
+	public int getReadcount() {
+		return readcount;
+	}
+	public void setReadcount(int readcount) {
+		this.readcount = readcount;
+	}
+	
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	public String getPass() {
+		return pass;
+	}
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
 	@Override
 	public String toString() {
 		return "BoardBean [num=" + num + ", name=" + name + ", subject=" + subject + ", content=" + content
 				+ ", filename=" + filename + ", oFileName=" + oFileName + ", re_ref=" + re_ref + ", re_lev=" + re_lev
-				+ ", re_seq=" + re_seq + "]";
+				+ ", re_seq=" + re_seq + ", readcount=" + readcount + ", pass=" + pass + ", date=" + date + "]";
 	}
-	
-	
-	
-	
-	
 
-	
-	
-	
-	
-	
 	
 	
 	

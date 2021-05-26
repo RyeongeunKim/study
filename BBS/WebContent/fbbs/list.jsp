@@ -57,6 +57,8 @@
       <td>번호</td>
       <td>제목</td>
       <td>작성자</td>
+      <td>작성일</td>
+      <td>조회수</td>
     </tr>
     
     <%
@@ -83,6 +85,8 @@
        <a href="content.jsp?num=<%=bb.getNum()%>&pageNum=<%=pageNum%>"><%=bb.getSubject() %></a>
       </td>
       <td><%=bb.getName() %></td>
+      <td><%=bb.getDate() %></td>
+      <td><%=bb.getReadcount() %></td>
     </tr>
     <%
     }
