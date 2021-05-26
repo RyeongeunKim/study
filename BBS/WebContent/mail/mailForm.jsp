@@ -9,14 +9,6 @@
 <link rel="stylesheet" href="../css/bootstrap.css">
 <link rel="stylesheet" href="../css/custom.css">
 <title>드림오피스</title>
-	<style type="text/css">
-		.jumbotron{
-			background-image: url("../images/main3.jpg");
-			background-size: cover;
-			text-shadow: black 0.2em 0.2em 0.2em;
-			color: white;
-		}
-	</style>
 </head>
 <body>
 	<%
@@ -35,13 +27,12 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>	
 			</button>
-			<a class="navbar-brand" href="main.jsp">드림오피스</a>
+			<a class="navbar-brand" href="../main/main.jsp">드림오피스</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="main.jsp">메인</a></li>
-				<li><a href="../bbs/bbs.jsp">방문예약</a></li>
-				<li><a href="../fbbs/fWriteForm.jsp">후기</a></li>
+				<li><a href="../main/main.jsp">메인</a></li>
+				<li class="active"><a href="../bbs/bbs.jsp">방문예약</a></li>
 				<li><a href="../map/map.jsp">위치</a></li>
 				<li><a href="../images/gallery.jsp">시설안내</a></li>
 				<li><a href="../mail/mailForm.jsp">고객지원</a></li>
@@ -69,7 +60,7 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">회원관리<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="../member/userInfo.jsp">회원정보</a></li>
+						<li><a href="../member/userInfo.jsp">회원정보수정</a></li>
 						<li><a href="../member/logoutAction.jsp">로그아웃</a></li>
 					</ul>
 				</li>
@@ -80,49 +71,35 @@
 		</div>
 	</nav>
 	<div class="container">
-	<div class="jumbotron">
-				<h1 class="text-center">드림 오피스를 소개합니다.</h1>
-				<p class="text-center">드림 오피스는 효과적인 협업을 위한 공유공간을 제공합니다</p>
-				<p class="text-center"><a class="btn btn-primary btn-lg" href="../bbs/bbs.jsp" role="button">상담 예약하기</a></p>
-			</div>
-		</div>
-
-	<div class="container">
-		<div id="myCarousel" class="carousel slide" data-ride="darousel">
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-				<li data-target="#myCarousel" data-slide-to="3"></li>
-			</ol>
-			<div class="carousel-inner">
-				<div class="item">
-					<img src="../images/main1.jpg">
-				</div>
-				<div class="item">
-					<img src="../images/main2.jpg">
-				</div>
-				<div class="item">
-					<img src="../images/lounge1.jpg">
-				</div>
-				<div class="item active">
-					<img src="../images/private.jpg">
-				</div>
-			</div>
-			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left"></span>
-			</a>
-			<a class="right carousel-control" href="#myCarousel" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right"></span>
-			</a>
-	<p align="center">
-	<br>
-	도로명주소 : 부산광역시 부산진구 동천로 109 삼한골든게이트 7층지번부산광역시 부산진구 부전동 112-3<br>
-	지번주소 : 부산광역시 부산진구 부전동 112-3
-	</p>			
+		<div class="row">
+		<form method="post" action="mailSend.jsp">
+			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+				<thead>
+					<tr>
+						<th colspan="2" style="background-color: #eeeeee; text-align: center;"><b>이메일 문의</b></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td width="200"><b>고객 이메일</b></td>
+						<td><input type="text" class="form-control" placeholder="이메일" name="sender"></td>
+					</tr>
+					<tr>
+						<td><b>드림오피스 이메일</b></td>
+						<td><input type="text" class="form-control" value="ryeongeun.gim@gmail.com" name="receiver" readonly="readonly"></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="text" class="form-control" placeholder="제목" name="subject"></td>
+					</tr>
+					<tr>	
+						<td colspan="2"><textarea class="form-control" placeholder="내용" name="content" maxlength="2048" style="height: 350px;"></textarea></td>
+					</tr>
+				</tbody>
+			</table>
+			<input type="submit" class="btn btn-primary pull-right" value="글쓰기">
+		</form>
 		</div>
 	</div>
-
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="../js/bootstrap.js"></script>
 </body>

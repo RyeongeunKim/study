@@ -54,8 +54,8 @@ public class BbsDAO {
 		return -1; //데이터베이스 오류
 	}
 	
-	public int write(String bbsTitle, String userID, String bbsContent, int passAvailable){
-		String SQL = "insert into bbs values (?,?,?,?,?,?,?)";
+	public int write(String bbsTitle, String userID, String bbsContent){
+		String SQL = "insert into bbs values (?,?,?,?,?,?)";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, getNext());
@@ -64,7 +64,6 @@ public class BbsDAO {
 			pstmt.setString(4, getDate());
 			pstmt.setString(5, bbsContent);
 			pstmt.setInt(6, 1);
-			pstmt.setInt(7, passAvailable);
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -87,7 +86,6 @@ public class BbsDAO {
 				bbs.setBbsDate(rs.getString(4));
 				bbs.setBbsContent(rs.getString(5));
 				bbs.setBbsAvailable(rs.getInt(6));
-				bbs.setPassAvailable(rs.getInt(7));
 				list.add(bbs);
 			}
 		} catch (Exception e) {
@@ -125,7 +123,6 @@ public class BbsDAO {
 				bbs.setBbsDate(rs.getString(4));
 				bbs.setBbsContent(rs.getString(5));
 				bbs.setBbsAvailable(rs.getInt(6));
-				bbs.setPassAvailable(rs.getInt(7));
 				return bbs;
 			}
 		} catch (Exception e) {

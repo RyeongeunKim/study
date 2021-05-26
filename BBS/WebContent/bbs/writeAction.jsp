@@ -6,7 +6,6 @@
 <jsp:useBean id="bbs" class="bbs.Bbs" scope="page"/>
 <jsp:setProperty property="bbsTitle" name="bbs"/>
 <jsp:setProperty property="bbsContent" name="bbs"/>
-<jsp:setProperty property="passAvailable" name="bbs"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,9 +33,7 @@
 						script.println("</script>");
 					}else{
 					BbsDAO bbsDAO = new BbsDAO();
-					int result = bbsDAO.write(bbs.getBbsTitle(), 
-								 userID, bbs.getBbsContent(), 
-								 bbs.getPassAvailable());
+					int result = bbsDAO.write(bbs.getBbsTitle(), userID, bbs.getBbsContent());
 					
 					if(result == -1){
 						

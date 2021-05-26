@@ -35,6 +35,7 @@
 				<li class="active"><a href="bbs.jsp">방문예약</a></li>
 				<li><a href="../map/map.jsp">위치</a></li>
 				<li><a href="../images/gallery.jsp">시설안내</a></li>
+				<li><a href="../mail/mailForm.jsp">고객지원</a></li>
 			</ul>
 			<%
 				if(userID == null){
@@ -80,14 +81,10 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" required="required"></td>
-					</tr>
-					<tr>
-						<td><input type="radio" class="form-control" name="passAvailable" value="1">Lock</td>
-						<td><input type="radio" class="form-control" name="passAvailable" value="0">Unlock</td>
+						<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle"></td>
 					</tr>
 					<tr>	
-						<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;" required="required"></textarea></td>
+						<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;"></textarea></td>
 					</tr>
 				</tbody>
 			</table>

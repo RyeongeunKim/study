@@ -29,7 +29,8 @@
 				<li><a href="../main/main.jsp">메인</a></li>
 				<li><a href="../bbs/bbs.jsp">방문예약</a></li>
 				<li><a href="../map/map.jsp">위치</a></li>
-				<li><a href="../images/gallery.jsp">시설안내</a></li>				
+				<li><a href="../images/gallery.jsp">시설안내</a></li>	
+				<li><a href="../mail/mailForm.jsp">고객지원</a></li>			
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
@@ -51,7 +52,7 @@
 				<form method="post" action="joinAction.jsp" name="fr">
 					<h2 style="text-align: center;">회원가입</h2><br>
 					<div class="d-flex justify-content-end" align="right">
-						<button class="btn btn-primary" onclick="winopen();" type="button">중복체크</button>
+						<button class="btn btn-primary" onclick="winopen();" type="button" >중복체크</button>
 						<input type="text" class="form-control" placeholder="아이디" name="userID" maxlength="20">	
 					</div><br>
 					<div class="form-group">

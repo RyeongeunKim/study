@@ -51,6 +51,7 @@
 				<li class="active"><a href="bbs.jsp">방문예약</a></li>
 				<li><a href="../map/map.jsp">위치</a></li>
 				<li><a href="../images/gallery.jsp">시설안내</a></li>
+				<li><a href="../mail/mailForm.jsp">고객지원</a></li>
 			</ul>
 			<%
 				if(userID == null){
@@ -107,8 +108,7 @@
 					</tr>
 					<tr>
 						<td>작성일자</td>
-						<td><%= bbs.getBbsDate()
-						.substring(0, 11) 
+						<td><%= bbs.getBbsDate().substring(0, 11) 
 						+ bbs.getBbsDate().substring(11, 13) 
 						+ "시" + bbs.getBbsDate().substring(14, 16) + "분" %></td>
 					</tr>
@@ -117,15 +117,21 @@
 						<td colspan="2" style="min-height: 200px; text-align: left;">
 						<%= bbs.getBbsContent().replaceAll(" ", "&nbsp;")
 						.replaceAll("<", "&lt;")
-						.replaceAll(">", "&gt;")
-						.replaceAll("\n", "br")%></td>
+						.replaceAll(">", "&gt;").replaceAll("\n", "br")%></td>
 					</tr>
 				</tbody>
 			</table>
 			<a href="bbs.jsp" class="btn btn-primary">목록</a>
-			<a href="PassCheck.jsp?bbsPass=<%= bbs.getBbsPass() %>" class="btn btn-primary">수정</a>
-			<a onclick="return confirm('정말로 삭제하겠습니까?')" href="deleteAction.jsp?bbsID=<%= bbsID %>" class="btn btn-primary">삭제</a>
-
+			<%
+				if(userID != null && userID.equals(bbs.getUserID())){
+			%>
+				<a href="update.jsp?bbsID=<%= bbsID %>" class="btn btn-primary">수정</a>
+				<a onclick="return confirm('정말로 삭제하겠습니까?')" 
+				href="deleteAction.jsp?bbsID=<%= bbsID %>" 
+				class="btn btn-primary">삭제</a>
+			<%
+				}
+			%>
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

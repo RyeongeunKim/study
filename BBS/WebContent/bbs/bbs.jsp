@@ -48,6 +48,7 @@
 				<li class="active"><a href="bbs.jsp">방문예약</a></li>
 				<li><a href="../map/map.jsp">위치</a></li>
 				<li><a href="../images/gallery.jsp">시설안내</a></li>
+				<li><a href="../mail/mailForm.jsp">고객지원</a></li>
 			</ul>
 			<%
 				if(userID == null){
@@ -87,7 +88,6 @@
 			<table class="table" style="text-align: center; border: 1px solid #dddddd">
 				<thead class="thead-dark">
 					<tr>
-						<th style="background-color: #000000; color: white; text-align: center;">비밀</th>
 						<th style="background-color: #000000; color: white; text-align: center;">번호</th>
 						<th style="background-color: #000000; color: white; text-align: center;">제목</th>
 						<th style="background-color: #000000; color: white; text-align: center;">작성자</th>
@@ -101,11 +101,6 @@
 						for(int i = 0;i<list.size(); i++){
 					%>		
 					<tr>
-						<%if(list.get(i).getPassAvailable()==1){ %>
-						<td>lock</td>
-						<% }else{ %>
-						<td>unlock</td>
-						<% }%>
 						<td><%= list.get(i).getBbsID() %></td>
 					 	<td><a href = "view.jsp?bbsID=<%= list.get(i).getBbsID()%>"><%= list.get(i).getBbsTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "br") %></a></td>
 						<td><%= list.get(i).getUserID() %></td>

@@ -42,6 +42,7 @@
 				<li class="active"><a href="../bbs/bbs.jsp">방문예약</a></li>
 				<li><a href="../map/map.jsp">위치</a></li>
 				<li><a href="../images/gallery.jsp">시설안내</a></li>
+				<li><a href="../mail/mailForm.jsp">고객지원</a></li>
 			</ul>
 			<%
 				if(userID == null){
