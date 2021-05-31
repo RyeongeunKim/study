@@ -13,14 +13,6 @@
 <body>
 	<h1>WebContent/board/content.jsp</h1>
 	<%
-   // 한글처리 
-   request.setCharacterEncoding("UTF-8");
-   // 전달되는 파라미터값 저장(name,subject,filename,oFileName)
-   String name = request.getParameter("name");
-   String subject = request.getParameter("subject");
-   String filename = request.getParameter("filename");
-  %>
-	<%
 		// 페이지 이동시 전달정보가 있으면(파라미터) 항상 가장먼저 저장
 		// num,pageNum
 // 		int num = 0;
@@ -39,7 +31,9 @@
 		
 		// DB에서 글번호(num)에 해당하 글정보를 모두 가져와서 출력	
 		BoardBean bb = bdao.getBoard(num); 
-	%> 
+		
+		bdao.updateReadcount(num);
+	%>
 
     <table border="1">
       <tr>
@@ -57,8 +51,7 @@
       <tr>
         <td>첨부파일</td>
         <td colspan="3">
-          <a href="file_down.jsp?filename=<%=bb.getFilename()%>"><%=bb.getFilename() %></a> 
-
+          <a href="../upload/<%=bb.getFilename()%>"><%=bb.getFilename() %></a> 
         </td>
       </tr>
       <tr>
@@ -73,10 +66,6 @@
           >
           <input type="button" value="삭제하기" 
                 onclick=" location.href='deleteForm.jsp?num=<%=bb.getNum() %>&pageNum=<%=pageNum %>';"
-          >
-          
-          <input type="button" value="답글쓰기" 
-                onclick="location.href='reWriteForm.jsp?num=<%=bb.getNum() %>&re_ref=<%=bb.getRe_ref() %>&re_lev=<%=bb.getRe_lev() %>&re_seq=<%=bb.getRe_seq() %>';"
           >
           
           <input type="button" value="목록으로" 

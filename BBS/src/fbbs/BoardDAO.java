@@ -90,7 +90,7 @@ public class BoardDAO {
 			////////////////////////////////////////////////////
 			
 			// 3 sql 작성 (insert) & pstmt 객체 생성
-			sql = "insert into itwill_board values(?,?,?,?,?,?,?,?,?,?,now())";
+			sql = "insert into itwill_board values(?,?,?,?,?,?,now(),?)";
 			
 			pstmt = conn.prepareStatement(sql);
 			
@@ -100,11 +100,8 @@ public class BoardDAO {
 			pstmt.setString(3, bb.getSubject());
 			pstmt.setString(4, bb.getContent());
 			pstmt.setString(5, bb.getFilename());
-			pstmt.setInt(6, bb.getRe_ref());
-			pstmt.setInt(7, bb.getRe_lev());
-			pstmt.setInt(8, bb.getRe_seq());
-			pstmt.setInt(9, bb.getReadcount());
-			pstmt.setString(10, bb.getPass());
+			pstmt.setString(6, bb.getPass());
+			pstmt.setInt(7, bb.getReadcount());
 			
 			// 4 sql 실행	
 			
@@ -128,8 +125,7 @@ public class BoardDAO {
 	}
 	// insertBoard()
 	
-	
-	
+
 	public int getBoardCount(){
 		
         int cnt = 0;
@@ -200,9 +196,6 @@ public class BoardDAO {
 				bb.setName(rs.getString("name"));
 				bb.setNum(rs.getInt("num"));
 				bb.setPass(rs.getString("pass"));
-				bb.setRe_lev(rs.getInt("re_lev"));
-				bb.setRe_ref(rs.getInt("re_ref"));
-				bb.setRe_seq(rs.getInt("re_seq"));
 				bb.setReadcount(rs.getInt("readcount"));
 				bb.setSubject(rs.getString("subject"));
 				
@@ -250,7 +243,7 @@ public class BoardDAO {
 			
 			
 			//sql= "select * from itwill_board";
-			sql= "select * from itwill_board order by num desc, re_ref desc, re_seq asc limit ?,?";			
+			sql= "select * from itwill_board order by num desc limit ?,?";			
 			
 			pstmt = conn.prepareStatement(sql);
 			
@@ -273,9 +266,6 @@ public class BoardDAO {
 				bb.setName(rs.getString("name"));
 				bb.setNum(rs.getInt("num"));
 				bb.setPass(rs.getString("pass"));
-				bb.setRe_lev(rs.getInt("re_lev"));
-				bb.setRe_ref(rs.getInt("re_ref"));
-				bb.setRe_seq(rs.getInt("re_seq"));
 				bb.setReadcount(rs.getInt("readcount"));
 				bb.setSubject(rs.getString("subject"));
 				
@@ -351,9 +341,6 @@ public class BoardDAO {
 				bb.setName(rs.getString("name"));
 				bb.setNum(rs.getInt("num"));
 				bb.setPass(rs.getString("pass"));
-				bb.setRe_lev(rs.getInt("re_lev"));
-				bb.setRe_ref(rs.getInt("re_ref"));
-				bb.setRe_seq(rs.getInt("re_seq"));
 				bb.setReadcount(rs.getInt("readcount"));
 				bb.setSubject(rs.getString("subject"));
 				
@@ -454,73 +441,5 @@ public class BoardDAO {
 	}
 	// deleteBoard(bb)
 	
-	// reInsertBoard(bb)
-	public void reInsertBoard(BoardBean bb){
-		int num = 0;
-		
-		try {
-			// 1) 답글 작성 번호(num)계산
-			// 1,2 디비연결
-			conn = getConnection();
-			// 3 sql 구문 & pstmt 객체
-			sql = "select max(num) from itwill_board";
-			pstmt = conn.prepareStatement(sql);
-			
-			// 4 sql 실행
-			rs = pstmt.executeQuery();
-			
-			// 5 데이터 처리
-			if(rs.next()){
-				//rs.getInt("max(num)");
-				num = rs.getInt(1)+1;
-			}
-			
-			System.out.println(" 답글 번호 계산 완료 : "+num);			
-			
-			// 2) 답글 순서 재배치 (정렬)
-			// -> re_ref(같은그룹)안에서  re_seq(순서)를 정렬
-			//            "           기존의 순서값보다 큰값이 있으면 순서를 1증가
-			sql = "update itwill_board set re_seq = re_seq+1 "
-					+ "where re_ref=? and re_seq>?";
-			
-			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setInt(1, bb.getRe_ref());
-			pstmt.setInt(2, bb.getRe_seq());
-			
-			// sql 실행
-			pstmt.executeUpdate();
-			
-			System.out.println(" 답글 정렬 완료! ");
-			
-			// 3) 답글 쓰기 
-			sql = "insert into itwill_board values(?,?,?,?,?,?,?,?,?,?,now())";
-			
-			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setInt(1, num);
-			pstmt.setString(2, bb.getName());
-			pstmt.setString(3, bb.getSubject());
-			pstmt.setString(4, bb.getContent());
-			pstmt.setString(5, bb.getFilename());
-			pstmt.setInt(6, bb.getRe_ref());
-			pstmt.setInt(7, bb.getRe_lev());
-			pstmt.setInt(8, bb.getRe_seq());
-			pstmt.setInt(9, bb.getReadcount());
-			pstmt.setString(10, bb.getPass());
-	
-			// sql 실행
-			pstmt.executeUpdate();
-			
-			System.out.println(" 답글 작성완료! ");
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			closeDB();
-		}
-	
-	}
-	// reInsertBoard(bb)
 	
 }//DAO 끝

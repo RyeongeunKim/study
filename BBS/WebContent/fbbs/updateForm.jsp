@@ -38,7 +38,6 @@
     <form action="updatePro.jsp?pageNum=<%=pageNum %>" method="post">
      <input type="hidden" name="num" value="<%=bb.getNum()%>">
           글쓴이 : <input type="text" name="name" value="<%=bb.getName()%>" readonly> <br>
-          비밀번호 : <input type="password" name="pass" placeholder="비밀번호 입력하시오."><br>
           제목 : <input type="text" name="subject" value="<%=bb.getSubject() %>"><br>
           내용 : <textarea rows="10" cols="30" name="content"><%=bb.getContent() %></textarea>
       <hr>

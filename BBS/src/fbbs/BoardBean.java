@@ -10,9 +10,6 @@ public class BoardBean {
 	private String content;
 	private String filename;
 	private String oFileName;
-	private int re_ref;
-	private int re_lev;
-	private int re_seq;
 	private int readcount;
 	private String pass;
 	private Date date;
@@ -55,24 +52,6 @@ public class BoardBean {
 	public void setFilename(String filename) {
 		this.filename = filename;
 	}
-	public int getRe_ref() {
-		return re_ref;
-	}
-	public void setRe_ref(int re_ref) {
-		this.re_ref = re_ref;
-	}
-	public int getRe_lev() {
-		return re_lev;
-	}
-	public void setRe_lev(int re_lev) {
-		this.re_lev = re_lev;
-	}
-	public int getRe_seq() {
-		return re_seq;
-	}
-	public void setRe_seq(int re_seq) {
-		this.re_seq = re_seq;
-	}
 	
 	public int getReadcount() {
 		return readcount;
@@ -93,15 +72,12 @@ public class BoardBean {
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
+	
 	@Override
 	public String toString() {
 		return "BoardBean [num=" + num + ", name=" + name + ", subject=" + subject + ", content=" + content
-				+ ", filename=" + filename + ", oFileName=" + oFileName + ", re_ref=" + re_ref + ", re_lev=" + re_lev
-				+ ", re_seq=" + re_seq + ", readcount=" + readcount + ", pass=" + pass + ", date=" + date + "]";
+				+ ", filename=" + filename + ", oFileName=" + oFileName + ", readcount=" + readcount + ", pass=" + pass
+				+ ", date=" + date + "]";
 	}
-
-	
-	
-	
 
 }

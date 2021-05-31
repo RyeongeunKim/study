@@ -35,6 +35,7 @@
 				<li class="active"><a href="bbs.jsp">방문예약</a></li>
 				<li><a href="../map/map.jsp">위치</a></li>
 				<li><a href="../images/gallery.jsp">시설안내</a></li>
+				<li><a href="../mail/mailForm.jsp">고객지원</a></li>
 			</ul>
 			<%
 				if(userID == null){
@@ -59,7 +60,7 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">회원관리<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="../member/memberUpdate.jsp">회원정보수정</a></li>
+						<li><a href="../member/userInfo.jsp">회원정보수정</a></li>
 						<li><a href="../member/logoutAction.jsp">로그아웃</a></li>
 					</ul>
 				</li>
@@ -80,10 +81,10 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50" required="required"></td>
+						<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle"></td>
 					</tr>
 					<tr>	
-						<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;" required="required"></textarea></td>
+						<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;"></textarea></td>
 					</tr>
 				</tbody>
 			</table>

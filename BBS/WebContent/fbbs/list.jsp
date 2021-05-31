@@ -48,6 +48,7 @@
    // 디비에 저장된 모든 글중에서 원하는 만큼만 가져오기(페이지 사이즈)
   ArrayList<BoardBean> boardList = bdao.getBoardList(startRow,pageSize); 
    
+   
   %>
   <h2> ITWILL 게시판 글목록 [총 : <%=cnt %>개] </h2>
   
@@ -57,8 +58,6 @@
       <td>번호</td>
       <td>제목</td>
       <td>작성자</td>
-      <td>작성일</td>
-      <td>조회수</td>
     </tr>
     
     <%
@@ -71,22 +70,9 @@
      <tr>
       <td><%=bb.getNum() %></td>
       <td>
-      <%
-       // 답글일때만 이미지 보여주기
-       int wid = 0;
-       if(bb.getRe_lev()>0){
-    	   wid = 10 * bb.getRe_lev();
-      %>
-       <img src="level.gif" height="15" width="<%=wid%>">
-       <img src="re.gif">
-      <%
-       }
-      %>
        <a href="content.jsp?num=<%=bb.getNum()%>&pageNum=<%=pageNum%>"><%=bb.getSubject() %></a>
       </td>
       <td><%=bb.getName() %></td>
-      <td><%=bb.getDate() %></td>
-      <td><%=bb.getReadcount() %></td>
     </tr>
     <%
     }
