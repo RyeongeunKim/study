@@ -9,22 +9,33 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/notice-reg")
-public class NoticeReg extends HttpServlet {
+@WebServlet("/add")
+public class Add extends HttpServlet {
+	
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
-		//request.setCharacterEncoding("utf-8");
 		
 		PrintWriter out = response.getWriter();
+				
+		String x_ = request.getParameter("x");
+		String y_ = request.getParameter("y");
+				
+		int x = 0;
+		int y = 0;
 		
-		String title = request.getParameter("title");
-		String content = request.getParameter("content");
+		if(x_ != null && !x_.equals(""))
+			x = Integer.parseInt(x_);
 		
-		out.println(title);
-		out.println(content);
+		if(y_ != null && !y_.equals(""))
+			y = Integer.parseInt(y_);
+		
+		out.print("덧셈 결과 : " + (x+y));
+		
+		
 		
 	}
+	
 }

@@ -5,54 +5,32 @@ public class MultiThreadTest {
 	//싱글(메인)스레드
 	public static void main(String[] args) {
 
-		new MultiThread1().start();
-		new MultiThread2().start();
-		new MultiThread3().start();
-		new MultiThread4().start();
-
-	}
-
-}
-
-class MultiThread1 extends Thread{
-	
-	public void run() {
+		//작업1
 		for(int i=0;  i<10;  i++) {
 			System.out.print(i);
 		}
-	}
-}
-
-class MultiThread2 extends Thread{
-	
-	public void run() {
+		
+		//작업2
 		for(char i='A';  i<='Z'; i++){
 			System.out.print(i);
 		}
-	}
-}
-
-class MultiThread3 extends Thread{
-	
-	public void run() {
+		
+		
+		//작업3
 		for(char i='a';  i<='z'; i++){
 			System.out.print(i);
 		}
-	}
-}
-
-class MultiThread4 extends Thread{
-	
-	public void run() {
+		
+			
+		//작업4
 		char arr[] = {'ㄱ', 'ㄴ','ㄷ','ㄹ','ㅁ','ㅂ','ㅅ','ㅈ'};
 		for(char i : arr){
 			System.out.print(i);
 		}
+		
 	}
+
 }
-
-
-
 //실행결과 
 //0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzㄱㄴㄷㄹㅁㅂㅅㅈ
 
