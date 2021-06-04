@@ -21,8 +21,46 @@
     <servlet-name>MemberFrontController</servlet-name>
     <url-pattern>*.me</url-pattern>
   </servlet-mapping>  
-  
   <!-- MemberFrontController 매핑 -->
+  
+  <!-- AdminGoodsFrontController 매핑 -->
+  <servlet>
+    <servlet-name>AdminGoodsFrontController</servlet-name>
+    <servlet-class>com.admin.goods.action.AdminGoodsFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>AdminGoodsFrontController</servlet-name>
+    <url-pattern>*.ag</url-pattern>
+  </servlet-mapping>
+  <!-- AdminGoodsFrontController 매핑 -->
+  
+  
+  <!-- GoodsFrontController 매핑 -->
+  <servlet>
+    <servlet-name>GoodsFrontController</servlet-name>
+    <servlet-class>com.goods.action.GoodsFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>GoodsFrontController</servlet-name>
+    <url-pattern>*.go</url-pattern>
+  </servlet-mapping>
+  <!-- GoodsFrontController 매핑 -->
+  
+  
+    
+  <!-- BasketFrontController 매핑 -->
+  <servlet>
+    <servlet-name>BasketFrontController</servlet-name>
+    <servlet-class>com.basket.action.BasketFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>BasketFrontController</servlet-name>
+    <url-pattern>*.ba</url-pattern>
+  </servlet-mapping>
+  <!-- BasketFrontController 매핑 -->
   
   
   

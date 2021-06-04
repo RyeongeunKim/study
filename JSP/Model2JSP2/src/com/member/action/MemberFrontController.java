@@ -25,12 +25,14 @@ public class MemberFrontController extends HttpServlet {
 
 		// 가상주소 가져오기
 		String requestURI = request.getRequestURI();
+		// 컨텍스트 패스주소를 포함한 요청한 주소 얻기   /Model2JSP2/Main.me
 		System.out.println("1 : requestURI:" + requestURI);
 		// 프로젝트명(컨텍스트명)
 		String contextPath = request.getContextPath();
 		System.out.println("1 : contextPath : " + contextPath);
 		// 프로젝트명을 제외한 가상주소
 		String command = requestURI.substring(contextPath.length());
+		//   /Main.me
 		System.out.println("1 : command : " + command);
 
 		/******************* 1.페이지 주소 파싱 ********************************/
@@ -95,21 +97,99 @@ public class MemberFrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/Main.me")){
+		else if(command.equals("/Main.me")){//메인화면으로 이동시켜줘~ 라는 요청주소 /Main.me를 컨트롤러가 받았을때
 			System.out.println("C : /Main.me 호출");
 			
 			forward = new ActionForward();
 			forward.setPath("./main/main.jsp");
 			forward.setRedirect(false);
 		}
-		
+		else if(command.equals("/MemberLogout.me")){
+			System.out.println("C : /MemberLogout.me 호출");
+			// MemberLogoutAction() 객체 생성
+			action = new MemberLogoutAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}			
+		}
+		else if(command.equals("/MemberInfo.me")){
+			System.out.println("C : /MemberInfo.me 호출");
+			// DB정보를 가져와서 view페이지에 출력
+			// MemberInfoAction() 객체 생성
+			action = new MemberInfoAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/MemberUpdate.me")){
+			System.out.println("C : /MemberUpdate.me 호출");
+			// DB정보를 -> 화면(view)출력-./member/updateForm.jsp
+			// MemberUpdateAction() 객체 생성
+			
+			action = new MemberUpdateAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/MemberUpdateProAction.me")){
+			System.out.println("C : /MemberUpdateProAction.me 호출");
+			// 입력받은 정보를 DB에 저장(수정) -> 메인페이지로 이동
+			// MemberUpdateProAction() 객체 생성
+			action = new MemberUpdateProAction();
+				
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/MemberDelete.me")){
+			System.out.println("C : /MemberDelete.me 호출");
+			// 정보 입력 view -> DB 처리
+			
+			forward = new ActionForward();
+			forward.setPath("./member/deleteForm.jsp");
+			forward.setRedirect(false);			
+		}
+		else if(command.equals("/MemberDeleteAction.me")){
+			System.out.println("C : /MemberDeleteAction.me 호출");
+			// 정보를 전달받아서 DB에서 삭제 
+			// MemberDeleteAction() 객체 생성
+			action = new MemberDeleteAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}		
+		}
+		else if(command.equals("/MemberList.me")){
+			System.out.println("C : /MemberList.me 호출");
+			// DB사용해서 해당 view출력
+			// MemberListAction() 객체
+			action = new MemberListAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}
 		
 		
 		/******************* 2.페이지 주소 매핑(연결) ********************************/
 
 		/******************* 3.페이지 주소 이동 ********************************/
 
-		if (forward != null) {
+		if (forward != null) { //forward변수에  new ActionForward();객체가 저장 되어 있고~~
 			// forward 객체 있음 => 페이지 이동정보가 있음
 			if (forward.isRedirect()) { // true
 				System.out.println("3 : @@@@@@@@ sendRedirect() 이동 \n\n\n");
@@ -117,7 +197,7 @@ public class MemberFrontController extends HttpServlet {
 			} else {// false
 				System.out.println("3 : @@@@@@@@ forward() 이동 \n\n\n");
 				RequestDispatcher dis = request.getRequestDispatcher(forward.getPath());
-				dis.forward(request, response);
+				dis.forward(request, response);						// ./main/main.jsp
 			}
 		}
 		/******************* 3.페이지 주소 이동 ********************************/

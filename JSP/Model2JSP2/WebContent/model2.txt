@@ -51,6 +51,32 @@ model2.txt
   UNIQUE INDEX `email_UNIQUE` (`email` ASC));
 	
 	
+	CREATE TABLE `model2`.`itwill_goods` (
+  `num` INT NOT NULL,
+  `category` VARCHAR(100) NULL,
+  `name` VARCHAR(45) NULL,
+  `content` VARCHAR(1000) NULL,
+  `size` VARCHAR(45) NULL,
+  `color` VARCHAR(45) NULL,
+  `amount` INT NULL,
+  `price` INT NULL,
+  `image` VARCHAR(1000) NULL,
+  `best` INT NULL,
+  `date` DATE NULL,
+  PRIMARY KEY (`num`));
+  
+  
+	
+	CREATE TABLE `model2`.`itwill_basket` (
+  `b_num` INT NOT NULL,
+  `b_m_id` VARCHAR(50) NULL,
+  `b_g_num` INT NULL,
+  `b_g_amount` INT NULL,
+  `b_g_size` VARCHAR(45) NULL,
+  `b_g_color` VARCHAR(45) NULL,
+  `b_date` DATE NULL,
+  PRIMARY KEY (`b_num`));
+	
 	
 	
 	
