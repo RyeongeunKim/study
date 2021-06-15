@@ -62,14 +62,14 @@ public class GoodsDAO {
 
 	// getGoodsList()
 	public List getGoodsList() {
-        List goodsList = new ArrayList();
-        try {
-        	conn = getConnection();
-        	sql = "select * from itwill_goods";
+		List goodsList = new ArrayList();
+		try {
+			conn = getConnection();
+			sql = "select * from itwill_goods";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			
-			while(rs.next()){
+
+			while (rs.next()) {
 				GoodsDTO dto = new GoodsDTO();
 				dto.setAmount(rs.getInt("amount"));
 				dto.setBest(rs.getInt("best"));
@@ -82,61 +82,60 @@ public class GoodsDAO {
 				dto.setNum(rs.getInt("num"));
 				dto.setPrice(rs.getInt("price"));
 				dto.setSize(rs.getString("size"));
-				
+
 				// 리스트 한칸에 상품 1개를 저장
-				goodsList.add(dto);			
-				
-			}// while
-			
+				goodsList.add(dto);
+
+			} // while
+
 			System.out.println("DAO : 상품 정보 저장 완료(일반사용자 상품 목록)");
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			closeDB();
 		}
-		
+
 		return goodsList;
 	}
 	// getGoodsList()
-	
+
 	// getGoodsList(item)
 	public List getGoodsList(String item) {
-		// item에 따라서 다른 결과를 처리 
+		// item에 따라서 다른 결과를 처리
 		// item - all/best/그외 카테고리
-        List goodsList = new ArrayList();
-        
-        StringBuffer SQL = new StringBuffer();
-        
-        try {
-        	conn = getConnection();
-        	
-        	//sql = "select * from itwill_goods";
-        	
-        	SQL.append("select * from itwill_goods");
-        	
-        	if(item.equals("all")){
-        	}else if(item.equals("best")){
-        		SQL.append(" where best=?");
-        	}else{
-        		SQL.append(" where category=?");
-        	}
-        	
-        	//pstmt = conn.prepareStatement(sql);
-        	pstmt = conn.prepareStatement(SQL+"");
-        	
-        	// ?
-        	if(item.equals("all")){
-        	}else if(item.equals("best")){
-        		pstmt.setInt(1, 1); // 인기상품-1, 일반상품-0
-        	}else{
-        		pstmt.setString(1, item);
-        	}       	
-        	
-			
+		List goodsList = new ArrayList();
+
+		StringBuffer SQL = new StringBuffer();
+
+		try {
+			conn = getConnection();
+
+			// sql = "select * from itwill_goods";
+
+			SQL.append("select * from itwill_goods");
+
+			if (item.equals("all")) {
+			} else if (item.equals("best")) {
+				SQL.append(" where best=?");
+			} else {
+				SQL.append(" where category=?");
+			}
+
+			// pstmt = conn.prepareStatement(sql);
+			pstmt = conn.prepareStatement(SQL + "");
+
+			// ?
+			if (item.equals("all")) {
+			} else if (item.equals("best")) {
+				pstmt.setInt(1, 1); // 인기상품-1, 일반상품-0
+			} else {
+				pstmt.setString(1, item);
+			}
+
 			rs = pstmt.executeQuery();
-			
-			while(rs.next()){
+
+			while (rs.next()) {
 				GoodsDTO dto = new GoodsDTO();
 				dto.setAmount(rs.getInt("amount"));
 				dto.setBest(rs.getInt("best"));
@@ -149,39 +148,39 @@ public class GoodsDAO {
 				dto.setNum(rs.getInt("num"));
 				dto.setPrice(rs.getInt("price"));
 				dto.setSize(rs.getString("size"));
-				
+
 				// 리스트 한칸에 상품 1개를 저장
-				goodsList.add(dto);			
-				
-			}// while
-			
+				goodsList.add(dto);
+
+			} // while
+
 			System.out.println("DAO : 상품 정보 저장 완료(일반사용자 상품 목록)");
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			closeDB();
 		}
-		
+
 		return goodsList;
 	}
 	// getGoodsList(item)
-	
+
 	// getGoods(num)
-	public GoodsDTO getGoods(int num){
+	public GoodsDTO getGoods(int num) {
 		GoodsDTO goods = null;
 		try {
 			conn = getConnection();
 			sql = "select * from itwill_goods where num=?";
 			pstmt = conn.prepareStatement(sql);
-			
+
 			pstmt.setInt(1, num);
-			
+
 			rs = pstmt.executeQuery();
-			
-			if(rs.next()){
+
+			if (rs.next()) {
 				goods = new GoodsDTO();
-				
+
 				goods.setAmount(rs.getInt("amount"));
 				goods.setBest(rs.getInt("best"));
 				goods.setCategory(rs.getString("category"));
@@ -192,35 +191,34 @@ public class GoodsDAO {
 				goods.setName(rs.getString("name"));
 				goods.setNum(rs.getInt("num"));
 				goods.setPrice(rs.getInt("price"));
-				goods.setSize(rs.getString("size"));				
-				
+				goods.setSize(rs.getString("size"));
+
 			} // if
-			
+
 			System.out.println("DAO : 상품 1개 정보 저장 완료(Detail)");
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			closeDB();
 		}
-		
-		
+
 		return goods;
 	}
 	// getGoods(num)
-	
+
 	// updateAmount(basketList)
-	public void updateAmount(List basketList){
-		
-		
+	public void updateAmount(List basketList) {
+
 		try {
 			conn = getConnection();
-			
-			for(int i=0;i<basketList.size();i++){
-				BasketDTO bkDTO = (BasketDTO) basketList.get(i);
+
+			for (int i = 0; i < basketList.size(); i++) {
+				BasketDTO bkDTO = (BasketDTO)basketList.get(i);
 				// 상품번호에 해당하는 장바구니 상품의 개수만큼 차감
 				sql = "update itwill_goods set amount = amount-? where num=?";
 				pstmt = conn.prepareStatement(sql);
+				
 				pstmt.setInt(1, bkDTO.getB_g_amount());
 				pstmt.setInt(2, bkDTO.getB_g_num());
 				
@@ -229,23 +227,12 @@ public class GoodsDAO {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
+		}finally {
 			closeDB();
 		}
+
 	}
-	
+
 	// updateAmount(basketList)
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

@@ -4,30 +4,31 @@ import java.sql.Date;
 
 public class OrderDTO {
 	
-	private int o_num;			//테이블 주문번호 (1, 2, 3, 4, ...)
-	private String o_trade_num; //상품 주문번호(123123-123123)
+	private int o_num;  			//테이블 주문번호  (1,2,3,4,...)
+	private String o_trade_num;		//상품 주문번호 (123123-123123)
 	
-	private int o_g_num; 		//주문된 상품물건 번호
-	private String o_g_name; 	//주문된 상품 이름
-	private String o_g_amount; 	//주문된 상품 수량
-	private String o_g_color; 	//주문된 상품 색상
-	private String o_g_size; 	//주문된 상품 크기
-	private String o_m_id; 		//주문한 사람의 ID
+	private int o_g_num;			//주문된 상품물건 번호
+	private String o_g_name;		//주문된 상품 이름
+	private int o_g_amount;		//주문된 상품 수량
+	private String o_g_color;		//주문된 상품 색상
+	private String o_g_size;		//주문된 상품 크기
+	private String o_m_id;			//주문한 사람의 ID
 	
 	private String o_receive_name;	//받는사람 이름
 	private String o_receive_addr1;	//받는 사람 주소1
 	private String o_receive_addr2;	//받는 사람 주소2
-	private String o_receive_phone;	//받는 사람 연락처
+	private String o_receive_phone; //받는 사람 연락처
 	private String o_receive_msg;	//배송 메세지
 	
-	private int o_sum_money;		//주문 총액
+	private int o_sum_money; 		// 주문 총액
 	private String o_trade_type;	//결제 방법
 	private String o_trade_payer;	//결제자
 	private Date o_trade_date;		//결제 시간
 	
-	private String o_trans_num;		//택배 운송자 정보
+	private String o_trans_num;		//택배 운송장정보
 	private Date o_date;			//주문테이블 시간정보
 	private int o_status;			//주문상태 저장정보
+	
 	
 	public int getO_num() {
 		return o_num;
@@ -53,10 +54,10 @@ public class OrderDTO {
 	public void setO_g_name(String o_g_name) {
 		this.o_g_name = o_g_name;
 	}
-	public String getO_g_amount() {
+	public int getO_g_amount() {
 		return o_g_amount;
 	}
-	public void setO_g_amount(String o_g_amount) {
+	public void setO_g_amount(int o_g_amount) {
 		this.o_g_amount = o_g_amount;
 	}
 	public String getO_g_color() {
@@ -150,6 +151,7 @@ public class OrderDTO {
 		this.o_status = o_status;
 	}
 	
+	// alt+shift+s+s
 	@Override
 	public String toString() {
 		return "OrderDTO [o_num=" + o_num + ", o_trade_num=" + o_trade_num + ", o_g_num=" + o_g_num + ", o_g_name="
@@ -162,4 +164,18 @@ public class OrderDTO {
 	}
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
 }

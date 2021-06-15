@@ -1,4 +1,4 @@
-package com.order.action;
+package com.admin.order.action;
 
 import java.io.IOException;
 
@@ -9,15 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-// @WebServlet("*.or")
-// => 주소를 통한 컨트롤러 매핑 (JSP2.2~2.3/서블릿3.0~3.1에서 사용)
-
-@WebServlet("*.or")
-public class OrderFrontController extends HttpServlet {
+@WebServlet("*.ao")
+public class AdminOrderFrontController extends HttpServlet{
 
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("C : OrderFrontController_doProcess() 호출");
+		System.out.println("C : AdminOrderFrontController_doProcess() 호출");
 
 		/******************* 1.페이지 주소 파싱 ********************************/
 		// 가상주소 전체 가져오기
@@ -35,9 +32,22 @@ public class OrderFrontController extends HttpServlet {
 		Action action = null;
 		ActionForward forward = null;
 		
-		if(command.equals("/OrderStart.or")){
-			// OrderStartAction 객체
-			action = new OrderStartAction();
+		if(command.equals("/AdminOrderList.ao")){
+			System.out.println("C : /AdminOrderList.ao 호출");
+			// AdminOrderListAction()
+			
+			action = new AdminOrderListAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/AdminOrderDetail.ao")){
+			System.out.println("C : /AdminOrderDetail.ao 호출");
+			
+			// AdminOrderDetailAction()
+			action = new AdminOrderDetailAction();
 			
 			try {
 				forward = action.execute(request, response);
@@ -45,30 +55,22 @@ public class OrderFrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 			
-		}else if(command.equals("/OrderAdd.or")){
-			System.out.println("C: /OrderAdd.or 호출 ");
-			
-			// 주문정보를 전달받아서 DB저장
-			// OrderAddAction
-			action = new OrderAddAction();
-			
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}else if(command.equals("/OrderList.or")){
-			System.out.println("C : /OrderList.or 호출 ");
-			// OrderListAction()
-			
-			action = new OrderListAction();
-			
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}			
 		}
+		else if(command.equals("/AdminOrderModify.ao")){
+			System.out.println("C : /AdminOrderModify.ao 호출");
+			
+			// AdminOrderModifyAction()
+			action = new AdminOrderModifyAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
+		
 
 		
 		System.out.println("C : 2.페이지 주소 매핑  완료");
@@ -96,7 +98,7 @@ public class OrderFrontController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("---------------------------------------------");
-		System.out.println("C : OrderFrontController_doGet() 호출");
+		System.out.println("C : AdminOrderFrontController_doGet() 호출");
 		doProcess(request, response);
 	}
 
@@ -104,7 +106,7 @@ public class OrderFrontController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("---------------------------------------------");
-		System.out.println("C : OrderFrontController_doPost() 호출");
+		System.out.println("C : AdminOrderFrontController_doPost() 호출");
 		doProcess(request, response);
 	}
 

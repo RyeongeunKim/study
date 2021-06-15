@@ -53,7 +53,7 @@ public class BasketFrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}else if(command.equals("/BasketDelete.ba")){
-			// 장바구니 정보 DB에서 삭제
+			// 장바구니 정보 DB에서 삭제 
 			// BasketDeleteAction
 			action = new BasketDeleteAction();
 			

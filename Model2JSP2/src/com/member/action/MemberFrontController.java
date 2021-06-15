@@ -25,12 +25,14 @@ public class MemberFrontController extends HttpServlet {
 
 		// 가상주소 가져오기
 		String requestURI = request.getRequestURI();
+		// 컨텍스트 패스주소를 포함한 요청한 주소 얻기   /Model2JSP2/Main.me
 		System.out.println("1 : requestURI:" + requestURI);
 		// 프로젝트명(컨텍스트명)
 		String contextPath = request.getContextPath();
 		System.out.println("1 : contextPath : " + contextPath);
 		// 프로젝트명을 제외한 가상주소
 		String command = requestURI.substring(contextPath.length());
+		//   /Main.me
 		System.out.println("1 : command : " + command);
 
 		/******************* 1.페이지 주소 파싱 ********************************/
@@ -95,7 +97,7 @@ public class MemberFrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/Main.me")){
+		else if(command.equals("/Main.me")){//메인화면으로 이동시켜줘~ 라는 요청주소 /Main.me를 컨트롤러가 받았을때
 			System.out.println("C : /Main.me 호출");
 			
 			forward = new ActionForward();
@@ -187,7 +189,7 @@ public class MemberFrontController extends HttpServlet {
 
 		/******************* 3.페이지 주소 이동 ********************************/
 
-		if (forward != null) {
+		if (forward != null) { //forward변수에  new ActionForward();객체가 저장 되어 있고~~
 			// forward 객체 있음 => 페이지 이동정보가 있음
 			if (forward.isRedirect()) { // true
 				System.out.println("3 : @@@@@@@@ sendRedirect() 이동 \n\n\n");
@@ -195,7 +197,7 @@ public class MemberFrontController extends HttpServlet {
 			} else {// false
 				System.out.println("3 : @@@@@@@@ forward() 이동 \n\n\n");
 				RequestDispatcher dis = request.getRequestDispatcher(forward.getPath());
-				dis.forward(request, response);
+				dis.forward(request, response);						// ./main/main.jsp
 			}
 		}
 		/******************* 3.페이지 주소 이동 ********************************/

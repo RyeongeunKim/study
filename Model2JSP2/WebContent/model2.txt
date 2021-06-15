@@ -76,6 +76,32 @@ model2.txt
   `b_g_color` VARCHAR(45) NULL,
   `b_date` DATE NULL,
   PRIMARY KEY (`b_num`));
+  
+  
+  
+  CREATE TABLE `model2`.`itwill_order` (
+  `o_num` INT NOT NULL,
+  `o_trade_num` VARCHAR(50) NULL,
+  `o_g_num` INT NULL,
+  `o_g_name` VARCHAR(45) NULL,
+  `o_g_amount` INT NULL,
+  `o_g_size` VARCHAR(45) NULL,
+  `o_g_color` VARCHAR(45) NULL,
+  `o_m_id` VARCHAR(45) NULL,
+  `o_receive_name` VARCHAR(45) NULL,
+  `o_receive_addr1` VARCHAR(100) NULL,
+  `o_receive_addr2` VARCHAR(100) NULL,
+  `o_receive_phone` VARCHAR(45) NULL,
+  `o_receive_msg` VARCHAR(100) NULL,
+  `o_sum_money` INT NULL,
+  `o_trade_type` VARCHAR(45) NULL,
+  `o_trade_payer` VARCHAR(45) NULL,
+  `o_trade_date` DATE NULL,
+  `o_trans_num` VARCHAR(100) NULL,
+  `o_date` DATE NULL,
+  `o_status` INT NULL,
+  PRIMARY KEY (`o_num`));
+  
 	
 	
 	

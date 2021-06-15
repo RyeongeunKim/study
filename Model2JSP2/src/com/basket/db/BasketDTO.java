@@ -1,9 +1,9 @@
 package com.basket.db;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class BasketDTO {
-	
+
 	private int b_num;
 	private String b_m_id;
 	private int b_g_num;
@@ -11,6 +11,7 @@ public class BasketDTO {
 	private String b_g_size;
 	private String b_g_color;
 	private Date b_date;
+	
 	
 	public int getB_num() {
 		return b_num;
@@ -55,12 +56,15 @@ public class BasketDTO {
 		this.b_date = b_date;
 	}
 	
+	// alt + shift + s  + s
 	@Override
 	public String toString() {
 		return "BasketDTO [b_num=" + b_num + ", b_m_id=" + b_m_id + ", b_g_num=" + b_g_num + ", b_g_amount="
 				+ b_g_amount + ", b_g_size=" + b_g_size + ", b_g_color=" + b_g_color + ", b_date=" + b_date + "]";
 	}
-
-
+	
+	
+	
+	
 	
 }

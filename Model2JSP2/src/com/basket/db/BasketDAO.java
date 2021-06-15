@@ -228,7 +228,8 @@ public class BasketDAO {
 	}	
 	// getBasketList(id)
 	
-	//basketDelete(num)
+	
+	// basketDelete(b_num)
 	public void basketDelete(int b_num){
 		
 		try {
@@ -242,34 +243,39 @@ public class BasketDAO {
 			
 			System.out.println("DAO : 회원장바구니 정보 삭제 완료~!");
 			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			closeDB();
-		}
-		
-	}
-	//basketDelete(num)
-	
-	//basketDelete(id) - 구매 후 장바구니 전체 제거
-	public void basketDelete(String id){
-		
-		try {
-			conn = getConnection();
-			// 구매 후 아이디에 해당하는 모든 장바구니 초기화
-			sql = "delete from itwill_basket where b_m_id=?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, id);
-			pstmt.executeUpdate();
-			System.out.println("DAO : 구매 후 장바구니 제거");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			closeDB();
 		}
 		
+		
+		
 	}
-	//basketDelete(id) - 구매 후 장바구니 전체 제거
+	// basketDelete(b_num)
+	
+	
+	// basketDelete(id)-구매후 장바구니 전체 제거
+	public void basketDelete(String id){
+		
+		try {
+			conn = getConnection();
+			// 구매후 아이디에 해당하는 모든 장보구니 초기화
+			sql = "delete from itwill_basket where b_m_id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			
+			pstmt.executeUpdate();
+			
+			System.out.println("DAO : 구매후 장바구니 제거");
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+	}	
+	// basketDelete(id)-구매후 장바구니 전체 제거
 	
 	
 	
