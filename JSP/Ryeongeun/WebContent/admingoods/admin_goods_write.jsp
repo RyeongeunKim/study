@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<form method="post" action="#" enctype="multipart/form-data">
+	<form method="post" action="./GoodsAddAction.ag" enctype="multipart/form-data">
 		<table border="1">
 			<thead>
 				<tr>
