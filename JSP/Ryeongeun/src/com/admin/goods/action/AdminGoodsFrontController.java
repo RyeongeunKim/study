@@ -28,10 +28,13 @@ public class AdminGoodsFrontController extends HttpServlet{
 		
 		// (3) 필요한 가상주소 생성
 		String command = requestURI.substring(ContextPath.length());
+		
 		System.out.println("command : " + command);
 		System.out.println("C : 1.페이지 주소 파싱");
 		
 		/********************************* 1. 페이지 주소 파싱 *************************/
+
+		/********************************* 2. 페이지 주소 매핑(연결) *******************/
 		Action action = null;
 		ActionForward forward = null;
 		
@@ -42,6 +45,7 @@ public class AdminGoodsFrontController extends HttpServlet{
 			forward = new ActionForward();
 			forward.setPath("./admingoods/admin_goods_write.jsp");
 			forward.setRedirect(false);
+			
 		} else if(command.equals("/GoodsAddAction.ag")){
 			System.out.println("C : /GoodsAddAction.ag 호출");
 			// GoodsAddAction() 객체 생성
@@ -52,14 +56,48 @@ public class AdminGoodsFrontController extends HttpServlet{
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} 
+		} else if(command.equals("/AdminGoodsList.ag")){
+			System.out.println("C : /AdminGoodsList.ag 호출");
+			// DB정보를 사용해서 화면에 출력
+			// AdminGoodsListAction() 객체 			
+			action = new AdminGoodsListAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("/AdminGoodsModify.ag")) {
+			System.out.println("C : /AdminGoodsModify.ag 호출");
+			// DB 정보를 꺼내서 화면에 출력
+			// AdminGoodsModifyFormAction();
+			
+			action = new AdminGoodsModifyFormAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		} else if(command.equals("/AdminGoodsModifyAction.ag")){
+			System.out.println("C : /AdminGoodsModifyAction.ag 호출");
+			// DB정보를 처리 페이지(list 이동)이동
+			// AdminGoodsModifyAction() 객체 생성
+			
+			action = new AdminGoodsModifyAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		
 
 		
 		
-		/********************************* 2. 페이지 주소 매핑(연결) *******************/
-		// -> 특정 주소일때 실행할 기능들 정의해주기
-		// 같은 패키지 안에 있는 Action을 호출 해주어야함!
+
 
 		
 		

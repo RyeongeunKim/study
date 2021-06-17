@@ -45,7 +45,7 @@ public class GoodsAddAction implements Action {
 		gdto.setCosPrice(Integer.parseInt(multi.getParameter("cosPrice")));
 		gdto.setCosSkinType(multi.getParameter("cosSkinType"));
 		gdto.setCosTrouble(multi.getParameter("cosTrouble"));
-		gdto.setCosVolumn(Integer.parseInt("cosVolumn"));
+		gdto.setCosVolumn(Integer.parseInt(multi.getParameter("cosVolumn")));
 		gdto.setCosWarning(multi.getParameter("cosWarning"));
 		gdto.setIngredient(multi.getParameter("ingredient"));
 		gdto.setMadeCompany(multi.getParameter("madeCompany"));
@@ -66,7 +66,7 @@ public class GoodsAddAction implements Action {
 		
 		// 페이지 이동
 		ActionForward forward = new ActionForward();
-		forward.setPath("./AdminGoodsList.ad");
+		forward.setPath("./AdminGoodsList.ag");
 		forward.setRedirect(true);
 		
 		return forward;
