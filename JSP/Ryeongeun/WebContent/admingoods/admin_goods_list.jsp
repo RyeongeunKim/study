@@ -54,9 +54,9 @@
 			<td><%=dto.getCosVolumn() %></td>
 			<td><%=dto.getCosWriteDate() %></td>
 			<td>
-				<a href="./AdminGoodsModify.ag?num=<%=dto.getCosNum()%>">수정</a>
+				<a href="./AdminGoodsModify.ag?cosNum=<%=dto.getCosNum()%>">수정</a>
 	                /
-				<a href="./AdminGoodsDelete.ag?num=<%=dto.getCosNum()%>">삭제</a>
+				<a href="./AdminGoodsDelete.ag?cosNum=<%=dto.getCosNum()%>">삭제</a>
 			</td>
 		</tr>
 		<%} %>

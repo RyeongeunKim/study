@@ -172,14 +172,16 @@ public class AdminGoodsDAO {
 				dto.setCosAmount(rs.getInt("cosAmount"));
 				dto.setCosBrand(rs.getString("cosBrand"));
 				dto.setCosCategory(rs.getString("cosCategory"));
-				dto.setCosImage(rs.getString("cosImage"));
 				dto.setCosName(rs.getString("cosName"));
 				dto.setCosNum(rs.getInt("cosNum"));
 				dto.setCosPrice(rs.getInt("cosPrice"));
 				dto.setCosSkinType(rs.getString("cosSkinType"));
 				dto.setCosTrouble(rs.getString("cosTrouble"));
-				dto.setCosVolumn(rs.getInt("cosVolumn"));
-				dto.setCosWriteDate(rs.getDate("cosWriteDate"));				
+				dto.setCosVolumn(rs.getInt("cosVolumn"));	
+				dto.setIngredient(rs.getString("ingredient"));
+				dto.setCosMethod(rs.getString("cosMethod"));
+				dto.setCosWarning(rs.getString("cosWarning"));
+				dto.setMadeCompany(rs.getString("madeCompany"));
 			}//if
 			System.out.println("DAO : 수정할 상품정보 저장완료!");
 		} catch (Exception e) {

@@ -27,7 +27,7 @@ public class AdminGoodsModifyAction implements Action {
 		gdto.setCosPrice(Integer.parseInt(request.getParameter("cosPrice")));
 		gdto.setCosSkinType(request.getParameter("cosSkinType"));
 		gdto.setCosTrouble(request.getParameter("cosTrouble"));
-		gdto.setCosVolumn(Integer.parseInt("cosVolumn"));
+		gdto.setCosVolumn(Integer.parseInt(request.getParameter("cosVolumn")));
 		gdto.setCosWarning(request.getParameter("cosWarning"));
 		gdto.setIngredient(request.getParameter("ingredient"));
 		gdto.setMadeCompany(request.getParameter("madeCompany"));
