@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+	<beans>
+		<!-- 객체 생성(new PersonImp() -->
+		<bean id="person" class="com.itwillbs.test.PersonImpl">
+		<!-- setter를 사용하여 데이터 주입을 사용(설계시 set() 생성) -->
+			<property name="name">
+				<value>홍길동</value>
+			</property>
+			<property name="age" value="20"></property>
+		</bean>
+		
+		<bean id="personC1" class="com.itwillbs.test.PersonImpl">
+			<!-- 생성자를 사용한 데이터 주입 -->
+			<constructor-arg>
+				<value>김학생</value>
+			</constructor-arg>
+		</bean>
+		
+		<bean id="personC2" class="com.itwillbs.test.PersonImpl">
+			<constructor-arg value="박학생" />
+			<constructor-arg value="30" />
+		</bean>
+		
+		<bean id="itwillP1" class="com.itwillbs.test.ItwillbsImpl">
+			<property name="classNum" value="2"/>
+			<property name="student" ref="personC2"/>
+		</bean>
+	</beans>
+
+	
+
+
