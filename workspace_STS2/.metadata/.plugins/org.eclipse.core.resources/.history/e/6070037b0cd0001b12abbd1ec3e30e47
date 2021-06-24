@@ -1,0 +1,14 @@
+package com.itwillbs.web;
+
+public class MySqlConectTest {
+	
+	private static final String DRIVER="com.mysql.jdbc.Driver";
+	// 8.0		"com.mysql.cj.jdbc.Driver"
+	private static final String DBURL="jdbc:mysql://localhost:3306/springdb?useSSL=false";
+	// 8.0		"jdbc:mysql://localhost:3306/springdb?useSSL=false&serverTimezone=Asia/Seoul"
+	private static final String DBID="root";
+	private static final String DBPW="1234";
+	
+	
+
+}
