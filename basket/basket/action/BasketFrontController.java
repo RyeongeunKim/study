@@ -1,4 +1,4 @@
-package com.admin.goods.action;
+package com.basket.action;
 
 import java.io.IOException;
 
@@ -10,13 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("*.ag")
-public class AdminGoodsFrontController extends HttpServlet{
+@WebServlet("*.ba")
+public class BasketFrontController extends HttpServlet{
 
 	
 	// Get, Post 방식 상관없이 한번에 주소를 처리할 수 있는 메소드
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("C : AdminGoods_doProcess() 호출");
+		System.out.println("C : BasketFrontController_doProcess() 호출");
 		
 		
 		/********************************* 1. 페이지 주소 파싱 *************************/
@@ -28,64 +28,51 @@ public class AdminGoodsFrontController extends HttpServlet{
 		
 		// (3) 필요한 가상주소 생성
 		String command = requestURI.substring(ContextPath.length());
-		
 		System.out.println("command : " + command);
 		System.out.println("C : 1.페이지 주소 파싱");
 		
 		/********************************* 1. 페이지 주소 파싱 *************************/
-
+		
+		
+		
 		/********************************* 2. 페이지 주소 매핑(연결) *******************/
+		// -> 특정 주소일때 실행할 기능들 정의해주기
+		// 같은 패키지 안에 있는 Action을 호출 해주어야함!
 		Action action = null;
 		ActionForward forward = null;
 		
-		if(command.equals("/GoodsAdd.ag")){
-			System.out.println("C : /GoodsAdd.ag 호출");
-			// 정보를 입력받는 페이지 -> view페이지 이동
-			
-			forward = new ActionForward();
-			forward.setPath("./admingoods/admin_goods_write.jsp");
-			forward.setRedirect(false);
-			
-		} else if(command.equals("/GoodsAddAction.ag")){
-			System.out.println("C : /GoodsAddAction.ag 호출");
-			// GoodsAddAction() 객체 생성
-			action = new GoodsAddAction();
+		if(command.equals("/BasketAdd.ba")){
+			System.out.println("C : /BasketAdd.ba 호출");
+			// 전달받은 구매정보를 DB에 저장
+			action = new BasketAddAction();
 			
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if(command.equals("/AdminGoodsList.ag")){
-			System.out.println("C : /AdminGoodsList.ag 호출");
-			// DB정보를 사용해서 화면에 출력
-			// AdminGoodsListAction() 객체 			
-			action = new AdminGoodsListAction();
+		} else if(command.equals("/BasketList.ba")){
+			System.out.println("C : /BasketList.ba 호출 ");
+			
+			// BasketListAction 객체 -> 정보 view 페이지 출력
+			action = new BasketListAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("/BasketDelete.ba")){
+			// 장바구니 정보 DB에서 삭제
+			action = new BasketDeleteAction();
 			
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if(command.equals("/AdminGoodsModify.ag")) {
-			System.out.println("C : /AdminGoodsModify.ag 호출");
-			// DB 정보를 꺼내서 화면에 출력
-			// AdminGoodsModifyFormAction();
-			
-			action = new AdminGoodsModifyFormAction();
-			
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
-		} else if(command.equals("/AdminGoodsModifyAction.ag")){
-			System.out.println("C : /AdminGoodsModifyAction.ag 호출");
-			// DB정보를 처리 페이지(list 이동)이동
-			// AdminGoodsModifyAction() 객체 생성
-			
-			action = new AdminGoodsModifyAction();
+		} else if(command.equals("/BasketModify.ba")){
+			// 장바구니 정보 DB에서 삭제
+			action = new BasketModifyAction();
 			
 			try {
 				forward = action.execute(request, response);
@@ -94,14 +81,9 @@ public class AdminGoodsFrontController extends HttpServlet{
 			}
 		}
 		
-
-		
-		
-
-
-		
 		
 		System.out.println("C : 2. 페이지 주소 매핑 완료 ");
+		
 		/********************************* 2. 페이지 주소 매핑(연결) *******************/
 	
 		
@@ -127,13 +109,13 @@ public class AdminGoodsFrontController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("C : AdminGoods_doGet() 호출");
+		System.out.println("C : BasketFrontController_doGet() 호출");
 		doProcess(request, response);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("C : AdminGoods_doPost() 호출");
+		System.out.println("C : BasketFrontController_doPost() 호출");
 		doProcess(request, response);
 	}
 	

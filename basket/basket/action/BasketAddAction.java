@@ -16,11 +16,11 @@ public class BasketAddAction implements Action {
 		
 		//세션 제어
 		HttpSession session = request.getSession();
-		String userID = (String) session.getAttribute("userID");
+		String userID = (String) session.getAttribute("userId");
 		
 		ActionForward forward = new ActionForward();
 		if(userID == null){
-			forward.setPath("MemberLogin.me");
+			forward.setPath("./MemberLogin.me");
 			forward.setRedirect(true);
 			return forward;
 		}
@@ -33,7 +33,7 @@ public class BasketAddAction implements Action {
 		BasketDTO bkDTO = new BasketDTO();
 		bkDTO.setBasketCosAmount(Integer.parseInt(request.getParameter("cosAmount")));
 		bkDTO.setBasketCosNum(Integer.parseInt(request.getParameter("cosNum")));
-		bkDTO.setBasketUserId(request.getParameter("UserID"));
+		bkDTO.setBasketUserId(userID);
 		
 		System.out.println("M: "+bkDTO);
 		
