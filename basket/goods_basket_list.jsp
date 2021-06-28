@@ -133,8 +133,9 @@
 							<input type="number" name="amount" min="1" style="width:45px" value="<%=bkDTO.getBasketCosAmount()%>">	
 						  </li>
 						  <li class="nav-item mb-2">
-						  	<input type="submit" value="수정" class="btn btn-secondary btn-sm" style="background-color: #b0bcc2;"
-						  	onclick="javascript: form.action='BasketModify.ba'"/>
+ 						  <input type="submit" value="수정" class="btn btn-secondary btn-sm" style="background-color: #b0bcc2;"
+						  	onclick="javascript: form.action='BasketModify.ba?'"/> 
+						  
 						  </li>
 						</ul>
 					</td>
@@ -150,11 +151,13 @@
 		<%
 		int count = 0;
 		int hap = 0;
+		int mul = 0;
 		for(int i=0; i<basketList.size();i++){
 			BasketDTO bkDTO = (BasketDTO) basketList.get(i);
 			GoodsDTO gDTO = (GoodsDTO) goodsList.get(i);
-			hap += gDTO.getCosPrice();
+			mul = gDTO.getCosPrice() * bkDTO.getBasketCosAmount();
 			count += bkDTO.getBasketCosAmount();
+			hap += mul;
 		} %>
 		
 		<p>
