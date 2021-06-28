@@ -3,11 +3,11 @@
 .h2-01 {background-color: #390;
 border-left:10px solid;
 margin: 2em auto;
-/* 
+/* 또는
 margin-left: auto;
-margin-right: auto; 
+margin-right: auto; 로
 좌우 margin을 auto로 항상 같게 하면 요소가
-항상 수평으로 중앙정렬됨
+항상 수평으로 중앙정렬 됨!
 */
 padding:0.3em;
 width:400px;
@@ -17,9 +17,12 @@ color: #9d4;
 #mg-n>li {border: 1px solid red;}
 
 .mg-n01 {margin: 14px;}
-.mg-n02 {margin: 14px 0;}
+.mg-n02 {margin: 20px 0;}
 .mg-n03 {margin: 20px 0 30px;}
 .mg-n04 {margin: 30px 40px 50px 60px;}
+
+
+
 
 #mg-d>li {border: 1px solid blue;}
 
@@ -31,7 +34,27 @@ color: #9d4;
 b {border: 1px solid blue;
 margin: 30px;}
 
-nav>a {margin-right: 1em;
+	
+nav>a {margin: 1em;
 background-color: #000;
-color: #fff ;}
+color: #fff	;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -8,7 +8,10 @@ width: 150px;}
 
 .pd-n1 {padding: 1em;}
 .pd-n2 {padding: 0 1em;}
-.pd-n3 {padding: 0 1em 2em 3em;}
+.pd-n3 {padding: 0 1em 2em;}
+.pd-n4 {padding: 0 1em 2em 3em;}
+
+
 
 /* 방향별 적용 속성 */
 #pd-d>li {border: 1px solid navy;}
@@ -16,43 +19,54 @@ width: 150px;}
 .pd-t {padding-top: 10px;}
 .pd-r {text-align: right;
 padding-right: 10px;}
-.pd-b {padding-bottom: 10px;}
-.pd-l {padding-left: 10px;}
+.pd-b {padding-bottom:10px; }
+.pd-l {padding-left: 60px;}
+
 
 #sec01>img {
-	border: solid #333;}
-	
-	.img01 {padding: 20px;
-	border-width: 10px; !important;} 
-	
-	.img02 {padding: 20px 20px 100px;}
-	.img03 {padding: 16px 22px 160px;
-	box-shadow: 2px 3px 10px #333;
-	/*	영역의 그림자 효과
-		그림자 X방향 거리값 Y방향 거리 값 퍼짐값 색상 순서
-	*/}
-	.img04 {padding: 10px 20px 100px;
-	box-shadow: 2px 2px 10px #333;}
-	
-	.in01 {padding: 0.7em;}
-	.in02 {padding: 0.5em 1em;}
-	.in03 {padding: 0.5em 0.5em;}
-	
-	.h3-05{width:300px;
-	border-left:12px solid;
-	padding: 6px 0 6px 10px;
-	background-color: #aef;
-	color: #269;}
-	
-	nav>a {background-color: #069;
-	color: #fff;
-	padding: 0.5em;
-	text-decoration: none;}
-	nav>a:hover {background-color: #aff;
-	color: #144;}
-	
-	
-	
-	
-	
-	
+ border: solid #333;}
+
+.img01 {padding: 20px;
+border-width: 10px !important;}
+
+.img02 {padding: 20px 20px 100px; }
+.img03 {padding: 16px 22px 160px; 
+box-shadow: 2px 3px 10px #333;
+/*  영역의 그림자 효과 
+그림자X방향거리값  Y방향거리값   퍼짐값  색상
+ 의 순서 */}
+
+
+.in01 {padding: 0.7em;}
+.in02 {padding: 0.5em 1em;}
+
+.h3-05 {width:300px;
+border-left:12px solid;
+padding: 6px 0 6px 10px;
+background-color: #aef;
+color: #269;}
+
+nav>a {background-color: #069;
+color: #fff;
+padding: 0.5em;
+text-decoration: none;}
+nav>a:hover {background-color: #aff;
+color: #144;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

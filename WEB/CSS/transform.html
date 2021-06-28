@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>transform</title>
+<link href="style.css" rel="stylesheet">
+<link href="transform.css" rel="stylesheet">
+</head>
+<body>
+<h1>transform 변형</h1>
+
+<h2>변형함수</h2>
+<ul>
+ <li>transform:translate(n,n); 위치 변형.<br>
+  n은 수평, 수직의 순서. 음수 가능.<br>
+  단위가 %일 경우 자신의 크기가 기준이 됨.  
+ </li>
+ <li>transform:scale(n); 크기 변형</li>
+ <li>transform:rotate(n); 회전 변형</li>
+ <li>transform:skew(n); 기울기 변형</li>
+</ul>
+
+
+<h3>벤더프리픽스(브라우저 접두사)</h3>
+<pre>
+최신 속성을 지원하지 못하는 구형 브라우저에게
+같은 결과를 보이고 싶을 때 소스 앞에 기입함.
+
+ -o-transform:scale(3,3);
+ -moz-transform:scale(3,3);
+ -ms-transform:scale(3,3);
+     ...
+     transform:scale(3,3);
+       --- 표준소스를 맨 마지막에 씀.
+</pre>
+       
+<ul>
+ <li>-o-</li>
+ <li>-ms- </li>
+ <li>-moz-</li>
+ <li>-webkit</li>
+</ul>
+
+
+
+
+<section id="sec01">
+ <h2>transform:translate(n); 위치 변형</h2>
+ 
+ <div class="tr01">transform:translateX(800px);</div>
+ <div class="tr02">transform:translateX(-200px);</div>
+ <div class="tr03">transform:translateY(-150px);</div>
+ <div class="tr04">transform:translateY(4em);</div>
+ <div class="tr05">transform:translate(10em,-5em);</div>
+ <div class="tr06">transform:translate(-3em,100px);</div>
+
+ <div class="cen">[center]
+ position: absolute; 상위요소 기준으로
+ left:50%; top:50%;	중앙에서 시작
+ transform:translate(-50%,-50%);
+ 자신의 크기 절반만큼 앞,위로 이동해서 정중앙이 됨
+ </div> 
+</section>
+
+<section id="sec02">
+ <h2>transform:scale(n); 크기 변형</h2>
+
+ <div class="sc01">transform:scaleX(2); <br>
+  <img alt="tea" src="img/tea.jpg"></div>
+ <div class="sc02">transform:scaleX(0.5); <br>
+  <img alt="tea" src="img/tea.jpg"></div>
+ <div class="sc03">transform:scaleY(1.5); <br>
+  <img alt="tea" src="img/tea.jpg"></div>
+ <div class="sc04">transform:scaleY(0.3); <br>
+  <img alt="tea" src="img/tea.jpg"></div>
+ <div class="sc05">transform:scale(1.3,1.3); <br>
+  <img alt="tea" src="img/tea.jpg"></div>
+ <div class="sc06">
+  <img alt="tea" src="img/tea.jpg">
+  <b>transform:scale(n);</b> 
+ </div>
+</section>
+
+
+<section id="sec03">
+ <h2>transform:rotate(n); 회전 변형</h2>
+
+ <div class="ro01">
+  <b>transform:rotate(360deg);</b>  <br>
+  <img alt="ice" src="img/ice.jpg"></div>
+ <div class="ro02">
+  <b>transform:rotate(-360deg);</b>  <br>
+  <img alt="ice" src="img/ice.jpg"></div>
+ <div class="ro03">
+  <b>transform:rotate(180deg);</b>  <br>
+  <img alt="ice" src="img/ice.jpg"></div>
+ <div class="ro04">
+  <b>transform:rotateX(90deg);</b>  <br>
+  <img alt="ice" src="img/ice.jpg"></div>
+ <div class="ro05">
+  <b>transform:rotateY(90deg);</b>  <br>
+  <img alt="ice" src="img/ice.jpg"></div>
+ <div class="ro06">
+  <b>transform:rotate(n);</b>  <br>
+  <img alt="ice" src="img/ice.jpg"></div>
+ <div class="ro07">
+  <b>transform:rotate(n);</b>  <br>
+  <img alt="ice" src="img/ice.jpg"></div>
+  <p style="clear: both;">fsfssdfdsfsdss</p>
+</section>
+
+<section id="sec04">
+ <h2>transform:skew(n); 기울기 변형</h2>
+ 
+ <div class="sk01">
+  <b>transform:skewX(30deg);</b>  <br>
+  <img alt="ice" src="img/ice.jpg"></div>
+ <div class="sk02">
+  <b>transform:skewX(-30deg);</b>  <br>
+  <img alt="ice" src="img/ice.jpg"></div>
+ <div class="sk03">
+  <b>transform:skewY(30deg);</b>  <br>
+  <img alt="ice" src="img/ice.jpg"></div>
+ <div class="sk04">
+  <b>transform:skewY(-30deg);</b>  <br>
+  <img alt="ice" src="img/ice.jpg"></div>
+ <div class="sk05">
+  <b>transform:skew(30deg,30deg);</b>  <br>
+  <img alt="ice" src="img/ice.jpg"></div>
+ <div class="sk06">
+  <b>transform:skew(-40deg,-45deg);</b>  <br>
+  <img alt="ice" src="img/ice.jpg"></div>
+</section>
+
+
+<section id="sec05" style="clear: both;">
+ <div class="mx01">mix-1</div>
+ <div class="mx02">mix-2</div>
+</section>
+
+
+<section id="sec06">
+ <h2>transform-origin: (center center) | (50% 50%) ;
+   (기본값)  변형의 기준점 변경
+ </h2>
+ <pre>
+  기본은 정중앙임.
+   left center right / top center bottom 의 값을 조합하거나
+    
+   n% n% ,
+   npx npx, 처럼 단위를 붙여 직접 수평 수직의 순서대로 적용 가능
+ </pre>
+ <div class="sc01">transform:scaleX(2); <br>
+  <img alt="tea" src="img/tea.jpg"></div>
+ <div class="sc01 ori01">transform:scaleX(2); <br>
+  transform-origin: 0 0;<br>
+  <img alt="tea" src="img/tea.jpg"></div>
+  
+ <div class="sc02">transform:scaleY(2); <br>
+  <img alt="tea" src="img/tea.jpg"></div>
+ <div class="sc02 ori02">transform:scaleY(2); <br>
+  <img alt="tea" src="img/tea.jpg"></div>
+
+
+ <div class="ro01">transform: ; <br>
+  <img alt="tea" src="img/tea.jpg"></div>
+ <div class="ro01 ori03">transform: ; <br>
+  <img alt="tea" src="img/tea.jpg"></div>
+
+</section>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

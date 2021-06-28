@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+body {
+background-color: #fff;
+color: #333; }
+
+@media only print {
+/* only는 해당 유형에서만,
+ not은 해당 유형만 제외하고 */
+	
+body {
+ background-color: #fff;
+ color: #000; }
+}
+
+
+
+@media screen and (min-width:768px) {
+ 	
+body {
+background-color: #777;
+color: #fff;
+font-size: 1.1em; }			
+}
+
+@media screen and (min-width:1000px) {
+	
+body {
+ background-color: #aff;
+ color: #026;
+ font-size: 1.2em; }	
+}
+
+
+
+
+
+#box04 {border: 2px dashed #ccc;}
+#box05 {background-color: #fe5;}
+
+@media screen and (orientation:landscape) {
+	#box04, #box05 { float: left;}	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

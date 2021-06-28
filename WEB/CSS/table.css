@@ -1,0 +1,124 @@
+@charset "UTF-8";
+.clear {clear: both;}
+
+table {border: 1px solid #00f;}
+th, td {border: 1px solid #0a0;}
+caption {font-size: 1.5em;
+font-weight: bold;
+color: #007;
+text-align: right;
+padding: 0.3em 0.5em;}
+caption>i {
+ font-size: 0.8em;	
+ font-style: normal;}
+
+/* table-layout:auto/fixed
+ 각 셀의 너비 */
+#tab01, #tab02 {
+width: 800px; height: 600px;
+float: left;
+margin-left: 2em;
+margin-bottom: 4em;}
+
+#tab01 {table-layout: auto; }
+#tab02 {table-layout: fixed;}
+
+
+/*  */
+#tab03, #tab04 {
+ width: 600px; height: 600px;
+ float: left;	
+ margin: 4em 2em;}
+ 
+#tab03 {
+border-spacing: 5px 15px;}
+
+#tab04 {
+border-collapse: collapse;	}
+
+
+#tab05, #tab06 {
+ width: 600px; height: 700px;
+ float: left;
+ margin: 2em;}
+
+#tab05 th {color: #fff;
+background-color: #0ac;
+height: 50px;}
+
+#tab05 tr:nth-of-type(2n-1) {
+/* A:nth-of-type(n) 
+ A요소 중 n번째를 지정하는 선택자
+ (수식도 가능) */	
+background-color: #ccc;	}
+
+#tab05 tr>td:nth-of-type(3) {
+/* 한 줄안에서 3번째 셀을 지정 */	
+ text-align: center;
+ color: #900;}
+
+
+#tab06 {
+table-layout: fixed;	
+border-collapse: collapse;}
+
+#tab06 th {
+background-color: #336;
+color: #fff;	}
+
+#tab06 tr:nth-of-type(2n) {
+background-color: #99d;}
+
+#tab06 tr:nth-of-type(2n-1) {
+background-color: #77b;	}
+
+#tab06 tr:hover {
+background-color: #333;
+color: #fff;
+cursor: pointer;/* 커서모양-손 */ }
+
+#tab06 tr:nth-of-type(4) td {
+	/* 말줄임표 삼총사 속성 */
+ white-space: nowrap;/* 공백처리 -
+  자동 줄바꿈 금지 */
+ overflow: hidden;/* 영역밖 컨텐츠
+ 처리 - 숨김 */
+ text-overflow:ellipsis; 
+ /* 영역밖 글자 - 말줄임표(...) 표시  */
+}
+
+
+
+/*  */
+#tab07 {width: 600px;
+height: 400px; }
+
+
+#tab07 tr:nth-of-type(2)>td:nth-of-type(1) {
+ vertical-align: top;	}
+
+#tab07 tr:nth-of-type(2)>td:nth-of-type(3) {
+ vertical-align: bottom; }
+
+
+#tab07 tr:nth-of-type(2)>td:nth-of-type(2) {
+ text-align: center; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

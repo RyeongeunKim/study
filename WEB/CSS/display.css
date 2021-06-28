@@ -54,8 +54,51 @@ margin: 30px;
 display: inline-block;
 }
 
+ /* display:none; */
+#sec04>div {background-color: #69a;}
+.n02 {display: none;}
+
+.n01:hover+.n02 {
+/*  형제관계선택자 A+B 는 
+  A의 바로 뒤에 오는 형제B만을 불러오는 선택자
+	형제관계선택자 A~B 는 
+  A의 뒤에 오는 모든 형제B를 다 불러오는 선택자 */
+ display: block;
+ color: #f00; }
+ 
+ 
+#sec04>b {background-color: #9a0;}
+.nb03 {display: none;}
+
+.nb01:hover~.nb03 { 
+ display: inline;
+ color: #f00; }
+ 
+
+.vis02 {visibility: hidden;}
+.vis01:hover {
+border-left: 6px solid;
+padding-left:5px;
+color: #035;}
+.vis01:hover+.vis02 {
+ visibility: visible; }
 
 
+.visb03 {visibility: hidden;}
+.visb01:hover~.visb03 {
+ visibility: visible; }
+ 
+ /* opacity 투명도 */
+aside>b {
+	border: 10px solid #275;}
+.opa00 {opacity:0;}
+.opa01 {opacity:0.3;}
+.opa02 {opacity:0.5;}
+.opa03 {opacity:1;}
+
+aside:hover>b {
+ opacity: 1;
+ transition:2s;	}
 
 
 

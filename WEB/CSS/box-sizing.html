@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>box-sizing</title>
+<link href="box-sizing.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<h1>box-sizing 요소의 크기 계산법</h1>
+<ol id="box">
+ <li class="cont">
+ box-sizing:content-box; (기본값) <br>
+ 요소의 크기(width,height)에
+ border와 padding값이 포함되지 않는 방식.<br>
+ border나 padding이 추가되면 요소가 차지하는
+ 영역이 그만큼 더 커짐.
+ </li>
+ <li class="brdr">
+ box-sizing:border-box;<br>
+ 요소의 크기(width,height)에
+ border와 padding값을 포함하는 방식.<br>
+ border나 padding이 추가되도 요소가 차지하는
+ 영역이 변화없음.
+ </li>
+</ol>
+
+<div id="box-2">
+ <div class="div-1">div-1</div><div class="div-2">div-2</div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
