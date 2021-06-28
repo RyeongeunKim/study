@@ -24,8 +24,7 @@ public class BasketModifyAction implements Action {
 			forward.setRedirect(true);
 			return forward;
 		}
-		
-		request.setCharacterEncoding("utf-8");
+
 		BasketDTO bkdto = new BasketDTO();
 		bkdto.setBasketNum(Integer.parseInt(request.getParameter("bkNum")));
 		bkdto.setBasketCosAmount(Integer.parseInt(request.getParameter("amount")));

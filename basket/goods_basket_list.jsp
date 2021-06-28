@@ -110,6 +110,7 @@
 					BasketDTO bkDTO = (BasketDTO) basketList.get(i);
 					GoodsDTO gDTO = (GoodsDTO) goodsList.get(i);
 				%>
+				
 				<tr>
 					<td>
 						<input type="checkbox" name="del-id" class="del-id" value="<%=bkDTO.getBasketNum() %>"/>
@@ -127,6 +128,8 @@
 					<td><%=gDTO.getCosName() %></td>
 					<td><%=gDTO.getCosPrice() %></td>
 					<td><input type=hidden name="sell_price" value="<%=gDTO.getCosPrice() %>"><td>
+					<form name="form" method="post" action="./BasketList.ba">
+					<input type="hidden" name="bkNum" class="bkNum" value="<%=bkDTO.getBasketNum() %>"/>
 					<td>
 						<ul class="nav flex-column " style="width: 100px; margin-left: 0; margin-right: auto;">
 						  <li class="nav-item mb-2">
@@ -135,11 +138,12 @@
 						  <li class="nav-item mb-2">
  						  <input type="submit" value="수정" class="btn btn-secondary btn-sm" style="background-color: #b0bcc2;"
 						  	onclick="javascript: form.action='BasketModify.ba?'"/> 
-						  
 						  </li>
 						</ul>
 					</td>
+					</form>
 				</tr>
+				
 				<%} %>
 				</tbody>
 			</table>	
