@@ -382,7 +382,13 @@ public class AdminGoodsDAO {
 				dto.setUserTel(rs.getString("userTel"));
 				dto.setUserTotal(rs.getInt("userTotal"));
 				dto.setUserTrouble(rs.getString("userTrouble"));
+				
+				// 리스트 한칸 -> 1명 정보 저장
+				memberList.add(dto);
 			}
+			
+			System.out.println("DAO : 모든 회원 정보 저장 완료");
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -392,6 +398,114 @@ public class AdminGoodsDAO {
 	}
 	// getAdminMemberList()
 	
+	// getMemberList()
+	public ArrayList getMemberList(){
+
+		// 상품 정보를 모두 저장하는 가변길이 배열
+		ArrayList memberListAll = new ArrayList();
+		
+		// 상품 1개의 정보를 저장하는 객체 
+		MemberDTO dto = null;
+		
+		try {
+			conn = getConnection();
+			sql = "select * from user_info";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				
+				dto = new MemberDTO();
+				
+				dto.setUserAddr(rs.getString("userAddr"));
+				dto.setUserBirth(rs.getString("userBirth"));
+				dto.setUserEmail(rs.getString("userEmail"));
+				dto.setUserGender(rs.getString("userGender"));
+				dto.setUserId(rs.getString("userId"));
+				dto.setUserLevel(rs.getInt("userLevel"));
+				dto.setUserName(rs.getString("userName"));
+				dto.setUserNum(rs.getInt("userNum"));
+				dto.setUserPoint(rs.getInt("userPoint"));
+				dto.setUserSkinType(rs.getString("userSkinType"));
+				dto.setUserTel(rs.getString("userTel"));
+				dto.setUserTotal(rs.getInt("userTotal"));
+				dto.setUserTrouble(rs.getString("userTrouble"));
+				
+				memberListAll.add(dto);
+				
+			}//while
+			System.out.println("DAO : 관리자 회원리스트 저장 완료");
+			System.out.println(" 총 "+memberListAll.size()+"개");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+		
+		return memberListAll;
+		
+	}
+	// getGoodsList()
+	
+	// getGoodsList(startRow,pageSize)
+	public ArrayList<MemberDTO> getMemberList(int startRow,int pageSize){
+		
+		// DB데이터 1row 정보를 GoodsDTO 저장 -> ArrayList 한칸에 저장
+		
+		// 상품리스트의 정보를 원하는 만큼 저장하는 가변길이 배열
+		ArrayList<MemberDTO> memberList = new ArrayList<MemberDTO>();
+		
+		// 상품 1개의 정보를 저장하는 객체 
+		MemberDTO dto = null;
+		
+		try {
+			conn = getConnection();
+			sql = "select * from user_info order by userNum desc limit ?,?";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, startRow-1);
+			pstmt.setInt(2, pageSize);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				
+				dto = new MemberDTO();
+				
+				dto.setUserAddr(rs.getString("userAddr"));
+				dto.setUserBirth(rs.getString("userBirth"));
+				dto.setUserEmail(rs.getString("userEmail"));
+				dto.setUserGender(rs.getString("userGender"));
+				dto.setUserId(rs.getString("userId"));
+				dto.setUserLevel(rs.getInt("userLevel"));
+				dto.setUserName(rs.getString("userName"));
+				dto.setUserNum(rs.getInt("userNum"));
+				dto.setUserPoint(rs.getInt("userPoint"));
+				dto.setUserSkinType(rs.getString("userSkinType"));
+				dto.setUserTel(rs.getString("userTel"));
+				dto.setUserTotal(rs.getInt("userTotal"));
+				dto.setUserTrouble(rs.getString("userTrouble"));
+				
+				memberList.add(dto);
+				
+				
+			}//while
+			
+			System.out.println("회원 모든정보 저장완료!");
+			System.out.println("총 "+memberList.size()+"명");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+		
+		return memberList;
+		
+	}
+	// getGoodsList(startRow,pageSize)
 }
 
 
