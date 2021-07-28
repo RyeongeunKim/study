@@ -126,5 +126,3 @@ Click [here](https://www.notion.so/HOME-608d86af9bb341c38caf4f53e7654390)
 |Feature2|<img src="https://user-images.githubusercontent.com/80612679/126331512-d6bd35bb-9d96-4166-b386-74fb82b6c930.jpg" width="400"><br>Feature2.Responsive Web Page|
 |Feature3|<img src="https://user-images.githubusercontent.com/80612679/126332124-acc5feb9-ad7e-475a-baa5-8da98fc701bc.jpg" width="400"><br>Feature3.Responsive Web Page|
 
-
->>>>>>> 848c84b1c15688f6813ab6e100afe26852192476
