@@ -1,2 +1,0 @@
-1. 아래 주소 접속, 다운받고 web폴더안에 압축해제 해놓기
-https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2020-06/R/eclipse-jee-2020-06-R-win32-x86_64.zip

@@ -1,4 +1,0 @@
-mysqlDB
-
-url에 jspdb부분 바꾸기
-
