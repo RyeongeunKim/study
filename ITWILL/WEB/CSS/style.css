@@ -1,0 +1,36 @@
+@charset "UTF-8";
+ /* 수업시간 공용 css스타일 파일 */
+h1 {
+border-bottom:4px double; 
+margin:2.5em 0; 
+text-align: center;
+color: #068;}
+
+section {border: 2px dashed #ccc;
+background-color: #fff;	
+margin: 3em 0;
+padding: 1em; }
+
+section>h2 {
+/* 1. 관계선택자 중 A>B는
+상위요소A의 바로 한단계 아래의
+B를 지정하는 부모자식선택자. 
+   2. 관계선택자 중 A B는
+상위요소A의 아래의
+B모두를 지정하는 자손선택자. */	
+border-bottom: 2px dashed;	
+padding-bottom:0.2em;
+color: #003;
+}
+
+
+
+
+
+
+
+
+
+
+
+

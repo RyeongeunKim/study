@@ -1,0 +1,48 @@
+< 치환변수 >
+
+select employee_id, last_name, salary, department_id
+from employees
+where employee_id = &emp_num; 
+
+select employee_id, last_name, job_id, salary
+from employees
+where job_id = '&job';
+
+insert into departments
+values (&d_id, '&d_name', &m_id, &loc_id);
+
+& 변수명
+
+>숫자의 경우는 그냥 써도 되지만 where job_id=&emp_num;
+>문자, 날짜는 작은따옴표('')로 묶어서 작성 where job_id='&job';
+
+>대소문자 구분안하고 검색하려면
+
+lower(job_id)=lower('&job')
+
+< 스크립트 파일 생성 및 실행 >
+
+자주 실행하는 쿼리구문을 스크립트 파일로 저장하고 필요할 때 마다 불러옴
+그 쿼리구문이 버퍼에 있어야됨!
+
+> 스크립트 파일 저장하는 명령어
+
+1) 경로 설명할 경우
+save 저장경로 파일명
+예) save /home/oracle/test.sql
+
+2) 경로 생략할 경우 -> sql 프로그램을 실행해서 들어왔던 경로로 자동으로 저장됨
+save 파일명.sql
+예) save search_emp.sql
+
+3) 파일만들어졌는지 확인하기
+ ! ==> 잠시만 나오겠다
+pwd
+ls
+exit ==> 제자리로 돌아가기
+
+@ 실행하고 싶은 스트립트 파일의 경로와 이름(현재 맞춰져 있는 경로면 생략가능) 파일명
+예) search_emp.sql
+
+@/home/oracle/new_dept.sql
+

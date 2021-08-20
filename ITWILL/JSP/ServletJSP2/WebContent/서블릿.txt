@@ -1,0 +1,73 @@
+서블릿.txt
+
+p23~
+
+Servlet(서블릿) : HTML 코드 방식의  한계를 개선하기위해서 (동적데이터 처리)
+    => 웹 서버에서 실행되는 자바 클래스 파일 (Server Side Applet)
+    
+=> JSP : 서블릿 코드를 실행 처리
+     =>  JSP 파일을 서블릿형태로 변경-클라이언트 요청 실행
+
+
+p27~
+서블릿의 동작원리
+
+1) 사용자 URL을 요청 (web.xml-배포서술자를 사용해서 특정주소와 클래스를 연결)
+2) 웹 컨테이너가 필요한 정보 request,response를 생성
+3) 서블릿 인스턴스와 쓰레드 생성 (init()- 서블릿당 1번씩)
+4) service() 메서드 호출 & 서블릿 클래스 실행 ( doGet()/doPost() 실행 )
+5) 응답 처리 & 쓰레드 소멸
+
+p67~ 서블릿 라이프 사이클
+p143~ 서블릿 포워딩 방법(Dispatcher/Redirect)
+
+
+* 서블릿 생성 규칙
+ 1) javax.servlet.Servlet 인터페이스를 구현해야함.
+ 2)  1번 동작을 수행하기 어렵다면, javax.servlet.http.HttpServlet 상속해야함.
+ 3) doGet/doPost 메서드를 오버라이딩한다. 전달인자를 구현
+    javax.servlet.http.HttpServletRequest,
+    javax.servlet.http.HttpServletResponse 를 반드시 구현해야함.
+
+ 4) java.io.IOException, javax.servlet.ServletException 예외처리 필요.
+ 5) web.xml을 통한 서블릿 매핑(URL매핑)
+ 
+ 
+  * 서블릿 생성 -> 사용
+  [최초 실행]
+  1. 클라이언트 url 요청
+  2. 웹컨테이터(톰켓) 호출 -> 서블릿 객체 생성
+  3. init() 실행 (초기화)
+  4. service(), doGet/doPost() 실행
+  5. 서블릿에서 응답 결과를 WAS에 전달
+  6. 클라이언트에게 전달
+  
+  [이후 실행]  
+  1. 클라이언트 url 요청
+  2. 웹컨테이터(톰켓) 호출 -> 서블릿 객체 생성
+  3. service(), doGet/doPost() 실행
+  4. 서블릿에서 응답 결과를 WAS에 전달
+  5. 클라이언트에게 전달
+
+ * 서블릿 파일이 저장되는 경로
+ D:\workspace_jsp2\.metadata\.plugins
+ \org.eclipse.wst.server.core\tmp0\work\Catalina\localhost
+
+
+  * JSP -> Servlet 변경 규칙
+   1) jsp 페이지는 클라이언트 요청이 최초 발생시 서블릿으로 변경
+   2) 스크립틀릿(<% %>)은  서블릿-service()메서드에 작성됨
+   3) 표현식(<%= %>)은  서블릿-service()메서드 안에서 out.println() 변환
+   4) 선언문(<%! %>)은  서블릿의 멤버 변수/메서드 변환
+   5) HTML 코드는  서블릿-service()메서드 안에서 out.write() 변환 
+
+
+
+
+
+
+
+
+
+         
+

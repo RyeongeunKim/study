@@ -1,0 +1,23 @@
+자주 사용되어지는 객체
+패키지 X
+9개의 클래스들이 미리 등록되어 있어서 별도의 선언없이(import X) 사용할 수 있음
+내장객체는 스크립트릿 안에서만 사용가능
+외울 것!
+
+1. * Request : 웹 브라우저의 요청 정보를 저장하고 있는 객체
+2. Response : 웹 브라우저의 요청에 대한 응답 정보를 저장하고 있는 객체
+3. Out : 데이터를 화면에 출력
+          JSP 페이지에 출력할 내용을 가지고 있는 출력 스트림 객체이다.
+4. Session : 하나의 웹 브라우저의 정보를 유지하기 위한 세션 정보를 저장하고 있는 객체
+5. Application : 웹 어플리케이션 Context의 정보를 저장하고 있는 객체 / 많이 사용 X
+6. PageContext : JSP 페이지에 대한 정보를 저장하고 있는 객체 / 많이 사용 X
+7. Page : JSP 페이지를 구현한 자바 클래스 객체
+8. config : JSP 페이지에 대한 설정 정보를 저장하고 있는 객체
+9. Exception : JSP 페이지에서 예외가 발생한 경우에 사용되는 객체
+
+서버탭-server.xml
+    <Connector connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443"
+    URIEncoding="UTF-8"/>
+
+
+

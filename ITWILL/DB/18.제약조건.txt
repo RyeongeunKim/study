@@ -1,0 +1,42 @@
+<제약조건 선언 시기>
+-테이블 생성 시 : create table ---;
+-테이블 생성 후 : alter table ----;
+
+<제약조건 유형>
+-Primary key, Foreign key, Unique, Not null, Check
+
+<제약조건명>
+-사용자 지정 : 고유하고 의미있는 이름 부여를 권장함.
+	    ex) 테이블약자_컬럼약자_제약조건유형약자
+                emp_empid_pk
+                emp_did_fk
+                emp_email_uk
+		dept_dname_nn
+		emp_sal_ck
+
+-사용자 생략 : Oracle이 자동 부여함(sys_cxxxxxx)
+---------------------------------------------------
+<Check 제약조건>
+[ex1]
+salary number(10) constraint OOO check (salary > 0),
+(==)
+salary number(10),
+constraint OOO check (salary > 0),
+
+[ex2]
+주민번호 varchar2(13) constraint OOO check (length(주민번호) = 13),
+(==)
+주민번호 varchar2(13),
+constraint OOO check (length(주민번호) = 13),
+
+[ex3]
+학년 number(10) constraint OOO check (학년 >= 1 or 학년 <= 6),
+(==)
+학년 number(10) constraint OOO check (학년 between 1 and 6),
+
+[ex4]
+과목 varchar2(10) constraint OOO 
+                 check (과목 in ('Java', 'Jsp', 'Web', 'DB')),
+(==)
+과목 varchar2(10),
+constraint OOO check (과목 in ('Java', 'Jsp', 'Web', 'DB')),

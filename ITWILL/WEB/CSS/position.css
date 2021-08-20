@@ -1,0 +1,131 @@
+@charset "UTF-8";
+/* 기본값. 위치 변동 불가. */
+#sec01>p {
+background-color: #ccc;
+position: static;
+bottom: 500px;}
+
+ /* relative
+ 현재 위치에서 ~이동 */
+#sec02>p {
+background-color: #aef;
+width: 300px;	}
+
+.re01 {position: relative;
+ left: 500px;}
+.re02 {position: relative;
+ bottom: 300px;}
+.re03 {position: relative;
+right: 500px;}
+.re04 {position: relative;
+top:200px;}
+.re05 {position: relative;
+ left:300px;	
+ bottom:100px;}
+
+#sec02:hover>p {
+ position: static;}
+
+
+ /* absolute 상위요소를 기준으로 */
+#sec03>p {
+background-color: #aff;
+width: 200px; height: 50px;
+margin: 0;}
+
+#sec03 {position: relative;
+ height: 500px;
+ overflow: hidden;}
+
+.ab00 {position: absolute;
+top:-100px;
+z-index: 999;}
+
+#sec03:hover>.ab00 {
+ top:20px;		
+ transition:1.5s;}
+
+.ab01 {position: absolute;
+   top:0;}
+.ab02 {position: absolute;
+  bottom: 0;}
+.ab03 {position: absolute;
+ left: 0;}
+.ab04 {position: absolute;
+ right: 0;}
+.ab05 {position: absolute;
+ left: 50%; top: 100px;}
+
+#sec03>div {border: 4px solid;
+ background-color: #48a;
+ width: 100px; height: 100px;
+ text-align: center;
+ line-height: 100px;	
+ position: absolute;}
+
+.ab07 {left:0px; top:300px;
+ color: #f00;
+ z-index: 51;}
+.ab08 {left:50px; top:330px;
+ color: #0f0;
+ z-index: 52;}
+.ab09 {left:100px; top:360px;
+ color: #00f;
+ z-index: 50;}
+
+#sec03:hover>.ab07 {
+left:50px; top:270px;	
+transition:1.5s;}
+#sec03:hover>.ab08 {
+left:200px; top:270px;
+transition:1.5s;	}
+#sec03:hover>.ab09 {
+left:350px; top:270px;
+transition:1.5s;	}
+
+
+/* aside를 position:fixed;
+로 고정 */
+
+aside {
+ border-left: 15px solid #0d0;	
+ width: 200px;
+ box-sizing: border-box;
+ background-color: #000;
+ color:#fff;
+ position: fixed;
+ right: -185px;
+ bottom: 50%;}
+
+aside:hover {
+right: 0px;	}
+
+/* :link, :visited 인
+ 링크의 평상시 상태 소스가 먼저 와야함 */
+aside a:link, aside a:visited {
+color:#fff;
+text-decoration: none;}
+
+/* :hover, :active인
+ 마우스오버시의 상태 소스는 뒤에 기입 */
+aside a:hover, aside a:active {
+color:#ff0;	}
+
+
+/* position:sticky;
+ relative와 fixed의 믹스. */
+
+#sec04 {
+ position: sticky;
+ top:0;
+ z-index: 9999999;}
+
+
+
+
+
+
+
+
+
+

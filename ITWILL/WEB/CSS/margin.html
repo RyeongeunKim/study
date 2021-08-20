@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>margin</title>
+<link href="margin.css" rel="stylesheet">
+</head>
+<body>
+<h1>margin 외부여백</h1>
+테두리를 기준으로 밖에 양사방 적용되는 여백.
+<h2 class="h2-01">margin의 값 갯수에 따른 적용법</h2>
+<ul id="mg-n">
+ <li class="mg-n01">margin: n ;</li>
+ <li class="mg-n02">margin: n n ;</li>
+ <li class="mg-n03">margin: n n n ;</li>
+ <li class="mg-n04">margin: n n n n;</li>
+</ul>
+
+
+<h2>margin의 방향별 적용 속성</h2>
+<ul id="mg-d">
+ <li class="mg-d01">margin-top : n ;</li>
+ <li class="mg-d02">margin-right: n ;</li>
+ <li class="mg-d03">margin-bottom: n ;</li>
+ <li class="mg-d04">margin-left: n ;</li>
+</ul>
+
+<h2>inline에 margin을 적용</h2>
+<p>
+ 1. 자동으로 줄이 안바뀌는(한 줄에 나란히 올 수 있는)태그를
+ inline요소라고 하며 <br>
+ 크기 적용 불가하고 상하 margin적용 불가!<br>
+ 
+ <b>b tag-1</b><b>b tag-2</b><b>b tag-3</b>
+</p>
+
+<p>
+ 2. 자동으로 줄이 바뀌는(한 줄에 나란히 올 수 없는)태그를
+ block요소라고 하며 <br>
+ 크기 적용 가능하고 모든 방향의 margin적용 가능.
+</p>
+
+
+<h3 class="h3-05">a에 margin을 적용</h3>
+<nav>
+ <a href="#">1</a>
+ <a href="#">2</a>
+ <a href="#">3</a>
+ <a href="#">4</a>
+ <a href="#">5</a>
+ <a href="#">6</a>
+ <a href="#">7</a>
+ <a href="#">8</a>
+ <a href="#">9</a>
+ <a href="#">10</a>
+</nav>
+
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,23 @@
+<3장 연습문제>
+1.
+SELECT employee_id, last_name, salary, 
+          ROUND(salary * 1.155, 0) "New Salary",
+          ROUND(salary * 1.155, 0) - salary "Increase"
+FROM employees;
+
+2.
+SELECT last_name, LPAD(salary, 15, '$') SALARY
+FROM employees;
+
+3.
+SELECT last_name || ' earns ' || TO_CHAR(salary, 'fm$99,999.00')
+         || ' monthly but wants ' || TO_CHAR(salary * 3, 'fm$99,999.00')
+         || '.' as "Dream Salaries"
+FROM employees;
+
+4.
+SELECT last_name, NVL(TO_CHAR(commission_pct), 'No Commission') COMM
+FROM employees;
+
+SELECT last_name, NVL2(commission_pct, TO_CHAR(commission_pct), 'No Commission') COMM
+FROM employees;
