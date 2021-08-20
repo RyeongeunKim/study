@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+/* 
+font-family: 'Jua', sans-serif;
+font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Single Day', cursive;
+ */
+
+* {margin: 0; padding: 0;} 
+
+html {scroll-behavior: smooth;
+ /* 스크롤시 자연스러운 움직임 */}
+
+body {
+font-family: 'Nanum Gothic', sans-serif;}
+
+a {text-decoration: none;}
+
+nav a:link, nav a:visited {
+/* 초기링크,방문한링크의 상태 (먼저 기입)*/	
+color: #fff;} 
+nav a:hover, nav a:active {
+/* 마우스오버시, 활성화링크의 상태 */	
+color: #ff0;} 
+
+h2 {font-size: 1.8em;}
+h3 {font-size: 1.3em;}
+p {font-size: 1.3em;
+line-height: 2.5;/* 행간(줄간격)
+             글자높이의 ~배 */}
+li {font-size: 1em;
+line-height: 2;}
+
+#container {/* border: 1px solid red;	 */
+width: 100%;
+margin: 0 auto;}
+
+header {
+background-image: url("img/header.jpg");
+background-position: center center;	
+background-size: cover;
+height: 300px;}
+
+#main_nav {height:50px;
+background-color:rgba(0,0,0,0.8);
+/* r,g,b,a(red,green,blue,alpha) 
+r,g,b는 각 0~255사이의 값.
+빛의 삼원색에 투명도
+(a=0~1사이의 값, 0은 완전투명)
+를 추가함 */}
+#main_nav ul {list-style: none;
+/* 목록앞의 기본 모양-없애기 */
+padding: 10px;}
+#main_nav li {
+display: inline-block;
+margin: 5px 15px;	
+font-size: 0.8em;	
+font-family: 'Jua', sans-serif; }
+
+
+/* 모바일 - 767px이하*/
+section {width: 100%;
+padding: 15px 5% 10px 5%;
+position: relative; 
+/* 하위요소가 absolute일때
+기준이 될 상위요소의 position값을 변경함 */}
+
+section:nth-of-type(2n) {
+background-color: #eee;}
+
+.pg-title {padding: 30px 50px;
+position: absolute;
+/* 상위요소 기준으로 자리 잡기 */
+left: 0; top:20px;}
+
+.content { width: 90%;
+ padding: 20px;
+ box-sizing:border-box;
+    /* 요소의 크기 계산시
+ padding과 border값을 포함하도록 */ 
+ margin: 80px auto 10px;}
+ 
+.text h3 {color: #0094ff;
+font-weight: 600;
+margin-bottom: 20px;} 
+
+.photo {display: none;/*이미지 숨김 */}
+
+footer {height:100px;
+background-color: #000;	
+color: #fff;}
+
+footer p {text-align: center;
+line-height:100px;
+/* 영역의 높이값과 행간을 일치시켜서
+  수직정렬을 중앙으로.
+(height=line-height) */ 
+text-transform: capitalize;
+/* 영문의 대소문자 변경-첫글자를 대문자로 */
+font-family: 'Single Day', cursive;}
+
+
+  /* tablet - 768px이상 */
+@media screen and (min-width:768px) {
+	
+ header {height: 400px;}
+	
+ #intro, #map {
+ float: left;
+ /* 나란히 배치하기 */
+ width: 50%; height: 400px;
+ box-sizing: border-box;}
+ 
+#choice {clear: both;
+/* float의 영향을 해제하여 제자리로 */}
+ }
+
+
+
+  /* pc - 992px이상 */
+@media screen and (min-width:992px) {
+	
+#container {border: 1px solid #ccc;	
+width: 995px;}	
+	
+ header {height: 500px;}	
+
+ #intro, #map {
+ width: 100%; height: 420px; 
+ padding: 15px 2% 10px 5%;}
+ 
+.photo { /* border: 1px solid red; */
+	display: block;  /*이미지 보임*/} 
+ 
+.photo>img {width:100%;
+ max-width:320px;
+ height: auto;
+ margin-bottom: 30px;} 
+ 
+.photo, .text {float: left;
+ width: 42%;}
+ 
+#choice .photo, #choice .text {
+ float: right; } 
+ 
+#choice .photo {margin-left: 5%;
+ margin-right: 7%;}
+
+#choice .photo>img {
+ border-radius: 50%;
+ /* 모서리 라운딩 */}
+
+footer {clear: both;}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

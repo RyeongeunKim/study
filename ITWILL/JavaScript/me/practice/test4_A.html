@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	// 연산자
+	
+	// 1) 바나나가 100개 있다. 이때 5개씩 포장가능한 박스로 포장하려한다.
+	// 이때 필요한 상자의 개수는?
+			
+	var banana = 100;
+	var sizeOfbox = 5;
+	document.write("필요한 상자의 개수 : " + banana / sizeOfbox + "개<br>");
+	
+	// 2) 738 -> 연산 -> 700 
+	//    123 ->    -> 100
+	//    654 ->    -> 600
+	//모든 3자리수에서도 동일한 조건을 가진다.
+	
+	var data1 = 738;
+	//data / 100; // 7.38
+	//Math.floor(data / 100); // 7
+	//Math.floor(data / 100) * 100; // 700
+	
+	document.write(Math.floor(data1 / 100) * 100 + "<br>");
+	
+	// 3) 777 -> 연산 -> 771
+	
+	var data2 = 777;
+	document.write((Math.floor(data2 / 10) * 10 + 1) + "<br>");
+	
+	// 4) 대입연산자 ( = ), 복합대입연산자 (+= -= *= /= %=)
+	// 변수 = 값; (오른쪽의 값을 왼쪽의 변수에 저장)
+	// A += B; <=> A = A + B 누적합
+	
+	num1 = 10;
+	num2 = 20;
+	
+	// document.write(num1 = num1 + num2);
+	
+	// 누적합을 사용하여 화면에 출력하기(테이블) ※ 자주 사용! 기억해두기!
+	
+	// num1과 num2를 이용하여 --> |10|20|30| 형태로 테이블만들기
+	
+	var t = "<table border = '1'>";
+	t += "<tr>";
+	t += "<td>"+num1+"</td>";
+	t += "<td>"+num2+"</td>";
+	t += "<td>"+(num1+num2)+"</td>";
+	t += "</tr>";
+	t += "</table>";
+	
+	document.write(t);
+	
+	//5) 삼항연산자 ※ 기억하기!
+	
+	// 조건문? 값(참일때 실행):값(거짓일때 실행)
+	
+	// 나이가 20살 이상인 경우 "성인입니다!" 아닌 경우 "미성년자입니다!"
+	
+	var age = 33;
+	document.write(age > 20? "성인입니다!" : "미성년자 입니다!"); //조건문? T : F
+			
+	document.write("<br>");
+			
+	// 6) 삼항연산자로 과일상자 계산하기
+	// 과일 : 237개 , 상자의 크기 : 5
+	// => 이때 필요한 상자의 개수
+	var banana = 237;
+	var sizeOfBox = 5;
+	
+	document.write("필요한 상자의 개수 : " + (Math.floor(banana / sizeOfBox) + (banana % sizeOfBox > 0 ? 1 : 0)) + "개<br>");
+	
+	
+</script>
+</head>
+<body>
+	<h1>WebContent/js1/test4.html</h1>
+	
+	
+	<table border = "1">
+	
+	<tr>
+	<td>1</td>
+	<td>2</td>
+	<td>3</td>
+	</tr>
+	
+	</table>
+
+</body>
+</html>

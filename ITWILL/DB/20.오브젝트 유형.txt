@@ -1,0 +1,17 @@
+<Table>
+-사용방법 : select, insert, update, delete
+-정의방법 : create table, alter table,
+          drop table, truncate table
+
+<View>
+-사용방법 : select, insert, update, delete
+-정의방법 : create [or replace] view, drop view
+
+-or replace : 생성하거나 교체해달라
+-noforce : Base table이 존재하는 경우에만 교체해달라(default)
+-force : 잘안씀 / Base table 존재 여부에 관계없이 만들어달라
+
+<Sequence>
+-사용방법 : 시퀀스명.nextval, 시퀀스명.currval
+-정의방법 : create sequence, alter sequence
+               drop sequence

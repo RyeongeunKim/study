@@ -1,0 +1,242 @@
+< 테이블 생성 시 데이터 타입 4가지 >
+
+a varchar2(10)
+
+b number(5)
+
+c number(p, s) 예 => (3.1)
+  p는 전체자리, s는 소수점 몇번째까지?
+  정수, 실수 구분안하고 number 데이터 타입 사용
+
+d date 컬럼 사이즈 지정 X
+
+------------------------------------------------------------------------------------
+
+< 날짜 기본 형식 >
+
+SQL Plus DD-MON-RR
+SQL Developer RR-MM-DD
+
+-----------------------------------------------------------------------------------
+
+< DML >
+
+널 값 넣고싶을 때  null
+=> insert into dept
+     values(30,'CCC',null,null);
+
+디폴트 값 넣고싶을 때 default
+=> insert into dept
+    values(50,'DDD','D200',default);
+
+선언된 티폴트 값이 없는데 default 입력하면 널값이 들어감
+=> insert into dept
+    values(50,'DDD',default,default);
+
+--------------------------------------------------------------------------------
+
+< 제약조건 >
+
+* 선언 시기
+
+-테이블 생성 시 : create table ---;
+
+-테이블 생성 후 : alter table ----;
+
+* 제약조건 유형
+
+-Primary key, Foreign key, Unique, Not null, Check
+
+* 제약조건명
+
+-사용자 지정 : 고유하고 의미있는 이름 부여를 권장함.
+	      ex) 테이블약자_컬럼약자_제약조건유형약자
+	           emp_empid_pk
+	           emp_did-fk
+	           emp_email-uk
+	           dept_dname_nn
+	           emp_sal_ck
+
+-사용자 생략 : Oracle이 자동 부여함(sys_cxxxxxxx)
+
+※ 제약조건명은 생략하지 말고 지정하자! 생략하면 관리하기 번거롭다!
+
+* 문법
+
+not null만 column-level의 문법을 사용하고
+primary key, foreign key, unique, check 는 둘 중 아무거나 상관 없음
+
+1. column-level 
+
+ constraint emp_emp_id_pk primary key
+
+ 컬럼명 뒤에
+ constraint 제약조건명 제약조건유형
+
+ create table employees{
+   employee_id number(6)
+     constraint emp_emp_id_pk primary key,
+   first_name varchar(20),
+   .....);
+ }
+
+2. table-level
+
+콤마있음
+
+컬럼들 먼저 선언하고
+제약조건만 따로 한줄 선언하고
+뒤에 컬럼명을 한번 더 명시함
+
+ create table employees{
+   employee_id number(6),
+   first_name varchar(20),
+   ...
+   job_id varchar2(10) not null,
+   constraint emp_emp_id_pk primary key(employee_id));
+ }
+
+* 제약조건
+
+1. not null : 필수조건 (비어있으면 안되는 값)
+2. unique : 고유한 값 -> 중복된 값 X (학번, 사번, 전화번호, 메일주소 등)
+3. primary key : not null + unique 
+   나머지 모든 제약조건은 여러번 선언이 가능하나
+   기본키는 한번 밖에 선언할 수 없다
+
+4. foreign key : 자기 자신 테이블이나 
+   다른 테이블의 primary key 또는 unique 제약조건이 걸려있는 컬럼만 참조가능 
+   not null 제약조건이 걸려있지 않는 한 null은 허용한다
+
+[ FK - table level 문법 ] 
+
+foreign key 생략하면 안됨! 
+=> ※ references가 있어도 foreign key뒤에 컬럼명이 오기 때문
+
+constraint emp-dapt_fk foreign key(department_id)
+references departments(department_id),
+constraint emp-email_uk unuque(email));
+
+※ references 부모테이블(부모컬럼명)
+
+[ FK - columm level 문법 ] (( 주로 사용 ))
+
+foreign key 무조건 생략! 
+=> ※ references가 있으니까 foreign key 를 생략해도 외래키인지 알기 때문
+
+...
+department_id number(4) constraint emp_deptid_fk
+references departments(department_id),
+...
+
+5. check 제약조건
+
+----------------------------------------------------------------------------------------
+
+< check 제약조건 >
+
+[ex1]
+
+salary number(10) constraint OOO check (salary < 0),
+(==) 콤마가 있냐 없냐 차이
+salary number(10), 
+constraint OOO check (salary > 0),
+
+[ex2]
+
+주민번호 varchar2(13) constraint OOO check (length(주민번호) = 13),
+(==)
+주민번호 varchar2(13),
+constraint OOO check (length(주민번호) = 13),
+
+[ex3]
+
+학년 number(10) constraint OOO check (학년 >= 1 or 학년 <= 6),
+(==)
+학년 number(10) constraint OOO check (학년 between 1 and 6),
+
+[ex4]
+
+과목 varchar2(10) constraint OOO 
+                      check (과목 in ('Java', 'Jsp', 'Web', 'DB'))
+
+------------------------------------------------------------------------------------------------------
+
+< 테이블 수정 >
+
+1. 컬럼 추가, 제약조건 추가
+   alter table 테이블명
+   add -----;
+
+2. 컬럼 수정(데이터타입, 컬럼 사이즈, default값 등), 제약조건 추가
+   alter table 테이블명
+   modify -----;
+
+3. 컬럼 삭제, 제약조건 삭제
+   alter table 테이블명
+   drop -----;
+   (=)
+   alter table dept80
+   drop (job_id);
+
+< 테이블 생성 후 제약조건 추가 > 
+
+1. 테이블 레벨 문법 - PK, FK, UK, CK
+   alter table 테이블명
+   add constraint 제약조건명 제약조건유형(컬럼명);
+
+2. 컬럼 레벨 문법 - PK, FK, UK, CK, NN
+   alter table 테이블명
+   modify 컬럼명 constraint 제약조건명 제약조건유형;
+
+< 제약조건 삭제 > 
+
+// 제약조건명으로 삭제함
+alter table 테이블명
+drop constraint 제약조건명;
+
+// PK 제약조건은 제약조건 유형으로 삭제 가능함
+alter table 테이블명
+drop primary key; 
+
+--------------------------------------------------------------------------------------------------------
+
+< 컬럼명 변경 >
+
+alter table 테이블명
+rename column 기존컬럼명 to 새컬럼명;
+ 
+< 제약조건명 변경 >
+
+alter table 테이블명
+rename constraint 기존제약조건명 to 새제약조건명;
+
+< 테이블명(객체명) 변경 > 
+
+rename 기존테이블명 to 새테이블명;
+
+---------------------------------------------------------------------------------------------------------
+
+1. 테이블 삭제 
+  drop table 테이블명;
+
+2. 실수로 삭제한 경우 휴지통으로부터 되살림
+  휴지통보기
+  show recyclebin
+
+  복원(외워라!)
+  flashback table 테이블명 to before drop; 
+
+3. 휴지통을 거치지 않고 테이블 삭제하기
+  drop table 테이블명 purge;
+
+휴지통은 순환형으로 용량이 다차면 먼저 들어온 것 부터 사라진다.(시간 상관 X)
+
+----------------------------------------------------------------------------------------------------------
+
+< TRUNCATE > 
+
+테이블 구조는 남겨두고 모든 행 제거함
+
+DML : DELETE 특정 행 삭제 + 모든 행 삭제 가능  => COMMIT/ROLLBACK
+DDL : TRUNCATE 모든 행 삭제 => AUTOCOMMIT

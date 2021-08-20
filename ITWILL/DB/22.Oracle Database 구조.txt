@@ -1,0 +1,70 @@
+<<Oracle Database 전체구조>>
+[Database]
+1.Datafiles
+-실제 Data가 저장된 곳
+-Data Dictionary가 저장된 곳
+-Datafile 정보 조회 : v$datafile, v$tempfile
+
+2.Controlfile
+-DB의 무결성을 유지/관리할 수 있는 모든 동기화 정보가 기록된 곳
+ (DB의 논리적/물리적 구조 정보, 마지막 작업 번호 등)
+-DB당 하나 존재함
+-다중화 기능 제공됨(최대 8개까지 다중화 가능, 권장 : 3개)
+-Controlfile 정보 조회 : v$controlfile
+
+3.Redologfiles
+-DB에서 발생된 변경작업의 로그정보(Redo data)가 기록된 곳
+-주목적 : Datafile Recovery(복구)
+-순환형 관리됨, 다중화 기능 제공됨
+-DB당 최소 2개이상의 Redo log group 존재해야함
+-Redo log group에는 최소 1개이상의 member 존재해야함
+-Redologfile 정보 조회 : v$log, v$logfile
+
+4.Parameterfile
+-instance의 정의정보가 기록된 곳(SGA 할당 정보 등)
+-DB의 여러 설정 정보가 기록된 곳
+-위치 : $ORACLE_HOME/dbs
+       (Oracle Software가 설치된 물리적인 경로)
+-이름 : spfileSID.ora  (ex) spfileorcl.ora
+
+5.Passwordfile
+-DB를 시작/종료할 수 있게 인증해주는 곳
+-위치 : $ORACLE_HOME/dbs
+-이름 : orapwSID  (ex) orapworcl
+
+6.Archived log files(option)
+-Redologfile의 Offline 복사본
+-주목적 : Datafile Recovery(복구)
+-Archive log mode 확인 : v$database
+
+[Instance]
+(SGA) - 공유 가능 메모리 구조
+1.Shared pool => 사전 준비 작업 공간
+1)Library cache
+-최근에 실행된 SQL과 실행계획이 저장된 곳
+ (대소문자, 공백까지 일치해야 hit됨)
+-LRU 알고리즘으로 관리됨
+
+2)Data dictionary cache
+-최근에 사용된 DB 정의정보가 저장된 곳
+ (object, user, file, 제약조건, 권한 등)
+-LRU 알고리즘으로 관리됨
+
+2.DB buffer cache => 실제 작업 공간
+-최근에 사용된 Data block이 저장된 곳
+-LRU 알고리즘으로 관리됨
+
+3.Redo log buffer
+-DB에서 발생된 변경 작업의 로그정보가 기록되는 곳
+-순환형으로 관리됨
+
+(B/G proc)
+1.PMON - User proc fail 시 트랜잭션 롤백 및 선점하고 있던 자원/Lock 해제함
+2.SMON - Instance fail(=DB 비정상종료) 후 DB 재시작 시 동기화를 맞춰줌
+3.DBWR - 체크포인트 발생 시 DB buffer cache의 dirty block을 Datafile로 기록함
+4.LGWR - 커밋(commit) 발생 시 Redo log buffer의 로그정보를 Redologfile로 기록함
+5.CKPT - 체크포인트 발생 시 DBWR에게 알림
+	 Datafile 헤더와 Controlfile에 마지막 체크포인트 번호 갱신함
+6.ARC(option) - DB가 Archive log mode인 경우 활성화됨
+ 		(DB가 Noarchive log mode인 경우 비활성화됨)
+		Redologfile에 로그스위치 발생 시 Archived log file 생성함

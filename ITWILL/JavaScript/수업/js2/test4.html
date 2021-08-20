@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 내장객체 = 배열(Array)
+	// 모든 데이터를 연속적인 공간에 저장
+	// * 데이터의 위치를 저장 => 인덱스 => 배열의 인덱스는 항상 0 부터 시작
+	
+	// 배열 객체 생성
+/* 	var arr = new Array();
+	var arr1 = new Array(10); // 크기 : 10
+	var arr2 = new Array(10, 20, 30, 40, 50); // 크기 : 값으로 초기화
+	var arr3 = [1, 2, 3, 4, 5, 6];
+	 */
+
+	 var arr = new Array();
+	 // 요소 : 배열의 값
+	 // 배열의 이름[인덱스]를 사용해서 접근 => 배열의 요소는 변수처럼 접근가능
+	 arr[0] = "값1";
+	 arr[1] = 1;
+	 arr[2] = "value"
+	 arr[3] = 3.123;
+	 arr[4] = true;
+	 
+	 document.write("배열 0번 인덱스의 값 : " + arr[0] + "<br>");
+	 document.write("배열 1번 인덱스의 값 : " + arr[1] + "<br>");
+	 document.write("배열 2번 인덱스의 값 : " + arr[2] + "<br>");
+	 document.write("배열 3번 인덱스의 값 : " + arr[3] + "<br>");
+	 document.write("배열 4번 인덱스의 값 : " + arr[4] + "<br>");
+
+	 document.write("<hr>");
+	  
+	 for(var i=0; i<5; i++){
+		 document.write("배열 " + i + "번 인덱스의 값 : " + arr[i] + "<br>");
+	 }
+	 
+	 document.write("<hr>");
+	 
+	 // arr.length => 배열의 길이 5
+	 for(var i=0; i<arr.length; i++){
+		 document.write("배열 " + i + "번 인덱스의 값 : " + arr[i] + "<br>");
+	 }
+	 
+	 document.write("<hr>");
+	 
+	 // ※ 2차원 배열 : 2중 for문 / 3차원 배열 : 3중 for문
+	 
+	 // for~ in		i값은 배열의 크기만큼 자동으로 증가(0~해당 개수만큼)
+	 for(var i in arr){
+		 document.write(arr[i]+"<br>");
+	 }
+	 
+	 document.write("<hr>");
+	 
+	 // 배열의 기능 - 메서드
+	 var arr2 = [1,2,3,4,5,6,7,8];
+	 
+	 for(var i in arr2){
+		 document.write(arr2[i]+" ");
+	 }
+	 
+	 document.write("<hr>");
+	 
+	 arr2.reverse();
+	 
+	 for(var i in arr2){
+		 document.write(arr2[i]+" ");
+	 }
+	 
+	 // 배열1 = "apple","banana","lemon","orange"
+	 var arrF = ["apple","banana","lemon","orange"];
+	 // 배열2 = 4,2,6,7,3,4,5,8
+	 var arrN = new Array(4,2,6,7,3,4,5,8);
+	 
+	 document.write("<hr>");
+	 for(var i=0;i<arrF.length;i++){
+		 document.write(arrF[i]+" ");
+	 }
+	 document.write("<hr>");
+	 for(var i in arrN){
+		 document.write(arrN[i]+' ');
+	 }
+	 document.write("<hr>");
+	 // join("구분자") : 배열의 요소를 구분자를 사용해서 연결
+	 document.write(arrF.join()+" "+"<br>"); // [,]
+	 document.write(arrF.join('!')+" "+"<br>");
+	 
+	 arrF.reverse();
+	 document.write(arrF+"<br>");
+	 arrF.sort(); // 오름차순 정렬
+	 document.write(arrF+"<br>");
+	 
+	 arrN.sort();
+	 document.write(arrN+"<br>");
+	 
+	 // 배열 분리
+	 // slice(시작인덱스, 끝인덱스-1)
+	 document.write(arrN.slice(3, 6)+"<br>");
+	 
+	 // 배열 (점수를 저장) 85,95,70,80,100,68
+	 // => 배열의 요소의 총합, 평균 계산
+	 var scoreArr = [85, 95, 70, 80, 100, 68];
+	 var sum = 0;
+	 for(var i=0; i<scoreArr.length; i++){
+		 sum += scoreArr[i];
+	 }
+	 
+	 document.write("총합 : "+sum+"점<br>");
+	 document.write("평균 : "+sum/6+"점<br>");
+	 document.write("평균 : "+sum/scoreArr.length+"점<br>");
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+</script>
+</head>
+<body>
+<h1>WebContent/js2/test4.html</h1>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="../js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+   $(document).ready(function(){
+	   // 비동기방식으로 string2.jsp페이지에 데이터 전달
+	   
+	   var myName="아이티윌";
+	   
+	   $.ajax({
+		   url: "string2.jsp",
+		   type:"post",
+		   data: {name:myName,age:20},
+		   success:function(data){
+			   alert("페이지 비동기방식 처리 완료");
+			   //alert(data);
+			   $('input').val(data);
+		   }
+	   });
+   });
+</script>
+</head>
+<body>
+  <h1>WebContent/jq2/string2.html</h1>
+  
+  <input type="text" >
+  
+</body>
+</html>

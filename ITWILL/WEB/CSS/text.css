@@ -1,0 +1,121 @@
+@charset "UTF-8"; 
+/* text-align 글자 수평 정렬 */
+
+#sec01>p {border: 1px solid;
+width: 500px;}
+.tal01 {text-align: left;}
+.tal02 {text-align: center;}
+.tal03 {text-align: right;}
+.tal04 {text-align: justify;}
+
+#sec01>button {
+ width: 300px;	}
+
+
+
+
+/* text-decoration 글자의 줄들 */
+
+.tdec01 {
+text-decoration:overline;}
+.tdec02 {
+text-decoration:line-through;}
+.tdec03 {
+text-decoration: underline;}
+.tdec04>a {
+text-decoration: none;}
+.tdec04>a:hover {
+ /* A:hover 는 요소A에 마우스를
+올렸을 때의 상태를 지정하는 상태선택자*/	
+text-decoration: underline;
+font-size: 1.2em;
+color: #00f;}
+
+.tdec04:hover {
+background-color: #ccc;}
+
+
+/* text-indent 글자 들여쓰기 */
+.tin01 {text-indent: 50px;}
+.tin02 {text-indent: -50px;}
+.tin03 {text-indent: 1em;}
+.tin04 {background-color:#aff;
+	text-indent: 10%;}
+.tin05:hover {
+ text-indent: 150px;} 
+
+#sec01>h2>span, #sec03>h2>span {
+ font-size: 0.7em;
+ color: #800;}
+
+
+
+/* text-transform 
+영문 대소문자 변경 */
+
+.ttr01 {text-transform: none;}
+.ttr02 {text-transform: lowercase;}
+.ttr03 {text-transform: uppercase;}
+.ttr04 {text-transform: capitalize;}
+
+
+#sec04 label {font-weight: bold;
+text-transform: uppercase;}
+
+#id:focus {
+/* A:focus는 input에 포커싱 된 
+상태일 때를 지정하는 선택자 */
+border:none;
+outline:none;
+border-bottom:4px double;
+/* background-color: #4de; */
+color:#026; }
+
+
+
+/* text-shadow 글자의 그림자 */
+
+#sec05>p {
+font-size: 25px;
+font-weight: bold; }
+
+.tsh01 {
+text-shadow: 2px 4px 4px #444; }
+.tsh02 {
+text-shadow: 3px 0 0 #444;}
+.tsh03 {
+text-shadow: 0 3px 0 #444;}
+.tsh04 {
+text-shadow: 0 0 3px #444;}
+.tsh05 {
+text-shadow: -3px -3px 3px #44a;}
+
+.tsh06 {color: #fff;}	
+.tsh06:hover {
+text-shadow: 3px 3px 3px #44a;
+transition:2s;}
+
+.tsh07 {
+background-color: #000;
+padding: 0.5em;
+text-shadow: 0 0 1px #9ea;	}
+.tsh07:hover {
+text-shadow: 0 0 8px #aeffee;
+transition:2s;}
+
+.tsh08 {
+background-color: #000;
+padding: 0.5em;
+text-shadow: 2px 2px 3px #ae0, 4px 4px 3px #0ae,-2px -2px 2px #f97;}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,127 @@
+@charset "UTF-8";
+* { margin:0;
+	padding: 0;}
+
+nav>ul {list-style: none;
+/* 목록 앞의 모양 제거 */}
+
+#nav-left li {
+border: 1px solid;	
+width: 100px;
+float: left;/* 메뉴각각을 나란히 배치 */
+margin-right: 10px;/* 메뉴 사이 간격 */
+text-align: center;/* 메뉴 글자를
+영역내에서 중앙정렬 */
+}
+
+/* 2. 가로 메뉴바 - 우측형 ~~~~~~ */
+#nav-rgt>ul {
+border: 1px solid ;
+float: right; 
+/* 부모요소(ul)에 float을
+  right해서 우측메뉴로*/	
+padding-left: 0;}
+
+#nav-rgt li {
+border: 1px solid red;	
+width: 100px;
+float: left;/* 자식요소(li)는 float을
+ left해서 가로로 나란히 배치되는 메뉴로 */}
+
+
+
+/* 3. 가로 메뉴바 - 중앙형 */
+#nav-cnt>ul {
+border: 1px solid #0da;	
+width:500px; /* 부모요소(ul)의
+               크기를 줄이고 */
+margin: 2em auto;
+/* 여백을 좌우동일(auto)하게 줘서 중앙정렬*/}
+
+#nav-cnt li {
+border: 1px solid #080;	
+float: left;/* 자식요소(li)는 
+ float을 left로 나란히 배치 */
+width: 100px;
+padding: 10px;
+box-sizing: border-box;}
+
+
+
+#ul01>li {
+ background-color:#aff;
+ margin-right:1.5em;
+ padding:1em;	
+ float: left;	}
+ 
+ 
+.clear {clear: both;
+/* 1. clear시킬 요소가 있을때
+class로 추가하기 */}
+
+#sec01 {clear: both;
+/* 2. 요소에 직접 clear 적용하기*/}
+
+ 
+
+#sec01, #sec02 {
+ display: inline-block;
+ width: 45%; }
+section>h2>i {
+ font-size: 0.7em;
+ font-style: normal;}
+
+/* 이미지를 float시켜
+ 글자가 자연스럽게 둘러싸기 */
+#sec01 img {
+float: left;/* 그림 왼쪽*/
+margin-right: 1em;}
+
+#sec02 img {
+ float: right;/* 그림 오른쪽*/	
+ margin-left:1em; }
+#sec02 p {
+ text-align: right;	}	
+
+
+
+/* 레이아웃용으로 float적용하기 */
+
+#sec03 {/* height: 600px; */
+overflow: hidden;}
+
+#sec03>p {
+border: 1px solid;
+width: 40%;
+float: left;}
+
+
+#sec04 {overflow: hidden;}
+#sec04>p {
+border: 1px solid;	
+float: right;
+width: 30%;}
+
+
+#sec05 {overflow: hidden;}
+#sec05>p {
+border: 1px solid #0a0;	
+width: 25%;}
+
+#sec05>.p-1 {float: left;}
+#sec05>.p-2 {float: right;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
