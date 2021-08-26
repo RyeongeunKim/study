@@ -11,6 +11,233 @@ public class Hello
 }
 */
 
+/*
+// ex24)
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		int a = 100;
+		String s1 = Integer.toString(a);
+		System.out.println(s1 + 200);
+		String s2 = ""+a;
+		System.out.println(s2 + 100);
+		String s3 = "456";
+		int b = Integer.parseInt(s3);
+		System.out.println(b + 100);
+	}
+}
+*/
+/*
+// ex23)
+class Tiger {
+	void method01() {
+		System.out.println(1);
+	}
+	void method01(int a) {
+		System.out.println(2);
+	}
+	void method01(int a, int b) {
+		System.out.println(3);
+	}
+	void method01(String a, int b) {
+		System.out.println(4);
+	}
+	int getAreaRect(int width, int height) {		
+		return width*height;
+	}
+	int getAreaRect(int length) {
+		return length * length;
+	}
+}
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		Tiger t = new Tiger();
+		t.method01();
+		t.method01(10);
+		t.method01(10, 20);
+		t.method01("호랑이", 20);
+		
+	}
+}
+*/
+/*
+// ex22)
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		for(int i=0; i<10; i++) {
+			System.out.println(i);
+			if(i<3) {
+				continue;
+			}
+			System.out.println("호랑이");
+			
+			while(true) {
+				int num = 0;
+				num++;
+				if(num%2==0) {
+					System.out.println("호랑이" + num);
+					continue;
+				}
+				if(num==10) {
+					System.out.println("코끼리" + num);
+					break;
+				}
+			}
+			if(i==7) {
+				break;
+			}
+		}
+	}
+}
+*/
+
+/*
+// ex21)
+class Tiger {
+	
+	int m1(int a, int b) {
+		if(a>b) {
+			return 100;
+		} else {
+			System.out.println("호랑이");
+		}
+		return 5000;
+	}
+	
+	void m2() {
+		System.out.println(1);
+		return;
+		//System.out.println(2);
+	}
+	
+	void m3(int num) {
+		for(int i=0; i<10; i++) {
+			if(i==num) {
+				System.out.println("찾았다");
+			}
+		}
+		System.out.println("검색데이터 찾지못함");
+		return;
+	}
+}
+
+public class Hello 
+{
+	
+	public static void main(String[] args) 
+	{
+		Tiger t = new Tiger();
+		t.m1(2, 3);
+		t.m3(2);
+	}
+}
+*/
+
+
+/*
+// ex20)
+
+class Tiger {
+	
+	String m1() {
+		
+		return "독수리";
+	}
+	
+	Lion m2() {
+		//return new Lion();
+		Lion t = new Lion();
+		return t;
+	}
+	
+	Lion m3(Lion t) {
+		return t;
+	}
+}
+
+class Lion {
+	void show() {
+		System.out.println(1000);
+	}
+}
+
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		Tiger t1 = new Tiger();
+		String s1 = t1.m1();
+		System.out.println(s1);
+		System.out.println(t1.m1());
+		
+		Lion t2 = t1.m2();
+		t2.show();
+		
+		Lion t3 = t1.m3(new Lion());
+		t3.show();
+		
+		t1.m3(new Lion()).show();;
+	}
+}
+*/
+/*
+class Tiger {
+	// 주의 => int a, b (X)
+	void m1(int a, int b) {
+		System.out.println(a+" "+b);
+		System.out.println(a * b + a);
+		System.out.println("-----------------------------------");
+	}
+	
+	void m2(int a, char b, boolean c, float d, String e) {
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+		System.out.println(d);
+		System.out.println(e);
+	}
+	
+	void m3(Lion a) {
+		System.out.println(a.hashCode());
+		a.sound();
+	}
+}
+
+class Lion{
+	void sound() {
+		System.out.println("어흥~~~~~~!");
+	}
+}
+
+// ex20)
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "호랑이";
+		System.out.println(s1);
+		System.out.println(s1.length());
+		
+		Tiger t1 = new Tiger();
+		t1.m1(3, 4);
+		t1.m2(10, '한', false, 3.14f, "호랑이");
+		
+		Lion t2 = new Lion();
+		System.out.println(t2.hashCode());
+		t1.m3(t2);
+		
+		// Lion a = new Lion();
+		t1.m3(new Lion());
+	}
+}
+*/
+/*
+// ex19)
 class Tiger{
 	
 	void merry() {
