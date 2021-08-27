@@ -1,5 +1,8 @@
 package Pack;
 
+import java.util.Iterator;
+import java.util.Random;
+
 /*
 // ex)
 public class Hello 
@@ -10,7 +13,746 @@ public class Hello
 	}
 }
 */
+/*
+// ex)
+class Animal {
+	
+}
 
+class Tiger extends Animal {
+	
+}
+
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		// System.out.println("1000");
+	}
+}
+*/
+/*
+class A{
+	void m1() {
+		System.out.println(1);
+	}
+}
+
+interface B{
+	void m2(); // 함수원형
+
+}
+
+interface C{
+	void m3();
+}
+
+class D extends A implements B, C{
+	@Override
+	public void m2() {
+		System.out.println(2);
+		
+	}
+	@Override
+	public void m3() {
+		System.out.println(3);
+	}
+}
+
+@FunctionalInterface // 반드시 이 인터페이스에는 함수는 한개만 존재한다는 뜻
+interface E{
+	void m1();
+}
+
+
+// ex41)
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		D t = new D();
+		t.m1();
+		t.m2();
+		t.m3();	
+		Thread t2 = null; //t2는 객체가 아니다(명확하게 적기!)
+		
+		String s = null;
+		StringBuffer sf = null;
+	}
+}
+*/
+/*
+interface 한국은행{
+	void 입금();
+	void 출금();
+	void 이체();
+	void 대출();
+}
+
+class 국민은행 implements 한국은행{
+	@Override
+	public void 입금() {
+		System.out.println("이자율은 3%입니다");
+		
+	}
+	@Override
+	public void 출금() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void 이체() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void 대출() {
+		// TODO Auto-generated method stub
+		
+	}
+}
+
+class 우리은행 implements 한국은행{
+	@Override
+	public void 입금() {
+		System.out.println("이자율은 6%입니다");
+		
+	}
+	@Override
+	public void 출금() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void 이체() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void 대출() {
+		// TODO Auto-generated method stub
+		
+	}
+}
+
+// ex40)
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		국민은행 t1 = new 국민은행();
+		t1.입금();
+		우리은행 t2 = new 우리은행();
+		t2.입금();
+	}
+}
+*/
+
+
+/*
+class 대장장이 {
+	void 칼() {
+		System.out.println("칼을 잘 만듭니다");
+	}
+	void 방패() {};
+}
+
+class 나그네1 extends 대장장이{
+	void 방패() {
+		System.out.println("방패 잘 만듭니다");
+	}
+}
+class 나그네2 extends 대장장이{
+	// 오버라이딩 : 부모와 자식이 함수이름을 동일하게 사용
+	// 어노테이션 : 프로그래머가 실수할 수 있는 사항을 미리 방지
+	//			  코드가 오류나기 전에 미리 알려주는 역할
+	@Override
+	void 방패() {
+		
+	}
+}
+
+// ex39)
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		나그네1 t1 = new 나그네1();
+		t1.칼();
+		t1.방패();
+		
+		나그네2 t2 = new 나그네2();
+		t2.칼();
+		t2.방패();
+	}
+}
+/*
+// ex38)
+// class? interface? 둘 다 사용할 수 있을 땐 interface 사용
+interface Animal { // 자식의 가이드 역할
+	abstract void m1(); // 실전에는 abstract 안붙이는 경우도 있음	
+}
+
+//abstract class Animal { // 인터페이스 역할만 한다
+//	abstract void m1(); // {} 없음 -> 미완성코드
+//	
+//}
+
+class Tiger implements Animal {
+	public void m1() {
+		System.out.println(2);
+	}
+}
+
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		Animal a = new Tiger();
+		a.m1();
+		//Animal t2 = new Animal(); // 객체를 생성시킬 수 없다
+	}
+}
+*/
+/*
+// ex37)
+class Animal {
+	void cry() {
+		System.out.println("...");
+	}
+}
+
+class Dog extends Animal {
+	void cry() {
+		System.out.println("멍멍!");
+	}
+	
+}
+class Cat extends Animal {
+	void cry() {
+		System.out.println("야옹~~!");
+	}
+	
+}
+class Snake extends Animal {
+	
+}
+
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		Random rm = new Random();
+		Animal t0 = new Dog();
+		Animal t1 = new Cat();
+		Animal t2 = new Snake();
+		
+		for(int i=0; i<10; i++) {
+			int num = rm.nextInt(3);
+			switch (num) {
+			case 0:
+				t0.cry();
+				break;
+			case 1:
+				t1.cry();
+				break;
+			case 2:
+				t2.cry();
+				break;
+			}
+		}
+		System.out.println("----------------------------------");
+		for(int i=0; i<10; i++) {
+			Animal[] t3 = new Animal[] {new Dog(), new Cat(), new Snake()};
+			t3[rm.nextInt(3)].cry();
+		}
+	}
+}
+*/
+/*
+// ex36) 랜덤
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		Random rm = new Random();
+		//System.out.println(rm.nextInt());
+		for(int i=0; i<10; i++) {
+			int num = rm.nextInt(2); // 0 1 2
+			System.out.println(num);
+			System.out.println("---------------------------------");
+			System.out.println(rm.nextInt(10));
+		}
+	}
+}
+*/
+/*
+// ex35)
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		int a = 10; //컴퓨터에게 4byte메모리달라고 요청
+		
+		// 일괄적으로 메모리달라는 요청 - 배열
+		// 1 사용 O
+		int[] ar = new int[5];
+		// 2 실전에선 사용 X
+		int[] br = new int[] {1,2,3,4,5};
+		// 3 실전에선 사용 X
+		int[] cr = {10,20,30,40,50};
+		
+		System.out.println(ar.length);
+		for (int i = 0; i < br.length; i++) {
+			System.out.print(br[i] + " ");
+		} System.out.println();
+		
+		System.out.println("호랑이");
+		
+		// 간략화 된 for문
+		// i대신 사용하는 변수 = x, data, value
+		for (int x : cr) {
+			System.out.print(x + " ");
+		} System.out.println();
+		
+
+		cr[0] = 100;
+		cr[4] = 200;
+		//cr[5] = 300;
+		//ar[-1] = 400;
+		int num = 3;
+		ar[num] = 500;
+		ar[num * 3 - 5] = 400; 
+		ar[2] = 3;
+		ar[ar[2]] = 999;
+		System.out.println(ar[2] + " " + ar[3]);
+		ar[ar[3]-998] = 888;
+		for (int x : ar) {
+			System.out.print(x + " ");
+		} System.out.println();
+		System.out.println("-------------------------------");
+		boolean[] dr = {true, false, false, true};
+		for (boolean x : dr) {
+			System.out.print(x + " ");
+		} System.out.println();
+		System.out.println("--------------------------------");
+		String[] ss = new String[4];
+		ss[0] = "호랑이";
+		ss[1] = "강아지";
+		ss[2] = "고양이";
+		ss[3] = "기린";
+		for (int i = 0; i < ss.length; i++) {
+			System.out.println(ss[i]);
+		}
+		for (String x : ss) {
+			System.out.println(x);
+		}
+		String[] st = new String[] {"제비꽃", "벚꽃", "개나리"};
+		String s1 = "호랑이"; // 정석
+		String s2 = new String("독수리");
+		
+		// 기억해라
+		String[] su = new String[] {new String("민들레"),new String("진달래"), new String("개나리")};
+		
+	}
+}
+*/	
+
+/*
+// ex34)
+class Animal {
+	void cry() {
+		System.out.println("...");
+	}
+}
+
+class Dog extends Animal {
+	void cry() {
+		System.out.println("멍멍!");
+	}
+	
+}
+class Cat extends Animal {
+	void cry() {
+		System.out.println("야옹~~!");
+	}
+	
+}
+class Snake extends Animal {
+	
+}
+
+class Zoo {
+//	void sound(Dog t) {
+//		t.cry();
+//	}
+//	void sound(Cat t) {
+//		t.cry();
+//	}
+//	void sound(Snake t) {
+//		t.cry();
+//	}
+	void sound(Animal t) {
+		t.cry();
+	}
+}
+
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		Animal t1 = new Dog();
+		Animal t2 = new Cat();
+		Animal t3 = new Snake();
+		
+		Dog t4 = new Dog();
+		Cat t5 = new Cat();
+		Snake t6 = new Snake();
+		
+		t1.cry();
+		t2.cry();
+		t3.cry();
+		t4.cry();
+		t5.cry();
+		t6.cry();
+		System.out.println("----------------------");
+		
+		Zoo t7 = new Zoo();
+		t7.sound(new Dog());
+		t7.sound(new Cat());
+		t7.sound(new Snake());
+	}
+}
+*/
+/*
+// ex33)
+class Animal {
+	void m1() {
+		System.out.println(1);
+	}
+	void m3() {
+		System.out.println(31);
+	}
+	
+}
+
+class Tiger extends Animal {
+	void m2() {
+		System.out.println(2);
+	}
+	void m3() {
+		System.out.println(32);
+	}
+}
+
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		Animal t1 = new Animal(); // case 1
+		Tiger t2 = new Tiger(); // case 2
+		Animal t3 = new Tiger(); // case 3 부자관계(업캐스팅)
+		//Tiger t4 = new Animal(); // case 4 다운캐스팅
+		t3.m1(); // m2는 문법이 지원 X
+		t3.m3();
+	}
+}
+*/
+/*
+// ex32) 상속관계일 때 생성자
+class Animal{
+	Animal(){
+		System.out.println("부모 생성자 콜");
+	}
+	
+	Animal(int n){
+		System.out.println(n);
+	}
+}
+
+class Tiger extends Animal{
+	Tiger(){
+		// 현재 라인에 코드가 한줄이 생략되어 있다.
+		super(); // 부모의 생성자를 콜
+		System.out.println("자식 생성자 콜");
+	}
+	Tiger(int num){
+		super(num+100);
+		System.out.println(num);
+	}
+	Tiger(int a, int b){
+		super(a * b);
+		System.out.println("3번째 생성자");
+	}
+}
+
+
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		Tiger t1 = new Tiger();
+		Tiger t2 = new Tiger(100);
+		Tiger t3 = new Tiger(3, 4);
+	}
+}
+*/
+/*
+// ex31) 상속
+// 호랑이는 동물이다 
+// 호랑이 -> 동물
+// 자식 -> 부모
+class Animal{
+	void m2() {
+		System.out.println(2);
+	}
+	void m3() {
+		System.out.println(31);
+		System.out.println("---------------------------");
+	}
+	
+	
+}
+
+class Tiger extends Animal {
+	
+	void m1() {
+		System.out.println(1);
+	}
+	void m3() {
+		System.out.println(32);
+		System.out.println("---------------------------");
+	}
+	void m4() {
+		m3();
+		super.m3();
+		System.out.println(4);
+		System.out.println("---------------------------");
+	}
+}
+
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		Animal t1 = new Animal(); // 상속과 관계 X
+		Tiger t2 = new Tiger(); 
+		t2.m1();
+		t2.m2(); // Tiger에서 m2를 찾고 없으니까 Animal m2 사용
+		t2.m3(); // 자기껄 사용한다
+		t2.m4();
+		//부모의 m3 호출 -> 직접적 X, 간접적으로 사용가능
+		
+	}
+}
+*/
+/*
+// ex30) 수학
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		int v1 = Math.abs(-5);
+		System.out.println("v1 = "+v1);
+		double v2 = Math.abs(-3.14);
+		System.out.println("v2 = "+v2);
+		double v3 = Math.ceil(6.0);
+		double v4 = Math.ceil(-5.0);
+		double v5 = Math.floor(5.0);
+		double v6 = Math.floor(-6.0);
+	}
+}
+*/
+/*
+// ex29)
+class Tiger{
+	static void myMain() {
+		Tiger t = new Tiger();
+		
+		// static은 아니지만 객체를 생성했기 때문에
+		// staitc안의 객체를 사용
+		t.m1();
+		// m1(); static이 아니라서 쓸 수 없다
+	}
+	
+	void m1() {
+	}
+}
+
+public class Hello 
+{
+	static int num = 10;
+	Hello(){}
+	static void m1() {
+		System.out.println("1번 콜");
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println(num);
+		m1();
+
+		Hello h = new Hello();
+		h.m2();
+		h.m1();
+		Hello.m1();
+		// Hello.m2(); 사용할 수 없다
+	}
+	void m2() {
+		System.out.println("2번 콜");
+	}
+}
+*/
+
+/*
+class Tiger{
+	int num1;
+	static int num2 = 100;
+	
+	static void m1() {
+		System.out.println("static 함수 콜");	
+	}
+}
+
+// ex28)
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println(Tiger.num2);
+		Tiger t1 = new Tiger();
+		Tiger t2 = new Tiger();
+		System.out.println(t1.num2);
+		t2.num2 = 200;
+		System.out.println(t1.num2);
+		System.out.println(Tiger.num2); // 원칙
+		Tiger.m1();
+		
+		// 이해
+		System.out.println(Math.abs(-10));
+		
+	}
+}
+*/
+/*
+class Car {
+	int fuel = 100;
+	String name;
+	
+	Car(){
+		System.out.println("default 생성자 콜");
+		name = "무명";
+	}
+	
+	Car(String n, int f){
+		System.out.println("인수전달 생성자 콜");
+		fuel = f;
+		name = n;
+	}
+	
+	void move() {
+		System.out.println(name + "자동차가 달린다");
+		fuel -= 30;
+	}
+	
+	void stop() {
+		System.out.println(name + "자동차가 멈춘다");
+		fuel -= 10;
+	}
+	
+	void inject(int f) {
+		System.out.println(name + "연료를 주입하다");
+		fuel += f;
+	}
+	
+	void show() {
+		System.out.println(name + " " + fuel);
+	}
+	
+	
+}
+
+
+// ex27)
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		Car car1 = new Car();
+		Car car2 = new Car("꼬마", 200);
+		car1.move();
+		car2.move();
+		car1.show();
+		car2.show();
+		car1.stop();
+		car2.stop();
+	}
+}
+*/
+/*
+class Tiger {
+	
+	Tiger(){}
+	
+	Tiger(int a, int b){
+		
+	}
+}
+
+
+// ex26)
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		Tiger t1 = new Tiger();
+		Tiger t2 = new Tiger(10, 20);
+	}
+}
+*/
+/*
+class Tiger {
+	
+	int age = 20;
+	String name = "홍길동";
+	
+	//default 생성자
+	Tiger(){
+		System.out.println("생성자콜");
+		System.out.println("생성자가 호출되었다");
+		
+		//age = 20;
+		//name = "홍길동";
+	}
+	
+	Tiger(int a, String n){
+		age = a;
+		name = n;
+	}
+	
+	void showInfo() {
+		System.out.println(age + " " + name);
+	}
+}
+
+// ex25) 생성자
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		Tiger t1 = new Tiger();
+		Tiger t2 = new Tiger();
+
+		Tiger t3 = new Tiger(100, "독수리");
+		Tiger t4 = new Tiger(200, "앵무새");
+
+		t1.showInfo();
+		t2.showInfo();
+		t3.showInfo();
+		t4.showInfo();
+	}
+}
+*/
 /*
 // ex24)
 public class Hello 
@@ -138,7 +880,6 @@ public class Hello
 }
 */
 
-
 /*
 // ex20)
 
@@ -200,15 +941,18 @@ class Tiger {
 		System.out.println(c);
 		System.out.println(d);
 		System.out.println(e);
+		System.out.println("-----------------------------------");
 	}
 	
 	void m3(Lion a) {
 		System.out.println(a.hashCode());
 		a.sound();
+		System.out.println("-----------------------------------");
 	}
 }
 
 class Lion{
+	
 	void sound() {
 		System.out.println("어흥~~~~~~!");
 	}
