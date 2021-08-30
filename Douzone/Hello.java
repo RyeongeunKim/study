@@ -32,18 +32,27 @@ public class Hello
 //ex51) 2진법 표현
 public class Hello 
 {
-	static void hexaToBinary(int n) {
+//	StringBuffer보다 String으로 리턴하는게 일반적임
+	static String hexaToBinary(int n) {
 		String s = Integer.toBinaryString(n);
-		System.out.println(s);
-		System.out.println(s.length());
+//		System.out.println(s);
+//		System.out.println(s.length());
 		while(s.length() < 32) {
 			s = "0" + s; 
 		}
-		System.out.println(s);
+		// System.out.println(s);
 		
 		StringBuffer s1 = new StringBuffer(s);
-		s1.insert(4, "한");
-		System.out.println(s1);
+//		s1.insert(4, "한");
+//		System.out.println(s1);
+//		s1.insert(8, "글");
+//		System.out.println(s1);
+		for(int i=0; i<7; i++) {
+//			System.out.println((7-i) * 4);
+			s1.insert((7-i) * 4, " ");
+		}
+//		System.out.println(s1);
+		return s1.toString();
 	}
 	
 	public static void main(String[] args) 
@@ -64,7 +73,8 @@ public class Hello
 		if(a == b) {
 			System.out.println(1);
 		}
-		hexaToBinary(a);
+		System.out.println(hexaToBinary(a));
+		System.out.println(hexaToBinary(b));
 	}
 }
 /*
