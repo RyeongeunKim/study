@@ -1,7 +1,9 @@
 package Pack;
 
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Random;
+import java.util.function.Predicate;
 /*
 // ex)
 class Animal {
@@ -29,6 +31,244 @@ public class Hello
 	}
 }
 */
+//ex)
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		LinkedList<Integer> mm = new LinkedList<Integer>();
+		mm.add(33);
+		mm.add(44);
+		mm.add(77);
+		for(int i=0; i<10; i++) {
+			mm.add(i * 2);
+		}
+		mm.add(101);
+		mm.add(102);
+		mm.add(103);
+		System.out.println(mm);
+		
+		// ex1)
+//		for(int i=0; i<mm.size(); ) {
+//			int num = mm.get(i);
+//			if(num % 2 == 0) {
+//				mm.remove(i);
+//			} else {
+//				i++;
+//			}
+//		}
+//		System.out.println(mm);
+		
+		// ex2) iterator 이용
+//		for (Iterator<Integer> it = mm.iterator(); it.hasNext(); ) {
+//			Integer num = it.next();
+//			if(num % 2 == 0)
+//				it.remove();
+//		}
+//		System.out.println(mm);
+		
+		// ex3) 
+		// removeIf(Tiger<데이터타입>)
+//		mm.removeIf(new Predicate<Integer>() {
+//			@Override
+//			public boolean test(Integer num) {
+//				return num % 2 ==0;
+//			}
+//		}); 
+//		System.out.println(mm);
+		
+		// 4. 람다 함수 사용
+		// 코드가 심플하고 가볍다
+		mm.removeIf(num -> num % 2 == 0);
+		System.out.println(mm);
+		
+//		for(int i=0; i<10; i++) {
+//			mm.add(i * 10 + i);
+//		}
+//		System.out.println(mm);
+//		
+//		// 개발용 - mm.size(일반적으론 사용 X, 비용문제)
+//		// 서비스용 - int size = mm.size();
+//		//			i < size;
+//		for (int i = 0; i < mm.size(); i++) {
+//			int num = mm.get(i);
+//			// System.out.println(num);
+//			if(num == 44) {
+//				System.out.println(i + "번째 찾았다");
+//				break;
+//			}
+//			if(i == mm.size()-1) {
+//				System.out.println("Not Found");
+//			}
+//		}
+//		
+//		for (int i = 0; i < mm.size(); i++) {
+//			int num = mm.get(i);
+//			// System.out.println(num);
+//			if(num == 55) {
+//				mm.remove(i);
+//				break;
+//			}
+//			if(i == mm.size()-1) {
+//				System.out.println("Not Found");
+//			}
+//		}
+//		System.out.println(mm);
+		
+	}
+}
+/*
+//ex53) 
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		LinkedList<Integer> mm = new LinkedList<Integer>();
+		// C(reate)RUD
+		mm.add(10);
+		System.out.println(mm.size());
+		for(int i=0; i<10; i++) {
+			mm.add(i * 10 + i);
+		}
+		
+		// CR(ead)UD
+		// 1
+		System.out.println(mm);
+		
+		// 2
+		int size = mm.size();
+		for(int i=0; i < size; i++) {
+			int data = mm.get(i);
+			System.out.print(data + " ");
+		}System.out.println();
+		
+		// 3. x, item, data, value
+		for (Integer x : mm) {
+			System.out.print(x + " ");
+		}System.out.println();
+		
+		// CR(U)pdateD
+		mm.set(5, 999);
+		System.out.println(mm);
+		
+		// CRUD(elete)
+		mm.remove(5);
+		System.out.println(mm);
+	}
+}
+*/
+/*
+//ex52) 비트연산
+public class Hello 
+{
+//	static String result(char c) {
+//		if
+//	}
+	static String hexaToBinary(int n) {
+		String s = Integer.toBinaryString(n);
+		while(s.length() < 32) 
+			s = "0" + s; 
+		
+		StringBuffer s1 = new StringBuffer(s);
+		for(int i=0; i<7; i++) 
+			s1.insert((7-i) * 4, " ");
+
+		return s1.toString();
+	}
+	
+	public static void main(String[] args) 
+	{
+		int a = 0x0000cd5a;
+		int b = 0x0000ff00;
+		int c = 0x0000f800;
+		int d = 0x000007e0;
+		int e = 0x0000001f;
+		
+		// 205
+		System.out.println(hexaToBinary( a ));
+		System.out.println(hexaToBinary( b ));
+		System.out.println(hexaToBinary( (a & b) ));
+		System.out.println(hexaToBinary( (a & b) >> 8));
+		System.out.println(( a & b ) >> 8); // cd00
+		System.out.println("---------------------------------------");
+		
+		// 25
+		System.out.println(hexaToBinary( a ));
+		System.out.println(hexaToBinary( c ));
+		System.out.println(hexaToBinary( (a & c) ));
+		System.out.println(hexaToBinary( (a & c) >> 11));
+		System.out.println((a & c) >> 11);
+		System.out.println("---------------------------------------");
+
+		// 42
+		System.out.println(hexaToBinary( a ));
+		System.out.println(hexaToBinary( d ));
+		System.out.println(hexaToBinary( (a & d) ));
+		System.out.println((a & d) >> 5);
+		System.out.println("---------------------------------------");
+		
+		// 26
+		System.out.println(hexaToBinary( a ));
+		System.out.println(hexaToBinary( e ));
+		System.out.println(hexaToBinary( (a & e) ));
+		System.out.println(a & e);
+		
+		System.out.println("---------------------------------------");
+		int f = 0x77000000;
+		
+		System.out.println(Integer.toHexString(a));
+		//			0000 0000 1101 1100
+		
+		// 왼쪽 시프트로 되돌리기
+		
+		char g = 0x00dc; // (8가지 on/off 출력)
+		// char mask = 0x0080;
+		System.out.println(hexaToBinary(g));
+		//System.out.println(hexaToBinary(mask));
+		//System.out.println(hexaToBinary(mask));
+		//System.out.println(hexaToBinary((g & mask)));
+		System.out.println("---------------------------------------");
+
+		// int num = Integer.parseInt(Integer.toBinaryString(g));
+		
+//		String[] products = new String[] 
+//		{"전자렌지", "가스렌지", "에어프라이어", "통돌이", "노트북", "핸드폰", "태블릿", "전기포트"};
+//		
+//		for(int i=0; i<8; i++) {
+//			System.out.println(i);
+//			String s = (g & (mask >> i)) == 0 ? " off" : " on";
+//			System.out.println(products[i] += s);
+//		}
+		
+		// 0000 0000 1101 1100
+		char c5 = 0x00dc;
+		char mask = 0x80;// 1000 0000
+		String [] elec = new String[] {
+				"에어컨","선풍기","김치냉장고","세탁기",
+				"TV","에어프라이기","노트북","컴퓨터"
+				};
+		
+//		for (int i = 0; i < 8; i++)
+//		{
+//			System.out.println(
+//					(c5 & mask)== mask ?
+//					elec[i] +" ON":
+//					elec[i] +" OFF");
+//					mask >>= 1;
+//		}		
+		
+		for (int i = 0; i < 8; i++, mask >>= 1) 
+		{
+			System.out.println(
+					(c5 & mask)== mask ?
+					elec[i] +" ON":
+					elec[i] +" OFF");
+			
+		}
+	}
+}
+*/
+/*
 //ex51) 2진법 표현
 public class Hello 
 {
@@ -77,6 +317,7 @@ public class Hello
 		System.out.println(hexaToBinary(b));
 	}
 }
+*/
 /*
 //ex50)
 public class Hello 
