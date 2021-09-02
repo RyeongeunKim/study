@@ -1,9 +1,12 @@
 package Pack;
 
+import java.io.*;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Random;
 import java.util.function.Predicate;
+
+import javax.sound.sampled.AudioFormat.Encoding;
 /*
 // ex)
 class Animal {
@@ -31,7 +34,443 @@ public class Hello
 	}
 }
 */
-//ex)
+
+/*
+//ex62) 
+class A<E> { 
+	private E data;
+
+	public E getData() {
+		return data;
+	}
+
+	public void setData(E data) {
+		this.data = data;
+	}
+}
+
+public class Test {
+
+	public static void main(String[] args) {
+		A<Integer> a = new A<Integer>();
+		a.setData(100);
+		System.out.println(a.getData());
+		
+		A<String> b = new A<String>();
+		b.setData("호랑이");
+		System.out.println(b.getData());
+		
+		LinkedList<Integer> mm = new LinkedList<Integer>();
+	}
+}
+*/
+
+/*
+//ex61) 
+class A {
+	private int data;
+
+	public int getData() {
+		return data;
+	}
+
+	public void setData(int data) {
+		this.data = data;
+	}
+	
+}
+
+public class Test {
+
+	public static void main(String[] args) {
+		A a = new A();
+		a.setData(100);
+		System.out.println(a.getData());
+		
+		B b = new B();
+		b.setData("호랑이");
+		System.out.println(b.getData());
+	}
+
+}
+*/
+
+/*
+//ex60-2)
+class 커피 {
+	int 가격 = 30;
+	int 계산() {
+		System.out.println("커피 주문");
+		return 가격;
+	} 
+}
+class 설탕 extends 커피 {
+	int 가격 = 20;
+	커피 a; // 곧 사라지게될 객체를 백업받는다.
+	설탕(커피 a){
+		this.a = a;
+	}
+	int 계산() {
+		System.out.println("설탕추가");
+		return 가격 + a.계산();
+	}
+}
+class 프림 extends 커피 {
+	int 가격 = 10;
+	커피 a; // 곧 사라지게될 객체를 백업받는다.
+	프림(커피 a){
+		this.a = a;
+	}
+	int 계산() {
+		System.out.println("프림 추가");
+		return 가격 + a.계산();
+	}
+}
+
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		커피 a = new 커피();
+		// System.out.println(a.계산());
+		a = new 설탕(a);
+		a = new 설탕(a);		
+//		System.out.println(a.계산());
+		a = new 프림(a);
+		a = new 프림(a);
+		a = new 프림(a);
+		System.out.println(a.계산());
+		
+		
+//		a = new B(a);
+//		System.out.println(a.run());
+//		a = new C(a);
+//		System.out.println("----------------------------------");
+//		System.out.println(a.run());
+	}
+}
+*/
+/*
+//ex59-2) 데코레이션 패턴
+class A {
+	int num = 10;
+	int run() {
+		System.out.println("A Run");
+		return num;
+	}
+}
+class B extends A {
+	int num = 20;
+	A a; // 곧 사라지게될 객체를 백업받는다.
+	B(A a){
+		this.a = a;
+	}
+	int run() {
+		System.out.println("B Run");
+		return num + a.run();
+	}
+}
+class C extends A {
+	int num = 30;
+	A a; // 곧 사라지게될 객체를 백업받는다.
+	C(A a){
+		this.a = a;
+	}
+	int run() {
+		System.out.println("C Run");
+		return num + a.run();
+	}
+}
+
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		A a = new A();
+		a = new B(a);
+		System.out.println(a.run());
+		a = new C(a);
+		System.out.println("----------------------------------");
+		System.out.println(a.run());
+	}
+}
+*/
+/*
+ex59-1) 데코레이션 패턴
+class AA{}
+class BB extends AA {}
+class CC extends AA {}
+
+public class Test {
+
+	public static void main(String[] args) {
+		AA a1 = new BB();
+		System.out.println(a1.hashCode());
+		
+		// 기존에 초기화됐던 객체는 사라짐
+		a1 = new CC();
+		System.out.println(a1.hashCode());
+		
+		// 자기 객체를 백업잡았다
+ 		AA a2 = a1;
+		
+		a1 = new BB();
+		System.out.println(a1.hashCode());
+	}
+}
+*/
+/*
+//ex58-3) 파일입출력
+class Tiger {
+	
+}
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		try {
+			Reader r = new FileReader("test02.txt"); // 업캐스팅(부자관계)
+			
+			while(true) {
+				int data = r.read();
+				if(data == -1) {
+					break;
+				}
+				System.out.println((char)data);
+			}
+			
+//			System.out.println((char)data);
+			r.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+		System.out.println(1000);
+	}
+}
+*/
+/*
+//ex58-2) 파일입출력
+class Tiger {
+	
+}
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		try {
+			Writer w = new FileWriter("test01.txt"); // 업캐스팅(부자관계)
+			w.write("apple");
+			w.write("\n\n");
+			w.write("무궁화");
+			w.write("\n\n");
+			
+			for(int i=0; i<8; i++) {
+				for(int j=0; j<8; j++) {
+					w.write((i + j) % 2 == 0 ? "O " : "X ");
+				}
+				w.write("\n");
+			}w.write("\n");
+			
+			w.close();
+			System.out.println("파일 입출력 종료");
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+	}
+}
+*/
+/*
+//ex58-1) 이중 for문
+class Tiger {
+	
+}
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 4; j++) {
+				System.out.print("[" + i + " " + j + "]");
+			}
+			System.out.println();
+		} System.out.println();
+		
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 6; j++) {
+				if((i + j) % 2 == 0) {
+					System.out.print("O ");
+				} else {
+					System.out.print("X ");
+				}
+			}
+			System.out.println();
+		} System.out.println();
+	}
+}
+*/
+/*
+//ex57) 싱글톤 패턴
+class Tiger {
+	int num;
+	private static Tiger instance = null; // 밖으로 사용하면 안되기에 private 
+					 	    	   // 밖에서 사용하면 객체가 생성되기 때문
+	private Tiger() {}
+	
+	// static : 클래스 이름을 이용하여 함수를 호출할 수 있게함
+	// static 함수 안에서는 static 멤버만 사용할 수 있다
+	// 싱글톤 패턴을 사용할 땐 암묵적으로 함수명을 'getInstance'라고 사용한다
+	static Tiger getInstance() { 
+		if(instance == null) { 
+			System.out.println(1);
+			instance = new Tiger();
+		}
+		return instance;
+	}
+	
+	void m1() {
+		System.out.println(1000);
+	}
+	
+}
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		Tiger t1 = Tiger.getInstance(); 
+		Tiger t2 = Tiger.getInstance();
+		// 같은 객체를 다른 이름으로 사용한다
+		System.out.println(t1.hashCode()); 
+		System.out.println(t2.hashCode());
+		t1.m1();
+		t2.m1();
+		t1.num = 2000;
+		System.out.println("-----------------------------");
+		System.out.println(t2.num);
+	}
+}
+*/
+/*
+//ex56) 
+class Tiger {
+	private int a;
+	public int b; //default
+	
+	// setter getter
+	private int num;
+	
+	public void setNum(int num) {
+		this.num = num * 2;
+	}
+	
+	public int getNUm() {
+		return this.num;
+	}
+	
+	private void m1() {
+		
+	}
+}
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		Tiger t = new Tiger();
+		t.b = 10;
+		// t.a = 20;
+		t.setNum(100);
+		System.out.println(t.getNUm());
+	}
+}
+*/
+/*
+//ex55) 람다 문법
+interface Test1{
+	void m1();
+}
+interface Test2{
+	int m1();
+}
+class Tiger {
+	void m2(Test1 t) {
+		t.m1();
+	}
+	void m3(Test2 t) {
+		System.out.println(t.m1());
+	}
+}
+interface Test3{
+	int m1();
+}
+interface Test4{
+	String m1(int num, String str);
+}
+interface Test5{
+	int m1();
+}
+public class Hello 
+{
+	public static void main(String[] args) 
+	{
+		// ex1)
+		Test1 t1 = ()-> {
+				System.out.println(1);
+		};
+		
+		Tiger tiger = new Tiger();
+		tiger.m2(t1);
+		
+		// 실제 사용 모습
+		tiger.m2(()->{
+			System.out.println(2);
+		});
+		
+		tiger.m3(()->100); 
+		
+		
+		LinkedList<Integer> mm = new LinkedList<Integer>();
+		// 생략된 형태
+		mm.removeIf((lion)-> lion % 2 == 0);
+		// 기본형태 - 보통 사용 X
+		mm.removeIf((lion)-> { 
+			return lion % 2 == 0; 
+		});
+			
+		
+	
+		// ex2) 람다함수의 기본형
+//		Test1 t2 = () -> {
+//			System.out.println(2);
+//		};
+//		t2.m1();
+//		
+		// ex3) 인수전달 O
+		Test2 t3 = (n) -> {
+			System.out.println(n);
+		};
+		t3.m1(100);
+		
+		// ex4) 리턴 O
+		Test3 t4 = () -> {
+			System.out.println(3);
+			return 100;
+		};
+		System.out.println(t4.m1());
+		
+		// ex5) 리턴 O, 인수전달 O
+		Test4 t5 = (n, s) -> {
+			return n+s;
+		};
+		System.out.println(t5.m1(100, " 호랑이"));
+		
+		// ex6)
+		// 리턴이 한 문장 밖에 없을 땐 return 키워드가 생략 가능하지만
+		// {}도 반드시 같이 생략해야 한다
+		Test3 t6 = () -> 100;
+	}
+}
+*/
+/*
+//ex54)
 public class Hello 
 {
 	public static void main(String[] args) 
@@ -117,6 +556,7 @@ public class Hello
 		
 	}
 }
+*/
 /*
 //ex53) 
 public class Hello 
