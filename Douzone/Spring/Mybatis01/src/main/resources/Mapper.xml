@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="Mapper">
+ 	<select id="test01" resultType="int">
+ 		select age from table01
+ 	</select>
+	<insert id="test02" parameterType="int">
+		insert into table01(age) values (#{num})
+	</insert>
+	
+	<delete id="test03" parameterType="int">
+		delete from table01 where age = #{age}
+	</delete>
+	
+	<update id="test04" parameterType="int">
+		update table01 set age = 777 where age = #{age}
+	</update>
+
+</mapper>
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<!-- 	@Bean
+	Fuel makeFuel() {
+		return new Water(); 
+	} -->
+	<!-- 함수를 만들고 리턴값은 Water객체이다 -->
+	<bean id="makeWater" class="Pack.Water"/>
+	<bean id="makeGas" class="Pack.Gas"/>
+	
+<!-- 		@Bean
+	Airplain airplain() {
+		return new Airplain(makeFuel());
+	} -->
+	<bean id="airplain" class="Pack.Airplain">
+		<constructor-arg ref="makeWater"/>
+	</bean>
+	
+	<bean id="ship" class="Pack.Ship">
+		<constructor-arg ref="makeGas"/>
+	</bean>
+	
+	<bean id="car" class="Pack.Car">
+		<constructor-arg ref="makeGas"/>
+	</bean>
+	
+</beans>
