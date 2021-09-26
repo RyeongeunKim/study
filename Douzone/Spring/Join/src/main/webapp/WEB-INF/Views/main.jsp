@@ -11,8 +11,8 @@
 	<%
 		String id = (String)session.getAttribute("id");
 	%>
+	
 	<h1>메인페이지</h1>
-
 	
 	<%
 		if(session.getAttribute("id") == null){
@@ -25,7 +25,6 @@
 		if(id != null && id.equals("admin")){
 	%>
 		<a href="userList">회원목록</a><br>
-		<a href="join">회원가입</a>	
 	<%} %>
 	
 	<%

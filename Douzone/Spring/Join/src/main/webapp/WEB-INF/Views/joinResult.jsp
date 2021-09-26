@@ -11,6 +11,6 @@
 	아이디 : ${id }<br>
 	이름 : ${name }<br>
 	나이 : ${age }<br>
-	<a href="index.jsp">메인페이지로 가기</a>
+	<a href="main">메인페이지로 가기</a>
 </body>
 </html>

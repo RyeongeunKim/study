@@ -119,4 +119,21 @@ public class UserController {
 		return null;
 	}	
 	
+	@RequestMapping("/userList")
+	public String method08(Model model, UserDTO udto, HttpServletRequest request) {
+
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("id");
+		
+		if(id == null || !id.equals("admin")){
+			return "login";
+		} 
+		
+		UserDAO udao = new UserDAO();
+		List userList = udao.userList(udto);
+		request.setAttribute("userList", userList);
+		
+		return "userList";
+	}
+	
 }

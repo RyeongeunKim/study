@@ -55,5 +55,16 @@ public class UserDAO {
 		session.close();
 		return check;
 	}
+	
+	List userList(UserDTO udto){
+		
+		SqlSession session = ssf.openSession();
+		List<UserDTO> mm = session.selectList("test04");
+//		for (UserDTO u : mm) {
+//			System.out.println(u.getId() + " " + u.getAge() + " " + u.getName() + " " + u.getPw());
+//		}
+		mm.add(udto);
+		return mm;
+	}
 
 }

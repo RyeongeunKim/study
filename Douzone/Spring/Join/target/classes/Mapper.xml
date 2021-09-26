@@ -17,5 +17,9 @@
 	<insert id="test03" parameterType="Pack.UserDTO">
 		insert into table04(id, pw, name, age) values (#{id}, #{pw}, #{name}, #{age})
 	</insert>
+	
+	<select id="test04" resultType="Pack.UserDTO">
+		select * from table04 where id != 'admin'
+	</select>
 
 </mapper>
