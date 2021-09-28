@@ -1,5 +1,207 @@
 
+// ex25)
 
+// 1
+let t = () => () => 100;
+
+
+// 2
+t = () => () => {
+    return 100;
+}
+
+// 3
+t = () =>{ return () => {
+        return 100;
+    }
+}
+console.log(t()());
+
+// 4
+t = (a) => {return () => {
+        return 100 + a;
+    }
+}
+
+console.log(t(10)());
+
+// 5
+t = (a) => {
+    return (b) => {
+        return b + a;
+    }
+}
+console.log(t(10)(20));
+
+// 6
+t = (a) => {
+    return (b) => b + a;
+}
+t = (a) => (b) => b + a; 
+t = a => b => b + a;  // 인수 전달이 한 개일 때만 괄호 생략 가능
+
+// 7
+t = (a, c) => (b, d) => a*b+c*d;
+
+/*
+// ex24)
+let f1 = ()=>{
+    return 100;
+}
+let f2 = ()=> 100; // 위와 같은 코드
+
+let f3 = ()=> {
+    return console.log('1');
+}
+
+let f4 = ()=> console.log('1'); // 위와 같은 코드
+
+let t = a => b => 100;
+*/
+
+/*
+// ex23)
+
+// 즉시 실행 함수
+(function(a){
+    (function(b){
+
+    });
+})();
+
+// 위의 코드를 람다로 사용함
+((a)=>{
+    (b)=>{
+    }
+})();
+
+let f1 = function(fc){
+    fc(10);
+}
+
+f1((( a ) => { 
+    (( b ) => { 
+        console.log(a+b);
+    })(20)
+}));
+*/
+
+/*
+// ex22)
+let f1 = function(a){
+    console.log(a);
+}
+f1(1);
+
+// (a) => {}
+f1 = (a)=>{
+    console.log(a);
+}
+f1(2);
+
+// (a) => { (b)=>{} }
+let f2 = (a)=>{
+    console.log(a);
+    
+    let f2 = (b)=>{
+        console.log(b);
+    }
+    f1(a+3);
+}
+f2(3)
+*/
+
+/*
+// ex21)
+let f1 = function(){
+    let a = 100;
+    return function(){
+        console.log(a);
+    }
+}
+
+f1()();
+*/
+
+/*
+// ex20)
+(function(){
+    console.log('1');
+    return function(){
+        console.log('2');
+    }
+})()();
+*/
+/*
+// ex19)
+let f1 = function(fc){
+    console.log('1');
+    let f2 = function(){
+        console.log('2');
+    }
+    // f2 자체를 return
+    // return f2(); -> f2 콜
+    return f2; 
+}
+f1()();
+
+let f3 = function(fc){
+    console.log('3');
+
+    return function(){
+        console.log('4');
+    };
+}
+f3()();
+*/
+
+/*
+// ex18)
+// fc = 
+let f1 = function(fc){
+    console.log('1');
+    fc();
+}
+
+let f2 = function(fc){
+    console.log('2');
+}
+// 방법1
+f1(f2);
+// 방법2
+f1(function(){
+    console.log('3');
+});
+// 방법3
+f1(()=>{
+    console.log('4');
+});
+*/
+
+/*
+// ex17) 
+let f1 = function(){
+    console.log('1');
+    
+    let f2 = function(){
+        console.log('2');
+    }
+    f2();
+}
+f1();
+
+f1 = function(){
+    console.log('3');
+    
+    let f2 = function(){
+        console.log('4');
+    }
+    f2();
+}
+f1();
+*/
+
+/*
 // ex16) 함수 표현법
 
 // 1, 2 -> 펑션 네임 방식
@@ -100,7 +302,7 @@ function t5(){
     console.log(sum);
 }
 t5(10, 20, 30)
-
+*/
 /*
 // ex15)
 let a = 10;
