@@ -1,4 +1,340 @@
 
+// ex59) reduce 6 - 덧셈 간단 예시
+const oneTwoThree = [1, 2, 3];
+
+result = oneTwoThree.reduce((acc, cur, i) => {
+    console.log(acc, cur, i);
+    return acc + cur;
+}, 0);
+
+result;
+
+/*
+// ex58) reduce 5 - 속성으로 객체 분류하기
+var people = [
+    {name: 'Alice', age: 21},
+    {name: 'Max', age: 20},
+    {name: 'Jane', age: 20}
+];
+
+function groupBy(objectArray, property){
+    return objectArray.reduce(function(acc, obj){
+        var key = obj[property];
+        if(!acc[key]){
+            acc[key] = [];
+        }
+        acc[key].push(obj);
+        return acc;
+    }, {});
+}
+
+var groupedPeople = groupBy(people, 'age');
+console.log(groupedPeople);
+*/
+
+
+// ex57) reduce 4(중요) - 객체 내의 인스턴스 개수 세기
+var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+
+var countedNames = names.reduce(function(allNames, name){
+    if(name in allNames){       // 누적값에 이름이 있을 경우
+        allNames[name]++;
+    } else {
+        allNames[name] = 1;     // 누적값에 이름이 없을 경우
+    }
+    return allNames;
+}, {});
+
+console.log(countedNames);
+
+
+/*
+// ex56) reduce 3 - 중첩 배열 펼치기
+var flattened = [[0, 1], [2, 3], [4, 5]].reduce(
+    function(accumulator, currentValue){
+        return accumulator.concat(currentValue);
+    },[]
+);
+
+console.log(flattened);
+
+// 화살표 함수
+var flattened2 = [[0, 1], [2, 3], [4, 5]].reduce(
+    (accumulator, currentValue) => accumulator.concat(currentValue),
+    []
+);
+    
+console.log(flattened2);
+*/
+
+/*
+// ex55) reduce 2 - 객체 배열에서의 값 합산
+var initialValue = 0;
+var sum = [{x: 1}, {x:2}, {x:3}].reduce(function(accumulator, currentValue){
+    return accumulator + currentValue.x;
+},initialValue)
+
+console.log(sum);
+
+// 화살표 함수
+initialValue = 0;
+var total = [{x:1}, {x:2}, {x:3}].reduce(
+    (accumulator, currentValue) => accumulator + currentValue.x
+    ,initialValue
+);
+
+console.log(total);
+*/
+
+/*
+// ex54) reduce 1 - 배열의 모든 값 합산
+let initialValue = 0;
+let sum = [0, 1, 2, 3].reduce(function (accumulator, currentValue){
+    return accumulator + currentValue;
+}, 0)
+console.log(sum); // 6
+
+// 화살표 함수
+var total = [0, 1, 2, 3].reduce(
+    (accumulator, currentValue) => accumulator + currentValue, 0
+)
+
+console.log(total); // 6
+*/
+
+/*
+// ex53)
+let ar = ['tiger', 'cat', 'dog', 'lion']
+// 글자가 3글자보다 작은거 필터링해서 출력
+let br = ar.filter(v => v.length < 4);
+console.log(br); // [ 'cat', 'dog' ]
+*/
+
+/*
+// ex52) some(), filter()
+// - some() : 하나라도 만족하면 true 
+// - filter() : 원본 데이터에서 특정 조건에 만족하는 데이터만 뽑아내기
+let ar = [1, 6, 11, 39, 21]
+
+console.log(ar.some(v => v % 2 == 0)); // true -> 6
+
+let br = ar.filter( v => v < 15);
+console.log(br);
+*/
+
+/*
+// ex51) every : 모두 만족하면 true
+let ar = [1, 2, 10, 39, 20]
+let br = [1, 2, 10, 50, 20]
+
+function func(value){
+    return value < 40;
+}
+console.log(ar.every(func));          // true - 모두 만족
+console.log(br.every(func));          // false - 하나라도 실패
+console.log(br.every((v) => v < 40)); // 위를 람다로 
+console.log(br.every(                 // 생략 전 코드
+    (v) => {return v < 40;}
+));
+*/
+
+/*
+//ex50) indexof 
+let ar = ['tiger', 'cat', 'tiger', 'lion', 'apple']
+console.log(ar.indexOf('lion'));
+console.log(ar.indexOf('dog'));
+
+console.log(ar.indexOf('lion', 3));      // 찾으려는 위치값 지정
+
+console.log(ar.indexOf('tiger'));        // 앞에서 부터 찾기
+console.log(ar.lastIndexOf('tiger'));    // 뒤에서 부터 찾기
+*/
+
+/*
+// ex49) splice
+let ar = [1,2,3];
+
+// [시작위치, 삭제항목수, 추가항목,,,]
+    // 1? 1부터 
+    // 0?데이터를 삭제하지 마라
+    // 10,20,30 추가해라
+ar.splice(1,0,10,20,30); 
+console.log(ar); // [1, 10, 20, 30, 2, 3]
+ar.splice(1,2,88,99); 
+console.log(ar); // [1, 88, 99, 30, 2, 3]
+let br = [66, 55, 44, 33];
+ar.splice(0,0,br); 
+console.log(ar); // [66, 55, 44, 33]
+*/
+
+/*
+// ex48) slice()
+// slice * -> 원본 데이터 손상 X
+let ar = [10, 20, 30, 40, 50, 60];
+
+// [2,4)
+// s <= x < e
+let br = ar.slice(2, 4); // index 2, 3
+console.log(br);         // [30, 40]
+*/
+
+/*
+// ex47) sort4
+let ar = [
+    {n:30, s:'삼성'}, // n값에 대해 정렬
+    {n:20, s:'롯데'},
+    {n:10, s:'현대'},
+];
+
+function func(a, b){
+
+    return a.n - b.n;
+}
+
+ar.sort(func);
+
+console.log(ar);
+console.log('test');
+*/
+
+/*
+// ex47) sort3 - 절대값 구하기
+let ar = [-52, 73, -43, 32];
+// 7, 10, 7, 5
+// 32, 52, 43, 72 
+function func(a, b){
+    let c = Math.abs(a);
+    let d = Math.abs(b);
+
+    return c - d;
+}
+
+ar.sort(func);
+
+console.log(ar); // [32, -43, -52, 73]
+*/
+
+/*
+// ex46) sort2
+let ar = [52, 73, 43, 32];
+// 7, 10, 7, 5
+// 32, 52, 43, 72 
+function func(a, b){
+    let c = a / 10 + a % 10; // 활용도 △
+    let d = b / 10 + b % 10; // 활용도 △
+
+    return c - d;
+}
+
+ar.sort(func);
+
+console.log(ar);
+*/
+
+/*
+// ex45) sort1 : 문자열 기준으로 사전순으로 정렬
+let ar = [80, 20, 10, 15];
+ar.sort();
+console.log(ar); // [10, 15, 20, 80] 
+
+// 정렬된게 아니다?
+let ar2 = [52, 273, 103, 32];
+ar2.sort();
+console.log(ar2); // [103, 273, 32, 52]
+
+// 정렬해보자! - 인터페이스 방식
+function func(a, b){
+    // if(a > b){ 
+    //     return +1; // 양수
+    // } else { 
+    //     return -1; // 음수
+    // }
+    // return (a > b) ? +1 : -1; // 순차정렬 // 역순정렬 : a < b
+    return a - b; // js는 성립됨, 다른 언어는 안되는 경우도 있다
+}
+
+ar2.sort(func); // 함수 콜백 방식 사용
+console.log(ar2); // [32, 52, 103, 273]
+*/
+
+
+/* 
+// ex44) join, reverse, shift
+// join()
+let ar = ['tiger', 'lion', 'cat'];
+console.log(ar.join());      // tiger,lion,cat
+console.log(ar.join(''));    // tigerlioncat
+console.log(ar.join('-'));   // tiger-lion-cat
+console.log(ar.join(' + ')); // tiger + lion + cat
+
+// reverse()
+let ar2 = [10, 20, 30];
+console.log(ar2.reverse());  // [30, 20, 10]
+
+// shift() : 데이터 삭제
+// unshift() : 데이터 추가
+console.log(ar2.shift());      // 데이터 삭제 
+console.log(ar2);              // [20, 10]
+console.log(ar2.unshift(40));  // 데이터 추가
+console.log(ar2);              // [40, 20, 10]
+
+console.log(ar2.unshift(50,60,70));
+console.log(ar2);              // [50, 60, 70, 40, 20, 10]
+*/
+
+/*
+// ex43) concat()
+let ar = [10, 20, 30];
+let br = ar.concat(40);
+console.log(ar);
+console.log(br);
+
+let cr = [40, 50, 60];
+let dr = ar.concat(cr);
+
+// [10, 20, 30, 40, 50, 60]
+console.log(dr);
+console.log('test');
+
+// [10, 20, 30, [40, 50, 60]] 
+ar.push(cr);
+console.log(ar);
+
+console.log('test');
+*/
+
+
+/*
+// ex42) 배열의 함수2 - stack 구조
+let ar = [80, 20, 10, 15];
+
+// pop()* => 원본 데이터가 손상된다
+let num = ar.pop(); // (빼기) <-> push (넣기) => stack 구조 
+console.log(ar, num);
+
+// push()*
+ar.push(20);
+console.log(ar, num);
+*/
+
+/*
+// ex41) 배열의 함수1 
+
+let ar = [80, 20, 10, 15];
+console.log(ar, typeof(ar));
+
+let br = ar.toString();
+console.log(br, typeof(br));
+
+
+let st01 = '80,20,10,15';
+console.log(st01, typeof(st01));
+
+let date = new Date(); // 날짜 관련 함수, 참고만(빈도수 ▽)
+console.log(date);
+console.log(date.toLocaleDateString());
+*/
+
 /*
 // ex40) 배열 안 객체
 
@@ -16,7 +352,18 @@ let ar = [
         a: 30,
     },
 ]
+
+console.log(1);
 console.log(ar);
+console.log(2);
+
+for (const v of ar) {
+    console.log(v);
+}
+
+console.log(3);
+console.log(ar);
+console.log(4);
 
 for (const key in ar) {
     console.log(key);
