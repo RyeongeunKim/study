@@ -1,13 +1,178 @@
 
+// ex63)
+let obj = {
+    n:10,
+    obj2:{
+        f1:()=>{
+            console.log(this);
+            console.log(this.n);
+        }
+    }
+}
+obj.obj2.f1();
+
+/*
+// ex62) 
+// 생성자함수(클래스) >> new
+
+function Func(){
+    this.num = 100;
+    this.obj = {
+        num:200,
+        f1:()=>{ // arrow의 this : 자신을 감싸고 있는 {} 밖의 변수를 가리킨다
+            console.log(this.num);
+        },
+        f2:function(){ // 객체 안의 변수 사용
+            console.log(this.num);
+        }
+    }
+}
+let ins = new Func();
+ins.obj.f1();
+ins.obj.f2();
+*/
+
+/*
+// ex61) 객체 안에서 에로우 함수를 사용할 때
+// this를 주의(사용하지 말자) 하자
+
+let obj = {
+    num:100,
+    func01:()=>{ // 01 -> 03(동일문법) ES6 이전
+        console.log(this);
+        console.log(this.num);
+    },
+    func02:function(){
+        console.log(this);
+        console.log(this.num);
+    },
+    func03(){ // 01 -> 03(동일문법) ES6 이후
+        console.log(this);
+        console.log(this.num);
+    },
+}
+
+obj.func01();
+obj.func02();
+obj.func03();
+*/
+
+/*
+// ex60)문자열, 배열, 객체
+
+// length - 문자열, 배열 O
+
+// 문자열
+let st = '령은';
+console.log(st.length); // 2
+
+// 배열
+let ar = [10, 20, 31];
+console.log(ar.length); // 3
+
+// 객체 X
+let obj = {a:10, b:20}
+console.log(obj.length); // undefined
+
+console.log('-------------');
+
+// forEach - 배열 O
+ar.forEach(element => {
+    console.log(element); // 10 20 31
+});
+
+// st.array.forEach(element => {
+//     console.log(element);
+// });
+
+// obj.array.forEach(element => {
+//     console.log(element);
+// });
+
+console.log('-------------');
+
+// forIn - 문자열, 배열, 객체 O
+
+for (let k in st) {
+    console.log(k + ":" + st[k]); // 0:령 1:은
+}
+
+console.log('-------------');
+
+for (const k in ar) {
+    console.log(k + ":" + ar[k]); // 0:10 1:20 2:31
+}
+
+console.log('-------------');
+
+for (const k in obj) {
+    console.log(k + ":" + obj[k]); // a:10 b:20
+}
+
+console.log('-------------');
+
+// forof - 문자열, 배열 O
+for (let i of st) {
+    console.log(i); // 령 은
+}
+
+for (let i of ar) {
+    console.log(i); // 10 20 31
+}
+
+// 객체 X
+// for (let i of obj) {
+//     console.log(i);
+// }
+
+// map : 배열 O
+let br = ar.map(
+    num => (num % 2)? 'odd' : 'even' 
+);
+console.log(br); // [ 'even', 'even', 'odd' ]
+
+// 문자열 X
+// let cr = st.map(
+//     ss => '호랑이'
+// );
+// console.log(cr);
+
+// 객체 X
+// let cr = obj.map(
+//     o => {a:30}
+// );
+// console.log(cr);
+*/
+
+/*
 // ex59) reduce 6 - 덧셈 간단 예시
 const oneTwoThree = [1, 2, 3];
 
+// 초기값 O
 result = oneTwoThree.reduce((acc, cur, i) => {
     console.log(acc, cur, i);
     return acc + cur;
 }, 0);
 
 result;
+
+// 0 1 0
+// 1 2 1
+// 3 3 2
+
+console.log('----------------');
+
+// 초기값 X
+sum = oneTwoThree.reduce((acc, cur, i) => {
+    console.log(acc, cur, i);
+    return acc + cur;
+});
+
+sum;
+
+// 1 2 1
+// 3 3 2
+*/
 
 /*
 // ex58) reduce 5 - 속성으로 객체 분류하기
@@ -32,7 +197,7 @@ var groupedPeople = groupBy(people, 'age');
 console.log(groupedPeople);
 */
 
-
+/*
 // ex57) reduce 4(중요) - 객체 내의 인스턴스 개수 세기
 var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
 
@@ -46,7 +211,7 @@ var countedNames = names.reduce(function(allNames, name){
 }, {});
 
 console.log(countedNames);
-
+*/
 
 /*
 // ex56) reduce 3 - 중첩 배열 펼치기
