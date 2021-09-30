@@ -22,5 +22,5 @@ for(var j = 0;j<5;j++){
 }
 
 for(let index2 in arr){
-    console.log(arr[index2]());  // 0,1,2,3,4
+    console.log(arr[index2]());  // 0,1,2,3,4,5
 }
