@@ -1,4 +1,5 @@
 
+/*
 // ex69)
 let obj = {
     a:10,
@@ -11,8 +12,9 @@ console.log(str, typeof(str));
 // >>> 전송......
 let obj2 = JSON.parse(str);
 console.log(obj2, typeof(obj2));
+*/
 
-/*
+
 // ex68) 수학함수
 
 //Math.PI
@@ -21,7 +23,7 @@ console.log(Math.PI); // 3.141592653589793
 // random
 console.log(Math.random()); // 0.0~1.0 사이의 값을 랜덤하게 뽑음
 console.log(Math.random()*10); // 소수점까지 나옴
-console.log(Math.floor(Math.random()*10)); // Math.floor -> 소수점 이하 자르기
+console.log('이거==>' + Math.floor(Math.random()*10)); // Math.floor -> 소수점 이하 자르기
 
 // Math.sin -> 알면 좋고 몰라도 상관 X
 // 직각삼각형의 각도 30도 -> 높이/빗변의 비율
@@ -37,7 +39,7 @@ console.log(Math.sin(r));
 // sqrt? 제곱근 구하기
 console.log(1.7*1.7);
 console.log(Math.sqrt(30)); //1.7320508075688772 // 30? 30Radian
-*/
+
 
 /*
 // ex67-2) 상속
