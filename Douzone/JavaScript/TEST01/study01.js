@@ -1,6 +1,119 @@
 
+//Q.10
+function solution(s) {
+    let ar = s.split(' ');
+    ar.sort(func);
+
+    function func(a, b){ // 첫번째 인자, 두번째 인자 비교
+        return a - b;
+    }
+
+    var answer = ar[0] + ' ' + ar[ar.length-1]
+    return answer;
+    }
+console.log(solution('1 2 3'));
 
 
+/*
+//Q.9
+    // 변경 후 좌석
+    //***코드***
+    // 변경 전 좌석
+    let info = [
+    {name:'김민건', seat:1},
+    {name:'오정환', seat:2},
+    {name:'박정민', seat:3},
+    {name:'송용민', seat:4},
+    {name:'김나은', seat:5},
+    {name:'최예준', seat:6},
+    {name:'최진웅', seat:7},
+    {name:'이우주', seat:8},
+    {name:'박주은', seat:9},
+    {name:'박진현', seat:10},
+    {name:'김령은', seat:11},
+    {name:'김경도', seat:12},
+    {name:'강아름', seat:13},
+    {name:'윤성준', seat:14},
+    {name:'김상연', seat:15},
+    {name:'박유나', seat:16},
+    {name:'이태훈', seat:17},
+    {name:'최영진', seat:18},
+    {name:'이용연', seat:19},
+    {name:'강동하', seat:20},
+    {name:'채송화', seat:21},
+    {name:'김도훈', seat:22},
+    {name:'이재현', seat:23},
+    {name:'김수인', seat:24},
+    {name:'이수빈', seat:25},
+    {name:'김진우', seat:26}
+    ]
+
+    // 변경 후 좌석
+    let info2 = [
+    {name:'김민건'},
+    {name:'오정환'},
+    {name:'박정민'},
+    {name:'송용민'},
+    {name:'김나은'},
+    {name:'최예준'},
+    {name:'최진웅'},
+    {name:'이우주'},
+    {name:'박주은'},
+    {name:'박진현'},
+    {name:'김령은'},
+    {name:'김경도'},
+    {name:'강아름'},
+    {name:'윤성준'},
+    {name:'김상연'},
+    {name:'박유나'},
+    {name:'이태훈'},
+    {name:'최영진'},
+    {name:'이용연'},
+    {name:'강동하'},
+    {name:'채송화'},
+    {name:'김도훈'},
+    {name:'이재현'},
+    {name:'김수인'},
+    {name:'이수빈'},
+    {name:'김진우'}
+    ]
+
+    // 중복 좌석이 발생하지 않도록 반복문을 돌면서 새로 지정된 좌석 번호들은 stack 변수에 담고
+    // 이를 반복문을 돌 때마다 검사를 통해 중복 좌석이 발생하지 않도록 합니다.
+    // 해당 stack 변수를 아래의 for문 내에서 활용하세요.
+    const stack = [];
+
+    for(let i=0; i<26; i++){
+
+        // 이전 좌석 번호를 담는 변수
+        let temp = info[i].seat;
+        // 랜덤 좌석을 담을 변수
+        let randSeat;
+
+        while(true){
+            // 구현 : 랜덤 좌석 부여를 위해 randSeat 초기화하세요. 주의 사항 : 정수입니다. 실수 아닙니다.
+            randSeat = Math.floor((Math.random()*26)+1); // 1~26
+            if((temp === randSeat) || (stack.includes(randSeat))){
+                // 구현 : 조건에 충족할 때 처리
+                continue;
+            }
+
+            else{
+                // 구현 : 조건에 충족하지 않을 때 처리
+                stack.push(randSeat);
+                break;
+            }
+        };
+        // 랜덤좌석 부여.
+        info2[i]['seat'] = randSeat;
+
+    }
+
+    console.log('=============변경 전 좌석=============');
+    console.log(info);
+    console.log('=============변경 후 좌석=============');
+    console.log(info2);
+*/
 /*
 //Q.8
 let str = '';
