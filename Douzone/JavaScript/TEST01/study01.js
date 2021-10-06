@@ -1,4 +1,17 @@
+/*
+//Q.11
+function F2(){
+    this.a = 10
+    }
+    let ins1 = new F2();
+    let ins2 = new F2();
+    
+    // 여기에 코드 작성
+    
+    console.log(ins1.f === ins2.f);
+*/
 
+/*
 //Q.10
 function solution(s) {
     let ar = s.split(' ');
@@ -12,7 +25,7 @@ function solution(s) {
     return answer;
     }
 console.log(solution('1 2 3'));
-
+*/
 
 /*
 //Q.9
@@ -208,6 +221,26 @@ for (let i in ar) {
 // student.showInfo();
 
 /*
+// Q.5 정답
+let a = 1;  
+function car(){
+    // var a = 1;
+    function kia(){
+        console.log(a++);
+    }
+
+    tire(kia);
+}
+function tire(fn){
+    console.log('타이어 교체');
+    fn();
+}
+
+car();
+car(); 
+*/
+
+/*
 //Q.5 클로즈 함수
 
 // function car(){
@@ -252,7 +285,8 @@ function f1(){
     }
 })()(5);
 */
-/* 
+
+/*  
 //Q.3 재귀함수
 function fact(n) {
     if (n == 1) {
@@ -262,6 +296,37 @@ function fact(n) {
     }
     }
     console.log("5! = " + fact(5) );
+*/
+
+/*
+//Q.2 정답
+// 콜백함수
+// 비동기
+function buy_async(item, price, quantity) {
+    console.log(item + " 상품을 " + quantity + "개 골라서 점원에게 주었습니다.");
+    setTimeout(function () {
+        console.log("계산이 필요합니다.");
+        var total = price * quantity;
+        return total;
+    }, 1000);
+}
+
+function pay(tot) { 
+    console.log(tot + "원을 지불하였습니다."); 
+}
+// var tot = buy_async("고구마", 1000, 5);
+// pay(tot);
+
+// 동기
+function buy_sync(item, price, quantity, callback) {
+    console.log(item + " 상품을 " + quantity + "개 골라서 점원에게 주었습니다.");
+    setTimeout(function () {
+        console.log("계산이 필요합니다.");
+        var total = price * quantity;
+        callback(total);
+    }, 1000);
+}
+buy_sync("호박", 2000, 3, pay);
 */
 
 /*
@@ -279,6 +344,21 @@ function buy_async(item, price, quantity) {
 }
     
 var tot = buy_async("고구마", 1000, 5);
+*/
+
+/*
+// Q.1 정답
+function Student(name,age,stuNum){
+    this.name = name
+    this.age = age
+    this.stuNum = stuNum
+​
+    this.showInfo = ()=>{
+        console.log(name,age,stuNum);
+    }
+}
+let stu01 = new Student('홍길동',20,20211002);
+stu01.showInfo();
 */
 
 /*
