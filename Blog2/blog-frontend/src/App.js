@@ -76,23 +76,24 @@ export const auth = handleActions(
     [LOGIN_FAILURE]: (state, { payload: error }) => ({
       ...state,
       authError: error,
-    })
+    }),
   },
-  
   initialState
 );
 const client = axios.create();
 
+const authApi = ({ username, password }) =>
+client.post('/api/auth/login', { username, password });
+
 // saga 생성
-const loginSaga = createRequestSaga(LOGIN,  ({ username, password }) =>
-client.post('/api/auth/login', { username, password }));
+// 수정하기
+const loginSaga = createRequestSaga(LOGIN, authApi);
 
 export function* authSaga() {
   yield takeLatest(LOGIN, loginSaga);  // put LOGIN_SUCCCESS 디스패치 발생
 }
 
 const App = () => {
-
   const dispatch = useDispatch();
   const { form, auth, authError } = useSelector((auth)=>({
     form: auth.login,
@@ -125,8 +126,6 @@ const App = () => {
       }),
     );
   };
-
- 
 
   return (
       <form onSubmit={onSubmit} onChange={onChange}>

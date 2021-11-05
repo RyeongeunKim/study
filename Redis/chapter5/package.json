@@ -1,0 +1,16 @@
+{
+  "name": "chapter5",
+  "version": "1.0.0",
+  "description": "chapter5 monolithic architecture",
+  "main": "monolithic.js",
+  "scripts": {
+    "start": "node monolithic.js",
+    "test": "node test.js"
+  },
+  "author": "msa",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "redis": "^3.1.2"
+  }
+}
