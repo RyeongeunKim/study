@@ -1,23 +1,26 @@
-import React, { useState } from 'react';
-import { StyleSheet, TouchableOpacity, View, Text, Alert, TextInput } from 'react-native';
+import React from 'react';
+import { StyleSheet, TouchableOpacity, View, Text, TextInput } from 'react-native';
 import { images } from './MyInfoImages';
 import IconButton from './MyInfoIconButton';
 import { useNavigation } from '@react-navigation/native'
 
-export const Contents = ({ userEmail, onPress, newEmail, onChangeNewEmail }) => {
+export const Contents = ({ loadingEmail, email, onPress, newEmail, onChangeNewEmail, checkEmail }) => {
 
     const navigation = useNavigation();
-    
+
     return (
       <View style={[styles.container, {height: 300, backgroundColor: '#CEEDFF', marginTop: 50}]}>
         <View style={styles.myInfo}>
           <IconButton type={images.email}/>
-          <Text style={{fontSize: 18, marginLeft: 21}}>{userEmail}</Text>
+          <Text style={styles.myInfoText}>
+          {loadingEmail && '로딩 중..'}
+          {!loadingEmail && email && `${email.u_email}`}
+        </Text>
         </View>
         <View style={styles.myInfo}>
           <IconButton type={images.email}/>
           <TextInput
-          style={styles.input}
+          style={styles.myInfoText}
           onChangeText={onChangeNewEmail}
           value={newEmail}
           placeholder="이메일 변경"
@@ -58,7 +61,7 @@ export const Contents = ({ userEmail, onPress, newEmail, onChangeNewEmail }) => 
     },
     myInfoText: {
       flex: 1,
-      fontSize: 22
+      fontSize: 22,
     },
     footer: {
       height: 80,
@@ -82,14 +85,5 @@ export const Contents = ({ userEmail, onPress, newEmail, onChangeNewEmail }) => 
       color: "white",
       fontWeight: "bold",
       margin: 10,
-    },
-    input: {
-      height: 40,
-      margin: 12,
-      borderWidth: 1,
-      borderColor: '#CEEDFF',
-      padding: 10,
-      flex:1, 
-      fontSize: 18
     },
   });

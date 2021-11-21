@@ -17,7 +17,7 @@ export const Header = () => {
   );
 };
 
-export const Contents = ({ userPhone, onPress }) => {
+export const Contents = ({ phone, onPress }) => {
 
   const navigation = useNavigation();
 
@@ -26,7 +26,7 @@ export const Contents = ({ userPhone, onPress }) => {
       <View style={styles.myInfo}>
         <IconButton type={images.phone}/>
         <Text style={styles.myInfoText}>휴대폰번호</Text>
-        <Text style={{fontSize: 22}}>{userPhone}</Text>
+        <Text style={{fontSize: 22}}>{phone}</Text>
       </View>
       <View style={styles.myInfo}>
         <IconButton type={images.email}/>

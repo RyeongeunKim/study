@@ -17,8 +17,6 @@ const MyInfoEmailUpdateContainer = () => {
 
   const [newEmail, onChangeNewEmail] = React.useState('');
 
-  //console.log(newEmail);
-
   useEffect(() => {
     dispatch(getEmail(phone));
   }, []);
@@ -30,12 +28,6 @@ const MyInfoEmailUpdateContainer = () => {
       dispatch(updateEmail({phone, newEmail}));
       Alert.alert('이메일이 성공적으로 변경되었습니다.');
       onChangeNewEmail('');
-    }
-  }
-
-  function test(){
-    if(onChangeNewEmail===''){
-      
     }
   }
   
